@@ -1,22 +1,31 @@
-set nocompatible              " be iMproved
-filetype off                  " required!
+set nocompatible
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call plug#begin('~/.vim/bundles')
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-" NOTE: comments after Bundle commands are not allowed.
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'justinmk/vim-sneak'
+Plug 'kchmck/vim-coffee-script'
+Plug 'ap/vim-you-keep-using-that-word'
+Plug 'kmalloc/conque'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-oblique'
+Plug 'junegunn/vim-after-object'
+Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/vim-fnr'
+Plug 'whatyouhide/vim-lengthmatters'
+Plug 'tpope/vim-capslock'
 
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-surround'
-Bundle 'justinmk/vim-sneak'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'ap/vim-you-keep-using-that-word'
+Plug 'kana/vim-textobj-user'
+Plug 'thinca/vim-textobj-between'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-syntax'
+Plug 'beloglazov/vim-textobj-punctuation'
+Plug 'Julian/vim-textobj-variable-segment'
 
-filetype plugin indent on     " required!
+call plug#end()
 
 set guioptions-=T
 set guioptions-=m
@@ -31,11 +40,16 @@ set smartcase
 set gdefault
 set incsearch
 set showmatch
-" set hlsearch
+set hlsearch
 set ttimeoutlen=1000
+set textwidth=80
 
 set expandtab
 set shiftwidth=2
+
+let mapleader = "h"
+
+autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 
 nnoremap <cr> o<esc>
 vnoremap <cr> o<esc>
@@ -109,16 +123,28 @@ omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
 
 let g:surround_no_mappings = 1
-nmap dh <Plug>Dsurround
-nmap ch <Plug>Csurround
-nmap h  <Plug>Ysurround
-nmap H  <Plug>YSurround
-nmap hh <Plug>Yssurround
-nmap HH <Plug>YSsurround
-xmap h  <Plug>VSurround
-xmap H  <nop>
-xmap gh <Plug>VgSurround
-imap <c-h> <Plug>Isurround
+nmap d<Leader>s <Plug>Dsurround
+nmap c<Leader>s <Plug>Csurround
+nmap <Leader>s  <Plug>Ysurround
+nmap <Leader>S  <Plug>YSurround
+nmap <Leader>ss <Plug>Yssurround
+nmap <Leader>SS <Plug>YSsurround
+xmap <Leader>s  <Plug>VSurround
+xmap <Leader>S  <nop>
+xmap g<Leader>s <Plug>VgSurround
+imap <c-s> <Plug>Isurround
+
+nmap <Leader>e :ConqueTermTab bash<cr>
+
+xmap u iu
+omap u iu
+
+nmap <Leader>i i<Plug>CapsLockEnable
+
+nmap <Leader>a <Plug>(EasyAlign)
+vmap <Leader>a <Plug>(EasyAlign)
+
+let g:fnr_flags = 'g'
 
 nnoremap j :tabp<CR>
 nnoremap k :tabn<CR>
