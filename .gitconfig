@@ -1,0 +1,14 @@
+[user]
+	name = Simon Lydell
+	email = simon.lydell@gmail.com
+[core]
+	editor = gvim -f
+	excludesfile = ~/.gitignore_global
+[merge]
+	tool = gvimdiff
+[color]
+	ui = true
+[credential]
+	helper = cache
+[push]
+	default = current

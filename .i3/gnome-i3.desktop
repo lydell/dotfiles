@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=GNOME with i3
+Comment=A GNOME fallback mode session using i3 as the window manager.
+Exec=gnome-session --session=i3
+TryExec=gnome-session
+Icon=
+Type=Application

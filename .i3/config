@@ -1,0 +1,120 @@
+set $mod Mod4
+floating_modifier $mod
+
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+p focus parent
+bindsym $mod+c focus child
+
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+
+bindsym $mod+f fullscreen
+
+
+bindsym $mod+q kill
+
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling/floating windows.
+bindsym $mod+space focus mode_toggle
+
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+
+# Reload the configuration file.
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3).
+bindsym $mod+Shift+r restart
+
+bindsym $mod+Shift+Ctrl+q exec gnome-session-quit --power-off
+bindsym $mod+Shift+Ctrl+l exec gnome-session-quit --logout
+
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+
+  bindsym Escape mode "default"
+}
+
+
+# Start a terminal.
+bindsym $mod+Return exec i3-sensible-terminal
+
+# start dmenu (a program launcher)
+#bindsym F13 exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+bindsym F13 exec --no-startup-id i3-dmenu-desktop
+
+
+workspace_layout tabbed
+
+
+exec --no-startup-id redshift -l 57.7:12.9
+
+focus_follows_mouse no
+exec --no-startup-id unclutter -idle 2
+
+# Open a terminal straight away.
+exec i3-sensible-terminal
+
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in a bar {} block.
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:DejaVu Sans Mono 8
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+hide_edge_borders both
