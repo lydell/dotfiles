@@ -76,6 +76,9 @@ noremap <c-c> "+y
 
 noremap _ -
 
+nnoremap <Leader>w :w<cr>
+nnoremap <Leader>q :wq<cr>
+
 nnoremap <c-up> <c-w>k
 nnoremap <c-down> <c-w>j
 nnoremap <c-left> <c-w>h
