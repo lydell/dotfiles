@@ -132,6 +132,7 @@ imap <c-s> <Plug>Isurround
 
 """ Various
 nmap <Leader>e :ConqueTermTab bash<cr>
+let g:ConqueTerm_PromptRegex = '^.\+\n\$ '
 
 xmap u iu
 omap u iu

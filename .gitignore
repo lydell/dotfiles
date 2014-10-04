@@ -1,0 +1,9 @@
+*
+!.bash_aliases
+!.bashrc
+!.gitconfig
+!.gitignore
+!.gitignore_global
+!.i3/
+!.i3/*
+!.vimrc
