@@ -50,8 +50,6 @@ set textwidth=80
 set expandtab
 set shiftwidth=2
 
-let mapleader = "\<space>"
-
 
 """ Mappings
 noremap <cr> o<esc>
@@ -72,7 +70,7 @@ noremap <c-y> "+y
 
 map h <nop>
 map H <nop>
-map <space> <nop>
+map <space> <Leader>
 
 noremap _ -
 
