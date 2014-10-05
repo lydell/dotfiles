@@ -46,6 +46,7 @@ set showmatch
 set hlsearch
 set ttimeoutlen=1000
 set textwidth=80
+set wildmode=longest:full,full
 
 set expandtab
 set shiftwidth=2
