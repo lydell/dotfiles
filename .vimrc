@@ -50,7 +50,7 @@ set textwidth=80
 set expandtab
 set shiftwidth=2
 
-let mapleader = "e"
+let mapleader = "\<space>"
 
 
 """ Mappings
@@ -65,14 +65,14 @@ noremap Q gq
 nnoremap Y y$
 noremap , L
 noremap ; H
-noremap h e
-noremap H E
-noremap gh e
-noremap gH E
-noremap <space> <c-f>
-noremap <s-space> <c-b>
+noremap <c-space> <c-f>
+noremap <c-s-space> <c-b>
 nnoremap <c-a> ggVG
-noremap <c-c> "+y
+noremap <c-y> "+y
+
+map h <nop>
+map H <nop>
+map <space> <nop>
 
 noremap _ -
 
