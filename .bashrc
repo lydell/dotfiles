@@ -30,6 +30,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Enable programmable completion features.
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+  . /etc/bash_completion
+fi
+
 # Git prompt.
 #GIT_PROMPT_FETCH_REMOTE_STATUS=0
 #source ~/bash-git-prompt/gitprompt.sh
