@@ -71,6 +71,7 @@ nnoremap <c-a> ggVG
 noremap <c-y> "+y
 
 nnoremap <c-s> s
+nnoremap <a-o> <c-i>
 
 map h <nop>
 map H <nop>
