@@ -70,6 +70,8 @@ noremap <c-s-space> <c-b>
 nnoremap <c-a> ggVG
 noremap <c-y> "+y
 
+nnoremap <c-s> s
+
 map h <nop>
 map H <nop>
 map <space> <Leader>
