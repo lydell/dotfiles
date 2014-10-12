@@ -1,3 +1,6 @@
+" Some plugins require this to be set before they are loaded.
+set nocompatible
+
 """ Plugins
 call plug#begin('~/.vim/bundles')
 
@@ -30,7 +33,6 @@ call plug#end()
 
 
 """ Settings
-set nocompatible
 set guioptions-=T
 set guioptions-=m
 colorscheme desert
