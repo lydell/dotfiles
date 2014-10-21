@@ -146,6 +146,7 @@ omap u iu
 nmap <Leader>i i<Plug>CapsLockEnable
 
 map <Leader>a <Plug>(EasyAlign)
+map <Leader>A{ <Plug>(EasyAlign)i{:
 
 let g:fnr_flags = 'g'
 let g:oblique#very_magic = 1
