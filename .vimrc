@@ -72,7 +72,6 @@ noremap <c-space> <c-f>
 noremap <c-s-space> <c-b>
 nnoremap <c-a> ggVG
 noremap <c-y> "+y
-noremap <c-s-y> "+y$
 
 nnoremap <c-s> s
 nnoremap <a-o> <c-i>
