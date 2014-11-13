@@ -19,6 +19,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kmalloc/conque'
 Plug 'tommcdo/vim-exchange'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'whatyouhide/vim-lengthmatters'
 
 Plug 'kana/vim-textobj-user'
@@ -93,8 +94,6 @@ nnoremap <c-right> <c-w>l
 inoremap <c-v> <c-\><c-o>"+gP
 inoremap <up>   <esc>O
 inoremap <down> <esc>o
-inoremap <tab> <c-n>
-inoremap <s-tab> <c-p>
 inoremap <c-esc> <c-o>
 
 call after_object#enable('=', ':', '-', '#', ' ')
