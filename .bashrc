@@ -50,5 +50,6 @@ function PS1toggle {
 }
 
 # Environment variables.
+export PATH="$PATH:./node_modules/.bin"
 export TWORLDDIR="$HOME/.tworld"
 export TWORLDSAVEDIR="$HOME/.tworld/save"
