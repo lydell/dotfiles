@@ -4,6 +4,4 @@
 !.gitconfig
 !.gitignore
 !.gitignore_global
-!.i3/
-!.i3/*
 !.vimrc
