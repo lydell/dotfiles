@@ -4,6 +4,7 @@ alias tworld="tworld -pq &"
 alias c="xclip -selection clipboard"
 alias s="git status"
 alias noeolateof="perl -i -pe 'chomp if eof'"
+alias gem="gem2.1"
 
 alias ll='ls -alF'
 alias la='ls -A'
