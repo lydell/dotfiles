@@ -76,7 +76,7 @@ noremap <c-y> "+y
 nnoremap <c-s> s
 nnoremap <a-o> <c-i>
 
-map h <nop>
+map h :!!<cr>
 map H <nop>
 map <space> <Leader>
 
