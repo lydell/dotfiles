@@ -40,7 +40,7 @@ fi
 #source ~/bash-git-prompt/gitprompt.sh
 path='\w'
 stashed='$(n=$(git stash list 2>/dev/null | wc -l); [[ $n != "0" ]] && echo "($n stashed) ")'
-status='$(git status -sb 2>/dev/null | tr "\n" " " | sed "s/\ \+/\ /g")'
+status='$(git status -sb 2>/dev/null | head -c 100 | tr "\n" " " | sed "s/\ \+/\ /g")'
 export PS1="$path $stashed$status\n$ "
 lastPS1='$ '
 function PS1toggle {
