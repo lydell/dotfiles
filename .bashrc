@@ -36,18 +36,13 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Git prompt.
-#GIT_PROMPT_FETCH_REMOTE_STATUS=0
-#source ~/bash-git-prompt/gitprompt.sh
-path='\w'
-stashed='$(n=$(git stash list 2>/dev/null | wc -l); [[ $n != "0" ]] && echo "($n stashed) ")'
-status='$(git status -sb 2>/dev/null | head -c 100 | tr "\n" " " | sed "s/\ \+/\ /g")'
-export PS1="$path $stashed$status\n$ "
-lastPS1='$ '
-function PS1toggle {
-  tmp=$lastPS1
-  lastPS1=$PS1
-  export PS1=$tmp
-}
+GIT_PS1_SHOWDIRTYSTATE=true     # *, + (unstaged, staged)
+GIT_PS1_SHOWSTASHSTATE=true     # $
+GIT_PS1_SHOWUNTRACKEDFILES=true # %
+GIT_PS1_DESCRIBE_STYLE=contains # v1.6.3.2~35
+GIT_PS1_SHOWCOLORHINTS=true
+. /usr/lib/git-core/git-sh-prompt
+PROMPT_COMMAND='__git_ps1 "\w" "\n\\\$ "'
 
 # Environment variables.
 export PATH="$PATH:./node_modules/.bin"
