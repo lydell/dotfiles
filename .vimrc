@@ -73,11 +73,8 @@ noremap <c-s-space> <c-b>
 nnoremap <c-a> ggVG
 noremap <c-y> "+y
 
-nnoremap <c-s> s
 nnoremap <a-o> <c-i>
 
-map h :!!<cr>
-map H <nop>
 map <space> <Leader>
 
 noremap _ -
@@ -123,15 +120,15 @@ map T <Plug>Sneak_T
 
 """ Surround
 let g:surround_no_mappings = 1
-nmap ds <Plug>Dsurround
-nmap cs <Plug>Csurround
-nmap s  <Plug>Ysurround
-nmap S  <Plug>YSurround
-nmap ss <Plug>Yssurround
-nmap SS <Plug>YSsurround
-xmap s  <Plug>VSurround
-xmap S  <Plug>VgSurround
-imap <c-s> <Plug>Isurround
+nmap dh <Plug>Dsurround
+nmap ch <Plug>Csurround
+nmap h  <Plug>Ysurround
+nmap H  <Plug>YSurround
+nmap hh <Plug>Yssurround
+nmap HH <Plug>YSsurround
+xmap h  <Plug>VSurround
+xmap H  <Plug>VgSurround
+imap <c-h> <Plug>Isurround
 
 
 """ Various
