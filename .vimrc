@@ -70,6 +70,8 @@ noremap , L
 noremap ; H
 noremap <c-space> <c-f>
 noremap <c-s-space> <c-b>
+noremap <s-down> <c-e>
+noremap <s-up> <c-y>
 nnoremap <c-a> ggVG
 noremap <c-y> "+y
 
