@@ -15,6 +15,7 @@ Plug 'junegunn/vim-oblique'
 Plug 'junegunn/vim-after-object'
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-fnr'
+Plug 'junegunn/seoul256.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kmalloc/conque'
@@ -36,7 +37,8 @@ call plug#end()
 """ Settings
 set guioptions-=T
 set guioptions-=m
-colorscheme desert
+let g:seoul256_background = 234
+colorscheme seoul256
 set cursorline
 " Automatically remove trailing whitespace on save.
 autocmd BufWritePre * :%s/\s\+$//e
