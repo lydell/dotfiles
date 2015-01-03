@@ -40,8 +40,6 @@ set guioptions-=m
 let g:seoul256_background = 234
 colorscheme seoul256
 set cursorline
-" Automatically remove trailing whitespace on save.
-autocmd BufWritePre * :%s/\s\+$//e
 set relativenumber
 set modelines=0
 set ignorecase
@@ -56,6 +54,12 @@ set completeopt+=longest
 
 set expandtab
 set shiftwidth=2
+
+" Trailing whitespace (and tabs).
+set list
+set listchars=tab:▸\ ,trail:¬,nbsp:·
+nmap <leader>l :set list!<cr>
+nmap <leader>s :%s/\s\+$//e<cr>
 
 
 """ Mappings
