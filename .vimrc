@@ -153,7 +153,6 @@ map <Leader>a <Plug>(EasyAlign)
 map <Leader>A{ <Plug>(EasyAlign)i{:
 
 let g:fnr_flags = 'g'
-let g:oblique#very_magic = 1
 
 
 """ Temporary
