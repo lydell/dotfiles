@@ -13,3 +13,12 @@ alias l='ls -CF'
 FROM=/home/lydell/.mozilla/abrowser/Simon/extensions/keefox@chris.tomlinson/deps/KeePassRPC.plgx
 TO=/usr/lib/keepass2/plugins/
 alias upgrade_keefox="sudo mkdir -p $TO && sudo cp $FROM $TO"
+
+
+release() {
+  name=$(basename $PWD)
+  version="v$1"
+  message="$name $version"
+  git commit -am "$message" && git tag "$version" -am "$message"
+}
+alias push='git push && git push --tags && npm publish'
