@@ -43,9 +43,16 @@ GIT_PS1_SHOWUNTRACKEDFILES=true # %
 GIT_PS1_DESCRIBE_STYLE=contains # v1.6.3.2~35
 GIT_PS1_SHOWCOLORHINTS=true
 . /usr/lib/git-core/git-sh-prompt
-PROMPT_COMMAND='__git_ps1 "\w" "\n\\\$ "'
+__virtual_env() {
+  echo -n $(basename ${VIRTUAL_ENV:-""})
+}
+
+PROMPT_COMMAND='__git_ps1 "\w $(__virtual_env)" "\n\\\$ "'
 
 # Environment variables.
 export PATH="$PATH:./node_modules/.bin"
 export TWORLDDIR="$HOME/.tworld"
 export TWORLDSAVEDIR="$HOME/.tworld/save"
+
+export WORKON_HOME=~/.virtualenvs
+source /etc/bash_completion.d/virtualenvwrapper
