@@ -18,7 +18,6 @@ Plug 'junegunn/vim-fnr'
 Plug 'junegunn/seoul256.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'kchmck/vim-coffee-script'
-Plug 'kmalloc/conque'
 Plug 'tommcdo/vim-exchange'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'whatyouhide/vim-lengthmatters'
