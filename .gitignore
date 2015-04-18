@@ -4,6 +4,7 @@
 !/.gitconfig
 !/.gitignore
 !/.gitignore_global
+!/.pam_environment
 !/.vimrc
 !/.config/
 !/.config/dconf.dump

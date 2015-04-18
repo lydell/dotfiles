@@ -1,0 +1,3 @@
+PATH DEFAULT=${PATH}:./node_modules/.bin:$HOME/bin
+TWORLDDIR=/home/lydell/.config/tworld
+TWORLDSAVEDIR=/home/lydell/.config/tworld/save
