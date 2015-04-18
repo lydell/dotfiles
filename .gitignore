@@ -9,8 +9,11 @@
 !/.config/
 !/.config/dconf.dump
 !/bin/
+!/bin/ack
+!/bin/lsrc
 !/bin/noeolateof
 !/bin/push
 !/bin/release
+!/bin/toggle
 !/bin/tw
 !/bin/winresize

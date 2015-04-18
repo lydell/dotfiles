@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+path="$1"
+suffix=${2:-'-toggled'}
+toggled="$path$suffix"
+
+if test $# -lt 1 || test $# -gt 2; then
+  echo "Usage: $(basename "$0") path [suffix]"
+  echo 'Toggles the name of $path between $path and $path$suffix'
+  echo "The default suffix is '$suffix'"
+  exit
+fi
+
+if test -e "$path"; then
+  if test -e "$toggled"; then
+    echo "Error: Both $path and $toggled exists."
+    exit 1
+  fi
+  mv "$path" "$toggled"
+elif test -e "$toggled"; then
+  mv "$toggled" "$path"
+else
+  echo "Error: Neither $path nor $toggled exists."
+  exit 1
+fi

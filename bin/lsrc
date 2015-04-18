@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+(git ls-tree -r --name-only HEAD || ack -f) 2>/dev/null
