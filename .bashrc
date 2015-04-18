@@ -26,9 +26,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-  source ~/.bash_aliases
-fi
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 # Enable programmable completion features.
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -46,16 +44,5 @@ GIT_PS1_SHOWUNTRACKEDFILES=true # %
 GIT_PS1_DESCRIBE_STYLE=contains # v1.6.3.2~35
 GIT_PS1_SHOWCOLORHINTS=true
 source /usr/lib/git-core/git-sh-prompt
-__virtual_env() {
-  if [[ $VIRTUAL_ENV != "" ]]; then
-    echo -n " [$(basename $VIRTUAL_ENV)]"
-  fi
-}
 
-PROMPT_COMMAND='__git_ps1 "\w$(__virtual_env)" "\n\\\$ "'
-
-# Virtualenv.
-export WORKON_HOME=~/.virtualenvs
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-  source /usr/local/bin/virtualenvwrapper.sh
-fi
+PROMPT_COMMAND='__git_ps1 "\w" "\n\\\$ "'
