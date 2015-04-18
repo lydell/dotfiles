@@ -1,0 +1,73 @@
+# Dump all changed settings to stdout: `dconf dump /`
+# You can also see many available settings using: `gsettings list-reqursively`
+# To apply this file: `dconf load / <$THIS_FILE`
+# You might need to log out and log in for changes to take effect.
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Shift><Super>q'
+command='gnome-session-quit --power-off'
+name='poweroff'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Shift><Super>l'
+command='gnome-session-quit --logout'
+name='logout'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Super>n'
+command='winresize left'
+name='winresize left'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+binding='<Super>i'
+command='winresize max'
+name='winresize max'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+binding='<Super>s'
+command='winresize right'
+name='winresize right'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
+binding='<Super>Return'
+command='gnome-terminal'
+name='terminal'
+
+[org/gnome/desktop/wm/keybindings]
+close=['<Super>q', '<Alt>F4']
+toggle-fullscreen=['<Super>f']
+panel-run-dialog=['F13', '<Alt>F2']
+panel-main-menu=['F14', '<Alt>F1']
+
+# So that the TECK does not send extra Num Lock.
+[org/gnome/settings-daemon/peripherals/keyboard]
+numlock-state='on'
+
+[org/gnome/desktop/a11y/keyboard]
+mousekeys-accel-time=1200
+mousekeys-max-speed=750
+
+[org/gtk/settings/file-chooser]
+show-hidden=true
+
+[org/gnome/nautilus/preferences]
+sort-directories-first=true
+
+[org/gnome/nautilus/desktop]
+home-icon-visible=false
+network-icon-visible=false
+volumes-visible=false
+trash-icon-visible=false
+
+[org/gnome/gnome-panel/layout/toplevels/panel-0]
+orientation='top'
+size=24
+
+[org/gnome/desktop/a11y/applications]
+screen-reader-enabled=false
+
+[org/gnome/desktop/screensaver]
+lock-delay=uint32 1800

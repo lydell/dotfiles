@@ -5,59 +5,78 @@ set nocompatible
 call plug#begin('~/.vim/bundles')
 
 Plug 'ap/vim-you-keep-using-that-word'
+Plug 'bkad/CamelCaseMotion'
+Plug 'mileszs/ack.vim'
+Plug 'myint/indent-finder'
 Plug 'tpope/vim-capslock'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-oblique'
-Plug 'junegunn/vim-after-object'
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-fnr'
 Plug 'junegunn/seoul256.vim'
 Plug 'justinmk/vim-sneak'
-Plug 'kchmck/vim-coffee-script'
-Plug 'kmalloc/conque'
 Plug 'tommcdo/vim-exchange'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'wellle/targets.vim'
 Plug 'whatyouhide/vim-lengthmatters'
 
-Plug 'kana/vim-textobj-user'
-Plug 'thinca/vim-textobj-between'
-Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-syntax'
-Plug 'beloglazov/vim-textobj-punctuation'
-Plug 'Julian/vim-textobj-variable-segment'
+Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
 
 
 """ Settings
+" UI
 set guioptions-=T
 set guioptions-=m
-let g:seoul256_background = 234
-colorscheme seoul256
 set cursorline
 set relativenumber
-set modelines=0
+let g:seoul256_background = 234
+colorscheme seoul256
+
+" IO
+set autoread
+set directory-=.
+set undofile
+set undodir=~/.tmp
+
+" Search
 set ignorecase
 set smartcase
 set incsearch
 set showmatch
 set hlsearch
-set ttimeoutlen=1000
-set textwidth=80
-set wildmode=longest:full,full
-set completeopt+=longest
 
+" Indent
 set expandtab
 set shiftwidth=2
+set tabstop=4
+set autoindent
+filetype indent off
+
+" Misc
+set backspace=indent,eol,start
+set completeopt+=longest
+set display=lastline
+set formatoptions+=j
+set nojoinspaces
+set nostartofline
+set nrformats-=octal
+set showcmd
+set textwidth=80
+set wildmenu
+set wildmode=longest:full,full
+
+" Turn off /* vim: set foo=bar: */
+set modelines=0
 
 " Trailing whitespace (and tabs).
 set list
-set listchars=tab:▸\ ,trail:¬,nbsp:·
+set listchars=tab:▸\ ,trail:¬,extends:>,precedes:<,nbsp:·
 nmap <leader>l :set list!<cr>
 nmap <leader>s :%s/\s\+$//e<cr>
 
@@ -69,38 +88,43 @@ noremap <backspace> X
 noremap <delete> x
 noremap <home> ^
 noremap <end> $
-
-noremap Q gq
-nnoremap Y y$
-noremap , L
-noremap ; H
 noremap <c-space> <c-f>
 noremap <c-s-space> <c-b>
 noremap <s-down> <c-e>
 noremap <s-up> <c-y>
-nnoremap <c-a> ggVG
-noremap <c-y> "+y
-
-nnoremap <a-o> <c-i>
-
-map <space> <Leader>
-
-noremap _ -
-
-nnoremap <Leader>w :w<cr>
-nnoremap <Leader>q :wq<cr>
-
 nnoremap <c-up> <c-w>k
 nnoremap <c-down> <c-w>j
 nnoremap <c-left> <c-w>h
 nnoremap <c-right> <c-w>l
 
-inoremap <c-v> <c-\><c-o>"+gP
-inoremap <up>   <esc>O
-inoremap <down> <esc>o
+" Y like C and D
+nnoremap Y y$
+" qq to record, Q to replay
+nnoremap Q @q
+" vim-vinegar takes `-`
+noremap _ -
+
+" Ctrl-{a,c,v} stand-in
+nnoremap <c-a> ggVG
+noremap <a-y> "+y
+noremap <a-s-y> "+y$
+inoremap <a-v> <c-r>+
+
+" Better undo
+inoremap <C-U> <C-G>u<C-U>
+inoremap <CR> <C-G>u<CR>
+
+" Insert mode
 inoremap <c-esc> <c-o>
 
-call after_object#enable('=', ':', '-', '#', ' ')
+" <Leader>
+map <space> <Leader>
+nnoremap <Leader>w :w<cr>
+nnoremap <Leader>q :wq<cr>
+
+" See Sneak and Surround below
+noremap , L
+noremap ; H
 
 
 """Sneak
@@ -114,6 +138,9 @@ map L <Plug>SneakPrevious
 
 nmap <c-tab>   <Plug>(SneakStreak)
 nmap <c-s-tab> <Plug>(SneakStreakBackward)
+
+" Mapping <tab> unfortunately kills <c-i>.
+nnoremap <a-o> <c-i>
 
 let g:sneak#f_reset = 1
 let g:sneak#t_reset = 1
@@ -139,22 +166,38 @@ xmap H  <Plug>VgSurround
 imap <c-h> <Plug>Isurround
 
 
+""" CameCaseMotion
+map <silent> <a-w> <Plug>CamelCaseMotion_w
+map <silent> <a-b> <Plug>CamelCaseMotion_b
+map <silent> <a-e> <Plug>CamelCaseMotion_e
+omap <silent> i<a-w> <Plug>CamelCaseMotion_iw
+vmap <silent> i<a-w> <Plug>CamelCaseMotion_iw
+omap <silent> i<a-b> <Plug>CamelCaseMotion_ib
+vmap <silent> i<a-b> <Plug>CamelCaseMotion_ib
+omap <silent> i<a-e> <Plug>CamelCaseMotion_ie
+vmap <silent> i<a-e> <Plug>CamelCaseMotion_ie
+
+
 """ Various
-nmap <Leader>e :ConqueTermTab bash<cr>
-let g:ConqueTerm_PromptRegex = '^.\+\n\$ '
-let g:lengthmatters_excluded = ['conque_term']
+imap <a-c> <Plug>CapsLockToggle
 
-xmap u iu
-omap u iu
-
-nmap <Leader>i i<Plug>CapsLockEnable
-
-map <Leader>a <Plug>(EasyAlign)
-map <Leader>A{ <Plug>(EasyAlign)i{:
+map <Leader>a :Ack
+map <Leader>n :FZF<cr>
+map <Leader>i <Plug>(EasyAlign)
 
 let g:fnr_flags = 'g'
+let g:fzf_launcher = 'gnome-terminal -e "bash -ic %s"'
 
 
-""" Temporary
-nnoremap j :tabp<CR>
-nnoremap k :tabn<CR>
+""" Status line
+set laststatus=2
+set statusline=
+set statusline+=%-4(%m%) "[+]
+set statusline+=%f:%l:%c "dir/file.js:12:5
+set statusline+=%=%<
+set statusline+=%{CapsLockStatusline()}
+set statusline+=%{&fileformat=='unix'?'':'['.&fileformat.']'}
+set statusline+=%{strlen(&fileencoding)==0\|\|&fileencoding=='utf-8'?'':'['.&fileencoding.']'}
+set statusline+=%r "[RO]
+set statusline+=%y "[javascript]
+set statusline+=[%{&expandtab?'spaces:'.&shiftwidth:'tabs:'.&tabstop}]

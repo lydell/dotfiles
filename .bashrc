@@ -27,32 +27,35 @@ fi
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
+  source ~/.bash_aliases
 fi
 
 # Enable programmable completion features.
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-  . /etc/bash_completion
+  source /etc/bash_completion
 fi
-. <(npm completion)
+source <(npm completion)
 
-# Git prompt.
+# fzf.
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Prompt.
 GIT_PS1_SHOWDIRTYSTATE=true     # *, + (unstaged, staged)
 GIT_PS1_SHOWSTASHSTATE=true     # $
 GIT_PS1_SHOWUNTRACKEDFILES=true # %
 GIT_PS1_DESCRIBE_STYLE=contains # v1.6.3.2~35
 GIT_PS1_SHOWCOLORHINTS=true
-. /usr/lib/git-core/git-sh-prompt
+source /usr/lib/git-core/git-sh-prompt
 __virtual_env() {
-  echo -n $(basename ${VIRTUAL_ENV:-""})
+  if [[ $VIRTUAL_ENV != "" ]]; then
+    echo -n " [$(basename $VIRTUAL_ENV)]"
+  fi
 }
 
-PROMPT_COMMAND='__git_ps1 "\w $(__virtual_env)" "\n\\\$ "'
+PROMPT_COMMAND='__git_ps1 "\w$(__virtual_env)" "\n\\\$ "'
 
-# Environment variables.
-export PATH="$PATH:./node_modules/.bin"
-export TWORLDDIR="$HOME/.tworld"
-export TWORLDSAVEDIR="$HOME/.tworld/save"
-
+# Virtualenv.
 export WORKON_HOME=~/.virtualenvs
-source /etc/bash_completion.d/virtualenvwrapper
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
