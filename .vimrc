@@ -69,6 +69,8 @@ set nojoinspaces
 set nostartofline
 set nrformats-=octal
 set showcmd
+set splitbelow
+set splitright
 set textwidth=80
 set wildmenu
 set wildmode=longest:full,full
