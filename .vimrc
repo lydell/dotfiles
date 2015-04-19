@@ -63,6 +63,7 @@ filetype indent off
 set backspace=indent,eol,start
 set completeopt+=longest
 set display=lastline
+set formatoptions-=t
 set formatoptions+=j
 set nojoinspaces
 set nostartofline
