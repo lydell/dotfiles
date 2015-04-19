@@ -1,4 +1,4 @@
-PATH DEFAULT=${PATH}:./node_modules/.bin:$HOME/bin
+PATH DEFAULT=${PATH}:./node_modules/.bin:${HOME}/bin
 FZF_DEFAULT_COMMAND=lsrc
 TWORLDDIR=/home/lydell/.config/tworld
 TWORLDSAVEDIR=/home/lydell/.config/tworld/save
