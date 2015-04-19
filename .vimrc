@@ -15,6 +15,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-oblique'
+Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-fnr'
 Plug 'junegunn/seoul256.vim'
@@ -99,8 +100,8 @@ nnoremap <c-right> <c-w>l
 
 " Y like C and D
 nnoremap Y y$
-" qq to record, Q to replay
-nnoremap Q @q
+" qq to record, Q to replay. Use recursive map for Peekaboo compat.
+nmap Q @q
 " vim-vinegar takes `-`
 noremap _ -
 
@@ -187,6 +188,7 @@ map <Leader>i <Plug>(EasyAlign)
 
 let g:fnr_flags = 'g'
 let g:fzf_launcher = 'xterm -bg "\#252525" -fg "\#d9d9d9" -fa Monospace -fs 10 -geometry 100x50 -e bash -ic %s'
+let g:peekaboo_delay = 750
 
 
 """ Status line
