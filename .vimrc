@@ -106,7 +106,7 @@ nmap Q @q
 noremap _ -
 
 " Ctrl-{a,c,v} stand-in
-nnoremap <c-a> ggVG
+nnoremap <c-y> ggVG
 noremap <a-y> "+y
 noremap <a-s-y> "+y$
 inoremap <a-v> <c-r>+
