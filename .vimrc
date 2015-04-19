@@ -187,7 +187,7 @@ map <Leader>n :FZF<cr>
 map <Leader>i <Plug>(EasyAlign)
 
 let g:fnr_flags = 'g'
-let g:fzf_launcher = 'xterm -bg "\#252525" -fg "\#d9d9d9" -fa Monospace -fs 10 -geometry 100x50 -e bash -ic %s'
+let g:fzf_launcher = 'xterm -bg "\#252525" -fg "\#d9d9d9" -fa Monospace -fs 10 -geometry 100x50+0+0 -e bash -ic %s'
 let g:peekaboo_delay = 750
 
 
