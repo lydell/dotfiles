@@ -4,7 +4,7 @@
 # You might need to log out and log in for changes to take effect.
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Shift><Super>q'
@@ -31,13 +31,23 @@ binding='<Super>s'
 command='winresize right'
 name='winresize right'
 
+# For QWERTY.
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
+binding='<Super>j'
+command='winresize right'
+name='winresize right (2)'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
 binding='<Super>Return'
 command='gnome-terminal'
 name='terminal'
 
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7]
+binding='<Super>q'
+command='wmctrl -c :ACTIVE:'
+name='close window'
+
 [org/gnome/desktop/wm/keybindings]
-close=['<Super>q', '<Alt>F4']
 toggle-fullscreen=['<Super>f']
 panel-run-dialog=['F13', '<Alt>F2']
 panel-main-menu=['F14', '<Alt>F1']
