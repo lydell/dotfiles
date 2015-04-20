@@ -121,10 +121,6 @@ inoremap <CR> <C-G>u<CR>
 inoremap <c-esc> <c-o>
 inoremap <a-p> <c-r>.<space>=<space><c-r>"
 
-" Visual selection
-set selection=exclusive
-nnoremap v vl
-
 " <Leader>
 map <space> <Leader>
 nnoremap <Leader>w :w<cr>
