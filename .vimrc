@@ -121,6 +121,10 @@ inoremap <CR> <C-G>u<CR>
 " Insert mode
 inoremap <c-esc> <c-o>
 
+" Visual selection
+set selection=exclusive
+nnoremap v vl
+
 " <Leader>
 map <space> <Leader>
 nnoremap <Leader>w :w<cr>
