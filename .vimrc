@@ -185,7 +185,7 @@ vmap <silent> i<a-e> <Plug>CamelCaseMotion_ie
 """ Various
 imap <a-c> <Plug>CapsLockToggle
 
-map <Leader>a :Ack
+map <Leader>a :Ack<space>
 map <Leader>n :FZF<cr>
 map <Leader>i <Plug>(EasyAlign)
 
