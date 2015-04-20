@@ -170,9 +170,10 @@ xmap H  <Plug>VgSurround
 imap <c-h> <Plug>Isurround
 
 
-""" CameCaseMotion
+""" CamelCaseMotion
 map <silent> <a-w> <Plug>CamelCaseMotion_w
 map <silent> <a-b> <Plug>CamelCaseMotion_b
+vmap <silent> <a-b> <Plug>CamelCaseMotion_b<right>
 map <silent> <a-e> <Plug>CamelCaseMotion_e
 omap <silent> i<a-w> <Plug>CamelCaseMotion_iw
 vmap <silent> i<a-w> <Plug>CamelCaseMotion_iw
