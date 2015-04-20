@@ -119,6 +119,7 @@ inoremap <CR> <C-G>u<CR>
 
 " Insert mode
 inoremap <c-esc> <c-o>
+inoremap <a-p> <c-r>.<space>=<space><c-r>"
 
 " Visual selection
 set selection=exclusive
