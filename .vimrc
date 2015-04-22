@@ -191,7 +191,15 @@ map <Leader>n :FZF<cr>
 map <Leader>i <Plug>(EasyAlign)
 
 let g:fnr_flags = 'g'
-let g:fzf_launcher = 'xterm -bg "\#252525" -fg "\#d9d9d9" -fa Monospace -fs 10 -geometry 100x50+0+0 -e bash -ic %s'
+
+let font = split(getfontname(), ' ')
+let g:fzf_launcher = printf('xterm -T fzf'
+      \ .' -bg "\%s" -fg "\%s"'
+      \ .' -fa "%s" -fs %d'
+      \ .' -geometry %dx%d+%d+%d -e bash -ic %%s',
+      \ synIDattr(hlID("Normal"), "bg"), synIDattr(hlID("Normal"), "fg"),
+      \ join(font[:-2], ' '), font[-1],
+      \ &columns/2, &lines, getwinposx(), getwinposy())
 
 
 """ Status line
