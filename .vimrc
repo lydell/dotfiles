@@ -183,23 +183,28 @@ omap <silent> i<a-e> <Plug>CamelCaseMotion_ie
 vmap <silent> i<a-e> <Plug>CamelCaseMotion_ie
 
 
+""" fzf
+map <Leader>n :call FZFSetup()<cr>:FZF<cr>
+map <Leader>N :call FZFSetup()<cr>:FZF<space>
+function! FZFSetup()
+  let font = split(getfontname(), ' ')
+  let g:fzf_launcher = printf('xterm -T fzf'
+        \ .' -bg "\%s" -fg "\%s"'
+        \ .' -fa "%s" -fs %d'
+        \ .' -geometry %dx%d+%d+%d -e bash -ic %%s',
+        \ synIDattr(hlID("Normal"), "bg"), synIDattr(hlID("Normal"), "fg"),
+        \ join(font[:-2], ' '), font[-1],
+        \ &columns, &lines/2, getwinposx(), getwinposy())
+endfunction
+
+
 """ Various
 imap <a-c> <Plug>CapsLockToggle
 
 map <Leader>a :Ack<space>
-map <Leader>n :FZF<cr>
 map <Leader>i <Plug>(EasyAlign)
 
 let g:fnr_flags = 'g'
-
-let font = split(getfontname(), ' ')
-let g:fzf_launcher = printf('xterm -T fzf'
-      \ .' -bg "\%s" -fg "\%s"'
-      \ .' -fa "%s" -fs %d'
-      \ .' -geometry %dx%d+%d+%d -e bash -ic %%s',
-      \ synIDattr(hlID("Normal"), "bg"), synIDattr(hlID("Normal"), "fg"),
-      \ join(font[:-2], ' '), font[-1],
-      \ &columns/2, &lines, getwinposx(), getwinposy())
 
 
 """ Status line
