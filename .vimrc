@@ -223,3 +223,10 @@ set statusline+=%r "[RO]
 set statusline+=%y "[javascript]
 set statusline+=[%{&expandtab?'spaces:'.&shiftwidth:'tabs:'.&tabstop}]
 set statusline+=%4p%% "50%
+
+
+""" Autocommands
+augroup vimrc
+autocmd!
+au FileType help :set tabstop=8
+augroup END
