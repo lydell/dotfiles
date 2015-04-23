@@ -33,6 +33,8 @@ call plug#end()
 " UI
 set guioptions-=T
 set guioptions-=m
+set guioptions-=r
+set guioptions-=L
 set cursorline
 set relativenumber
 let g:seoul256_background = 234
@@ -220,3 +222,4 @@ set statusline+=%{strlen(&fileencoding)==0\|\|&fileencoding=='utf-8'?'':'['.&fil
 set statusline+=%r "[RO]
 set statusline+=%y "[javascript]
 set statusline+=[%{&expandtab?'spaces:'.&shiftwidth:'tabs:'.&tabstop}]
+set statusline+=%4p%% "50%
