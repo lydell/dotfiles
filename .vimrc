@@ -184,18 +184,19 @@ vmap <silent> i<a-e> <Plug>CamelCaseMotion_ie
 
 
 """ fzf
-map <Leader>n :call FZFSetup()<cr>:FZF<cr>
-map <Leader>N :call FZFSetup()<cr>:FZF<space>
-function! FZFSetup()
-  let font = split(getfontname(), ' ')
-  let g:fzf_launcher = printf('xterm -T fzf'
-        \ .' -bg "\%s" -fg "\%s"'
-        \ .' -fa "%s" -fs %d'
-        \ .' -geometry %dx%d+%d+%d -e bash -ic %%s',
-        \ synIDattr(hlID("Normal"), "bg"), synIDattr(hlID("Normal"), "fg"),
-        \ join(font[:-2], ' '), font[-1],
-        \ &columns, &lines/2, getwinposx(), getwinposy())
+map <Leader>n :FZF<cr>
+map <Leader>N :FZF<space>
+
+function! FZF()
+  return printf('xterm -T fzf'
+      \ .' -bg "\%s" -fg "\%s"'
+      \ .' -fa "%s" -fs %d'
+      \ .' -geometry %dx%d+%d+%d -e bash -ic %%s',
+      \ synIDattr(hlID("Normal"), "bg"), synIDattr(hlID("Normal"), "fg"),
+      \ 'Monospace', getfontname()[-2:],
+      \ &columns, &lines/2, getwinposx(), getwinposy())
 endfunction
+let g:Fzf_launcher = function('FZF')
 
 
 """ Various
