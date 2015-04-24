@@ -113,7 +113,7 @@ noremap _ -
 nnoremap <c-y> ggVG
 noremap <a-y> "+y
 noremap <a-s-y> "+y$
-inoremap <a-v> <c-r>+
+inoremap <a-v> <c-o>:set paste<cr><c-r>+<c-o>:set nopaste<cr>
 
 " Better undo
 inoremap <C-U> <C-G>u<C-U>
