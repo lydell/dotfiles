@@ -163,6 +163,7 @@ map T <Plug>Sneak_T
 let g:surround_no_mappings = 1
 nmap dh <Plug>Dsurround
 nmap ch <Plug>Csurround
+nmap cH <Plug>CSurround
 nmap h  <Plug>Ysurround
 nmap H  <Plug>YSurround
 nmap hh <Plug>Yssurround
@@ -170,6 +171,7 @@ nmap HH <Plug>YSsurround
 xmap h  <Plug>VSurround
 xmap H  <Plug>VgSurround
 imap <c-h> <Plug>Isurround
+imap <a-h> <Plug>ISurround
 
 
 """ CamelCaseMotion
