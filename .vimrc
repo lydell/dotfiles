@@ -76,9 +76,6 @@ set textwidth=80
 set wildmenu
 set wildmode=longest:full,full
 
-" Turn off /* vim: set foo=bar: */
-set modelines=0
-
 " Trailing whitespace (and tabs).
 set list
 set listchars=tab:▸\ ,trail:¬,extends:>,precedes:<,nbsp:·
@@ -223,10 +220,3 @@ set statusline+=%r "[RO]
 set statusline+=%y "[javascript]
 set statusline+=[%{&expandtab?'spaces:'.&shiftwidth:'tabs:'.&tabstop}]
 set statusline+=%4p%% "50%
-
-
-""" Autocommands
-augroup vimrc
-autocmd!
-au FileType help :set tabstop=8
-augroup END
