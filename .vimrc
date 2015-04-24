@@ -120,6 +120,9 @@ inoremap <CR> <C-G>u<CR>
 inoremap <c-esc> <c-o>
 inoremap <a-p> <c-r>.<space>=<space><c-r>"
 
+" Visual mode
+vnoremap <end> $h
+
 " <Leader>
 map <space> <Leader>
 nnoremap <Leader>w :w<cr>
