@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+if test $# -lt 2; then
+  echo "Usage: $(basename "$0") regex replacement [i] [ack args]"
+  exit 1
+fi
+
+escape() {
+  # This does not cover the edge case where the user already escaped slashes.
+  # But KISS: A real user would never do that.
+  echo "$1" | sed 's#/#\\/#g'
+}
+
+regex=$(escape "$1")
+replacement=$(escape "$2")
+shift 2
+
+ackCase='--nosmart-case'
+perlCase=''
+if test "$1" == 'i'; then
+  ackCase='--ignore-case'
+  perlCase='i'
+  shift
+fi
+
+files=$(ack --files-with-matches $ackCase --match "$regex" $*) || exit $?
+echo "$files"
+echo "$files" | xargs -d '\n' perl -i -pe "s/$regex/$replacement/g$perlCase" --
