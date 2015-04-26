@@ -173,6 +173,32 @@ xmap h  <Plug>VSurround
 xmap H  <Plug>VgSurround
 imap <c-h> <Plug>Isurround
 imap <a-h> <Plug>ISurround
+imap <a-q> <Plug>Isurround>
+imap <a-<> <Plug>Isurround<
+imap <a-t> <Plug>Isurround<
+imap <a-l> <Plug>ISurround>
+imap <a-u> <Plug>Isurround}
+imap <a-{> <Plug>Isurround{
+imap <a-c> <Plug>ISurround{
+imap <a-a> <Plug>Isurround]
+imap <a-[> <Plug>Isurround[
+imap <a-n> <Plug>ISurround]
+imap <a-i> <Plug>Isurround)
+imap <a-(> <Plug>Isurround(
+imap <a-s> <Plug>ISurround)
+imap <a-/> <Plug>Isurround~
+imap <a-?> <Plug>Isurround`
+imap <a-y> <Plug>Isurround'
+imap <a-g> <Plug>Isurround"
+imap <a-j> <Plug>Isurround*
+imap <a-k> <Plug>Isurround#
+imap <a-b> <Plug>Isurround+
+imap <a--> <Plug>Isurround^
+imap <a-o> <Plug>Isurround=
+imap <a-,> <Plug>Isurround%
+imap <a-e> <Plug>Isurround<space><space>
+imap <a-'> <Plug>Isurround'<Plug>Isurround<space><space><Plug>Isurround+<Plug>Isurround<space><space>
+imap <a-"> <Plug>Isurround"<Plug>Isurround<space><space><Plug>Isurround+<Plug>Isurround<space><space>
 
 
 """ CamelCaseMotion
@@ -225,7 +251,7 @@ nnoremap <leader>g :YcmCompleter GoTo<cr>
 
 
 """ Various
-imap <a-c> <Plug>CapsLockToggle
+imap <a-r> <Plug>CapsLockToggle
 
 map <leader>a :Ack<space>
 map <leader>i <Plug>(EasyAlign)
