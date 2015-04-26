@@ -119,14 +119,16 @@ inoremap <CR> <C-G>u<CR>
 " Insert mode
 inoremap <c-esc> <c-o>
 inoremap <a-p> <c-r>.<space>=<space><c-r>"
+inoremap <up> <c-o>O
+inoremap <down> <c-o>o
 
 " Visual mode
 vnoremap <end> $h
 
-" <Leader>
-map <space> <Leader>
-nnoremap <Leader>w :w<cr>
-nnoremap <Leader>q :wq<cr>
+" <leader>
+map <space> <leader>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :wq<cr>
 
 " See Sneak and Surround below
 noremap , L
@@ -188,8 +190,8 @@ vmap <silent> i<a-e> <Plug>CamelCaseMotion_ie
 
 
 """ fzf
-map <Leader>n :FZF<cr>
-map <Leader>N :FZF<space>
+map <leader>n :FZF<cr>
+map <leader>N :FZF<space>
 
 function! FZF()
   return printf('xterm -T fzf'
@@ -203,11 +205,24 @@ endfunction
 let g:Fzf_launcher = function('FZF')
 
 
+""" YCM
+let g:ycm_filetype_blacklist = {}
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_key_list_select_completion = ['<tab>']
+let g:ycm_key_list_previous_completion = ['<s-tab>']
+let g:ycm_key_invoke_completion = '<c-tab>'
+let g:ycm_key_detailed_diagnostics = ''
+let g:ycm_autoclose_preview_window_after_insertion = 1
+nnoremap <leader>g :YcmCompleter GoTo<cr>
+
+
 """ Various
 imap <a-c> <Plug>CapsLockToggle
 
-map <Leader>a :Ack<space>
-map <Leader>i <Plug>(EasyAlign)
+map <leader>a :Ack<space>
+map <leader>i <Plug>(EasyAlign)
 
 let g:fnr_flags = 'g'
 
