@@ -10,6 +10,7 @@ Plug 'mileszs/ack.vim'
 Plug 'myint/indent-finder'
 Plug 'tpope/vim-capslock'
 Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
@@ -185,6 +186,13 @@ omap <silent> i<a-b> <Plug>CamelCaseMotion_ib
 vmap <silent> i<a-b> <Plug>CamelCaseMotion_ib
 omap <silent> i<a-e> <Plug>CamelCaseMotion_ie
 vmap <silent> i<a-e> <Plug>CamelCaseMotion_ie
+
+
+""" Commentary
+map  j  <Plug>Commentary
+nmap jj <Plug>CommentaryLine
+nmap cj <Plug>ChangeCommentary
+nmap ju <Plug>Commentary<Plug>Commentary
 
 
 """ fzf
