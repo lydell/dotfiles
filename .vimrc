@@ -19,6 +19,7 @@ Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-fnr'
 Plug 'junegunn/seoul256.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'tommcdo/vim-exchange'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'wellle/targets.vim'
@@ -66,6 +67,8 @@ set completeopt+=longest
 set display=lastline
 set formatoptions-=t
 set formatoptions+=j
+set list
+set listchars=tab:▸\ ,extends:>,precedes:<,nbsp:·
 set nojoinspaces
 set nostartofline
 set nrformats-=octal
@@ -75,12 +78,6 @@ set splitright
 set textwidth=80
 set wildmenu
 set wildmode=longest:full,full
-
-" Trailing whitespace (and tabs).
-set list
-set listchars=tab:▸\ ,trail:¬,extends:>,precedes:<,nbsp:·
-nmap <leader>l :set list!<cr>
-nmap <leader>s :%s/\s\+$//e<cr>
 
 
 """ Mappings
@@ -225,6 +222,8 @@ map <leader>a :Ack<space>
 map <leader>i <Plug>(EasyAlign)
 
 let g:fnr_flags = 'g'
+
+highlight! link ExtraWhitespace Error
 
 
 """ Status line
