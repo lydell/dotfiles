@@ -4,6 +4,7 @@ set nocompatible
 """ Plugins
 call plug#begin('~/.vim/bundles')
 
+Plug 'ap/vim-css-color'
 Plug 'ap/vim-you-keep-using-that-word'
 Plug 'bkad/CamelCaseMotion'
 Plug 'mileszs/ack.vim'
