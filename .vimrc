@@ -4,6 +4,7 @@ set nocompatible
 """ Plugins
 call plug#begin('~/.vim/bundles')
 
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ap/vim-css-color'
 Plug 'ap/vim-you-keep-using-that-word'
 Plug 'bkad/CamelCaseMotion'
@@ -199,6 +200,14 @@ map  j  <Plug>Commentary
 nmap jj <Plug>CommentaryLine
 nmap cj <Plug>ChangeCommentary
 nmap ju <Plug>Commentary<Plug>Commentary
+
+
+""" SplitJoin
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+
+noremap x :SplitjoinSplit<cr>
+noremap X :SplitjoinJoin<cr>
 
 
 """ fzf
