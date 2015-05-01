@@ -113,8 +113,8 @@ noremap <a-s-y> "+y$
 inoremap <a-v> <c-o>:set paste<cr><c-r>+<c-o>:set nopaste<cr>
 
 " Better undo
-inoremap <C-U> <C-G>u<C-U>
-inoremap <CR> <C-G>u<CR>
+inoremap <c-u> <c-g>u<c-u>
+inoremap <cr> <c-g>u<cr>
 
 " Insert mode
 inoremap <c-esc> <c-o>
