@@ -267,3 +267,10 @@ set statusline+=%r "[RO]
 set statusline+=%y "[javascript]
 set statusline+=[%{&expandtab?'spaces:'.&shiftwidth:'tabs:'.&tabstop}]
 set statusline+=%4p%% "50%
+
+
+""" Autocommands
+augroup vimrc
+autocmd!
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+augroup END
