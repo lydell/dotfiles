@@ -10,6 +10,7 @@ Plug 'AndrewRadev/undoquit.vim'
 Plug 'ap/vim-css-color'
 Plug 'ap/vim-you-keep-using-that-word'
 Plug 'bkad/CamelCaseMotion'
+Plug 'jamessan/vim-gnupg'
 Plug 'mileszs/ack.vim'
 Plug 'myint/indent-finder'
 Plug 'tpope/vim-capslock'
@@ -252,6 +253,8 @@ let g:fnr_flags = 'g'
 highlight! link ExtraWhitespace Error
 
 map <leader>e :InlineEdit<cr>
+
+let g:GPGUsePipes = 1
 
 
 """ Status line

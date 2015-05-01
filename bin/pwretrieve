@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+timeout=12
+clipboard='xclip -selection clipboard'
+decrypt='gpg --use-agent --no-tty --decrypt'
+
+file="$1"
+label="$2"
+user="$3"
+print="$4"
+
+usage() {
+  echo "Usage: $(basename "$0") file label [user [-]]"
+  exit 1
+}
+
+test $# -lt 2 -o $# -gt 4 && usage
+
+escapeRegex() {
+  echo "$1" | sed 's/[]|\\{}()[\]^$+*?.]/\\&/g'
+}
+
+pattern="^$(escapeRegex "$label")[^\t]*\t$(escapeRegex "$user")[^\t]*\t[^\t]+$"
+flags='--perl-regexp --ignore-case --max-count=1'
+entry=$($decrypt "$file" 2>/dev/null | grep $flags "$pattern") || exit $?
+user=$(echo "$entry" | cut --fields 2)
+pass=$(echo "$entry" | cut --fields 3)
+
+case "$print" in
+  '')
+    echo -n "$user"
+    echo -n "$pass" | $clipboard
+    sleep "$timeout"
+    echo -n '' | $clipboard
+    ;;
+  '-')
+    echo "$user"
+    echo -n "$pass"
+    ;;
+  *)
+    usage
+esac
+
+if test -t 1; then
+  echo
+fi

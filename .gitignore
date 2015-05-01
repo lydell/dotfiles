@@ -13,6 +13,8 @@
 !/bin/lsrc
 !/bin/noeolateof
 !/bin/push
+!/bin/pw
+!/bin/pwretrieve
 !/bin/release
 !/bin/replace
 !/bin/toggle
