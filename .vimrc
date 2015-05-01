@@ -5,6 +5,7 @@ set nocompatible
 call plug#begin('~/.vim/bundles')
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/undoquit.vim'
 Plug 'ap/vim-css-color'
 Plug 'ap/vim-you-keep-using-that-word'
 Plug 'bkad/CamelCaseMotion'
