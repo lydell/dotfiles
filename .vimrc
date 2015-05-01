@@ -4,6 +4,7 @@ set nocompatible
 """ Plugins
 call plug#begin('~/.vim/bundles')
 
+Plug 'AndrewRadev/inline_edit.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/undoquit.vim'
 Plug 'ap/vim-css-color'
@@ -249,6 +250,8 @@ map <leader>i <Plug>(EasyAlign)
 let g:fnr_flags = 'g'
 
 highlight! link ExtraWhitespace Error
+
+map <leader>e :InlineEdit<cr>
 
 
 """ Status line
