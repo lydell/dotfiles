@@ -182,7 +182,7 @@ imap <a-q> <Plug>Isurround<
 imap <a-'> <Plug>Isurround'<Plug>Isurround<space><space><Plug>Isurround+<Plug>Isurround<space><space>
 imap <a-"> <Plug>Isurround"<Plug>Isurround<space><space><Plug>Isurround+<Plug>Isurround<space><space>
 inoremap <a-u> {}<left><cr><cr><up><tab>
-inoremap <a-c> {<cr><tab><c-o>o}<esc><<kI
+inoremap <a-c> {<esc>jo}<esc>k>>
 inoremap <c-cr> <cr><c-o>O<tab>
 
 
