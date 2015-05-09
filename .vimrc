@@ -111,7 +111,7 @@ noremap Q @q
 noremap _ -
 
 " Ctrl-{a,c,v} stand-in
-nnoremap <c-y> ggVG
+nnoremap <c-y> gg"+yG
 noremap <a-y> "+y
 noremap <a-s-y> "+y$
 inoremap <a-v> <c-o>:set paste<cr><c-r>+<c-o>:set nopaste<cr>
