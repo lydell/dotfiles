@@ -114,8 +114,8 @@ noremap _ -
 nnoremap <c-y> gg"+yG
 noremap <a-y> "+y
 noremap <a-s-y> "+y$
-inoremap <a-v> <c-o>:set paste<cr><c-r>+<c-o>:set nopaste<cr>
-
+inoremap <a-r> <c-o>:set paste<cr><c-r>+<c-o>:set nopaste<cr>
+"
 " Better undo
 inoremap <c-u> <c-g>u<c-u>
 inoremap <cr> <c-g>u<cr>
@@ -244,7 +244,7 @@ nnoremap <leader>g :YcmCompleter GoTo<cr>
 
 
 """ Various
-imap <a-r> <Plug>CapsLockToggle
+imap <a-u> <Plug>CapsLockToggle
 
 map <leader>a :Ack<space>
 map <leader>i <Plug>(EasyAlign)
