@@ -2,3 +2,4 @@ PATH DEFAULT=${PATH}:./node_modules/.bin:${HOME}/bin
 FZF_DEFAULT_COMMAND=lsrc
 TWORLDDIR=/home/lydell/.config/tworld
 TWORLDSAVEDIR=/home/lydell/.config/tworld/save
+WORKON_HOME DEFAULT=${HOME}/.virtualenvs
