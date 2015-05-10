@@ -14,6 +14,7 @@
 !/.config/dconf.dump
 !/bin/
 !/bin/ack
+!/bin/backup
 !/bin/lsrc
 !/bin/noeolateof
 !/bin/push

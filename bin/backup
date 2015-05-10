@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+rsync --archive ~/ "/media/$USER/backup/home" \
+  --delete --backup \
+  --progress --human-readable \
+  --exclude /.cache/ \
+  --exclude /.node-gyp/ \
+  --exclude /.npm/ \
+  --exclude /.tmp/ \
+  --exclude /.vim/ \
+  --exclude /tmp/ \
+  --exclude node_modules/ \
+  $*
