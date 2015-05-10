@@ -56,4 +56,4 @@ PROMPT_COMMAND='__git_ps1 "\w$(__virtual_env)" "\n\\\$ "'
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 
 # Extra .bashrc.
-[ -f ~/.bash_aliases ] && source ~/.bashrc-extra
+[ -f ~/.bashrc-extra ] && source ~/.bashrc-extra
