@@ -7,7 +7,10 @@
 !/.keynavrc
 !/.pam_environment
 !/.vimrc
+!/.xbindkeysrc
 !/.config/
+!/.config/autostart-src
+!/.config/autostart-src/*
 !/.config/dconf.dump
 !/bin/
 !/bin/ack

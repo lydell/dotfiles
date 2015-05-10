@@ -1,0 +1,5 @@
+redshift -l 59:18
+/home/lydell/src/keyboard/teck_se
+xcape -e 'Shift_L=F21;Shift_R=F21;Control_L=F22;Control_R=F22;Alt_L=F23'
+xbindkeys
+keynav
