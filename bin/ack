@@ -1,2 +1,1 @@
-#!/usr/bin/env bash
-ack-grep $*
+/usr/bin/ack-grep
