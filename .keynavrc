@@ -1,110 +1,47 @@
-# This is a keynavrc file. Yours should live in 
-# $HOME/.keynavrc
-#
-# Lines beginning with '#' are comments.
-# Format is:
-#   keysequence cmd1,cmd2,cmd3...
-#
-# Other special values are:
-#   'clear' on a line by itself (no quotes) will erase all keybindings
-#   (including the defaults)
-#   'daemonize' on a line by itself (no quotes) will make keynav background
-#   after parsing the configfile and having no critical errors.
-#
-# The 'start' command alone is handled specially, in that any key sequence
-# mapped to 'start' will be grabbed when keynav starts up so you can invoke it
-# to activate keynav. The remaining keys are only recognized while keynav is
-# active
-#
-# Project page; http://www.semicomplete.com/projects/keynav
-
-# Use 'clear' to blow away any previous keybindings
 clear
 
-# Use 'daemonize' to background ourselves.
-#daemonize
-
-super+a start, grid 3x3, windowzoom
-super+shift+a start, grid 3x3
-a warp
+super+a start, grid 6x3, windowzoom
+super+shift+a start, grid 6x3
 Escape end
 
-t click 1
-o click 3
-space click 1, click 1
+Return       click 1, end
+Shift+Return drag 1
+e            click 3, end
+shift+e      drag 3
+space        doubleclick 1, end
 
-l cell-select 1x1, warp         # up-left
-u cell-select 2x1, warp         # up
-c cell-select 3x1, warp         # up-right
-n cell-select 1x2, warp         # left
-i cell-select 2x2, warp         # center
-s cell-select 3x2, warp         # right
-question cell-select 1x3, warp  # down-left
-y cell-select 2x3, warp         # down
-g cell-select 3x3, warp         # down-right
+l        cell-select 1x1, grid 3x3, warp
+u        cell-select 2x1, grid 3x3, warp
+c        cell-select 3x1, grid 3x3, warp
+n        cell-select 1x2, grid 3x3, warp
+i        cell-select 2x2, grid 3x3, warp
+s        cell-select 3x2, grid 3x3, warp
+question cell-select 1x3, grid 3x3, warp
+y        cell-select 2x3, grid 3x3, warp
+g        cell-select 3x3, grid 3x3, warp
 
+p        cell-select 4x1, grid 3x3, warp
+m        cell-select 5x1, grid 3x3, warp
+w        cell-select 6x1, grid 3x3, warp
+h        cell-select 4x2, grid 3x3, warp
+t        cell-select 5x2, grid 3x3, warp
+r        cell-select 6x2, grid 3x3, warp
+f        cell-select 4x3, grid 3x3, warp
+d        cell-select 5x3, grid 3x3, warp
+period   cell-select 6x3, grid 3x3, warp
 
-Left cut-left
-Down cut-down
-Up cut-up
-Right cut-right
-# y cut-left,cut-up
-# u cut-right,cut-up
-# b cut-left,cut-down
-# n cut-right,cut-down
-shift+Left move-left
-shift+Down move-down
-shift+Up move-up
-shift+Right move-right
-# shift+y move-left,move-up
-# shift+u move-right,move-up
-# shift+b move-left,move-down
-# shift+n move-right,move-down
-# space warp,click 1,end
-# semicolon warp,end
+Left  move-left,  warp
+Down  move-down,  warp
+Up    move-up,    warp
+Right move-right, warp
 
-# Zoom to the current window
-w windowzoom
+Shift+Left  cut-left,  warp
+Shift+Down  cut-down,  warp
+Shift+Up    cut-up,    warp
+Shift+Right cut-right, warp
 
-# Zoom to the cursor location with a given height and width
-m cursorzoom 200 200
-
-# # Handy for holding ctrl while using keynav:
-# ctrl+h cut-left
-# ctrl+j cut-down
-# ctrl+k cut-up
-# ctrl+l cut-right
-# ctrl+y cut-left,cut-up
-# ctrl+u cut-right,cut-up
-# ctrl+b cut-left,cut-down
-# ctrl+n cut-right,cut-down
-
-# Record keynav actions
-# q record
-
-### Example using the 'sh' command.
-# Make firefox the active window
-# f sh "xdotool windowactivate $(xdotool search -title -- '- Mozilla Firefox')", end
-# Make a new tab in google chrome:
-# t sh "xdotool windowactivate $(xdotool search --title -- '- Google Chrome' | head -1); xdotool key ctrl+t",end
-# Paste
-# v sh "xdotool key shift+Insert"
-
-### Drag examples
-# Start drag holding the left mouse button
-#q drag 1
-# Start drag holding middle mouse + control and shift
-#w drag 2 ctrl+shift
-
-### History
-b history-back
-
-### Example of cut and move without the default values
-#h cut-left .75
-#j cut-down .75
-#k cut-up .75
-#l cut-right .75
-#shift+h move-left .50
-#shift+j move-down .50
-#shift+k move-up .50
-#shift+l move-right .50
+v     grid 6x3, windowzoom
+minus grid 3x3, cursorzoom 10  10
+o     grid 3x3, cursorzoom 100 100
+comma grid 3x3, cursorzoom 200 200
+a history-back, warp
