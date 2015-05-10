@@ -11,6 +11,7 @@ Plug 'ap/vim-css-color'
 Plug 'ap/vim-you-keep-using-that-word'
 Plug 'bkad/CamelCaseMotion'
 Plug 'jamessan/vim-gnupg'
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mileszs/ack.vim'
 Plug 'myint/indent-finder'
 Plug 'tpope/vim-capslock'
@@ -257,6 +258,8 @@ map <leader>e :InlineEdit<cr>
 
 let g:GPGUsePipes = 1
 
+let g:tern_show_signature_in_pum = 1
+
 
 """ Status line
 set laststatus=2
@@ -276,5 +279,7 @@ set statusline+=%4p%% "50%
 """ Autocommands
 augroup vimrc
 autocmd!
-autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
+autocmd FileType javascript setlocal omnifunc=tern#Complete
+autocmd FileType javascript nnoremap <leader>g :TernDef<cr>
 augroup END
