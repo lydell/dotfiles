@@ -245,7 +245,7 @@ nnoremap <leader>g :YcmCompleter GoTo<cr>
 
 
 """ Various
-imap <a-u> <Plug>CapsLockToggle
+imap <a-/> <Plug>CapsLockToggle
 
 map <leader>a :Ack<space>
 map <leader>i <Plug>(EasyAlign)
