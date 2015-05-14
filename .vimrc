@@ -112,9 +112,10 @@ noremap Q @q
 noremap _ -
 
 " Ctrl-{a,c,v} stand-in
-nnoremap <c-y> gg"+yG
-noremap <a-y> "+y
-noremap <a-s-y> "+y$
+nnoremap <a-y> :let @*=@"\|let @+=@"<cr>
+" Recursive in order to trigger the above mapping.
+vmap <a-y> y<a-y>
+nmap <c-y> ggyG<a-y>
 inoremap <a-r> <c-o>:set paste<cr><c-r>+<c-o>:set nopaste<cr>
 "
 " Better undo
