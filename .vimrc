@@ -14,6 +14,7 @@ Plug 'jamessan/vim-gnupg'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mileszs/ack.vim'
 Plug 'myint/indent-finder'
+Plug 'othree/yajs.vim'
 Plug 'tpope/vim-capslock'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
