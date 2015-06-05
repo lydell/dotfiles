@@ -13,4 +13,9 @@
 [push]
 	default = current
 [alias]
+	br = branch
+	ci = commit
+	co = checkout
+	st = status
 	last = log -1 HEAD
+	unstage = reset HEAD --
