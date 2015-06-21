@@ -26,10 +26,10 @@
     Mod2+Mod4 + q
 
 "wmctrl -a terminal || (gnome-terminal & sleep 0.1 && winresize left)"
-    Mod2+Mod4 + 1
+    Mod2+Mod4 + h
 
 "wmctrl -a gvim || (gvim && winresize right)"
-    Mod2+Mod4 + 2
+    Mod2+Mod4 + t
 
 "wmctrl -a abrowser || wmctrl -a firefox || firefox"
-    Mod2+Mod4 + 3
+    Mod2+Mod4 + r

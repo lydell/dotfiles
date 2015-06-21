@@ -1,5 +1,4 @@
 redshift -l 59:18
 /home/lydell/src/keyboard/teck_se
-xcape -e 'Shift_L=Super_L|1;Shift_R=Super_L|1;Control_L=Super_L|2;Control_R=Super_L|2;Alt_L=Super_L|3;Alt_R=Super_L|3'
 xbindkeys
 keynav
