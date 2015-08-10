@@ -1,6 +1,7 @@
 alias pro="firefox -new-instance -P"
 alias c="xclip -selection clipboard"
 alias s="git status"
+alias r="./run"
 
 alias gvim='UBUNTU_MENUPROXY= gvim'
 
