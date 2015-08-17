@@ -19,3 +19,4 @@
 	st = status
 	last = log -1 HEAD
 	unstage = reset HEAD --
+	last-change = git log -1 --format=%cd
