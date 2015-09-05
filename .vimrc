@@ -244,7 +244,10 @@ let g:ycm_key_list_previous_completion = ['<s-tab>']
 let g:ycm_key_invoke_completion = '<c-tab>'
 let g:ycm_key_detailed_diagnostics = ''
 let g:ycm_autoclose_preview_window_after_insertion = 1
-nnoremap <leader>g :YcmCompleter GoTo<cr>
+nnoremap <silent> <expr> <leader>g
+  \ &filetype=='python'     ? ':YcmCompleter GoTo<cr>' :
+  \ &filetype=='javascript' ? ':TernDef<cr>' :
+  \ ':echoerr "Cannot GoTo in [".&filetype."]"<cr>'
 
 
 """ Various
@@ -284,5 +287,4 @@ augroup vimrc
 autocmd!
 autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
 autocmd FileType javascript setlocal omnifunc=tern#Complete
-autocmd FileType javascript nnoremap <leader>g :TernDef<cr>
 augroup END
