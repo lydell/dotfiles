@@ -90,6 +90,12 @@ set wildmenu
 set wildmode=longest:full,full
 
 
+""" Helper functions
+function! ChompedSystem( ... )
+    return substitute(call('system', a:000), '\n\+$', '', '')
+endfunction
+
+
 """ Mappings
 noremap <cr> o<esc>
 noremap <s-cr> O<esc>
@@ -221,9 +227,7 @@ noremap X :SplitjoinJoin<cr>
 """ fzf
 map <leader>n :FZF<cr>
 map <leader>N :FZF<space>
-map <silent> <leader>l :call fzf#run({
-  \   'dir': system('repo-root --cwd=' . shellescape(expand('%')))
-  \ })<cr>
+map <silent> <leader>l :execute 'FZF' ChompedSystem('repo-root --cwd=' . shellescape(expand('%')))<cr>
 
 function! FZF()
   return printf('xterm -T fzf'
