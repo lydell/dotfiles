@@ -6,6 +6,7 @@
 !/.keynavrc
 !/.pam_environment
 !/.programs
+!/.ptignore
 !/.vimrc
 !/.xbindkeysrc
 !/.config/
@@ -15,11 +16,13 @@
 !/bin/
 !/bin/ack
 !/bin/backup
+!/bin/e
 !/bin/lsrc
 !/bin/noeolateof
 !/bin/push
 !/bin/pw
 !/bin/pwretrieve
+!/bin/re
 !/bin/release
 !/bin/replace
 !/bin/toggle
