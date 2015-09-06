@@ -31,7 +31,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tommcdo/vim-exchange'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'wellle/targets.vim'
 Plug 'whatyouhide/vim-lengthmatters'
 
