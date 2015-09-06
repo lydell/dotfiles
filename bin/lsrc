@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-(git ls-files --cache --others --exclude-standard || ack -f) 2>/dev/null
+pt --hidden -g=^
