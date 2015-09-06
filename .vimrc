@@ -266,6 +266,8 @@ let g:GPGUsePipes = 1
 
 let g:tern_show_signature_in_pum = 1
 
+let g:ackprg = 'e'
+
 
 """ Status line
 set laststatus=2
