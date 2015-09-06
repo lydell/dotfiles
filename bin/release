@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 name="$(basename $PWD)"
 version="v$1"
 message="$name $version"
