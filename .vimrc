@@ -226,7 +226,7 @@ noremap X :SplitjoinJoin<cr>
 
 """ fzf
 map <leader>n :FZF<cr>
-map <leader>N :FZF<space>
+map <leader>? :FZF<space>
 map <silent> <leader>l :execute 'FZF' ChompedSystem('repo-root --cwd=' . shellescape(expand('%')))<cr>
 
 function! FZF()
