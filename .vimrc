@@ -221,6 +221,9 @@ noremap X :SplitjoinJoin<cr>
 """ fzf
 map <leader>n :FZF<cr>
 map <leader>N :FZF<space>
+map <silent> <leader>l :call fzf#run({
+  \   'dir': system('repo-root --cwd=' . shellescape(expand('%')))
+  \ })<cr>
 
 function! FZF()
   return printf('xterm -T fzf'
