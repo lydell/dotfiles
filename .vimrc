@@ -227,12 +227,12 @@ map <silent> <leader>l :call fzf#run({
 
 function! FZF()
   return printf('xterm -T fzf'
-      \ .' -bg "\%s" -fg "\%s"'
-      \ .' -fa "%s" -fs %d'
-      \ .' -geometry %dx%d+%d+%d -e bash -ic %%s',
-      \ synIDattr(hlID("Normal"), "bg"), synIDattr(hlID("Normal"), "fg"),
-      \ 'Monospace', getfontname()[-2:],
-      \ &columns, &lines/2, getwinposx(), getwinposy())
+    \ .' -bg "\%s" -fg "\%s"'
+    \ .' -fa "%s" -fs %d'
+    \ .' -geometry %dx%d+%d+%d -e bash -ic %%s',
+    \ synIDattr(hlID("Normal"), "bg"), synIDattr(hlID("Normal"), "fg"),
+    \ 'Monospace', getfontname()[-2:],
+    \ &columns, &lines/2, getwinposx(), getwinposy())
 endfunction
 let g:Fzf_launcher = function('FZF')
 
