@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if test $# -lt 2; then
-  echo "Usage: $(basename "$0") regex replacement [i] [ack args]"
+  echo "Usage: $(basename "$0") regex replacement [i] [re args]"
   exit 1
 fi
 
@@ -15,14 +15,14 @@ regex=$(escape "$1")
 replacement=$(escape "$2")
 shift 2
 
-ackCase='--nosmart-case'
+reCase=''
 perlCase=''
 if test "$1" == 'i'; then
-  ackCase='--ignore-case'
+  reCase='--ignore-case'
   perlCase='i'
   shift
 fi
 
-files=$(ack --files-with-matches $ackCase --match "$regex" $*) || exit $?
+files=$(re --files-with-matches $reCase $* "$regex") || exit $?
 echo "$files"
 echo "$files" | xargs -d '\n' perl -i -pe "s/$regex/$replacement/g$perlCase" --
