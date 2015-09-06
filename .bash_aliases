@@ -5,6 +5,7 @@ alias d="git diff"
 alias r="./run"
 
 alias gvim='UBUNTU_MENUPROXY= gvim'
+alias g='gvim .'
 
 alias ll='ls -alF'
 alias la='ls -A'
