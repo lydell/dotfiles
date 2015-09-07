@@ -8,6 +8,8 @@ rsync --archive ~/ "/media/$USER/backup/$(uname --nodename)/home" \
   --exclude /.npm/ \
   --exclude /.tmp/ \
   --exclude /.vim/ \
+  --exclude /programs/ \
   --exclude /tmp/ \
   --exclude node_modules/ \
+  --exclude '*.nb.*' \
   "$@"
