@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-e -e $*
+e -e "$@"

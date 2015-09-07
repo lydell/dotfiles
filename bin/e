@@ -13,4 +13,4 @@ if test "${last:0:1}" == '.'; then
   set -- "${@:1:$(($#-1))}" # pop argument
 fi
 
-pt --hidden $prefix $*
+pt --hidden $prefix "$@"
