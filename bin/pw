@@ -3,5 +3,5 @@
 if test $# == 0; then
   pwgen --symbols --secure 30 1
 else
-  pwretrieve ~/.pw.gpg $*
+  pwretrieve ~/.pw.gpg "$@"
 fi

@@ -5,5 +5,5 @@ export UBUNTU_MENUPROXY=
 if test "$#" == 0; then
   gvim .
 else
-  gvim $*
+  gvim "$@"
 fi

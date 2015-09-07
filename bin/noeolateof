@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-perl -i -pe 'chomp if eof' $*
+perl -i -pe 'chomp if eof' "$@"

@@ -10,4 +10,4 @@ rsync --archive ~/ "/media/$USER/backup/home" \
   --exclude /.vim/ \
   --exclude /tmp/ \
   --exclude node_modules/ \
-  $*
+  "$@"

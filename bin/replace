@@ -23,6 +23,6 @@ if test "$1" == 'i'; then
   shift
 fi
 
-files=$(re --files-with-matches $reCase $* "$regex") || exit $?
+files=$(re --files-with-matches $reCase "$@" "$regex") || exit $?
 echo "$files"
 echo "$files" | xargs -d '\n' perl -i -pe "s/$regex/$replacement/g$perlCase" --
