@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rsync --archive ~/ "/media/$USER/backup/home" \
+rsync --archive ~/ "/media/$USER/backup/$(uname --nodename)/home" \
   --delete --backup \
   --progress --human-readable \
   --exclude /.cache/ \
