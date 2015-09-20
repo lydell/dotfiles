@@ -1,6 +1,9 @@
 " Some plugins require this to be set before they are loaded.
 set nocompatible
 
+" Must be set before vim-indexed-search is set up.
+let g:indexed_search_mappings = 0
+
 """ Plugins
 call plug#begin('~/.vim/bundles')
 
@@ -11,6 +14,7 @@ Plug 'ap/vim-css-color'
 Plug 'ap/vim-you-keep-using-that-word'
 Plug 'bkad/CamelCaseMotion'
 Plug 'groenewege/vim-less'
+Plug 'henrik/vim-indexed-search'
 Plug 'jamessan/vim-gnupg'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mileszs/ack.vim'
@@ -297,3 +301,10 @@ autocmd!
 autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
 autocmd FileType javascript setlocal omnifunc=tern#Complete
 augroup END
+
+autocmd! User Oblique
+autocmd! User ObliqueStar
+autocmd! User ObliqueRepeat
+autocmd User Oblique       ShowSearchIndex
+autocmd User ObliqueStar   ShowSearchIndex
+autocmd User ObliqueRepeat ShowSearchIndex
