@@ -33,3 +33,6 @@
 
 "wmctrl -a abrowser || wmctrl -a firefox || firefox"
     Mod2+Mod4 + r
+
+"wmctrl -a chromium || chromium-browser"
+    Mod2+Mod4 + o
