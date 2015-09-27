@@ -95,8 +95,16 @@ set wildmode=longest:full,full
 
 
 """ Helper functions
-function! ChompedSystem( ... )
-    return substitute(call('system', a:000), '\n\+$', '', '')
+function! ChompedSystem(...)
+  return substitute(call('system', a:000), '\n\+$', '', '')
+endfunction
+
+function! IsAroundCursor(regex)
+  let currentLine = getline('.')
+  let pos = col('.') - 1
+  let start = match(currentLine, a:regex)
+  let end = matchend(currentLine, a:regex)
+  return start >= 0 && end >= 0 && start <= pos && end > pos
 endfunction
 
 
@@ -129,7 +137,15 @@ nnoremap <a-y> :let @*=@"\|let @+=@"<cr>
 vmap <a-y> y<a-y>
 nmap <c-y> ggyG<a-y>
 inoremap <a-r> <c-o>:set paste<cr><c-r>+<c-o>:set nopaste<cr>
-"
+
+" % in normal mode to jump between start and end tags.
+let tagTemplate = '<\@1<=%s\a[a-zA-Z-]*'
+nnoremap <expr> % IsAroundCursor(printf(tagTemplate, ''))
+  \ ? '"zyat`]:echo<cr>h'
+  \ : IsAroundCursor(printf(tagTemplate, '/'))
+  \ ? '"_yatl'
+  \ : '%'
+
 " Better undo
 inoremap <c-u> <c-g>u<c-u>
 inoremap <cr> <c-g>u<cr>
