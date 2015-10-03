@@ -34,5 +34,5 @@
 "wmctrl -a abrowser || wmctrl -a firefox || firefox"
     Mod2+Mod4 + r
 
-"wmctrl -a chromium || chromium-browser"
+"wmctrl -a chromium || wmctrl -a nightly || chromium-browser || firefox-trunk"
     Mod2+Mod4 + o
