@@ -141,9 +141,9 @@ inoremap <a-r> <c-o>:set paste<cr><c-r>+<c-o>:set nopaste<cr>
 " % in normal mode to jump between start and end tags.
 let tagTemplate = '<\@1<=%s\a[a-zA-Z-]*'
 nnoremap <expr> % IsAroundCursor(printf(tagTemplate, ''))
-  \ ? '"zyat`]:echo<cr>h'
+  \ ? 'vat<esc>h'
   \ : IsAroundCursor(printf(tagTemplate, '/'))
-  \ ? '"_yatl'
+  \ ? 'vato<esc>l'
   \ : '%'
 
 " Better undo
