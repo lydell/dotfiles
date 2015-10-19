@@ -81,6 +81,7 @@ set completeopt+=longest
 set display=lastline
 set formatoptions-=t
 set formatoptions+=j
+set iskeyword+=$
 set list
 set listchars=tab:▸\ ,extends:>,precedes:<,nbsp:·
 set nojoinspaces
