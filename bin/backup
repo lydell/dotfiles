@@ -4,8 +4,11 @@ rsync --archive ~/ "/media/$USER/backup/$(uname --nodename)/home" \
   --delete --backup \
   --progress --human-readable \
   --exclude /.cache/ \
+  --exclude /.cordova/ \
+  --exclude /.gradle/ \
   --exclude /.node-gyp/ \
   --exclude /.npm/ \
+  --exclude /.plugman/ \
   --exclude /.tmp/ \
   --exclude /.vim/ \
   --exclude /.virtualenvs/ \
