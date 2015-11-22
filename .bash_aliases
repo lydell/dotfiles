@@ -1,4 +1,5 @@
 alias pro="firefox -new-instance -P"
+alias pro-trunk="firefox-trunk -new-instance -P"
 alias c="xclip -selection clipboard"
 alias s="git status"
 alias d="git diff"
