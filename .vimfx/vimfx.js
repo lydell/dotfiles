@@ -1,7 +1,7 @@
 let {commands} = vimfx.modes.normal
 
 vimfx.addCommand({
-  name: 'open_tab_text_to_current',
+  name: 'open_tab_next_to_current',
   description: 'New tab next to current',
   category: 'tabs',
   order: commands.tab_new.order + 1,
@@ -42,7 +42,7 @@ map('<late><right>', 'scroll_right')
 map('<late><down>',  'scroll_down')
 map('<late><up>',    'scroll_up')
 
-map('gt', 'open_tab_text_to_current', true)
+map('gt', 'open_tab_next_to_current', true)
 map('s',  'tab_select_previous')
 map('h',  'tab_select_next')
 map('gs', 'tab_move_backward')
