@@ -41,6 +41,7 @@ map('<late><left>',  'scroll_left')
 map('<late><right>', 'scroll_right')
 map('<late><down>',  'scroll_down')
 map('<late><up>',    'scroll_up')
+map('gm', 'mark_scroll_position')
 
 map('gt', 'open_tab_next_to_current', true)
 map('s',  'tab_select_previous')
