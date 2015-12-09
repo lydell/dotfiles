@@ -59,6 +59,7 @@ map('gE',    'follow_in_window')
 map('ae',    'follow_multiple')
 map('ye',    'follow_copy')
 map('ze',    'follow_focus')
+map('l',     'click_browser_element')
 
 map('I', 'enter_mode_ignore')
 map('i', 'quote')
