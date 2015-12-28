@@ -43,6 +43,23 @@ vimfx.addCommand({
   })
 })
 
+vimfx.addCommand({
+  name: 'youtube_view_video',
+  description: 'View YouTube video',
+}, ({vim}) => {
+  let location = new vim.window.URL(vim.browser.currentURI.spec)
+  let match = /v=(\w+)/.exec(location.search)
+  if (
+    match &&
+    location.hostname.endsWith('www.youtube.com') &&
+    location.pathname === '/watch'
+  ) {
+    vim.window.gBrowser.loadURI(`${location.hostname}/embed/${match[1]}`)
+  } else {
+    vim.notify('No YouTube')
+  }
+})
+
 
 
 let map = (shortcuts, command, custom=false) => {
@@ -76,9 +93,10 @@ map('ye',    'follow_copy')
 map('ze',    'follow_focus')
 map('l',     'click_browser_element')
 
-map('I', 'enter_mode_ignore')
-map('i', 'quote')
-map('f', 'noscript_click_toolbar_button', true)
+map('I',  'enter_mode_ignore')
+map('i',  'quote')
+map('f',  'noscript_click_toolbar_button', true)
+map('gv', 'youtube_view_video', true)
 
 
 
