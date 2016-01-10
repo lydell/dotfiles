@@ -16,7 +16,6 @@ Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'henrik/vim-indexed-search'
 Plug 'jamessan/vim-gnupg'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'myint/indent-finder'
 Plug 'othree/yajs.vim'
 Plug 'tpope/vim-capslock'
@@ -34,7 +33,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tommcdo/vim-exchange'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'wellle/targets.vim'
 Plug 'whatyouhide/vim-lengthmatters'
 
@@ -274,10 +273,7 @@ let g:ycm_key_list_previous_completion = ['<s-tab>']
 let g:ycm_key_invoke_completion = '<c-tab>'
 let g:ycm_key_detailed_diagnostics = ''
 let g:ycm_autoclose_preview_window_after_insertion = 1
-nnoremap <silent> <expr> <leader>g
-  \ &filetype=='python'     ? ':YcmCompleter GoTo<cr>' :
-  \ &filetype=='javascript' ? ':TernDef<cr>' :
-  \ ':echoerr "Cannot GoTo in [".&filetype."]"<cr>'
+nnoremap <silent> <leader>g :YcmCompleter GoTo<cr>
 
 
 """ Various
@@ -290,9 +286,6 @@ let g:fnr_flags = 'g'
 highlight! link ExtraWhitespace Error
 
 let g:GPGUsePipes = 1
-
-let g:tern_show_signature_in_pum = 1
-
 
 """ Status line
 set laststatus=2
@@ -313,7 +306,6 @@ set statusline+=%4p%% "50%
 augroup vimrc
 autocmd!
 autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
-autocmd FileType javascript setlocal omnifunc=tern#Complete
 augroup END
 
 autocmd! User Oblique
