@@ -2,8 +2,8 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:name>VimFx-custom</em:name>
-    <em:id>VimFx-custom@vimfx.org</em:id>
+    <em:name>VimFx Config</em:name>
+    <em:id>VimFx-config@vimfx.org</em:id>
     <em:version>1</em:version>
     <em:bootstrap>true</em:bootstrap>
     <em:multiprocessCompatible>true</em:multiprocessCompatible>
