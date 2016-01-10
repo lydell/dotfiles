@@ -220,12 +220,15 @@ map <silent> <a-w> <Plug>CamelCaseMotion_w
 map <silent> <a-b> <Plug>CamelCaseMotion_b
 vmap <silent> <a-b> <Plug>CamelCaseMotion_b<right>
 map <silent> <a-e> <Plug>CamelCaseMotion_e
+map <silent> <a-g> <Plug>CamelCaseMotion_ge
 omap <silent> i<a-w> <Plug>CamelCaseMotion_iw
 vmap <silent> i<a-w> <Plug>CamelCaseMotion_iw
 omap <silent> i<a-b> <Plug>CamelCaseMotion_ib
 vmap <silent> i<a-b> <Plug>CamelCaseMotion_ib
 omap <silent> i<a-e> <Plug>CamelCaseMotion_ie
 vmap <silent> i<a-e> <Plug>CamelCaseMotion_ie
+omap <silent> i<a-g> <Plug>CamelCaseMotion_ige
+vmap <silent> i<a-g> <Plug>CamelCaseMotion_ige
 
 
 """ Commentary
