@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-pt --hidden -g=^
+pt --hidden --global-gitignore --home-ptignore -g=^
