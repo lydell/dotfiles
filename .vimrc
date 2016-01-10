@@ -306,6 +306,7 @@ set statusline+=%4p%% "50%
 augroup vimrc
 autocmd!
 autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
+autocmd FileType htmldjango setlocal commentstring={#\ %s\ #}
 augroup END
 
 autocmd! User Oblique
