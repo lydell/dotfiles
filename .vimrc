@@ -13,6 +13,7 @@ Plug 'ap/vim-css-color'
 Plug 'ap/vim-you-keep-using-that-word'
 Plug 'bkad/CamelCaseMotion'
 Plug 'groenewege/vim-less'
+Plug 'hail2u/vim-css3-syntax'
 Plug 'henrik/vim-indexed-search'
 Plug 'jamessan/vim-gnupg'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
