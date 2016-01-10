@@ -7,7 +7,6 @@ let g:indexed_search_mappings = 0
 """ Plugins
 call plug#begin('~/.vim/bundles')
 
-Plug 'AndrewRadev/inline_edit.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/undoquit.vim'
 Plug 'ap/vim-css-color'
@@ -17,7 +16,6 @@ Plug 'groenewege/vim-less'
 Plug 'henrik/vim-indexed-search'
 Plug 'jamessan/vim-gnupg'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'mileszs/ack.vim'
 Plug 'myint/indent-finder'
 Plug 'othree/yajs.vim'
 Plug 'tpope/vim-capslock'
@@ -281,20 +279,15 @@ nnoremap <silent> <expr> <leader>g
 """ Various
 imap <a-/> <Plug>CapsLockToggle
 
-map <leader>a :Ack<space>
 map <leader>i <Plug>(EasyAlign)
 
 let g:fnr_flags = 'g'
 
 highlight! link ExtraWhitespace Error
 
-map <leader>e :InlineEdit<cr>
-
 let g:GPGUsePipes = 1
 
 let g:tern_show_signature_in_pum = 1
-
-let g:ackprg = 'e'
 
 
 """ Status line
