@@ -20,3 +20,5 @@
 	last = log -1 HEAD
 	unstage = reset HEAD --
 	last-change = log -1 --format=%cd
+[log]
+	date = iso
