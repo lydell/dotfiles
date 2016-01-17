@@ -100,5 +100,14 @@ map('gv', 'youtube_view_video', true)
 
 
 
-vimfx.set('hint_chars', 'ehstirnoamupcwlfgdy')
-vimfx.set('prevent_autofocus', true)
+let set = (pref, valueOrFunction) => {
+  let value = typeof valueOrFunction === 'function'
+    ? valueOrFunction(vimfx.getDefault(pref))
+    : valueOrFunction
+  vimfx.set(pref, value)
+}
+
+set('hint_chars', 'ehstirnoamupcwlfgdy')
+set('prevent_autofocus', true)
+set('prev_patterns', v => `föregående  ${v}`)
+set('next_patterns', v => `nästa  ${v}`)
