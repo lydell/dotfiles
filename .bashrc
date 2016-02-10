@@ -33,6 +33,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
   source /etc/bash_completion
 fi
 source <(npm completion)
+type stack &> /dev/null && eval "$(stack --bash-completion-script stack)"
 
 # fzf.
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
