@@ -35,6 +35,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tommcdo/vim-exchange'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'wavded/vim-stylus'
 Plug 'wellle/targets.vim'
 Plug 'whatyouhide/vim-lengthmatters'
 
