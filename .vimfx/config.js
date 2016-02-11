@@ -33,6 +33,7 @@ vimfx.addCommand({
   description: 'NoScript',
 }, ({vim}) => {
   let button = vim.window.document.getElementById('noscript-tbb')
+  if (!button) return
   button.click()
   let menuitems = button.querySelectorAll('menuitem')
   Array.forEach(menuitems, menuitem => {
