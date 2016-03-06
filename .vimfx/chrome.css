@@ -17,17 +17,6 @@
     border-radius: var(--border-radius) !important;
   }
 
-  /* Tabs */
-  .tabbrowser-tab[pending]:not(#override) {
-    opacity: 0.7 !important;
-  }
-  .tabbrowser-tab[unread]:not([VimFx-visited]):not(#override) {
-    font-style: italic !important;
-  }
-  .tabbrowser-tab[unread][VimFx-visited]:not(#override) {
-    font-weight: bold !important;
-  }
-
   /* Throbber in URLbar */
   #status4evar-throbber-widget[busy] + #urlbar-container #page-proxy-favicon {
     list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");

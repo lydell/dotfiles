@@ -15,7 +15,7 @@
 !/.config/autostart-src/*
 !/.config/dconf.dump
 !/.vimfx/
-!/.vimfx/*
+!/.vimfx/!(tabs.css)
 !/bin/
 !/bin/ack
 !/bin/backup
