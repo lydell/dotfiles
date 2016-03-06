@@ -1,6 +1,20 @@
 const {classes: Cc, interfaces: Ci, utils: Cu} = Components
 const nsIStyleSheetService = Cc['@mozilla.org/content/style-sheet-service;1']
   .getService(Ci.nsIStyleSheetService)
+const globalMessageManager = Cc['@mozilla.org/globalmessagemanager;1']
+  .getService(Ci.nsIMessageListenerManager)
+
+let autoHideTabbarTimeout = 0
+
+
+let getWindowAttribute = (window, name) => {
+  return window.document.documentElement.getAttribute(`vimfx-config-${name}`)
+}
+
+let setWindowAttribute = (window, name, value) => {
+  window.document.documentElement.setAttribute(`vimfx-config-${name}`, value)
+}
+
 
 
 let {commands} = vimfx.modes.normal
@@ -21,16 +35,26 @@ vimfx.addCommand({
 })
 
 vimfx.addCommand({
-  name: 'toggle_treestyletab_tab_bar',
-  description: 'Toggle TreeStyleTab tab bar',
+  name: 'toggle_floating_tab_bar',
+  description: 'Toggle floating tab bar',
   category: 'tabs',
 }, ({vim}) => {
-  let {gBrowser} = vim.window
-  if (gBrowser.treeStyleTab.tabbarShown) {
-    gBrowser.treeStyleTab.hideTabbar()
-  } else {
-    gBrowser.treeStyleTab.showTabbar()
-  }
+  let {window} = vim
+  let value = getWindowAttribute(window, 'tabbar-visibility')
+  let isFloating = (!value || value === 'floating')
+  setWindowAttribute(window, 'tabbar-visibility', isFloating ? 'hidden' : 'floating')
+  window.clearTimeout(autoHideTabbarTimeout)
+})
+
+vimfx.addCommand({
+  name: 'toggle_fixed_tab_bar',
+  description: 'Toggle fixed tab bar',
+  category: 'tabs',
+}, ({vim}) => {
+  let {window} = vim
+  let isFixed = (getWindowAttribute(window, 'tabbar-visibility') === 'fixed')
+  setWindowAttribute(window, 'tabbar-visibility', isFixed ? 'hidden' : 'fixed')
+  window.clearTimeout(autoHideTabbarTimeout)
 })
 
 vimfx.addCommand({
@@ -88,7 +112,8 @@ map('gs', 'tab_move_backward')
 map('gh', 'tab_move_forward')
 map('c',  'tab_close')
 map('C',  'tab_restore')
-map('m',  'toggle_treestyletab_tab_bar', true)
+map('m',  'toggle_floating_tab_bar', true)
+map('M',  'toggle_fixed_tab_bar', true)
 
 map('e',     'follow')
 map('E',     'follow_in_tab')
@@ -119,6 +144,7 @@ set('prev_patterns', v => `föregående  ${v}`)
 set('next_patterns', v => `nästa  ${v}`)
 
 
+
 let loadCss = (uriString) => {
   let uri = Services.io.newURI(uriString, null, null)
   let method = nsIStyleSheetService.AUTHOR_SHEET
@@ -133,3 +159,44 @@ let loadCss = (uriString) => {
 loadCss(`${__dirname}/chrome.css`)
 loadCss(`${__dirname}/content.css`)
 loadCss(`${__dirname}/tabs.css`)
+
+
+
+let listen = (window, eventName, listener) => {
+  window.addEventListener(eventName, listener, true)
+  vimfx.on('shutdown', () => {
+    window.removeEventListener(eventName, listener, true)
+  })
+}
+
+let windows = new WeakSet()
+let onTabCreated = ({target: browser}) => {
+  let window = browser.ownerGlobal
+  if (!windows.has(window)) {
+    windows.add(window)
+
+    let tabsToolbar = window.document.getElementById('TabsToolbar')
+    let navigatorToolbox = window.document.getElementById('navigator-toolbox')
+    tabsToolbar.style.top = `${navigatorToolbox.clientHeight}px`
+
+    setWindowAttribute(window, 'tabbar-visibility', 'hidden')
+
+    let autoShowTabbar = () => {
+      let isVisible = (getWindowAttribute(window, 'tabbar-visibility') !== 'hidden')
+      if (!isVisible) {
+        setWindowAttribute(window, 'tabbar-visibility', 'floating')
+        window.clearTimeout(autoHideTabbarTimeout)
+        autoHideTabbarTimeout = window.setTimeout(() => {
+          setWindowAttribute(window, 'tabbar-visibility', 'hidden')
+        }, 2000)
+      }
+    }
+    listen(window, 'TabSelect', autoShowTabbar)
+    listen(window, 'TabOpen', autoShowTabbar)
+  }
+}
+
+globalMessageManager.addMessageListener('VimFx-config:tabCreated', onTabCreated)
+vimfx.on('shutdown', () => {
+  globalMessageManager.removeMessageListener('VimFx-config:tabCreated', onTabCreated)
+})

@@ -4,9 +4,24 @@ $tabbar-width: 200px;
 $tab-border-width: 1px;
 
 #main-window:not([customizing]) {
-  #content-deck {
-     padding-right: ($tabbar-width - $tab-border-width);
+  &[vimfx-config-tabbar-visibility="fixed"] {
+    #content-deck {
+       padding-right: ($tabbar-width - $tab-border-width);
+    }
+
+    #TabsToolbar::before {
+      opacity: 0;
+    }
   }
+
+  &[vimfx-config-tabbar-visibility="hidden"] {
+    #TabsToolbar {
+      visibility: hidden;
+    }
+  }
+
+  // 'floating' is the default.
+  // &[vimfx-config-tabbar-visibility="floating"]
 
   #TabsToolbar {
     position: fixed;
@@ -30,7 +45,7 @@ $tab-border-width: 1px;
       left: 0;
       width: 100%;
       height: 100%;
-      // -moz-appearance: toolbar;
+      -moz-appearance: toolbar;
       opacity: 0.5;
     }
 
