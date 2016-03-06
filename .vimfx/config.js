@@ -1,3 +1,8 @@
+const {classes: Cc, interfaces: Ci, utils: Cu} = Components
+const nsIStyleSheetService = Cc['@mozilla.org/content/style-sheet-service;1']
+  .getService(Ci.nsIStyleSheetService)
+
+
 let {commands} = vimfx.modes.normal
 
 vimfx.addCommand({
@@ -112,3 +117,18 @@ set('hint_chars', 'ehstirnoamupcwlfgdy')
 set('prevent_autofocus', true)
 set('prev_patterns', v => `föregående  ${v}`)
 set('next_patterns', v => `nästa  ${v}`)
+
+
+let loadCss = (uriString) => {
+  let uri = Services.io.newURI(uriString, null, null)
+  let method = nsIStyleSheetService.AUTHOR_SHEET
+  if (!nsIStyleSheetService.sheetRegistered(uri, method)) {
+    nsIStyleSheetService.loadAndRegisterSheet(uri, method)
+  }
+  vimfx.on('shutdown', () => {
+    nsIStyleSheetService.unregisterSheet(uri, method)
+  })
+}
+
+loadCss(`${__dirname}/chrome.css`)
+loadCss(`${__dirname}/content.css`)

@@ -1,0 +1,81 @@
+@-moz-document url(chrome://browser/content/browser.xul) {
+  /* S4E URLbar Progress - Native style */
+  #urlbar-progress-alt .progress-bar {
+    -moz-appearance: progresschunk !important;
+  }
+  #urlbar-progress-alt {
+    height: 24px !important; /* Fix height when the URLbar is focused. */
+    margin-left: -3px !important;
+    border-radius: var(--border-radius) !important;
+  }
+  .urlbar-progress-layer {
+    overflow: hidden !important;
+    margin: -1px !important;
+  }
+  #urlbar {
+    --border-radius: 0 12px 12px 0;
+    border-radius: var(--border-radius) !important;
+  }
+
+  /* Tabs */
+  .tabbrowser-tab[pending]:not(#override) {
+    opacity: 0.7 !important;
+  }
+  .tabbrowser-tab[unread]:not([VimFx-visited]):not(#override) {
+    font-style: italic !important;
+  }
+  .tabbrowser-tab[unread][VimFx-visited]:not(#override) {
+    font-weight: bold !important;
+  }
+
+  /* Throbber in URLbar */
+  #status4evar-throbber-widget[busy] + #urlbar-container #page-proxy-favicon {
+    list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
+  }
+  #status4evar-throbber-widget[progress] + #urlbar-container #page-proxy-favicon {
+    list-style-image: url("chrome://browser/skin/tabbrowser/loading.png");
+  }
+  #status4evar-throbber-widget {
+    display: none !important;
+  }
+
+
+  /* `display: none`s: */
+
+  /* Adblock Plus Context Menu items */
+  #contentAreaContextMenu .abp-contextmenuitem,
+
+  /* DOM Inspector - DOM view - 3 unnecessary lines */
+  #olNodeInfo > rows,
+
+  /* URLbar Dropmarker */
+  #urlbar dropmarker,
+
+  /* URLbar Stop/Reload/Go button */
+  #urlbar-go-button,
+  #urlbar-reload-button,
+  #urlbar-stop-button,
+
+  #dummy:not(#dummy) {
+    display: none !important;
+  }
+}
+
+/* DOM Inspector - Stacked panels */
+@-moz-document url("chrome://inspector/content/inspector.xul") {
+  #bxPanelSet {
+    -moz-box-orient: vertical !important;
+  }
+}
+
+/* about:blank */
+@-moz-document url(chrome://browser/content/browser.xul) {
+  browser[type="content-primary"] {
+    background-color: Window !important;
+  }
+}
+@-moz-document url("about:blank") {
+  body:empty:not([style]):not([text]):not([class]):not([onresize]) {
+    background-color: Window !important;
+  }
+}
