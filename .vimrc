@@ -124,6 +124,8 @@ nnoremap <c-up> <c-w>k
 nnoremap <c-down> <c-w>j
 nnoremap <c-left> <c-w>h
 nnoremap <c-right> <c-w>l
+nnoremap k `]
+nnoremap K `[
 
 " Y like C and D
 nnoremap Y y$
