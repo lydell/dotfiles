@@ -92,7 +92,7 @@ map('m',  'toggle_treestyletab_tab_bar', true)
 
 map('e',     'follow')
 map('E',     'follow_in_tab')
-map('<c-e>', 'follow_in_focused_tab')
+map('<force><c-e>', 'follow_in_focused_tab')
 map('gE',    'follow_in_window')
 map('ae',    'follow_multiple')
 map('ye',    'follow_copy')
