@@ -152,6 +152,10 @@ let listen = (window, eventName, listener) => {
 
 let windows = new WeakSet()
 let onTabCreated = ({target: browser}) => {
+  if (browser.getAttribute('messagemanagergroup') !== 'browsers') {
+    return
+  }
+
   let window = browser.ownerGlobal
   if (!windows.has(window)) {
     windows.add(window)
