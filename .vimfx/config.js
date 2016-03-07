@@ -4,8 +4,7 @@ const nsIStyleSheetService = Cc['@mozilla.org/content/style-sheet-service;1']
 const globalMessageManager = Cc['@mozilla.org/globalmessagemanager;1']
   .getService(Ci.nsIMessageListenerManager)
 
-let autoHideTabbarTimeout = 0
-
+const TABBAR_AUTO_SHOW_DURATION = 2000
 
 let getWindowAttribute = (window, name) => {
   return window.document.documentElement.getAttribute(`vimfx-config-${name}`)
@@ -41,9 +40,8 @@ vimfx.addCommand({
 }, ({vim}) => {
   let {window} = vim
   let value = getWindowAttribute(window, 'tabbar-visibility')
-  let isFloating = (!value || value === 'floating')
+  let isFloating = (!value || value === 'floating' || value === 'temporary')
   setWindowAttribute(window, 'tabbar-visibility', isFloating ? 'hidden' : 'floating')
-  window.clearTimeout(autoHideTabbarTimeout)
 })
 
 vimfx.addCommand({
@@ -54,7 +52,6 @@ vimfx.addCommand({
   let {window} = vim
   let isFixed = (getWindowAttribute(window, 'tabbar-visibility') === 'fixed')
   setWindowAttribute(window, 'tabbar-visibility', isFixed ? 'hidden' : 'fixed')
-  window.clearTimeout(autoHideTabbarTimeout)
 })
 
 vimfx.addCommand({
@@ -179,20 +176,28 @@ let onTabCreated = ({target: browser}) => {
     let navigatorToolbox = window.document.getElementById('navigator-toolbox')
     tabsToolbar.style.top = `${navigatorToolbox.clientHeight}px`
 
-    setWindowAttribute(window, 'tabbar-visibility', 'hidden')
-
+    let timeout = null
     let autoShowTabbar = () => {
-      let isVisible = (getWindowAttribute(window, 'tabbar-visibility') !== 'hidden')
-      if (!isVisible) {
-        setWindowAttribute(window, 'tabbar-visibility', 'floating')
-        window.clearTimeout(autoHideTabbarTimeout)
-        autoHideTabbarTimeout = window.setTimeout(() => {
-          setWindowAttribute(window, 'tabbar-visibility', 'hidden')
-        }, 2000)
+      let value = getWindowAttribute(window, 'tabbar-visibility')
+      if (value === 'hidden' || value === 'temporary') {
+        setWindowAttribute(window, 'tabbar-visibility', 'temporary')
+        if (timeout) {
+          window.clearTimeout(timeout)
+        }
+        timeout = window.setTimeout(() => {
+          if (getWindowAttribute(window, 'tabbar-visibility') === 'temporary') {
+            setWindowAttribute(window, 'tabbar-visibility', 'hidden')
+            timeout = null
+          }
+        }, TABBAR_AUTO_SHOW_DURATION)
       }
     }
+
     listen(window, 'TabSelect', autoShowTabbar)
     listen(window, 'TabOpen', autoShowTabbar)
+
+    setWindowAttribute(window, 'tabbar-visibility', 'temporary')
+    autoShowTabbar()
   }
 }
 

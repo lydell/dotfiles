@@ -20,8 +20,9 @@ $tab-border-width: 1px;
     }
   }
 
-  // 'floating' is the default.
-  // &[vimfx-config-tabbar-visibility="floating"]
+  // 'floating' is the default. 'temporary' is basically the same.
+  // &[vimfx-config-tabbar-visibility="floating"],
+  // &[vimfx-config-tabbar-visibility="temporary"]
 
   #TabsToolbar {
     position: fixed;
