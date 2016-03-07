@@ -19,6 +19,22 @@ let setWindowAttribute = (window, name, value) => {
 let {commands} = vimfx.modes.normal
 
 vimfx.addCommand({
+  name: 'tab_move_to_index',
+  description: 'Move tab to index',
+  category: 'tabs',
+  order: commands.tab_move_forward.order + 1,
+}, ({vim, count}) => {
+  if (count === undefined) {
+    vim.notify('Provide a count')
+    return
+  }
+  let {window} = vim
+  window.setTimeout(() => {
+    window.gBrowser.moveTabTo(window.gBrowser.selectedTab, count - 1)
+  }, 0)
+})
+
+vimfx.addCommand({
   name: 'toggle_floating_tab_bar',
   description: 'Toggle floating tab bar',
   category: 'tabs',
@@ -91,6 +107,7 @@ map('s',  'tab_select_previous')
 map('h',  'tab_select_next')
 map('gs', 'tab_move_backward')
 map('gh', 'tab_move_forward')
+map('gS', 'tab_move_to_index', true)
 map('c',  'tab_close')
 map('C',  'tab_restore')
 map('m',  'toggle_floating_tab_bar', true)
