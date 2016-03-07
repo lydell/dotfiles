@@ -18,10 +18,12 @@
   }
 
   /* Throbber in URLbar */
-  #status4evar-throbber-widget[busy] + #urlbar-container #page-proxy-favicon {
+  #status4evar-throbber-widget[busy] +
+      #urlbar-container :-moz-any(#page-proxy-favicon, #identity-icon) {
     list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
   }
-  #status4evar-throbber-widget[progress] + #urlbar-container #page-proxy-favicon {
+  #status4evar-throbber-widget[progress] +
+      #urlbar-container :-moz-any(#page-proxy-favicon, #identity-icon) {
     list-style-image: url("chrome://browser/skin/tabbrowser/loading.png");
   }
   #status4evar-throbber-widget {
