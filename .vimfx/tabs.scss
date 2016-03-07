@@ -91,10 +91,6 @@ $tab-border-width: 1px;
     pointer-events: auto;
     counter-increment: tabs-counter;
 
-    // When dragging tabs, Firefox adds `style="transform: translate(...);"`.
-    // Add a transition with a really long delay to prevent that.
-    transition: transform 0s 99999s;
-
     &:hover {
       background-color: white;
     }
