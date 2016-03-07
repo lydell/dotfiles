@@ -19,21 +19,6 @@ let setWindowAttribute = (window, name, value) => {
 let {commands} = vimfx.modes.normal
 
 vimfx.addCommand({
-  name: 'open_tab_next_to_current',
-  description: 'New tab next to current',
-  category: 'tabs',
-  order: commands.tab_new.order + 1,
-}, (args) => {
-  let {vim} = args
-  let {gBrowser} = vim.window
-  let newTabPosition = gBrowser.selectedTab._tPos + 1
-  commands.tab_new.run(args)
-  vim.window.setTimeout(() => {
-    gBrowser.moveTabTo(gBrowser.selectedTab, newTabPosition)
-  }, 0)
-})
-
-vimfx.addCommand({
   name: 'toggle_floating_tab_bar',
   description: 'Toggle floating tab bar',
   category: 'tabs',
@@ -102,7 +87,6 @@ map('<late><down>',  'scroll_down')
 map('<late><up>',    'scroll_up')
 map('gm', 'mark_scroll_position')
 
-map('gt', 'open_tab_next_to_current', true)
 map('s',  'tab_select_previous')
 map('h',  'tab_select_next')
 map('gs', 'tab_move_backward')
