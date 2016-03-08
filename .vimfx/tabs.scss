@@ -86,7 +86,7 @@ $tab-border-width: 1px;
     max-width: none;
     border: $tab-border-width solid ThreeDShadow;
     margin-top: -$tab-border-width;
-    background-color: rgba(darken(white, 4%), 0.9);
+    background-color: -moz-dialog;
     color: black;
     pointer-events: auto;
     counter-increment: tabs-counter;
