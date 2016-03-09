@@ -143,6 +143,37 @@ set('next_patterns', v => `nästa  ${v}`)
 
 
 
+let set_browser = (pref, value) => {
+  switch (typeof value) {
+    case 'boolean':
+      Services.prefs.setBoolPref(pref, value)
+      break
+    case 'number':
+      Services.prefs.setIntPref(pref, value)
+      break
+    case 'string':
+      Services.prefs.setCharPref(pref, value)
+      break
+  }
+}
+
+set_browser('accessibility.blockautorefresh', true)
+set_browser('browser.ctrlTab.previews', true)
+set_browser('browser.fixup.alternate.enabled', false)
+set_browser('browser.search.suggest.enabled', false)
+set_browser('browser.startup.page', 3)
+set_browser('browser.tabs.animate', false)
+set_browser('browser.tabs.closeWindowWithLastTab', false)
+set_browser('browser.tabs.warnOnClose', false)
+set_browser('browser.urlbar.formatting.enabled', false)
+set_browser('devtools.chrome.enabled', true)
+set_browser('devtools.command-button-eyedropper.enabled', true)
+set_browser('devtools.command-button-rulers.enabled', true)
+set_browser('devtools.selfxss.count', 0)
+set_browser('privacy.donottrackheader.enabled', true)
+
+
+
 let loadCss = (uriString) => {
   let uri = Services.io.newURI(uriString, null, null)
   let method = nsIStyleSheetService.AUTHOR_SHEET
