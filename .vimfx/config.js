@@ -143,34 +143,24 @@ set('next_patterns', v => `nästa  ${v}`)
 
 
 
-let set_browser = (pref, value) => {
-  switch (typeof value) {
-    case 'boolean':
-      Services.prefs.setBoolPref(pref, value)
-      break
-    case 'number':
-      Services.prefs.setIntPref(pref, value)
-      break
-    case 'string':
-      Services.prefs.setCharPref(pref, value)
-      break
-  }
-}
+let {Preferences} = Cu.import('resource://gre/modules/Preferences.jsm', {})
 
-set_browser('accessibility.blockautorefresh', true)
-set_browser('browser.ctrlTab.previews', true)
-set_browser('browser.fixup.alternate.enabled', false)
-set_browser('browser.search.suggest.enabled', false)
-set_browser('browser.startup.page', 3)
-set_browser('browser.tabs.animate', false)
-set_browser('browser.tabs.closeWindowWithLastTab', false)
-set_browser('browser.tabs.warnOnClose', false)
-set_browser('browser.urlbar.formatting.enabled', false)
-set_browser('devtools.chrome.enabled', true)
-set_browser('devtools.command-button-eyedropper.enabled', true)
-set_browser('devtools.command-button-rulers.enabled', true)
-set_browser('devtools.selfxss.count', 0)
-set_browser('privacy.donottrackheader.enabled', true)
+Preferences.set({
+  'accessibility.blockautorefresh': true,
+  'browser.ctrlTab.previews': true,
+  'browser.fixup.alternate.enabled': false,
+  'browser.search.suggest.enabled': false,
+  'browser.startup.page': 3,
+  'browser.tabs.animate': false,
+  'browser.tabs.closeWindowWithLastTab': false,
+  'browser.tabs.warnOnClose': false,
+  'browser.urlbar.formatting.enabled': false,
+  'devtools.chrome.enabled': true,
+  'devtools.command-button-eyedropper.enabled': true,
+  'devtools.command-button-rulers.enabled': true,
+  'devtools.selfxss.count': 0,
+  'privacy.donottrackheader.enabled': true,
+})
 
 
 
