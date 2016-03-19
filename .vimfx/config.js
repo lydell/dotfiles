@@ -181,6 +181,14 @@ loadCss(`${__dirname}/tabs.css`)
 
 
 
+vimfx.on('locationChange', ({vim, location}) => {
+  if (location.hostname === 'mobile.twitter.com') {
+    vimfx.send(vim, 'normalizeTwitterLinks')
+  }
+})
+
+
+
 let listen = (window, eventName, listener) => {
   window.addEventListener(eventName, listener, true)
   vimfx.on('shutdown', () => {
