@@ -20,5 +20,7 @@
 	last = log -1 HEAD
 	unstage = reset HEAD --
 	last-change = log -1 --format=%cd
+	lol = log --all --graph --decorate --oneline
+	lols = log --all --graph --decorate --oneline --simplify-by-decoration
 [log]
 	date = iso
