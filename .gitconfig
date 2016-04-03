@@ -22,5 +22,6 @@
 	last-change = log -1 --format=%cd
 	lol = log --all --graph --decorate --oneline
 	lols = log --all --graph --decorate --oneline --simplify-by-decoration
+	amd = commit -a --amend --no-edit
 [log]
 	date = iso
