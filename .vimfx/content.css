@@ -1,6 +1,6 @@
-@namespace url(http://www.w3.org/1999/xhtml);
+@namespace url("http://www.w3.org/1999/xhtml");
 
-@-moz-document regexp('https?://(?!([^.]+\\.)?localhost|\\d).*') {
+@-moz-document regexp("https?://(?!([^.]+\\.)?localhost|\\d).*") {
   /* Focus */
   :focus {
     outline: 2px solid orange !important;

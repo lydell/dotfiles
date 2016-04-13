@@ -1,4 +1,4 @@
-@-moz-document url(chrome://browser/content/browser.xul) {
+@-moz-document url('chrome://browser/content/browser.xul') {
   /* S4E URLbar Progress - Native style */
   #urlbar-progress-alt .progress-bar {
     -moz-appearance: progresschunk !important;
@@ -20,11 +20,11 @@
   /* Throbber in URLbar */
   #status4evar-throbber-widget[busy] +
       #urlbar-container :-moz-any(#page-proxy-favicon, #identity-icon) {
-    list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
+    list-style-image: url('chrome://browser/skin/tabbrowser/connecting.png');
   }
   #status4evar-throbber-widget[progress] +
       #urlbar-container :-moz-any(#page-proxy-favicon, #identity-icon) {
-    list-style-image: url("chrome://browser/skin/tabbrowser/loading.png");
+    list-style-image: url('chrome://browser/skin/tabbrowser/loading.png');
   }
   #status4evar-throbber-widget {
     display: none !important;
@@ -53,26 +53,26 @@
 }
 
 /* DOM Inspector - Stacked panels */
-@-moz-document url("chrome://inspector/content/inspector.xul") {
+@-moz-document url('chrome://inspector/content/inspector.xul') {
   #bxPanelSet {
     -moz-box-orient: vertical !important;
   }
 }
 
 /* about:blank */
-@-moz-document url(chrome://browser/content/browser.xul) {
-  browser[type="content-primary"] {
+@-moz-document url('chrome://browser/content/browser.xul') {
+  browser[type='content-primary'] {
     background-color: Window !important;
   }
 }
-@-moz-document url("about:blank") {
+@-moz-document url('about:blank') {
   body:empty:not([style]):not([text]):not([class]):not([onresize]) {
     background-color: Window !important;
   }
 }
 
 /* CSS property checkboxes in the devtools */
-@-moz-document url("chrome://devtools/content/styleinspector/cssruleview.xhtml") {
+@-moz-document url('chrome://devtools/content/styleinspector/cssruleview.xhtml') {
   .ruleview-enableproperty.theme-checkbox {
     visibility: visible !important;
   }

@@ -1,10 +1,10 @@
-@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@namespace url('http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul');
 
 $tabbar-width: 200px;
 $tab-border-width: 1px;
 
 #main-window:not([customizing]) {
-  &[vimfx-config-tabbar-visibility="fixed"] {
+  &[vimfx-config-tabbar-visibility='fixed'] {
     #content-deck {
        padding-right: ($tabbar-width - $tab-border-width);
     }
@@ -14,15 +14,15 @@ $tab-border-width: 1px;
     }
   }
 
-  &[vimfx-config-tabbar-visibility="hidden"] {
+  &[vimfx-config-tabbar-visibility='hidden'] {
     #TabsToolbar {
       visibility: hidden;
     }
   }
 
   // 'floating' is the default. 'temporary' is basically the same.
-  // &[vimfx-config-tabbar-visibility="floating"],
-  // &[vimfx-config-tabbar-visibility="temporary"]
+  // &[vimfx-config-tabbar-visibility='floating'],
+  // &[vimfx-config-tabbar-visibility='temporary']
 
   #TabsToolbar {
     position: fixed;
@@ -95,7 +95,7 @@ $tab-border-width: 1px;
       background-color: white;
     }
 
-    &[visuallyselected="true"] {
+    &[visuallyselected='true'] {
       border-color: Highlight;
       background: Highlight;
       color: HighlightText;
@@ -147,7 +147,7 @@ $tab-border-width: 1px;
     visibility: hidden;
 
     &:not(:hover) {
-      background-image: -moz-image-rect(url("chrome://global/skin/icons/close.svg"), 0, 16, 16, 0) !important;
+      background-image: -moz-image-rect(url('chrome://global/skin/icons/close.svg'), 0, 16, 16, 0) !important;
     }
 
     &::before {
