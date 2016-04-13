@@ -70,3 +70,10 @@
     background-color: Window !important;
   }
 }
+
+/* CSS property checkboxes in the devtools */
+@-moz-document url("chrome://devtools/content/styleinspector/cssruleview.xhtml") {
+  .ruleview-enableproperty.theme-checkbox {
+    visibility: visible !important;
+  }
+}
