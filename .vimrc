@@ -313,6 +313,7 @@ augroup vimrc
 autocmd!
 autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
 autocmd BufNewFile,BufFilePre,BufRead *.html setlocal filetype=htmldjango
+autocmd BufNewFile,BufFilePre,BufRead *.jsm setlocal filetype=javascript
 autocmd FileType htmldjango setlocal commentstring={#\ %s\ #}
 augroup END
 
