@@ -94,6 +94,10 @@ let map = (shortcuts, command, custom=false) => {
   vimfx.set(`${custom ? 'custom.' : ''}mode.normal.${command}`, shortcuts)
 }
 
+let map_caret = (shortcuts, command) => {
+  vimfx.set(`mode.caret.${command}`, shortcuts)
+}
+
 map('', 'go_home')
 map('', 'stop')
 
@@ -126,6 +130,11 @@ map('I',  'enter_mode_ignore')
 map('i',  'quote')
 map('f',  'noscript_click_toolbar_button', true)
 map('gv', 'youtube_view_video', true)
+
+map_caret('<left>',  'move_left')
+map_caret('<right>', 'move_right')
+map_caret('<down>',  'move_down')
+map_caret('<up>',    'move_up')
 
 
 
