@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-export UBUNTU_MENUPROXY=
-
 if test "$#" == 0; then
   gvim .
 else

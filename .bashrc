@@ -45,16 +45,4 @@ GIT_PS1_SHOWUNTRACKEDFILES=true # %
 GIT_PS1_DESCRIBE_STYLE=contains # v1.6.3.2~35
 GIT_PS1_SHOWCOLORHINTS=true
 source /usr/lib/git-core/git-sh-prompt
-__virtual_env() {
-  if [[ $VIRTUAL_ENV != "" ]]; then
-    echo -n " [$(basename $VIRTUAL_ENV)]"
-  fi
-}
-
-PROMPT_COMMAND='__git_ps1 "\w$(__virtual_env)" "\n\\\$ "'
-
-# Virtualenv.
-[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
-
-# Extra .bashrc.
-[ -f ~/.bashrc-extra ] && source ~/.bashrc-extra
+PROMPT_COMMAND='__git_ps1 "\w" "\n\\\$ "'

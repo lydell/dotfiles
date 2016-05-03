@@ -46,7 +46,7 @@ $tab-border-width: 1px;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: -moz-dialog;
+      background-color: Window;
       opacity: 0.5;
     }
 
@@ -86,13 +86,13 @@ $tab-border-width: 1px;
     max-width: none;
     border: $tab-border-width solid ThreeDShadow;
     margin-top: -$tab-border-width;
-    background-color: -moz-dialog;
-    color: black;
+    background-color: Window;
+    color: WindowText;
     pointer-events: auto;
     counter-increment: tabs-counter;
 
     &:hover {
-      background-color: white;
+      background-color: ThreeDShadow;
     }
 
     &[visuallyselected='true'] {

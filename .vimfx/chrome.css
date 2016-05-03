@@ -4,17 +4,10 @@
     -moz-appearance: progresschunk !important;
   }
   #urlbar-progress-alt {
-    height: 24px !important; /* Fix height when the URLbar is focused. */
-    margin-left: -3px !important;
-    border-radius: var(--border-radius) !important;
+    height: 25px !important; /* Fix height when the URLbar is focused. */
   }
   .urlbar-progress-layer {
-    overflow: hidden !important;
     margin: -1px !important;
-  }
-  #urlbar {
-    --border-radius: 0 12px 12px 0;
-    border-radius: var(--border-radius) !important;
   }
 
   /* Throbber in URLbar */
