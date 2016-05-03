@@ -34,3 +34,6 @@
 !/bin/toggle
 !/bin/tw
 !/bin/winresize
+!/bin-before/
+!/bin-before/pip
+!/bin-before/python

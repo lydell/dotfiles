@@ -11,12 +11,12 @@ rsync --archive ~/ "/media/$USER/backup/$(uname --nodename)/home" \
   --exclude /.plugman/ \
   --exclude /.tmp/ \
   --exclude /.vim/ \
-  --exclude /.virtualenvs/ \
   --exclude /programs/ \
   --exclude /tmp/ \
   --exclude bower_components/ \
   --exclude CACHE/ \
   --exclude node_modules/ \
+  --exclude .venv/ \
   --exclude __pycache__/ \
   --exclude '*.nb.*' \
   "$@"

@@ -1,5 +1,4 @@
-PATH DEFAULT=${PATH}:./node_modules/.bin:${HOME}/bin
+PATH DEFAULT=${HOME}/bin-before:${PATH}:${HOME}/bin:${HOME}/.python/bin:./.venv/bin:./node_modules/.bin
 FZF_DEFAULT_COMMAND=lsrc
 TWORLDDIR=/home/lydell/.config/tworld
 TWORLDSAVEDIR=/home/lydell/.config/tworld/save
-WORKON_HOME DEFAULT=${HOME}/.virtualenvs
