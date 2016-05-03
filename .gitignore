@@ -20,6 +20,8 @@
 !/bin/ack
 !/bin/backup
 !/bin/e
+!/bin/firefox-nightly
+!/bin/firefox-regular
 !/bin/g
 !/bin/lsrc
 !/bin/noeolateof
@@ -35,5 +37,6 @@
 !/bin/tw
 !/bin/winresize
 !/bin-before/
+!/bin-before/firefox
 !/bin-before/pip
 !/bin-before/python
