@@ -165,4 +165,10 @@ $tab-border-width: 1px;
       visibility: hidden;
     }
   }
+
+  // Put the devtools on top of the tab bar.
+  .devtools-toolbox-bottom-iframe {
+    position: relative;
+    z-index: 1;
+  }
 }
