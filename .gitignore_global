@@ -1,0 +1,11 @@
+*.swp
+*~
+–*
+
+.cache/
+.venv/
+stuff/
+
+run
+local_simon.py
+local_lydell.py
