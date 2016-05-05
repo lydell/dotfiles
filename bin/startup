@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+redshift -l 59:18 &
+xinput disable "ELAN Touchscreen"
+sleep 1
+teck_se

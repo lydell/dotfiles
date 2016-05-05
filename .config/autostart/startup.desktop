@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/lydell/bin/startup
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=startup
+Name=startup
+Comment[en_US]=
+Comment=

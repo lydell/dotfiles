@@ -9,10 +9,9 @@
 !/.ptignore
 !/.tern-project
 !/.vimrc
-!/.xbindkeysrc
 !/.config/
-!/.config/autostart-src
-!/.config/autostart-src/*
+!/.config/autostart
+!/.config/autostart/*
 !/.config/dconf.dump
 !/.vimfx/
 !/.vimfx/!(tabs.css)
@@ -33,6 +32,7 @@
 !/bin/re
 !/bin/release
 !/bin/repo-root
+!/bin/startup
 !/bin/teck_se
 !/bin/toggle
 !/bin/tw

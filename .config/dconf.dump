@@ -1,39 +1,99 @@
 # Dump all changed settings to stdout: `dconf dump /`
 # You can also see many available settings using: `gsettings list-reqursively`
+# dconf-editor is also useful.
 # To apply this file: `dconf load / <$THIS_FILE`
 # You might need to log out and log in for changes to take effect.
 
-[org/gnome/desktop/wm/keybindings]
-toggle-fullscreen=['<Super>f']
-panel-run-dialog=['F13', '<Alt>F2']
-panel-main-menu=['F14', '<Alt>F1']
+[org/gnome/settings-daemon/peripherals/touchscreen]
+orientation-lock=true
 
-# So that the TECK does not send extra Num Lock.
-[org/gnome/settings-daemon/peripherals/keyboard]
-numlock-state='on'
-
-[org/gnome/desktop/a11y/keyboard]
-mousekeys-accel-time=1200
-mousekeys-max-speed=750
-
-[org/gtk/settings/file-chooser]
-show-hidden=true
+[org/gnome/shell/calendar]
+show-weekdate=true
 
 [org/gnome/nautilus/preferences]
 sort-directories-first=true
 
-[org/gnome/nautilus/desktop]
-home-icon-visible=false
-network-icon-visible=false
-volumes-visible=false
-trash-icon-visible=false
-
-[org/gnome/gnome-panel/layout/toplevels/panel-0]
-orientation='top'
-size=24
-
-[org/gnome/desktop/a11y/applications]
-screen-reader-enabled=false
+[org/gnome/settings-daemon/plugins/power]
+ambient-enabled=false
+sleep-inactive-battery-type='nothing'
+sleep-inactive-ac-timeout=3600
+sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-timeout=1800
 
 [org/gnome/desktop/screensaver]
-lock-delay=uint32 1800
+lock-enabled=true
+
+[org/gnome/desktop/session]
+idle-delay=uint32 900
+
+[org/gnome/settings-daemon/plugins/orientation]
+active=false
+
+[org/gnome/desktop/peripherals/touchpad]
+natural-scroll=true
+tap-to-click=true
+
+[org/gnome/settings-daemon/peripherals/keyboard]
+remember-numlock-state=false
+numlock-state='on'
+
+[org/gnome/mutter]
+overlay-key=''
+
+[org/gnome/shell/keybindings]
+toggle-overview=['<Super>s', 'F13']
+
+[org/gnome/desktop/wm/keybindings]
+panel-main-menu=['<Alt>F1', 'F14']
+close=['<Alt>F4', '<Super>q']
+cycle-windows=['<Alt>Escape', '<Super>e']
+cycle-windows-backward=['<Shift><Alt>Escape', '<Super><Shift>e']
+show-desktop=['<Shift><Super>d']
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding=''
+command='gnome-session-quit --power-off'
+name='shut down'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Super>h'
+command='focus Gnome-terminal'
+name='focus terminal'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Super>t'
+command='focus Gvim'
+name='focus gvim'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+binding='<Super>r'
+command="focus 'Firefox(?!.+Nightly$)'"
+name='focus firefox'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+binding='<Super>period'
+command="focus '(chromium|Firefox.+Nightly$)'"
+name='focus alternate browsers'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
+binding='<Super>f'
+command='focus Eog'
+name='focus eog'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
+binding='<Super>d'
+command='focus Gimp'
+name='focus gimp'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7]
+binding='<Super>minus'
+command='focus Nautilus'
+name='focus nautilus'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8]
+binding='<Super>comma'
+command="focus '(?!Gnome-terminal|Gvim|Firefox|chromium|Eog|Gimp|Nautilus)'"
+name='focus other'

@@ -1,4 +1,0 @@
-redshift -l 59:18
-/home/lydell/src/keyboard/teck_se
-xbindkeys
-keynav
