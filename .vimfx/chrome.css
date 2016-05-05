@@ -24,6 +24,12 @@
   }
 
 
+  /* Smaller VimFx hint markers */
+  #VimFxMarkersContainer .marker {
+    font-size: 0.9em;
+  }
+
+
   /* `display: none`s: */
 
   /* Adblock Plus Context Menu items */
