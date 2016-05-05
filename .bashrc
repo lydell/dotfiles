@@ -4,6 +4,11 @@
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
 
+# More history.
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+HISTIGNORE='ls:bg:fg:history'
+
 # Append to the history file, don't overwrite it.
 shopt -s histappend
 
