@@ -75,7 +75,7 @@ name='focus firefox'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
 binding='<Super>period'
-command="focus '(chromium|Firefox.+Nightly$)'"
+command="focus '(chromium|Firefox.+Nightly$|Abrowser)'"
 name='focus alternate browsers'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
@@ -95,5 +95,5 @@ name='focus nautilus'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8]
 binding='<Super>comma'
-command="focus '(?!Gnome-terminal|Gvim|Firefox|chromium|Eog|Gimp|Nautilus)'"
+command="focus '(?!Gnome-terminal|Gvim|Firefox|Abrowser|chromium|Eog|Gimp|Nautilus)'"
 name='focus other'
