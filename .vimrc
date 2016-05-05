@@ -12,13 +12,10 @@ Plug 'AndrewRadev/undoquit.vim'
 Plug 'ap/vim-css-color'
 Plug 'ap/vim-you-keep-using-that-word'
 Plug 'bkad/CamelCaseMotion'
-Plug 'groenewege/vim-less'
-Plug 'hail2u/vim-css3-syntax'
 Plug 'henrik/vim-indexed-search'
 Plug 'elmcast/elm-vim'
 Plug 'jamessan/vim-gnupg'
 Plug 'myint/indent-finder'
-Plug 'othree/yajs.vim'
 Plug 'tpope/vim-capslock'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
@@ -33,13 +30,11 @@ Plug 'junegunn/vim-fnr'
 Plug 'junegunn/seoul256.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'sheerun/vim-polyglot'
 Plug 'tommcdo/vim-exchange'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --tern-completer' }
-Plug 'wavded/vim-stylus'
 Plug 'wellle/targets.vim'
 Plug 'whatyouhide/vim-lengthmatters'
-
-Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
 
@@ -292,6 +287,9 @@ let g:fnr_flags = 'g'
 highlight! link ExtraWhitespace Error
 
 let g:GPGUsePipes = 1
+
+let g:polyglot_disabled = ['elm']
+
 
 """ Status line
 set laststatus=2
