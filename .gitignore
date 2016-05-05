@@ -18,7 +18,6 @@
 !/.vimfx/
 !/.vimfx/!(tabs.css)
 !/bin/
-!/bin/ack
 !/bin/backup
 !/bin/e
 !/bin/firefox-nightly
@@ -36,7 +35,6 @@
 !/bin/repo-root
 !/bin/startup
 !/bin/teck_se
-!/bin/toggle
 !/bin/tw
 !/bin-before/
 !/bin-before/firefox
