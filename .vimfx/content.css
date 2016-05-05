@@ -18,3 +18,33 @@
     resize: both !important;
   }
 }
+
+@-moz-document domain("wikipedia.org") {
+  @media (min-width: 1090px) {
+    #mw-head {
+      width: 750px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+
+    #p-personal {
+      right: 0 !important;
+    }
+
+    #left-navigation {
+      margin-left: 0 !important;
+    }
+
+    #p-search {
+      margin-right: 0 !important;
+    }
+
+    .mw-body,
+    #footer {
+      max-width: 700px !important;
+      border-right-width: 1px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+}
