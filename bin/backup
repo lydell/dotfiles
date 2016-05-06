@@ -4,19 +4,23 @@ rsync --archive ~/ "/media/$USER/backup/$(uname --nodename)/home" \
   --delete --backup \
   --progress --human-readable \
   --exclude /.cache/ \
-  --exclude /.cordova/ \
-  --exclude /.gradle/ \
+  --exclude /.elm/ \
+  --exclude /.fzf/ \
   --exclude /.node-gyp/ \
   --exclude /.npm/ \
-  --exclude /.plugman/ \
+  --exclude /.python/ \
+  --exclude /.stack/ \
+  --exclude /.thumbnails/ \
   --exclude /.tmp/ \
   --exclude /.vim/ \
+  --exclude /old/ \
   --exclude /programs/ \
   --exclude /tmp/ \
+  --exclude .stack-work/ \
+  --exclude .venv/ \
   --exclude bower_components/ \
   --exclude CACHE/ \
+  --exclude elm-stuff/ \
   --exclude node_modules/ \
-  --exclude .venv/ \
   --exclude __pycache__/ \
-  --exclude '*.nb.*' \
   "$@"
