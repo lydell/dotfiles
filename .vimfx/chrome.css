@@ -26,8 +26,8 @@
 
   /* Smaller VimFx hint markers */
   #VimFxMarkersContainer .marker {
-    --padding: 0.1em;
-    padding: 0 var(--padding);
+    --padding: 0.15em;
+    padding: 0.05em var(--padding);
     font-size: 0.9em;
   }
 
