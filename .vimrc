@@ -30,6 +30,7 @@ Plug 'junegunn/vim-fnr'
 Plug 'junegunn/seoul256.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'tommcdo/vim-exchange'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --tern-completer' }
@@ -277,6 +278,11 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 nnoremap <silent> <leader>g :YcmCompleter GoTo<cr>
 
 
+""" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_wq = 0
+
+
 """ Various
 imap <a-/> <Plug>CapsLockToggle
 
@@ -297,6 +303,9 @@ set statusline=
 set statusline+=%-4(%m%) "[+]
 set statusline+=%f:%l:%c "dir/file.js:12:5
 set statusline+=%=%<
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 set statusline+=%{CapsLockStatusline()}
 set statusline+=%{&fileformat=='unix'?'':'['.&fileformat.']'}
 set statusline+=%{strlen(&fileencoding)==0\|\|&fileencoding=='utf-8'?'':'['.&fileencoding.']'}
