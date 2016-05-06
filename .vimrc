@@ -315,6 +315,10 @@ set statusline+=[%{&expandtab?'spaces:'.&shiftwidth:'tabs:'.&tabstop}]
 set statusline+=%4p%% "50%
 
 
+""" Commands
+command! -nargs=? FontSize :set guifont=monospace\ <args>
+
+
 """ Autocommands
 augroup vimrc
 autocmd!
