@@ -33,6 +33,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'tommcdo/vim-exchange'
+Plug 'unblevable/quick-scope'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --tern-completer' }
 Plug 'wellle/targets.vim'
 Plug 'whatyouhide/vim-lengthmatters'
