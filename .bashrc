@@ -18,9 +18,6 @@ shopt -s globstar
 # ?*+@!() glob support.
 shopt -s extglob
 
-# PATH. (Also make sure that `~/.profile` does not put `~/bin` at the start.)
-PATH="$HOME/bin-before:$PATH:$HOME/bin:$HOME/.python/bin:./.venv/bin:./node_modules/.bin"
-
 # Make `less` more friendly for non-text input files, see lesspipe(1).
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 

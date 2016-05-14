@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-dir="$(cd "$(dirname $BASH_SOURCE)" && pwd)"
-
 redshift -l 59:18 &
 xinput disable "ELAN Touchscreen"
 sleep 1
-"$dir/teck_se"
+teck_se
