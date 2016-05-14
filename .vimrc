@@ -15,19 +15,19 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'henrik/vim-indexed-search'
 Plug 'elmcast/elm-vim'
 Plug 'jamessan/vim-gnupg'
-Plug 'myint/indent-finder'
 Plug 'tpope/vim-capslock'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-oblique'
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-fnr'
 Plug 'junegunn/seoul256.vim'
+Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/syntastic'
@@ -298,6 +298,13 @@ let g:GPGUsePipes = 1
 
 let g:polyglot_disabled = ['elm']
 
+" Mapped by autocommands below.
+function! DirvishReload()
+  let currentLine = line('.')
+  execute 'Dirvish' '%'
+  call cursor(currentLine, 0)
+endfunction
+
 
 """ Status line
 set laststatus=2
@@ -328,6 +335,8 @@ autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
 autocmd BufNewFile,BufFilePre,BufRead *.html setlocal filetype=htmldjango
 autocmd BufNewFile,BufFilePre,BufRead *.jsm setlocal filetype=javascript
 autocmd FileType htmldjango setlocal commentstring={#\ %s\ #}
+autocmd FileType dirvish nnoremap <buffer><silent> R :call DirvishReload()<cr>
+autocmd FileType dirvish nnoremap <buffer> s :<space><c-r><c-a><home>!
 augroup END
 
 autocmd! User Oblique
