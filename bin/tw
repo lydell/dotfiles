@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-tworld -pq
+
+dir="$HOME/.config/tworld"
+tworld --no-passwords --quiet \
+  --data-dir="$dir/data" \
+  --levelset-dir="$dir/sets" \
+  --save-dir="$dir/save"

@@ -1,4 +1,0 @@
-PATH DEFAULT=${HOME}/bin-before:${PATH}:${HOME}/bin:${HOME}/.python/bin:./.venv/bin:./node_modules/.bin
-FZF_DEFAULT_COMMAND=lsrc
-TWORLDDIR=/home/lydell/.config/tworld
-TWORLDSAVEDIR=/home/lydell/.config/tworld/save

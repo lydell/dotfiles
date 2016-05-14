@@ -263,6 +263,7 @@ function! FZF()
     \ &columns, &lines/2, getwinposx(), getwinposy())
 endfunction
 let g:Fzf_launcher = function('FZF')
+let $FZF_DEFAULT_COMMAND = 'lsrc'
 
 
 """ YCM
