@@ -145,7 +145,7 @@ let set = (pref, valueOrFunction) => {
   vimfx.set(pref, value)
 }
 
-set('hint_chars', 'ehstirnoamupcwlfgdy')
+set('hint_chars', 'ehstirnoamupcwlfg dy')
 set('prevent_autofocus', true)
 set('prev_patterns', v => `föregående  ${v}`)
 set('next_patterns', v => `nästa  ${v}`)
