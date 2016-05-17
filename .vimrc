@@ -298,8 +298,6 @@ let g:GPGUsePipes = 1
 
 let g:polyglot_disabled = ['elm']
 
-let g:lengthmatters_excluded = ['help', 'dirvish']
-
 " Mapped by autocommands below.
 function! DirvishReload()
   let currentLine = line('.')
