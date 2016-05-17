@@ -82,6 +82,7 @@ set formatoptions+=j
 set iskeyword+=$
 set list
 set listchars=tab:▸\ ,extends:>,precedes:<,nbsp:·
+set mousemodel=popup_setpos
 set nojoinspaces
 set nostartofline
 set nrformats-=octal
@@ -164,6 +165,10 @@ vnoremap <end> $h
 map <space> <leader>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :wq<cr>
+nnoremap <leader>S :setlocal spell!<cr>
+nnoremap <leader>s i<c-x>s
+nnoremap <leader>c ]s
+nnoremap <leader>C [s
 
 " See Sneak and Surround below
 noremap , L
