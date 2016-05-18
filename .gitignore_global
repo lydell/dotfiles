@@ -6,6 +6,7 @@
 .venv/
 stuff/
 
+.ptignore
 run
 local_simon.py
 local_lydell.py

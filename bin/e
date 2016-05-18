@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 last="${@: -1}"
+localIgnore='.ptignore'
 
 prefix=''
 if test "${last:0:1}" == '.'; then
@@ -11,6 +12,10 @@ if test "${last:0:1}" == '.'; then
   fi
   prefix="--file-search-regexp=$regex"
   set -- "${@:1:$(($#-1))}" # pop argument
+fi
+
+if test -f "$localIgnore"; then
+  prefix="$prefix --ignore=$(cat $localIgnore)"
 fi
 
 pt --hidden --global-gitignore --home-ptignore $prefix "$@"
