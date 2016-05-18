@@ -1,9 +1,6 @@
 " Some plugins require this to be set before they are loaded.
 set nocompatible
 
-" Must be set before vim-indexed-search is set up.
-let g:indexed_search_mappings = 0
-
 """ Plugins
 call plug#begin('~/.vim/bundles')
 
@@ -302,6 +299,8 @@ highlight! link ExtraWhitespace Error
 let g:GPGUsePipes = 1
 
 let g:polyglot_disabled = ['elm']
+
+let g:indexed_search_mappings = 0
 
 " Mapped by autocommands below.
 function! DirvishReload()
