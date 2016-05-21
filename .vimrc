@@ -131,8 +131,8 @@ noremap Q @q
 noremap _ -
 
 " Let i and a pick up indentation from previous/next line if on empty line.
-nnoremap <expr> i getline('.') == '' ? 'ddko' : 'i'
-nnoremap <expr> a getline('.') == '' ? 'ddO' : 'a'
+nnoremap <expr> i getline('.') == '' && line('.') != 1 ? 'ddko' : 'i'
+nnoremap <expr> a getline('.') == '' && line('.') != line('$') ? 'ddO' : 'a'
 
 " Ctrl-{a,c,v} stand-in
 nnoremap <a-y> :let @*=@"\|let @+=@"<cr>
