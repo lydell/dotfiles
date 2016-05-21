@@ -164,7 +164,7 @@ inoremap <c-esc> <c-o>
 inoremap <a-p> <c-r>.<space>=<space><c-r><c-o>"
 inoremap <up> <c-o>O
 inoremap <down> <c-o>o
-inoremap <silent> <s-tab> a<bs><esc>:call SpaceTo()<cr>
+inoremap <silent> <c-space> a<bs><esc>:call SpaceTo()<cr>
 
 function! SpaceTo()
   let char = nr2char(getchar())
