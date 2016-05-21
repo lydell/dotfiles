@@ -159,6 +159,20 @@ inoremap <c-esc> <c-o>
 inoremap <a-p> <c-r>.<space>=<space><c-r><c-o>"
 inoremap <up> <c-o>O
 inoremap <down> <c-o>o
+inoremap <silent> <s-tab> a<bs><esc>:call SpaceTo()<cr>
+
+function! SpaceTo()
+  let char = nr2char(getchar())
+  let previousLine = getline(line('.') - 1)
+  let currentIndex = col('.') - 1
+  let previousIndex = stridx(previousLine, char, currentIndex + 1)
+  if previousIndex > currentIndex
+    let diff = previousIndex - currentIndex
+    execute 'normal! ' . diff . "a \<esc>l"
+  endif
+  let bang = col('.') == col('$') - 1 ? '!' : ''
+  execute 'startinsert' . bang
+endfunction
 
 " Visual mode
 vnoremap <end> $h
