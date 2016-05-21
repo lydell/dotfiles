@@ -77,6 +77,7 @@ set display=lastline
 set formatoptions-=t
 set formatoptions+=j
 set iskeyword+=$
+set lazyredraw
 set list
 set listchars=tab:▸\ ,extends:>,precedes:<,nbsp:·
 set mousemodel=popup_setpos
