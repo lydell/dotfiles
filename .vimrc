@@ -139,7 +139,7 @@ nnoremap <a-y> :let @*=@"\|let @+=@"<cr>
 " Recursive in order to trigger the above mapping.
 vmap <a-y> y<a-y>
 nmap <c-y> ggyG<a-y>
-inoremap <a-r> <c-o>:set paste<cr><c-r>+<c-o>:set nopaste<cr>
+inoremap <a-r> <c-r><c-o>+
 
 " % in normal mode to jump between start and end tags.
 let tagTemplate = '<\@1<=%s\a[a-zA-Z-]*'
