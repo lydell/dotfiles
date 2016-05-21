@@ -155,7 +155,7 @@ inoremap <cr> <c-g>u<cr>
 
 " Insert mode
 inoremap <c-esc> <c-o>
-inoremap <a-p> <c-r>.<space>=<space><c-r>"
+inoremap <a-p> <c-r>.<space>=<space><c-r><c-o>"
 inoremap <up> <c-o>O
 inoremap <down> <c-o>o
 
