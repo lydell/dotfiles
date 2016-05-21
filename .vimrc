@@ -185,7 +185,31 @@ nnoremap <a-y> :let @*=@"\|let @+=@"<cr>
 " Recursive in order to trigger the above mapping.
 vmap <a-y> y<a-y>
 nmap <c-y> ggyG<a-y>
-inoremap <a-r> <c-r><c-o>+
+inoremap <silent> <a-r> a<bs><c-\><c-o>:call InsertPaste()<cr>
+
+function! InsertPaste()
+  let lineNum = line('.')
+  let colNum = col('.')
+  let currentLine = getline(lineNum)
+  let before = strpart(currentLine, 0, colNum - 1)
+  let after = strpart(currentLine, colNum - 1)
+  let clipboard = split(getreg('+'), '\n')
+  let clipboardLen = len(clipboard)
+  if clipboardLen == 0
+    return
+  elseif clipboardLen == 1
+    let result = before . clipboard[0] . after
+    call setline(lineNum, result)
+    call setpos('.', [0, lineNum, strlen(before . clipboard[0]) + 1, 0])
+  else
+    let first = clipboard[0]
+    let last = clipboard[-1]
+    let middle = clipboard[1:-2]
+    call setline(lineNum, before . first)
+    call append(lineNum, middle + [last . after])
+    call setpos('.', [0, lineNum + clipboardLen - 1, strlen(last) + 1, 0])
+  endif
+endfunction
 
 " % in normal mode to jump between start and end tags.
 let tagTemplate = '<\@1<=%s\a[a-zA-Z-]*'
