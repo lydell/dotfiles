@@ -130,6 +130,10 @@ noremap Q @q
 " vim-vinegar takes `-`
 noremap _ -
 
+" Let i and a pick up indentation from previous/next line if on empty line.
+nnoremap <expr> i getline('.') == '' ? 'ddko' : 'i'
+nnoremap <expr> a getline('.') == '' ? 'ddO' : 'a'
+
 " Ctrl-{a,c,v} stand-in
 nnoremap <a-y> :let @*=@"\|let @+=@"<cr>
 " Recursive in order to trigger the above mapping.
