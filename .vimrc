@@ -123,6 +123,10 @@ nnoremap <c-left> <c-w>h
 nnoremap <c-right> <c-w>l
 noremap k `]
 noremap K `[
+nnoremap p ]p
+nnoremap P ]P
+nnoremap zp p
+nnoremap zP P
 
 " Y like C and D
 nnoremap Y y$
