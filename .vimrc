@@ -224,6 +224,7 @@ map T <Plug>Sneak_T
 
 """ Surround
 let g:surround_no_mappings = 1
+let g:surround_indent = 0
 nmap dh <Plug>Dsurround
 nmap ch <Plug>Csurround
 nmap cH <Plug>CSurround
