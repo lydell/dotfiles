@@ -1,4 +1,6 @@
-function set-abbrs
+function setup
+  fish_vi_key_bindings
+
   abbr c 'xclip -selection clipboard'
   abbr r './run'
 

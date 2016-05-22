@@ -18,7 +18,7 @@
 !/.config/fish/config.fish
 !/.config/fish/fishfile
 !/.config/fish/functions/
-!/.config/fish/functions/set-abbrs.fish
+!/.config/fish/functions/setup.fish
 !/.vimfx/
 !/.vimfx/!(tabs.css)
 !/bin/
