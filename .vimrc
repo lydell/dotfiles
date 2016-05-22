@@ -85,6 +85,7 @@ set mousemodel=popup_setpos
 set nojoinspaces
 set nostartofline
 set nrformats-=octal
+set shell=/bin/bash
 set showcmd
 set splitbelow
 set splitright
