@@ -164,18 +164,20 @@ inoremap <c-esc> <c-o>
 inoremap <a-p> <c-r>.<space>=<space><c-r><c-o>"
 inoremap <up> <c-o>O
 inoremap <down> <c-o>o
-inoremap <silent> <c-space> a<bs><esc>:call SpaceTo()<cr>
+inoremap <silent> <c-space> a<bs><c-\><c-o>:call SpaceTo()<cr>
 
 function! SpaceTo()
+  let wasAtEOL = (col('.') == col('$'))
   let char = nr2char(getchar())
   let previousLine = getline(line('.') - 1)
   let currentIndex = col('.') - 1
   let previousIndex = stridx(previousLine, char, currentIndex + 1)
   if previousIndex > currentIndex
     let diff = previousIndex - currentIndex
-    execute 'normal! ' . diff . "a \<esc>l"
+    let cmd = wasAtEOL ? 'a' : 'i'
+    execute 'normal! ' . (diff + 1) . cmd . " \<esc>l"
   endif
-  let bang = col('.') == col('$') - 1 ? '!' : ''
+  let bang = wasAtEOL ? '!' : ''
   execute 'startinsert' . bang
 endfunction
 
