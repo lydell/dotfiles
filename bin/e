@@ -15,7 +15,7 @@ if test "${last:0:1}" == '.'; then
 fi
 
 if test -f "$localIgnore"; then
-  prefix="$prefix --ignore=$(cat $localIgnore)"
+  prefix="$prefix $(sed 's/^/--ignore=/' "$localIgnore")"
 fi
 
 pt --hidden --global-gitignore --home-ptignore $prefix "$@"
