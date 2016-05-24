@@ -16,8 +16,12 @@
 !/.config/dconf.dump
 !/.config/fish/
 !/.config/fish/config.fish
-!/.config/fish/fishfile
 !/.config/fish/functions/
+!/.config/fish/functions/clear.fish
+!/.config/fish/functions/fish_mode_prompt.fish
+!/.config/fish/functions/fish_prompt.fish
+!/.config/fish/functions/fish_title.fish
+!/.config/fish/functions/__format_time.fish
 !/.config/fish/functions/setup.fish
 !/.vimfx/
 !/.vimfx/!(tabs.css)
