@@ -1,131 +1,124 @@
-# vim: set ft=sh:
+set -g __prompt_green green
+set -g __prompt_red red
+set -g __prompt_yellow yellow
+set -g __prompt_cyan brcyan
+set -g __prompt_grey 93A1A1
 
-# Pure
-# by Rafael Rinaldi
-# https://github.com/rafaelrinaldi/pure
-# MIT License
-# Modified by Simon Lydell:
-# - Use __fish_git_prompt
-# - Different colors
-# - Custom vi mode indicator
+set -g ___fish_git_prompt_color_branch (set_color $__prompt_green)
+set -g ___fish_git_prompt_color_branch_detached (set_color $__prompt_red)
+set -g ___fish_git_prompt_color_merging (set_color $__prompt_yellow)
+set -g ___fish_git_prompt_color_stagedstate (set_color $__prompt_green)
+set -g ___fish_git_prompt_color_dirtystate (set_color $__prompt_red)
+set -g ___fish_git_prompt_color_untrackedfiles (set_color $__prompt_yellow)
+set -g ___fish_git_prompt_color_stashstate (set_color $__prompt_cyan)
+set -g ___fish_git_prompt_color_upstream (set_color $__prompt_cyan)
 
-# Whether or not is a fresh session
-set -g fresh_session 1
+set -g __fish_git_prompt_showdirtystate 1
+set -g __fish_git_prompt_showstashstate 1
+set -g __fish_git_prompt_showuntrackedfiles 1
+set -g __fish_git_prompt_showupstream 1
+set -g __fish_git_prompt_describe_style 1
 
-# Git prompt
-set -g __fish_git_prompt_showdirtystate 1     # *, + (unstaged, staged)
-set -g __fish_git_prompt_showstashstate 1     # $
-set -g __fish_git_prompt_showuntrackedfiles 1 # %
-set -g __fish_git_prompt_describe_style 1     # v1.6.3.2~35
-set -g __fish_git_prompt_showcolorhints 1
+set -g ___fish_git_prompt_char_upstream_ahead ⇡
+set -g ___fish_git_prompt_char_upstream_behind ⇣
+set -g ___fish_git_prompt_char_upstream_diverged ⇡⇣
+set -g ___fish_git_prompt_char_upstream_equal ''
+set -g __fish_git_prompt_char_upstream_prefix ' '
+
+set __prompt_min_duration 6000 # ms
+
+set -g __prompt_excludes (string join '|' \
+  man less more \
+  'git (log|commit|diff|blame|show|rebase .*\b(-i|--interactive)\b)' \
+)
+
+set -g __prompt_newline 0
+
 
 function fish_prompt
-  # Save previous exit code
   set -l exit_code $status
 
-  set -l exclude '^(man|less|more|git (log|commit|diff|blame|show))\b'
+  set -l excluded (string match --regex "^($__prompt_excludes)\b" $history[1])
 
-  # Symbols
-  set -l symbol_prompt "❯"
-  set -l symbol_prompt_default "N"
-  set -l symbol_prompt_insert $symbol_prompt
-  set -l symbol_prompt_replace_one "R"
-  set -l symbol_prompt_visual "V"
-  set -l symbol_git_down_arrow "⇣"
-  set -l symbol_git_up_arrow "⇡"
-  set -l symbol_git_dirty "*"
-
-  # Colors
-  set -l color_red (set_color red)
-  set -l color_green (set_color green)
-  set -l color_yellow (set_color yellow)
-  set -l color_cyan (set_color cyan)
-  set -l color_gray (set_color 93A1A1)
-  set -l color_normal (set_color normal)
-
-  # Set default color symbol to green meaning it's all good!
-  set -l color_symbol $color_green
-
-  # Template
-
-  set -l current_folder (string replace $HOME "~" $PWD)
-  set -l git_arrows ""
-  set -l command_duration ""
-  set -l prompt_char $symbol_prompt
-  set -l prompt ""
-
-  # Do not add a line break to a brand new session
-  if test $fresh_session -eq 0
-    set prompt "\n"
+  set -l failed 0
+  if test "$exit_code" -ne 0 -a -z "$excluded"
+    set failed 1
   end
 
-  # Format current folder on prompt output
-  set prompt "$prompt$color_gray$current_folder$color_normal "
-
-  set excluded (string match --regex $exclude $history[1])
-  if test -z "$excluded"
-    # Handle previous failed command
-    if test $exit_code -ne 0
-      # Symbol color is red when previous command fails
-      set color_symbol $color_red
-    end
-
-    set command_duration (__format_time $CMD_DURATION)
-    set prompt "$prompt$color_yellow$command_duration$color_normal"
+  set -l mode insert
+  if test -n "$fish_bind_mode"
+    set mode $fish_bind_mode
   end
 
-  # Exit with code 1 if git is not available
-  if not which git >/dev/null
-    return 1
+  set -l newline ''
+  if test "$__prompt_newline" -ne 0
+    set newline '\n'
+  else
+    set __prompt_newline 1
   end
 
-  # Check if is on a Git repository
-  set -l is_git_repository (command git rev-parse --is-inside-work-tree ^/dev/null)
+  set -l dir (string replace $HOME '~' $PWD)
 
-  if test -n "$is_git_repository"
-    # Check if there is an upstream configured
-    command git rev-parse --abbrev-ref '@{upstream}' >/dev/null ^&1; and set -l has_upstream
-    if set -q has_upstream
-      set -l git_status (command git rev-list --left-right --count 'HEAD...@{upstream}' | sed "s/[[:blank:]]/ /" ^/dev/null)
-
-      # Resolve Git arrows by treating `git_status` as an array
-      set -l git_arrow_left (command echo $git_status | cut -c 1 ^/dev/null)
-      set -l git_arrow_right (command echo $git_status | cut -c 3 ^/dev/null)
-
-      # If arrow is not "0", it means it's dirty
-      if test $git_arrow_left -ne "0"
-        set git_arrows $symbol_git_up_arrow
-      end
-
-      if test $git_arrow_right -ne "0"
-        set git_arrows $git_arrows$symbol_git_down_arrow
-      end
-    end
-
-    # Format Git prompt output
-    set -l git_prompt (string trim --chars ' ()' (__fish_git_prompt))
-    set prompt "$prompt$git_prompt $color_cyan$git_arrows$color_normal"
+  set -l duration ''
+  if test -z "$excluded" -a "$CMD_DURATION" -gt "$__prompt_min_duration"
+    set duration (__prompt_format_time $CMD_DURATION)
   end
 
-  if test "$fish_key_bindings" = "fish_vi_key_bindings"
-    switch $fish_bind_mode
-      case default
-        set color_symbol (set_color --bold --background red white)
-        set prompt_char $symbol_prompt_default
-      case insert
-        set prompt_char $symbol_prompt_insert
-      case replace-one
-        set color_symbol (set_color --bold --background green white)
-        set prompt_char $symbol_prompt_replace_one
-      case visual
-        set color_symbol (set_color --bold --background magenta white)
-        set prompt_char $symbol_prompt_visual
-    end
-  end
+  set -l git (string trim --chars ' ()' (__fish_git_prompt))
 
-  set prompt $prompt "\n$color_symbol$prompt_char$color_normal "
+  set -l char (__prompt_char $mode $failed)
+
+  set -l prompt \
+    $newline \
+    (__prompt_part $dir $__prompt_grey) \
+    (__prompt_part $duration $__prompt_yellow) \
+    (__prompt_part $git) \
+    "\n$char "
 
   echo -e -s $prompt
+end
 
-  set fresh_session 0
+
+function __prompt_char
+  set -l mode $argv[1]
+  set -l failed $argv[2]
+  set -l char
+  set -l color normal
+  switch $mode
+    case insert
+      set char ❯
+      if test "$failed" -ne 0
+        set color $__prompt_red
+      else
+        set color $__prompt_green
+      end
+    case default
+      set char N
+      set color --bold --background $__prompt_red white
+    case replace-one
+      set char R
+      set color --bold --background $__prompt_yellow white
+    case visual
+      set char V
+      set color --bold --background $__prompt_cyan white
+  end
+  echo -s (set_color $color) $char (set_color normal)
+end
+
+
+function __prompt_format_time
+  set -l milliseconds $argv[1]
+  set -l formatted (date --utc --date @(math "$milliseconds / 1000") "+%kh %Mm %Ss")
+  string replace --regex --all '^[0\D\s]+|0(?=\d)' '' $formatted
+end
+
+
+function __prompt_part
+  if test -n $argv[1]
+    set -l color
+    if test (count $argv) -gt 1
+      set color (set_color $argv[2..-1])
+    end
+    echo -s $color $argv[1] ' '
+  end
 end
