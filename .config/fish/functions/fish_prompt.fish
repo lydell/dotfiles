@@ -23,6 +23,8 @@ function fish_prompt
   # Save previous exit code
   set -l exit_code $status
 
+  set -l exclude '^(man|less|more|git (log|commit|diff|blame|show))\b'
+
   # Symbols
   set -l symbol_prompt "❯"
   set -l symbol_prompt_default "N"
@@ -60,15 +62,16 @@ function fish_prompt
   # Format current folder on prompt output
   set prompt "$prompt$color_gray$current_folder$color_normal "
 
-  # Handle previous failed command
-  if test $exit_code -ne 0
-    # Symbol color is red when previous command fails
-    set color_symbol $color_red
+  set excluded (string match --regex $exclude $history[1])
+  if test $fresh_session -eq 0 -a "$excluded" = ''
+    # Handle previous failed command
+    if test $exit_code -ne 0
+      # Symbol color is red when previous command fails
+      set color_symbol $color_red
+    end
 
-    # Prompt failed command execution duration
     set command_duration (__format_time $CMD_DURATION)
-
-    set prompt $prompt "$color_yellow$command_duration$color_normal"
+    set prompt "$prompt$color_yellow$command_duration$color_normal"
   end
 
   # Exit with code 1 if git is not available
