@@ -335,7 +335,8 @@ let g:indexed_search_mappings = 0
 " whenever `filetype indent` is changed.
 let g:did_indent_on = 0
 
-" Mapped by autocommands below.
+cnoremap <silent><expr> <cr> &filetype == 'dirvish' ? '<cr>:call DirvishReload()<cr>' : '<cr>'
+
 function! DirvishReload()
   let currentLine = line('.')
   execute 'Dirvish' '%'
