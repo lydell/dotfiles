@@ -63,7 +63,7 @@ function fish_prompt
   set prompt "$prompt$color_gray$current_folder$color_normal "
 
   set excluded (string match --regex $exclude $history[1])
-  if test $fresh_session -eq 0 -a "$excluded" = ''
+  if test -z "$excluded"
     # Handle previous failed command
     if test $exit_code -ne 0
       # Symbol color is red when previous command fails
