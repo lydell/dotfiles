@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+cmd="$1"
+src="$2"
+arg="$3"
+
+optExt='\(\.[^.]\+\)\?$'
+
+if test $# -lt 3; then
+  name="$(basename "$0")"
+  echo "Usage: $name CMD SRC ARG"
+  echo ''
+  echo 'Runs: $ CMD SRC SRC+ARG'
+  echo ''
+  echo 'SRC+ARG=... read the source code :)'
+  exit 1
+fi
+
+slash="$(echo "$arg" | grep -m 1 -F '/')"
+if test "$slash" = ''; then
+  if test "${arg:0:1}" == '.'; then
+    if test "${arg:0:2}" == '..'; then
+      dest="$(dirname "$src")/${arg:1}"
+    else
+      dest="$(echo "$src" | sed "s/$optExt/$arg/")"
+    fi
+  else
+    dot="$(echo "$arg" | grep -m 1 -F '.')"
+    if test "$dot" = ''; then
+      dest="$(dirname "$src")/$arg$(basename "$src" | grep -m 1 -o "$optExt")"
+    else
+      dest="$(dirname "$src")/$(echo "$arg" | sed 's/\.\?$//')"
+    fi
+  fi
+else
+  if test "${arg:0:1}" == '/'; then
+    echo 'ARG must not start with a /'
+    exit 1
+  else
+    dest="$(dirname "$src")/$(echo "$arg" | sed 's|/\?$|/|')$(basename "$src")"
+  fi
+fi
+
+shift 3
+"$cmd" "$src" "$dest" "$@"
