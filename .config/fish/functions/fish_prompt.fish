@@ -38,11 +38,10 @@ set -g __prompt_newline 0
 
 function fish_prompt
   set -l exit_code $status
-
-  set -l excluded (string match --regex "^($__prompt_excludes)\b" "$history[1]")
+  set -l cmd "$history[1]"
 
   set -l failed 0
-  if test "$exit_code" -ne 0 -a -z "$excluded"
+  if test "$exit_code" -ne 0; and not __prompt_excluded $cmd
     set failed 1
   end
 
@@ -61,7 +60,7 @@ function fish_prompt
   set -l dir (string replace $HOME '~' $PWD)
 
   set -l duration ''
-  if test -z "$excluded" -a "$CMD_DURATION" -gt "$__prompt_min_duration"
+  if test "$CMD_DURATION" -gt "$__prompt_min_duration"; and not __prompt_excluded $cmd
     set duration (__prompt_format_time $CMD_DURATION)
   end
 
@@ -112,6 +111,12 @@ function __prompt_format_time
   set -l seconds (math "$milliseconds / 1000")
   set -l formatted (date --utc --date @$seconds "+%-kh %-Mm %-Ss")
   string replace --regex '^[0\D\s]+' '' $formatted
+end
+
+
+function __prompt_excluded
+  set -l cmd $argv[1]
+  string match --quiet --regex "^($__prompt_excludes)\b" $cmd
 end
 
 
