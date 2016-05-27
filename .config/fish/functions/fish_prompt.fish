@@ -17,7 +17,7 @@ set -g __fish_git_prompt_showdirtystate 1
 set -g __fish_git_prompt_showstashstate 1
 set -g __fish_git_prompt_showuntrackedfiles 1
 set -g __fish_git_prompt_showupstream 1
-set -g __fish_git_prompt_describe_style 1
+set -g __fish_git_prompt_describe_style contains
 
 set -g ___fish_git_prompt_char_upstream_ahead ⇡
 set -g ___fish_git_prompt_char_upstream_behind ⇣
@@ -38,7 +38,7 @@ set -g __prompt_newline 0
 function fish_prompt
   set -l exit_code $status
 
-  set -l excluded (string match --regex "^($__prompt_excludes)\b" $history[1])
+  set -l excluded (string match --regex "^($__prompt_excludes)\b" "$history[1]")
 
   set -l failed 0
   if test "$exit_code" -ne 0 -a -z "$excluded"
@@ -82,7 +82,7 @@ end
 function __prompt_char
   set -l mode $argv[1]
   set -l failed $argv[2]
-  set -l char
+  set -l char ''
   set -l color normal
   switch $mode
     case insert
@@ -108,8 +108,9 @@ end
 
 function __prompt_format_time
   set -l milliseconds $argv[1]
-  set -l formatted (date --utc --date @(math "$milliseconds / 1000") "+%kh %Mm %Ss")
-  string replace --regex --all '^[0\D\s]+|0(?=\d)' '' $formatted
+  set -l seconds (math "$milliseconds / 1000")
+  set -l formatted (date --utc --date @$seconds "+%-kh %-Mm %-Ss")
+  string replace --regex '^[0\D\s]+' '' $formatted
 end
 
 
