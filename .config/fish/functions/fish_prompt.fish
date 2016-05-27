@@ -29,7 +29,8 @@ set __prompt_min_duration 6000 # ms
 
 set -g __prompt_excludes (string join '|' \
   man less more \
-  'git (log|commit|diff|blame|show|rebase .*\b(-i|--interactive)\b)' \
+  'git (blame|commit|diff|log|show)' \
+  'git .*(-i|--interactive|-p|--patch)'
 )
 
 set -g __prompt_newline 0
