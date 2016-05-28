@@ -34,8 +34,7 @@ if test "$slash" = ''; then
   fi
 else
   if test "${arg:0:1}" == '/'; then
-    echo 'ARG must not start with a /'
-    exit 1
+    dest="$(dirname "$src")/$(basename "$src" | sed "s|$optExt|${arg:1}\0|")"
   else
     dest="$(dirname "$src")/$(echo "$arg" | sed 's|/\?$|/|')$(basename "$src")"
   fi
