@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+quality=70
+if (echo "$1" | grep --quiet '^[0-9]\+$'); then
+  quality="$1"
+  shift
+fi
+
+if test $# -eq 0; then
+  echo "Usage: $(basename "$0") [QUALITY] FILES..."
+  exit 1
+fi
+
+echo "Using $quality% quality."
+
+log=''
+
+for file in "$@"; do
+  sizeBefore="$(du "$file" | cut -f 1)"
+  sizeBeforeHuman="$(du -h "$file" | cut -f 1)"
+  unknown=0
+
+  echo "### Optimizing: $file"
+  case "$file" in
+    *.png)
+      optipng -strip all -o7 "$file"
+      ;;
+    *.jpg|*.jpeg)
+      convert -strip -interlace Plane -sampling-factor 4:2:0 \
+        -quality "$quality%" \
+        "$file" "$file"
+      ;;
+    *.svg)
+      svgo "$file"
+      ;;
+    *)
+      unknown=1
+  esac
+
+  if test "$unknown" -eq 0; then
+    sizeAfter="$(du "$file" | cut -f 1)"
+    sizeAfterHuman="$(du -h "$file" | cut -f 1)"
+    percentage="$(expr 100 \* \( "$sizeBefore" - "$sizeAfter" \) / "$sizeBefore")"
+    log+="$file\t$sizeBeforeHuman → $sizeAfterHuman\t-$percentage%\n"
+  else
+    log+="$file\tUnsupported file extension\n"
+  fi
+done
+
+echo "### Results:"
+echo -e "${log::-2}"

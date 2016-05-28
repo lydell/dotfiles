@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+if test $# -ne 1; then
+  echo "Usage: $(basename "$0") JPEG_FILE"
+  exit 1
+fi
+
+file="$1"
+dir="${file}_qualities"
+log=''
+
+mkdir "$dir" 2>/dev/null
+
+for quality in {10..100..10}; do
+  echo -ne "$quality%\r"
+  newFile="$dir/$quality.jpg"
+  cp "$file" "$newFile"
+  log+="$(imgoptimize "$quality" "$newFile" | tail -n 1)\n"
+done
+
+echo -e "${log::-2}"
+eog "$dir"
