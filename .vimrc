@@ -169,8 +169,16 @@ noremap Q @q
 noremap _ -
 
 " Let i and a pick up indentation from previous/next line if on empty line.
-nnoremap <expr> i getline('.') == '' && line('.') != 1 ? 'ddko' : 'i'
-nnoremap <expr> a getline('.') == '' && line('.') != line('$') ? 'ddO' : 'a'
+nnoremap <silent><expr> i getline('.') == '' ? ':call EmptyLineInsert(0)<cr>' : 'i'
+nnoremap <silent><expr> a getline('.') == '' ? ':call EmptyLineInsert(1)<cr>' : 'a'
+
+function! EmptyLineInsert(forward)
+  let lineNum = line('.')
+  let referenceLineNum = a:forward ? nextnonblank(lineNum) : prevnonblank(lineNum)
+  let whitespace = matchstr(getline(referenceLineNum), '^\s*')
+  call setline(lineNum, whitespace)
+  startinsert!
+endfunction
 
 " Ctrl-{a,c,v} stand-in
 nnoremap <a-y> :let @*=@"\|let @+=@"<cr>
