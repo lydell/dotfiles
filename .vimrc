@@ -125,10 +125,41 @@ nnoremap <c-left> <c-w>h
 nnoremap <c-right> <c-w>l
 noremap k `]
 noremap K `[
-nnoremap p ]p
-nnoremap P ]P
+nnoremap <silent> p :call Paste(1)<cr>
+nnoremap <silent> P :call Paste(0)<cr>
 nnoremap zp p
 nnoremap zP P
+
+function! Paste(forward)
+  let lineNum = line('.')
+  let numLines = line('$')
+  let empty = getline(lineNum) == ''
+  if empty
+    let referenceLineNum = a:forward ? prevnonblank(lineNum) : nextnonblank(lineNum)
+    let whitespace = matchstr(getline(referenceLineNum), '^\s*')
+    call setline(lineNum, whitespace)
+    normal! $
+  endif
+
+  let pasteChar = a:forward ? 'p' : 'P'
+  execute 'normal! "' . v:register . ']' . pasteChar
+
+  if empty
+    let newNumLines = line('$')
+    let newLineNum = line('.')
+    if newLineNum == lineNum && newNumLines == numLines
+      let whitespaceLen = strlen(whitespace)
+      if !a:forward && whitespaceLen > 0
+        let result = getline(lineNum)
+        let pasted = strpart(result, whitespaceLen - 1, strlen(result) - whitespaceLen)
+        call setline(lineNum, whitespace . pasted)
+        normal! $
+      endif
+    else
+      call setline(a:forward ? lineNum : newNumLines - numLines + lineNum, '')
+    endif
+  endif
+endfunction
 
 " Y like C and D
 nnoremap Y y$
