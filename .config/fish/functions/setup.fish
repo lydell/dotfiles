@@ -11,4 +11,7 @@ function setup
   abbr gci 'git commit'
   abbr gco 'git checkout'
   abbr gst 'git status'
+  abbr glol 'git log --all --graph --decorate --oneline'
+  abbr glols 'git log --all --graph --decorate --oneline --simplify-by-decoration'
+  abbr gamd 'git commit -a --amend --no-edit'
 end
