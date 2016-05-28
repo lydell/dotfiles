@@ -28,7 +28,7 @@ set -g __fish_git_prompt_char_upstream_prefix ' '
 set __prompt_min_duration 6000 # ms
 
 set -g __prompt_excludes (string join '|' \
-  man less more \
+  man less more bash sh \
   'git (blame|commit|diff|log|show)' \
   'git .*(-i|--interactive|-p|--patch)'
 )
