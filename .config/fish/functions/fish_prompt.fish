@@ -64,7 +64,7 @@ function fish_prompt
     set duration (__prompt_format_time $CMD_DURATION)
   end
 
-  set -l git (string trim --chars ' ()' (__fish_git_prompt))
+  set -l git (string replace --all --regex '^\s|[()]' '' (__fish_git_prompt))
 
   set -l char (__prompt_char $mode $failed)
 
