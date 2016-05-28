@@ -268,6 +268,7 @@ map T <Plug>Sneak_T
 let g:surround_no_mappings = 1
 let g:surround_indent = 0
 nmap dh <Plug>Dsurround
+nnoremap <silent> dH :call DSurround()<cr>
 nmap ch <Plug>Csurround
 nmap cH <Plug>CSurround
 nmap h  <Plug>Ysurround
@@ -283,6 +284,14 @@ imap <c-q> <Plug>ISurround<
 inoremap <a-u> {}<left><cr><cr><up><tab>
 inoremap <a-c> {<esc>jo}<esc>k>>
 inoremap <c-cr> <cr><c-o>O<tab>
+
+function! DSurround()
+  let startLine = line("'[")
+  let endLine = line("']")
+  normal! `[<`]
+  execute endLine . 'delete _'
+  execute startLine . 'delete _'
+endfunction
 
 
 """ CamelCaseMotion
