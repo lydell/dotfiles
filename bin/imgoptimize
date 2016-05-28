@@ -26,8 +26,15 @@ for file in "$@"; do
       optipng -strip all -o7 "$file"
       ;;
     *.jpg|*.jpeg)
+      num="$(echo "$file" | grep -m 1 -o '\.[0-9]\+\.')"
+      if test -n "$num"; then
+        fileQuality="${num:1:-1}"
+        echo "Using file-specific $fileQuality% quality."
+      else
+        fileQuality="$quality"
+      fi
       convert -strip -interlace Plane -sampling-factor 4:2:0 \
-        -quality "$quality%" \
+        -quality "$fileQuality%" \
         "$file" "$file"
       ;;
     *.svg)
@@ -41,7 +48,8 @@ for file in "$@"; do
     sizeAfter="$(du "$file" | cut -f 1)"
     sizeAfterHuman="$(du -h "$file" | cut -f 1)"
     percentage="$(expr 100 \* \( "$sizeBefore" - "$sizeAfter" \) / "$sizeBefore")"
-    log+="$file\t$sizeBeforeHuman → $sizeAfterHuman\t-$percentage%\n"
+    change="$(echo "-$percentage%" | sed 's/^--/+/')"
+    log+="$file\t$sizeBeforeHuman → $sizeAfterHuman\t$change\n"
   else
     log+="$file\tUnsupported file extension\n"
   fi
