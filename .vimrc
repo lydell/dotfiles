@@ -134,7 +134,7 @@ nnoremap zP P
 nnoremap Y y$
 " qq to record, Q to replay
 noremap Q @q
-" vim-vinegar takes `-`
+" vim-dirvish takes `-`
 noremap _ -
 
 " Let i and a pick up indentation from previous/next line if on empty line.
