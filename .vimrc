@@ -201,7 +201,7 @@ inoremap <silent> <c-space> a<bs><c-\><c-o>:call SpaceTo()<cr>
 function! SpaceTo()
   let wasAtEOL = (col('.') == col('$'))
   let char = nr2char(getchar())
-  let previousLine = getline(line('.') - 1)
+  let previousLine = getline(prevnonblank(line('.') - 1))
   let currentIndex = col('.') - 1
   let previousIndex = stridx(previousLine, char, currentIndex + 1)
   if previousIndex > currentIndex
