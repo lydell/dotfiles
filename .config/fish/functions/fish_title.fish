@@ -1,10 +1,8 @@
 function fish_title
   set -l command $argv[1]
   if test -z "$command"
-    set -l dir (string replace $HOME '~' $PWD)
-    echo "$dir – $_"
+    string replace $HOME '~' $PWD
   else
-    set -l basename (basename $PWD)
-    echo "$basename: $command – $_"
+    echo -s (basename $PWD) ": $command"
   end
 end
