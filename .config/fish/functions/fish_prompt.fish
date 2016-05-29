@@ -1,8 +1,9 @@
+set -g __prompt_cyan 00afff
 set -g __prompt_green green
-set -g __prompt_red red
-set -g __prompt_yellow yellow
-set -g __prompt_cyan brcyan
 set -g __prompt_grey 93A1A1
+set -g __prompt_red red
+set -g __prompt_white fff
+set -g __prompt_yellow yellow
 
 set -g ___fish_git_prompt_color_branch (set_color $__prompt_green)
 set -g ___fish_git_prompt_color_branch_detached (set_color $__prompt_red)
@@ -94,13 +95,13 @@ function __prompt_char
       end
     case default
       set char N
-      set color --bold --background $__prompt_red white
+      set color --bold --background $__prompt_red $__prompt_white
     case replace-one
       set char R
-      set color --bold --background $__prompt_yellow white
+      set color --bold --background $__prompt_yellow $__prompt_white
     case visual
       set char V
-      set color --bold --background $__prompt_cyan white
+      set color --bold --background $__prompt_cyan $__prompt_white
   end
   echo -s (set_color $color) $char (set_color normal)
 end
