@@ -3,8 +3,8 @@
 –*
 
 .cache/
+.stuff/
 .venv/
-stuff/
 
 .ptignore
 run
