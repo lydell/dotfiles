@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-quality=70
+quality=100
 if (echo "$1" | grep --quiet '^[0-9]\+$'); then
   quality="$1"
   shift
