@@ -21,10 +21,10 @@ escapeRegex() {
 }
 
 pattern="^$(escapeRegex "$label")[^\t]*\t$(escapeRegex "$user")[^\t]*\t[^\t]+$"
-flags='--perl-regexp --ignore-case --max-count=1'
-entry=$($decrypt "$file" 2>/dev/null | grep $flags "$pattern") || exit $?
-user=$(echo "$entry" | cut --fields 2)
-pass=$(echo "$entry" | cut --fields 3)
+flags=(--perl-regexp --ignore-case --max-count=1)
+entry="$($decrypt "$file" 2>/dev/null | grep "${flags[@]}" "$pattern")" || exit $?
+user="$(echo "$entry" | cut --fields 2)"
+pass="$(echo "$entry" | cut --fields 3)"
 
 case "$print" in
   '')

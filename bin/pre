@@ -11,8 +11,8 @@ escape() {
   echo "$1" | sed 's#/#\\/#g'
 }
 
-regex=$(escape "$1")
-replacement=$(escape "$2")
+regex="$(escape "$1")"
+replacement="$(escape "$2")"
 shift 2
 
 reCase=''
@@ -23,6 +23,10 @@ if test "$1" == 'i'; then
   shift
 fi
 
-files=$(re --files-with-matches $reCase "$regex" "$@") || exit $?
+files="$(re --files-with-matches "$reCase" "$regex" "$@")"
+if test -z "$files"; then
+  exit 1
+fi
+
 echo "$files"
 echo "$files" | xargs -d '\n' perl -i -pe "s/$regex/$replacement/g$perlCase" --
