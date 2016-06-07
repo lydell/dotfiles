@@ -16,7 +16,7 @@ window_num="$(echo "$windows" | grep -n -m 1 "^$window_id\s" | cut -d ':' -f 1)"
 
 new_window_id=''
 if test "$window_num" != ''; then
-  new_window_num="$(expr "$window_num" + 1)"
+  new_window_num="$((window_num + 1))"
   new_window_id="$(echo "$windows" | sed "${new_window_num}q;d" | cut -d ' ' -f 1)"
 fi
 if test "$new_window_id" == ''; then

@@ -45,7 +45,7 @@ for file in "$@"; do
   if test "$unknown" -eq 0; then
     sizeAfter="$(du "$file" | cut -f 1)"
     sizeAfterHuman="$(du -h "$file" | cut -f 1)"
-    percentage="$(expr 100 \* \( "$sizeBefore" - "$sizeAfter" \) / "$sizeBefore")"
+    percentage="$((100 * (sizeBefore - sizeAfter) / sizeBefore))"
     change="$(echo "-$percentage%" | sed 's/^--/+/')"
     log+="$file\t$sizeBeforeHuman → $sizeAfterHuman\t$change\n"
   else

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-name="$(basename $PWD)"
+name="$(basename "$PWD")"
 version="v$1"
 message="$name $version"
 git commit -am "$message" && git tag "$version" -am "$message"
