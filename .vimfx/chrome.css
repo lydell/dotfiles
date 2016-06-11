@@ -1,26 +1,8 @@
 @-moz-document url('chrome://browser/content/browser.xul') {
-  /* S4E URLbar Progress - Native style */
-  #urlbar-progress-alt .progress-bar {
-    -moz-appearance: progresschunk !important;
-  }
-  #urlbar-progress-alt {
-    height: 25px !important; /* Fix height when the URLbar is focused. */
-  }
-  .urlbar-progress-layer {
-    margin: -1px !important;
-  }
-
-  /* Throbber in URLbar */
-  #status4evar-throbber-widget[busy] +
-      #urlbar-container :-moz-any(#page-proxy-favicon, #identity-icon) {
-    list-style-image: url('chrome://browser/skin/tabbrowser/connecting.png');
-  }
-  #status4evar-throbber-widget[progress] +
-      #urlbar-container :-moz-any(#page-proxy-favicon, #identity-icon) {
-    list-style-image: url('chrome://browser/skin/tabbrowser/loading.png');
-  }
-  #status4evar-throbber-widget {
-    display: none !important;
+  /* Turn the URL bar stop button into a throbber */
+  #urlbar-stop-button:not(:hover) > image {
+    list-style-image: url("chrome://global/skin/icons/loading.png") !important;
+    -moz-image-region: auto !important;
   }
 
 
@@ -40,13 +22,8 @@
   /* DOM Inspector - DOM view - 3 unnecessary lines */
   #olNodeInfo > rows,
 
-  /* URLbar Dropmarker */
+  /* URL bar Dropmarker */
   #urlbar dropmarker,
-
-  /* URLbar Stop/Reload/Go button */
-  #urlbar-go-button,
-  #urlbar-reload-button,
-  #urlbar-stop-button,
 
   #dummy:not(#dummy) {
     display: none !important;
