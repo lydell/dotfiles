@@ -352,6 +352,11 @@ noremap x :SplitjoinSplit<cr>
 noremap X :SplitjoinJoin<cr>
 
 
+""" Elm
+let g:elm_setup_keybindings = 0
+let g:elm_syntastic_show_warnings = 1
+
+
 """ fzf
 map <leader>n :FZF<cr>
 map <leader>? :FZF<space>
@@ -381,6 +386,9 @@ let g:ycm_key_list_previous_completion = ['<s-tab>']
 let g:ycm_key_invoke_completion = '<c-tab>'
 let g:ycm_key_detailed_diagnostics = ''
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_semantic_triggers = {
+  \   'elm' : ['.'],
+  \ }
 nnoremap <silent> <leader>g :YcmCompleter GoTo<cr>
 
 
@@ -450,6 +458,7 @@ autocmd FileType help setlocal number relativenumber
 autocmd FileType htmldjango setlocal commentstring={#\ %s\ #}
 autocmd FileType dirvish nnoremap <buffer><silent> R :call DirvishReload()<cr>
 autocmd FileType dirvish nnoremap <buffer> s :<space><c-r><c-a><home>!
+autocmd FileType elm nnoremap <leader>f :ElmFormat<cr>
 augroup END
 
 autocmd! User Oblique
