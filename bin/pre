@@ -15,15 +15,15 @@ regex="$(escape "$1")"
 replacement="$(escape "$2")"
 shift 2
 
-reCase=''
+reCase=()
 perlCase=''
 if test "$1" == 'i'; then
-  reCase='--ignore-case'
+  reCase=('--ignore-case')
   perlCase='i'
   shift
 fi
 
-files="$(re --files-with-matches "$reCase" "$regex" "$@")"
+files="$(re --files-with-matches "${reCase[@]}" "$regex" "$@")"
 if test -z "$files"; then
   exit 1
 fi
