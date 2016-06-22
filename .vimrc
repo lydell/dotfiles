@@ -14,6 +14,7 @@ Plug 'ap/vim-you-keep-using-that-word'
 Plug 'bkad/CamelCaseMotion'
 Plug 'henrik/vim-indexed-search'
 Plug 'elmcast/elm-vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'jamessan/vim-gnupg'
 Plug 'tpope/vim-capslock'
 Plug 'tpope/vim-characterize'
@@ -452,7 +453,7 @@ command! -nargs=? FontSize :set guifont=monospace\ <args>
 augroup vimrc
 autocmd!
 autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
-autocmd BufNewFile,BufFilePre,BufRead *.html setlocal filetype=htmldjango
+" autocmd BufNewFile,BufFilePre,BufRead *.html setlocal filetype=htmldjango
 autocmd BufNewFile,BufFilePre,BufRead *.jsm setlocal filetype=javascript
 autocmd FileType help setlocal number relativenumber
 autocmd FileType htmldjango setlocal commentstring={#\ %s\ #}
