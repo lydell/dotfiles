@@ -221,6 +221,10 @@ nnoremap <expr> % IsAroundCursor(printf(tagTemplate, ''))
   \ ? 'vat<esc>h'
   \ : IsAroundCursor(printf(tagTemplate, '/'))
   \ ? 'vato<esc>l'
+  \ : IsAroundCursor('<')
+  \ ? 'f>'
+  \ : IsAroundCursor('>')
+  \ ? 'F<'
   \ : '%'
 
 " Better undo
