@@ -460,7 +460,7 @@ autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
 " autocmd BufNewFile,BufFilePre,BufRead *.html setlocal filetype=htmldjango
 autocmd BufNewFile,BufFilePre,BufRead *.jsm setlocal filetype=javascript
 autocmd FileType help setlocal number relativenumber
-autocmd FileType htmldjango setlocal commentstring={#\ %s\ #}
+autocmd FileType jinja setlocal commentstring={#\ %s\ #}
 autocmd FileType dirvish nnoremap <buffer><silent> R :call DirvishReload()<cr>
 autocmd FileType dirvish nnoremap <buffer> s :<space><c-r><c-a><home>!
 autocmd FileType elm nnoremap <leader>f :ElmFormat<cr>
