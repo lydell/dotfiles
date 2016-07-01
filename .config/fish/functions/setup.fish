@@ -1,6 +1,7 @@
 function setup
   fish_vi_key_bindings
 
+  abbr dc 'docker-compose'
   abbr c 'xclip -selection clipboard'
   abbr r './run'
 
