@@ -6,9 +6,7 @@ function setup
   abbr r './run'
 
   abbr s 'git status'
-  set -l diff 'diff-so-fancy | less --tabs=4 -RFX --pattern=\'^(Date|added|deleted|modified): \''
-  abbr d "git diff --color | $diff"
-  abbr D $diff
+  abbr d 'git diff'
   abbr gco 'git commit'
   abbr gbr 'git branch'
   abbr gci 'git commit'
