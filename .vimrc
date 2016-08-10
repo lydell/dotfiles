@@ -417,6 +417,8 @@ let g:polyglot_disabled = ['elm']
 
 let g:indexed_search_mappings = 0
 
+let g:lengthmatters_highlight_one_column = 1
+
 " Prevent vim-sleuth from running `filetype indent on`. NOTE: This must be done
 " _after_ `filetype indent off`, since Vim sets/unsets this global variable
 " whenever `filetype indent` is changed.
