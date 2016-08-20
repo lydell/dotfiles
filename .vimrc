@@ -377,6 +377,8 @@ function! FZF()
     \ &columns, &lines/2, getwinposx(), getwinposy())
 endfunction
 let g:Fzf_launcher = function('FZF')
+" fzf occasionally hangs if `$SHELL` is `/usr/bin/fish`.
+let $SHELL = '/bin/bash'
 
 
 """ YCM
