@@ -56,22 +56,6 @@ vimfx.addCommand({
 })
 
 vimfx.addCommand({
-  name: 'noscript_click_toolbar_button',
-  description: 'NoScript',
-}, ({vim}) => {
-  let button = vim.window.document.getElementById('noscript-tbb')
-  if (!button) return
-  button.click()
-  let menuitems = button.querySelectorAll('menuitem')
-  Array.forEach(menuitems, menuitem => {
-    let match = /^(\S+(?:\s+\S+)*)\s+(\S+\.\S+)(?:\s+(\S+))?/.exec(menuitem.label)
-    if (match) {
-      menuitem.label = `${match[2]} – ${match[1]} ${match[3] || ''}`.trim()
-    }
-  })
-})
-
-vimfx.addCommand({
   name: 'youtube_view_video',
   description: 'View YouTube video',
 }, ({vim}) => {
@@ -128,7 +112,6 @@ map('l',  'click_browser_element')
 
 map('I',  'enter_mode_ignore')
 map('i',  'quote')
-map('f',  'noscript_click_toolbar_button', true)
 map('gv', 'youtube_view_video', true)
 
 map_caret('<left>',  'move_left')
