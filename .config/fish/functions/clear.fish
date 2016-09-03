@@ -1,4 +1,4 @@
 function clear
   command clear
-  set -g __prompt_newline 0
+  set -g __prompt_at_top 1
 end

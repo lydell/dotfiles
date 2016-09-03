@@ -34,15 +34,20 @@ set -g __prompt_excludes (string join '|' \
   'git .*(-i|--interactive|-p|--patch)'
 )
 
-set -g __prompt_newline 0
+set -g __prompt_at_top 1
 
 
 function fish_prompt
   set -l exit_code $status
   set -l cmd "$history[1]"
 
+  set -l excluded 0
+  if test "$__prompt_at_top" -eq 1; or __prompt_excluded $cmd
+    set excluded 1
+  end
+
   set -l failed 0
-  if test "$exit_code" -ne 0; and not __prompt_excluded $cmd
+  if test "$exit_code" -ne 0 -a "$excluded" -ne 1
     set failed 1
   end
 
@@ -52,16 +57,14 @@ function fish_prompt
   end
 
   set -l newline ''
-  if test "$__prompt_newline" -ne 0
+  if test "$__prompt_at_top" -ne 1
     set newline '\n'
-  else
-    set __prompt_newline 1
   end
 
   set -l dir (string replace $HOME '~' $PWD)
 
   set -l duration ''
-  if test "$CMD_DURATION" -gt "$__prompt_min_duration"; and not __prompt_excluded $cmd
+  if test "$CMD_DURATION" -gt "$__prompt_min_duration" -a "$excluded" -ne 1
     set duration (__prompt_format_time $CMD_DURATION)
   end
 
@@ -77,6 +80,7 @@ function fish_prompt
     "\n$char "
 
   echo -e -s $prompt
+  set __prompt_at_top 0
 end
 
 
