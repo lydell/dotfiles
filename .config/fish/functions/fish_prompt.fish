@@ -84,9 +84,7 @@ function fish_prompt
 end
 
 
-function __prompt_char
-  set -l mode $argv[1]
-  set -l failed $argv[2]
+function __prompt_char -a mode failed
   set -l char ''
   set -l color normal
   switch $mode
@@ -111,26 +109,24 @@ function __prompt_char
 end
 
 
-function __prompt_format_time
-  set -l milliseconds $argv[1]
+function __prompt_format_time -a milliseconds
   set -l seconds (math "$milliseconds / 1000")
   set -l formatted (date --utc --date @$seconds "+%-kh %-Mm %-Ss")
   string replace --regex '^[0\D\s]+' '' $formatted
 end
 
 
-function __prompt_excluded
-  set -l cmd $argv[1]
+function __prompt_excluded -a cmd
   string match --quiet --regex "^($__prompt_excludes)\b" $cmd
 end
 
 
-function __prompt_part
-  if test -n $argv[1]
+function __prompt_part -a part
+  if test -n $part
     set -l color
     if test (count $argv) -gt 1
       set color (set_color $argv[2..-1])
     end
-    echo -s $color $argv[1] ' '
+    echo -s $color $part ' '
   end
 end

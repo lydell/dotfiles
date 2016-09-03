@@ -1,5 +1,4 @@
-function fish_title
-  set -l command $argv[1]
+function fish_title -a command
   if test -z "$command"
     string replace $HOME '~' $PWD
   else
