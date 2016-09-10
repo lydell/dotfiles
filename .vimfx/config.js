@@ -105,6 +105,8 @@ map('e',  'follow')
 map('E',  'follow_in_tab')
 map('<force><c-e>', 'follow_in_focused_tab')
 map('fw', 'follow_in_window')
+map('fb', 'follow_in_private_window')
+map('fc', 'open_context_menu')
 map('ae', 'follow_multiple')
 map('ye', 'follow_copy')
 map('fe', 'follow_focus')
@@ -128,7 +130,7 @@ let set = (pref, valueOrFunction) => {
   vimfx.set(pref, value)
 }
 
-set('hint_chars', 'ehstirnoamupcwlfg dy')
+set('hints.chars', 'ehstirnoamupcwlfg dy')
 set('prevent_autofocus', true)
 set('prev_patterns', v => `föregående  ${v}`)
 set('next_patterns', v => `nästa  ${v}`)
