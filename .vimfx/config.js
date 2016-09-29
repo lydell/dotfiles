@@ -1,145 +1,65 @@
+// IMPORTS
+
 const {classes: Cc, interfaces: Ci, utils: Cu} = Components
 const nsIStyleSheetService = Cc['@mozilla.org/content/style-sheet-service;1']
   .getService(Ci.nsIStyleSheetService)
 const globalMessageManager = Cc['@mozilla.org/globalmessagemanager;1']
   .getService(Ci.nsIMessageListenerManager)
+const {Preferences} = Cu.import('resource://gre/modules/Preferences.jsm', {})
 
-const TABBAR_AUTO_SHOW_DURATION = 2000
 
-let getWindowAttribute = (window, name) => {
-  return window.document.documentElement.getAttribute(`vimfx-config-${name}`)
+
+// OPTIONS
+
+const MAPPINGS = {
+  'go_home': '',
+  'stop': '',
+
+  'scroll_left':  '<late><left>',
+  'scroll_right': '<late><right>',
+  'scroll_down':  '<late><down>',
+  'scroll_up':    '<late><up>',
+  'mark_scroll_position': 'gm',
+
+  'tab_select_previous': 's',
+  'tab_select_next':     'h',
+  'tab_move_backward': 'gs',
+  'tab_move_forward':  'gh',
+  'tab_move_to_index': ['gS', 'custom.mode.normal'],
+  'tab_close':   'c',
+  'tab_restore': 'C',
+  'toggle_floating_tab_bar': ['m', 'custom.mode.normal'],
+  'toggle_fixed_tab_bar':    ['M', 'custom.mode.normal'],
+
+  'follow':                   'e',
+  'follow_in_tab':            'E',
+  'follow_in_focused_tab':    '<force><c-e>',
+  'follow_in_window':         'fw',
+  'follow_in_private_window': 'fp',
+  'open_context_menu':        'fc',
+  'follow_multiple':          'ae',
+  'follow_copy':              'ye',
+  'follow_focus':             'fe',
+  'click_browser_element':    'l',
+
+  'enter_mode_ignore':  'I',
+  'quote':              'i',
+  'youtube_view_video': ['gv', 'custom.mode.normal'],
+
+  'move_left':  ['<left>',  'mode.caret'],
+  'move_right': ['<right>', 'mode.caret'],
+  'move_down':  ['<down>',  'mode.caret'],
+  'move_up':    ['<up>',    'mode.caret'],
 }
 
-let setWindowAttribute = (window, name, value) => {
-  window.document.documentElement.setAttribute(`vimfx-config-${name}`, value)
+const VIMFX_PREFS = {
+  'hints.chars': 'ehstirnoamupcwlfg dy',
+  'prevent_autofocus': true,
+  'prev_patterns': v => `föregående  ${v}`,
+  'next_patterns': v => `nästa  ${v}`,
 }
 
-
-
-let {commands} = vimfx.modes.normal
-
-vimfx.addCommand({
-  name: 'tab_move_to_index',
-  description: 'Move tab to index',
-  category: 'tabs',
-  order: commands.tab_move_forward.order + 1,
-}, ({vim, count}) => {
-  if (count === undefined) {
-    vim.notify('Provide a count')
-    return
-  }
-  let {window} = vim
-  window.setTimeout(() => {
-    window.gBrowser.moveTabTo(window.gBrowser.selectedTab, count - 1)
-  }, 0)
-})
-
-vimfx.addCommand({
-  name: 'toggle_floating_tab_bar',
-  description: 'Toggle floating tab bar',
-  category: 'tabs',
-}, ({vim}) => {
-  let {window} = vim
-  let value = getWindowAttribute(window, 'tabbar-visibility')
-  let isFloating = (!value || value === 'floating' || value === 'temporary')
-  setWindowAttribute(window, 'tabbar-visibility', isFloating ? 'hidden' : 'floating')
-})
-
-vimfx.addCommand({
-  name: 'toggle_fixed_tab_bar',
-  description: 'Toggle fixed tab bar',
-  category: 'tabs',
-}, ({vim}) => {
-  let {window} = vim
-  let isFixed = (getWindowAttribute(window, 'tabbar-visibility') === 'fixed')
-  setWindowAttribute(window, 'tabbar-visibility', isFixed ? 'hidden' : 'fixed')
-})
-
-vimfx.addCommand({
-  name: 'youtube_view_video',
-  description: 'View YouTube video',
-}, ({vim}) => {
-  let location = new vim.window.URL(vim.browser.currentURI.spec)
-  let match = /v=(\w+)/.exec(location.search)
-  if (
-    match &&
-    location.hostname.endsWith('www.youtube.com') &&
-    location.pathname === '/watch'
-  ) {
-    vim.window.gBrowser.loadURI(`${location.hostname}/embed/${match[1]}`)
-  } else {
-    vim.notify('No YouTube')
-  }
-})
-
-
-
-let map = (shortcuts, command, custom=false) => {
-  vimfx.set(`${custom ? 'custom.' : ''}mode.normal.${command}`, shortcuts)
-}
-
-let map_caret = (shortcuts, command) => {
-  vimfx.set(`mode.caret.${command}`, shortcuts)
-}
-
-map('', 'go_home')
-map('', 'stop')
-
-map('<late><left>',  'scroll_left')
-map('<late><right>', 'scroll_right')
-map('<late><down>',  'scroll_down')
-map('<late><up>',    'scroll_up')
-map('gm', 'mark_scroll_position')
-
-map('s',  'tab_select_previous')
-map('h',  'tab_select_next')
-map('gs', 'tab_move_backward')
-map('gh', 'tab_move_forward')
-map('gS', 'tab_move_to_index', true)
-map('c',  'tab_close')
-map('C',  'tab_restore')
-map('m',  'toggle_floating_tab_bar', true)
-map('M',  'toggle_fixed_tab_bar', true)
-
-map('e',  'follow')
-map('E',  'follow_in_tab')
-map('<force><c-e>', 'follow_in_focused_tab')
-map('fw', 'follow_in_window')
-map('fp', 'follow_in_private_window')
-map('fc', 'open_context_menu')
-map('ae', 'follow_multiple')
-map('ye', 'follow_copy')
-map('fe', 'follow_focus')
-map('l',  'click_browser_element')
-
-map('I',  'enter_mode_ignore')
-map('i',  'quote')
-map('gv', 'youtube_view_video', true)
-
-map_caret('<left>',  'move_left')
-map_caret('<right>', 'move_right')
-map_caret('<down>',  'move_down')
-map_caret('<up>',    'move_up')
-
-
-
-let set = (pref, valueOrFunction) => {
-  let value = typeof valueOrFunction === 'function'
-    ? valueOrFunction(vimfx.getDefault(pref))
-    : valueOrFunction
-  vimfx.set(pref, value)
-}
-
-set('hints.chars', 'ehstirnoamupcwlfg dy')
-set('prevent_autofocus', true)
-set('prev_patterns', v => `föregående  ${v}`)
-set('next_patterns', v => `nästa  ${v}`)
-
-
-
-let {Preferences} = Cu.import('resource://gre/modules/Preferences.jsm', {})
-
-Preferences.set({
+const FIREFOX_PREFS = {
   'accessibility.blockautorefresh': true,
   'browser.ctrlTab.previews': true,
   'browser.fixup.alternate.enabled': false,
@@ -154,59 +74,143 @@ Preferences.set({
   'devtools.command-button-rulers.enabled': true,
   'devtools.selfxss.count': 0,
   'privacy.donottrackheader.enabled': true,
+}
+
+const CSS = [
+  `${__dirname}/chrome.css`,
+  `${__dirname}/content.css`,
+  `${__dirname}/tabs.css`,
+]
+
+const TABBAR_AUTO_SHOW_DURATION = 2000 // ms
+
+
+
+// CUSTOM COMMANDS
+
+const {commands} = vimfx.modes.normal
+
+const CUSTOM_COMMANDS = [
+  [
+    {
+      name: 'tab_move_to_index',
+      description: 'Move tab to index',
+      category: 'tabs',
+      order: commands.tab_move_forward.order + 1,
+    },
+    ({vim, count}) => {
+      if (count === undefined) {
+        vim.notify('Provide a count')
+        return
+      }
+      const {window} = vim
+      window.setTimeout(() => {
+        window.gBrowser.moveTabTo(window.gBrowser.selectedTab, count - 1)
+      }, 0)
+    },
+  ],
+  [
+    {
+      name: 'toggle_floating_tab_bar',
+      description: 'Toggle floating tab bar',
+      category: 'tabs',
+    },
+    ({vim}) => {
+      const {window} = vim
+      const value = getWindowAttribute(window, 'tabbar-visibility')
+      const isFloating = (!value || value === 'floating' || value === 'temporary')
+      setWindowAttribute(window, 'tabbar-visibility', isFloating ? 'hidden' : 'floating')
+    },
+  ],
+  [
+    {
+      name: 'toggle_fixed_tab_bar',
+      description: 'Toggle fixed tab bar',
+      category: 'tabs',
+    },
+    ({vim}) => {
+      const {window} = vim
+      const isFixed = (getWindowAttribute(window, 'tabbar-visibility') === 'fixed')
+      setWindowAttribute(window, 'tabbar-visibility', isFixed ? 'hidden' : 'fixed')
+    },
+  ],
+  [
+    {
+      name: 'youtube_view_video',
+      description: 'View YouTube video',
+    },
+    ({vim}) => {
+      const location = new vim.window.URL(vim.browser.currentURI.spec)
+      const match = /v=(\w+)/.exec(location.search)
+      if (
+        match &&
+        location.hostname.endsWith('www.youtube.com') &&
+        location.pathname === '/watch'
+      ) {
+        vim.window.gBrowser.loadURI(`${location.hostname}/embed/${match[1]}`)
+      } else {
+        vim.notify('No YouTube')
+      }
+    },
+  ],
+]
+
+
+
+// APPLY THE ABOVE
+
+CUSTOM_COMMANDS.forEach(([options, fn]) => {
+  vimfx.addCommand(options, fn)
 })
 
+Object.entries(MAPPINGS).forEach(([command, value]) => {
+  const [shortcuts, mode] = Array.isArray(value)
+    ? value
+    : [value, 'mode.normal']
+  vimfx.set(`${mode}.${command}`, shortcuts)
+})
 
+Object.entries(VIMFX_PREFS).forEach(([pref, valueOrFunction]) => {
+  const value = typeof valueOrFunction === 'function'
+    ? valueOrFunction(vimfx.getDefault(pref))
+    : valueOrFunction
+  vimfx.set(pref, value)
+})
 
-let loadCss = (uriString) => {
-  let uri = Services.io.newURI(uriString, null, null)
-  let method = nsIStyleSheetService.AUTHOR_SHEET
+Preferences.set(FIREFOX_PREFS)
+
+CSS.forEach(uriString => {
+  const uri = Services.io.newURI(uriString, null, null)
+  const method = nsIStyleSheetService.AUTHOR_SHEET
   if (!nsIStyleSheetService.sheetRegistered(uri, method)) {
     nsIStyleSheetService.loadAndRegisterSheet(uri, method)
   }
   vimfx.on('shutdown', () => {
     nsIStyleSheetService.unregisterSheet(uri, method)
   })
-}
-
-loadCss(`${__dirname}/chrome.css`)
-loadCss(`${__dirname}/content.css`)
-loadCss(`${__dirname}/tabs.css`)
-
-
-
-vimfx.on('locationChange', ({vim, location}) => {
-  if (location.hostname === 'mobile.twitter.com') {
-    vimfx.send(vim, 'normalizeTwitterLinks')
-  }
 })
 
 
 
-let listen = (window, eventName, listener) => {
-  window.addEventListener(eventName, listener, true)
-  vimfx.on('shutdown', () => {
-    window.removeEventListener(eventName, listener, true)
-  })
-}
+// AUTO-HIDE TABBAR
 
-let windows = new WeakSet()
-let onTabCreated = ({target: browser}) => {
+const windows = new WeakSet()
+const onTabCreated = ({target: browser}) => {
   if (browser.getAttribute('messagemanagergroup') !== 'browsers') {
     return
   }
 
-  let window = browser.ownerGlobal
+  const window = browser.ownerGlobal
   if (!windows.has(window)) {
     windows.add(window)
 
-    let tabsToolbar = window.document.getElementById('TabsToolbar')
-    let navigatorToolbox = window.document.getElementById('navigator-toolbox')
+    const tabsToolbar = window.document.getElementById('TabsToolbar')
+    const navigatorToolbox = window.document.getElementById('navigator-toolbox')
     tabsToolbar.style.top = `${navigatorToolbox.clientHeight}px`
 
     let timeout = null
-    let autoShowTabbar = () => {
-      let value = getWindowAttribute(window, 'tabbar-visibility')
+    const autoShowTabbar = () => {
+      const value = getWindowAttribute(window, 'tabbar-visibility')
       if (value === 'hidden' || value === 'temporary') {
         setWindowAttribute(window, 'tabbar-visibility', 'temporary')
         if (timeout) {
@@ -233,3 +237,22 @@ globalMessageManager.addMessageListener('VimFx-config:tabCreated', onTabCreated)
 vimfx.on('shutdown', () => {
   globalMessageManager.removeMessageListener('VimFx-config:tabCreated', onTabCreated)
 })
+
+
+
+// HELPER FUNCTIONS
+
+function getWindowAttribute(window, name) {
+  return window.document.documentElement.getAttribute(`vimfx-config-${name}`)
+}
+
+function setWindowAttribute(window, name, value) {
+  window.document.documentElement.setAttribute(`vimfx-config-${name}`, value)
+}
+
+function listen(window, eventName, listener) {
+  window.addEventListener(eventName, listener, true)
+  vimfx.on('shutdown', () => {
+    window.removeEventListener(eventName, listener, true)
+  })
+}
