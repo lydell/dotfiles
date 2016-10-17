@@ -13,7 +13,8 @@ const {Preferences} = Cu.import('resource://gre/modules/Preferences.jsm', {})
 
 const MAPPINGS = {
   'go_home': '',
-  'stop': '',
+  'stop': '<c-escape>',
+  'stop_all': 'a<c-escape>',
 
   'scroll_left':  '<late><left>',
   'scroll_right': '<late><right>',
