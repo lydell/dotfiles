@@ -71,8 +71,8 @@ const FIREFOX_PREFS = {
   'browser.tabs.warnOnClose': false,
   'browser.urlbar.formatting.enabled': false,
   'devtools.chrome.enabled': true,
-  'devtools.command-button-eyedropper.enabled': true,
-  'devtools.command-button-rulers.enabled': true,
+  'devtools.command-button-paintflashing.enabled': true,
+  'devtools.command-button-measure.enabled': true,
   'devtools.selfxss.count': 0,
   'privacy.donottrackheader.enabled': true,
 }
