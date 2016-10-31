@@ -56,6 +56,7 @@ colorscheme seoul256
 
 " IO
 set autoread
+set backupcopy=yes
 set directory-=.
 set undofile
 set undodir=~/.tmp
