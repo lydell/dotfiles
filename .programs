@@ -1,6 +1,7 @@
 diff-so-fancy
+firefox-developer-edition
+firefox-nightly
 fish
-fisher
 fzf
 git
 gvim
@@ -15,12 +16,13 @@ tworld
 wmctrl
 xclip
 
-fonts-cantarell
-
 Alternatetab
 Applications menu
-Docker integration
 Frippery move clock
+No Topleft Hot Corner
 Pixel saver
 Removable drive menu
-Switcher
+
+Adblock Plus
+Blank New Tab
+VimFx
