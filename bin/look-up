@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+files=($@)
+dir="$(pwd)"
+first_match=''
+
+while test "$dir" != '/'; do
+  first_match=''
+  for file in "${files[@]}"; do
+    if test -e "$dir/$file"; then
+      first_match="$file"
+      break
+    fi
+  done
+  if test "$first_match" == ''; then
+    dir="$(dirname "$dir")"
+  else
+    break
+  fi
+done
+
+if test "$first_match" == ''; then
+  exit 1
+fi
+
+echo "$dir/$first_match"

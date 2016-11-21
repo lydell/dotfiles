@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-dirname "$(look-up '{.git,.git-toggled,package.json,bower.json}' "$@")"
+dirname "$(look-up .git package.json bower.json "$@")"
