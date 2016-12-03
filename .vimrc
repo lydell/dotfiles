@@ -366,7 +366,7 @@ let g:elm_syntastic_show_warnings = 1
 """ fzf
 map <leader>n :FZF<cr>
 map <leader>? :FZF<space>
-map <silent> <leader>l :execute 'FZF' ChompedSystem('repo-root --cwd=' . shellescape(expand('%')))<cr>
+map <silent> <leader>l :execute 'FZF' ChompedSystem('repo-root . ' . shellescape(expand('%')))<cr>
 
 function! FZF()
   return printf('xterm -T fzf'
