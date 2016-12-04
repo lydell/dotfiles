@@ -1,9 +1,6 @@
 " Some plugins require this to be set before they are loaded.
 set nocompatible
 
-" Hack to work around YCM build issue on one of my computers.
-let python = has('patch-7.4.53') ? 'python3' : 'python2'
-
 """ Plugins
 call plug#begin('~/.vim/bundles')
 
@@ -35,7 +32,7 @@ Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'tommcdo/vim-exchange'
 Plug 'unblevable/quick-scope'
-Plug 'Valloric/YouCompleteMe', { 'do': python . ' install.py --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --tern-completer' }
 Plug 'wellle/targets.vim'
 Plug 'whatyouhide/vim-lengthmatters'
 
@@ -383,7 +380,7 @@ let $SHELL = '/bin/bash'
 
 
 """ YCM
-let g:ycm_path_to_python_interpreter = '/usr/bin/' . python
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
 let g:ycm_filetype_blacklist = {}
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
