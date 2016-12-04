@@ -1,20 +1,9 @@
-# APT
-chromium-browser
-curl
-gvim
-jpegoptim
-optipng
-pwgen
-redshift
-shellcheck
-tree
-tworld
-wmctrl
-xclip
-
 # PPA
-fish
-git
+sudo apt-add-repository ppa:fish-shell/release-2
+sudo add-apt-repository ppa:git-core/ppa
+
+# APT
+sudo apt install chromium-browser curl fish git gvim jpegoptim optipng pwgen redshift shellcheck tree tworld wmctrl xclip
 
 # ~/programs
 firefox-developer-edition
@@ -27,12 +16,7 @@ ngrok
 pt
 
 # npm
-coffee-script
-diff-so-fancy
-elm
-npm-check-updates
-source-map-visualize
-svgo
+npm install --global coffee-script diff-so-fancy elm npm-check-updates source-map-visualize svgo
 
 # Via Vim
 fzf
