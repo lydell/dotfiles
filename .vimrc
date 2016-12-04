@@ -41,6 +41,7 @@ call plug#end()
 
 """ Settings
 " UI
+set guifont=monospace\ 11
 set guioptions-=T
 set guioptions-=m
 set guioptions-=r
