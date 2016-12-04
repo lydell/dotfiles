@@ -35,7 +35,6 @@
 !/bin/g
 !/bin/imgoptimize
 !/bin/jpgquality
-!/bin/look-up
 !/bin/lsrc
 !/bin/noeolateof
 !/bin/pre
@@ -50,5 +49,6 @@
 !/bin/tw
 !/bin-before/
 !/bin-before/firefox
+!/bin-before/look-up
 !/bin-before/pip
 !/bin-before/python
