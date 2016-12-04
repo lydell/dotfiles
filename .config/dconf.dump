@@ -20,6 +20,9 @@ sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='nothing'
 sleep-inactive-battery-timeout=1800
 
+[org/gnome/desktop/interface]
+monospace-font-name='DejaVu Sans Mono 11'
+
 [org/gnome/desktop/screensaver]
 lock-enabled=true
 
