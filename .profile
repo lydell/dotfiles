@@ -1,6 +1,6 @@
 # Don’t forget `export` for environment variables!
 
-export PATH="$HOME/bin-before:$PATH:$HOME/bin:$HOME/.python/bin:./.venv/bin:./node_modules/.bin"
+export PATH="$HOME/bin-before:$PATH:$HOME/bin:$HOME/.python/bin:$HOME/.npm-global/bin:./.venv/bin:./node_modules/.bin"
 
 export FZF_DEFAULT_COMMAND='lsrc'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

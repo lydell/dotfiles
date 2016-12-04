@@ -1,28 +1,49 @@
-diff-so-fancy
-firefox-developer-edition
-firefox-nightly
-fish
-fzf
-git
+# APT
+chromium-browser
 gvim
-look-up-cli
-nodejs
-npm-check-updates
+jpegoptim
+optipng
 pwgen
-pt
 redshift
 tree
 tworld
 wmctrl
 xclip
 
+# PPA
+fish
+git
+
+# ~/programs
+firefox-developer-edition
+firefox-nightly
+nodejs
+
+# ~/bin
+elm-format
+ngrok
+pt
+
+# npm
+coffee-script
+diff-so-fancy
+elm
+npm-check-updates
+source-map-visualize
+svgo
+
+# Via Vim
+fzf
+
+# Firefox
+Adblock Plus
+Blank New Tab
+VimFx
+
+# GNOME
 Alternatetab
 Applications menu
 Frippery move clock
 No Topleft Hot Corner
 Pixel saver
 Removable drive menu
-
-Adblock Plus
-Blank New Tab
-VimFx

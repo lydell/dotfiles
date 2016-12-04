@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+default=7
+
+usage() {
+  echo "Usage: $(basename "$0") (look-up|default|4|6|7) (node|npm) args..."
+  exit 1
+}
+
+test "$#" -lt 2 && usage
+
+version="$1"
+program="$2"
+shift 2
+
+if test "$version" == 'look-up'; then
+  version='default'
+  file="$(look-up '.nodejs')"
+  if test "$file" != ''; then
+    version="$(head -n 1 "$file")"
+  fi
+fi
+
+if test "$version" == 'default'; then
+  version="$default"
+fi
+
+case "$version" in
+  '4')
+    name='node-v4.6.2-linux-x64'
+    ;;
+  '6')
+    name='node-v6.9.1-linux-x64'
+    ;;
+  '7')
+    name='node-v7.2.0-linux-x64'
+    ;;
+  *)
+    echo "Unknown version: $version"
+    usage
+esac
+
+cmd="$HOME/programs/$name/bin/$program"
+
+if test ! -x "$cmd"; then
+  echo "Unknown program: $program ($cmd)"
+  exit 1
+fi
+
+"$cmd" "$@"

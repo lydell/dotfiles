@@ -4,6 +4,7 @@
 !/.gitconfig
 !/.gitignore
 !/.gitignore_global
+!/.npmrc
 !/.profile
 !/.programs
 !/.ptignore
@@ -36,7 +37,10 @@
 !/bin/imgoptimize
 !/bin/jpgquality
 !/bin/lsrc
+!/bin/node
+!/bin/nodev
 !/bin/noeolateof
+!/bin/npm
 !/bin/pre
 !/bin/push
 !/bin/pw
