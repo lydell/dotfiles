@@ -6,6 +6,7 @@
 .stuff/
 .venv/
 
+.nodejs
 .ptignore
 run
 local_simon.py
