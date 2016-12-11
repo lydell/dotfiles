@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+keyword='NOCOMMIT'
+additions="$(git diff --staged --diff-filter=ACM | grep '^+')"
+
+if echo "$additions" | grep -q "$keyword"; then
+  echo "Error: Attempt to commit a $keyword change!"
+  # Print file names with offending lines, and the offending lines.
+  echo "$additions" | grep "^+++\|$keyword"
+  exit 1
+fi

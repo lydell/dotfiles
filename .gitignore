@@ -24,6 +24,8 @@
 !/.config/fish/functions/fish_title.fish
 !/.config/fish/functions/__format_time.fish
 !/.config/fish/functions/setup.fish
+!/.git-templates/
+!/.git-templates/**/*
 !/.vimfx/
 !/.vimfx/!(tabs.css)
 !/bin/

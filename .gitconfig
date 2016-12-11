@@ -20,3 +20,6 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+[init]
+	; Default: /usr/share/git-core/templates/hooks
+	templatedir = ~/.git-templates
