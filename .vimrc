@@ -150,8 +150,8 @@ function! Paste(forward)
   if empty
     let newNumLines = line('$')
     let newLineNum = line('.')
+    let whitespaceLen = strlen(whitespace)
     if newLineNum == lineNum && newNumLines == numLines
-      let whitespaceLen = strlen(whitespace)
       if !a:forward && whitespaceLen > 0
         let result = getline(lineNum)
         let pasted = strpart(result, whitespaceLen - 1, strlen(result) - whitespaceLen)
@@ -159,7 +159,19 @@ function! Paste(forward)
         normal! $
       endif
     else
-      call setline(a:forward ? lineNum : newNumLines - numLines + lineNum, '')
+      let lineNumToClear = a:forward ? lineNum : newNumLines - numLines + lineNum
+      let lineToClear = getline(lineNumToClear)
+      if lineToClear == whitespace
+        call setline(lineNumToClear, '')
+      else
+        let currentLine = getline(newLineNum)
+        let indent = matchstr(currentLine, '^\s*')
+        if indent == strpart(whitespace, 0, whitespaceLen - 1)
+          call setline(newLineNum, ' ' . currentLine)
+          call setline(lineNumToClear, strpart(lineToClear, 0, strlen(lineToClear) - 1))
+          normal! l
+        endif
+      endif
     endif
   endif
 endfunction
