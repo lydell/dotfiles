@@ -6,6 +6,6 @@ additions="$(git diff --staged --diff-filter=ACM | grep '^+')"
 if echo "$additions" | grep -q "$keyword"; then
   echo "Error: $keyword found in added lines!"
   # Print file names with offending lines, and the offending lines.
-  echo "$additions" | grep "$keyword" -B1
+  echo "$additions" | grep --before-context=1 --color=always "$keyword"
   exit 1
 fi
