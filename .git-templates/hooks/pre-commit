@@ -4,8 +4,8 @@ keyword='NOCOMMIT'
 additions="$(git diff --staged --diff-filter=ACM | grep '^+')"
 
 if echo "$additions" | grep -q "$keyword"; then
-  echo "Error: Attempt to commit a $keyword change!"
+  echo "Error: $keyword found in added lines!"
   # Print file names with offending lines, and the offending lines.
-  echo "$additions" | grep "^+++\|$keyword"
+  echo "$additions" | grep "$keyword" -B1
   exit 1
 fi
