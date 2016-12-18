@@ -8,7 +8,7 @@ rsync --archive ~/ "/media/$USER/backup/$(uname --nodename)/home" \
   --exclude /.fzf/ \
   --exclude /.node-gyp/ \
   --exclude /.npm/ \
-  --exclude /.nvm/ \
+  --exclude /.npm-global/ \
   --exclude /.python/ \
   --exclude /.stack/ \
   --exclude /.thumbnails/ \
