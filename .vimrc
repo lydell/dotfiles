@@ -83,7 +83,7 @@ set formatoptions+=j
 set iskeyword+=$
 set lazyredraw
 set list
-set listchars=tab:▸\ ,extends:>,precedes:<,nbsp:·
+set listchars=tab:\ \ ,extends:>,precedes:<,nbsp:·
 set mousemodel=popup_setpos
 set nojoinspaces
 set nostartofline
