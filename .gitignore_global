@@ -6,6 +6,7 @@
 .stuff/
 .venv/
 
+.env
 .nodejs
 .ptignore
 run
