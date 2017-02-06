@@ -16,8 +16,8 @@ echo "Using $quality% quality."
 log=''
 
 for file in "$@"; do
-  sizeBefore="$(du "$file" | cut -f 1)"
-  sizeBeforeHuman="$(du -h "$file" | cut -f 1)"
+  sizeBefore="$(du -b "$file" | cut -f 1)"
+  sizeBeforeHuman="$(du -bh "$file" | cut -f 1)"
   unknown=0
 
   echo "### Optimizing: $file"
@@ -43,8 +43,8 @@ for file in "$@"; do
   esac
 
   if test "$unknown" -eq 0; then
-    sizeAfter="$(du "$file" | cut -f 1)"
-    sizeAfterHuman="$(du -h "$file" | cut -f 1)"
+    sizeAfter="$(du -b "$file" | cut -f 1)"
+    sizeAfterHuman="$(du -bh "$file" | cut -f 1)"
     percentage="$((100 * (sizeBefore - sizeAfter) / sizeBefore))"
     change="$(echo "-$percentage%" | sed 's/^--/+/')"
     log+="$file\t$sizeBeforeHuman → $sizeAfterHuman\t$change\n"

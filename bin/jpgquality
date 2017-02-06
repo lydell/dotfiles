@@ -21,5 +21,5 @@ for quality in {10..100..10}; do
 done
 
 echo -e "${log::-2}"
-echo -e "$orig\t$(du -h "$orig" | cut -f 1)\t$(identify -format '%Q' "$orig")% quality"
+echo -e "$orig\t$(du -bh "$orig" | cut -f 1)\t$(identify -format '%Q' "$orig")% quality"
 eog "$dir"
