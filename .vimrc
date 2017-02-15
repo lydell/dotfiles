@@ -28,11 +28,11 @@ Plug 'junegunn/seoul256.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'tommcdo/vim-exchange'
 Plug 'unblevable/quick-scope'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --tern-completer' }
+Plug 'vim-syntastic/syntastic'
 Plug 'wellle/targets.vim'
 Plug 'whatyouhide/vim-lengthmatters'
 
