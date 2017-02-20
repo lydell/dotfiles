@@ -11,6 +11,9 @@
 !/.tern-project
 !/.vimrc
 !/README.md
+!/.atom/
+!/.atom/config.cson
+!/.atom/keymap.cson
 !/.config/
 !/.config/autostart
 !/.config/autostart/*

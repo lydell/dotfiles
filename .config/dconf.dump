@@ -70,7 +70,7 @@ name='focus terminal'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Super>t'
-command='focus Gvim'
+command="focus '(Atom|Gvim)'"
 name='focus gvim'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
@@ -100,5 +100,5 @@ name='focus nautilus'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8]
 binding='<Super>comma'
-command="focus '(?!Gnome-terminal|Gvim|Firefox|Chromium|Eog|Gimp|Nautilus)'"
+command="focus '(?!Gnome-terminal|Atom|Gvim|Firefox|Chromium|Eog|Gimp|Nautilus)'"
 name='focus other'

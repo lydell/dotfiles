@@ -1,0 +1,87 @@
+"*":
+  "atom-ternjs":
+    inlineFnCompletionDocumentation: true
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
+  "autocomplete-python":
+    useKite: false
+    useSnippets: "required"
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+    wrapSelectionsInBrackets: false
+  "choose-pane":
+    labelChars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  "close-other-panes":
+    moveItems: false
+  core:
+    autoHideMenuBar: true
+    customFileTypes:
+      "text.html.jinja": [
+        "html"
+      ]
+    projectHome: "/home/lydell/src"
+    restorePreviousWindowsOnStart: false
+    telemetryConsent: "limited"
+  editor:
+    softWrap: true
+  "elm-format":
+    binary: "elm-format"
+  "exception-reporting":
+    userId: "60c3fc6f-0001-fdb6-f824-d0193742cf3f"
+  "file-icons": {}
+  linter:
+    errorPanelHeight: 24
+  "linter-elm-make":
+    showInferredTypeAnnotations: true
+  "linter-eslint":
+    fixOnSave: true
+    rulesToSilenceWhileTyping: [
+      "prettier/prettier"
+    ]
+  "linter-flake8":
+    executablePath: "$PROJECT/.venv/bin/flake8"
+    flakeErrors: true
+  "relative-numbers": {}
+  "trailing-spaces":
+    enableForIndentation: true
+  "tree-view":
+    alwaysOpenExisting: true
+    showOnRightSide: true
+    squashDirectoryNames: true
+  "vim-mode-plus":
+    charactersToAddSpaceOnSurround: [
+      "("
+      "{"
+      "["
+      "<"
+    ]
+    clearHighlightSearchOnResetNormalMode: true
+    clearPersistentSelectionOnResetNormalMode: true
+    flashOnMoveToOccurrence: true
+    highlightSearch: true
+    ignoreCaseForSearch: true
+    incrementalSearch: true
+    keepColumnOnSelectTextObject: true
+    numberRegex: "(?:\\B-)?[0-9]+"
+    showHoverOnOperate: true
+    showHoverSearchCounter: true
+    smoothScrollOnFullScrollMotion: true
+    smoothScrollOnFullScrollMotionDuration: 200
+    smoothScrollOnHalfScrollMotion: true
+    smoothScrollOnHalfScrollMotionDuration: 200
+    stayOnDelete: true
+    stayOnTransformString: true
+    stayOnYank: true
+    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+    removeTrailingWhitespace: false
+".html.jinja.text":
+  editor:
+    commentEnd: " -#}"
+    commentStart: "{#- "

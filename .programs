@@ -18,6 +18,35 @@ pt
 # npm
 npm install --global coffee-script diff-so-fancy elm npm-check-updates source-map-visualize svgo
 
+# Atom
+atom-jinja2
+atom-ternjs
+autocomplete-python
+blackspace
+choose-pane
+close-other-panes
+cursor-history
+elm-format
+elmjutsu
+file-icons
+highlight-bad-chars
+jumpy
+language-elm
+language-fish-shell
+language-viml
+linter
+linter-elm-make
+linter-eslint
+linter-flake8
+linter-shellcheck
+linter-stylelint
+pigments
+quick-highlight
+relative-numbers
+trailing-spaces
+vim-mode-plus
+vim-mode-plus-exchange
+
 # Via Vim
 fzf
 
