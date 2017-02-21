@@ -1,5 +1,6 @@
 "body":
   "alt--": "tree-view:toggle"
+  "ctrl-_": "tree-view:toggle-focus"
   "ctrl-escape": "core:cancel"
 
 "atom-workspace":
@@ -18,9 +19,11 @@
   "backspace": "vim-mode-plus:delete-left"
   "ctrl-b": "fuzzy-finder:toggle-buffer-finder"
   "ctrl-f": "find-and-replace:show"
+  "ctrl-h": "symbols-view:toggle-file-symbols"
   "ctrl-shift-space": "vim-mode-plus:scroll-full-screen-up"
   "ctrl-space": "vim-mode-plus:scroll-full-screen-down"
   "ctrl-t": "fuzzy-finder:toggle-file-finder"
+  "ctrl-q": "unmap!"
   "delete": "vim-mode-plus:delete-right"
   "g _": "vim-mode-plus:snake-case"
   "home": "vim-mode-plus:move-to-first-character-of-line"
