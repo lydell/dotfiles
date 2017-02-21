@@ -29,6 +29,8 @@ cursor-history
 elm-format
 elmjutsu
 file-icons
+git-blame
+git-plus
 highlight-bad-chars
 jumpy
 language-elm
@@ -40,6 +42,7 @@ linter-eslint
 linter-flake8
 linter-shellcheck
 linter-stylelint
+merge-conflicts
 pigments
 quick-highlight
 relative-numbers

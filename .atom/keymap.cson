@@ -9,6 +9,9 @@
   "ctrl-shift-i": "cursor-history:next-within-editor"
   "ctrl-shift-o": "cursor-history:prev-within-editor"
 
+"atom-text-editor:not([mini])":
+  "alt-g B": "git-blame:toggle"
+
 "atom-text-editor.vim-mode-plus:not(.insert-mode)":
   ",": "vim-mode-plus:repeat-find"
   ";": "vim-mode-plus:repeat-find-reverse"
