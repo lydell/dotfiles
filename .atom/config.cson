@@ -43,6 +43,10 @@
   "linter-flake8":
     executablePath: "$PROJECT/.venv/bin/flake8"
     flakeErrors: true
+  "one-dark-ui":
+    fontSize: 14
+    layoutMode: "Compact"
+    tabSizing: "Minimum"
   "relative-numbers": {}
   "trailing-spaces":
     enableForIndentation: true
