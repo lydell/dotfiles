@@ -37,6 +37,7 @@
   "shift-up": "vim-mode-plus:scroll-up"
   "space ,": "linter:next-error"
   "space ;": "linter:previous-error"
+  "space n": "fuzzy-finder:toggle-file-finder"
   "space q": "core:close"
   "space w": "core:save"
   "space": "unmap!"
