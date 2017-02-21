@@ -1,123 +1,123 @@
-"body":
-  "alt--": "tree-view:toggle"
-  "ctrl-_": "tree-view:toggle-focus"
-  "ctrl-escape": "core:cancel"
+'body':
+  'alt--': 'tree-view:toggle'
+  'ctrl-_': 'tree-view:toggle-focus'
+  'ctrl-escape': 'core:cancel'
 
-"atom-workspace":
-  "ctrl-i": "cursor-history:next"
-  "ctrl-o": "cursor-history:prev"
-  "ctrl-shift-i": "cursor-history:next-within-editor"
-  "ctrl-shift-o": "cursor-history:prev-within-editor"
+'atom-workspace':
+  'ctrl-i': 'cursor-history:next'
+  'ctrl-o': 'cursor-history:prev'
+  'ctrl-shift-i': 'cursor-history:next-within-editor'
+  'ctrl-shift-o': 'cursor-history:prev-within-editor'
 
-"atom-text-editor:not([mini])":
-  "alt-g B": "git-blame:toggle"
+'atom-text-editor:not([mini])':
+  'alt-g B': 'git-blame:toggle'
 
-"atom-text-editor.vim-mode-plus:not(.insert-mode)":
-  ",": "vim-mode-plus:repeat-find"
-  ";": "vim-mode-plus:repeat-find-reverse"
-  "-": "tree-view:toggle-focus"
-  "_": "vim-mode-plus:move-to-first-character-of-line-up"
-  "alt-b": "editor:move-to-previous-subword-boundary"
-  "alt-w": "editor:move-to-next-subword-boundary"
-  "backspace": "vim-mode-plus:delete-left"
-  "ctrl-b": "fuzzy-finder:toggle-buffer-finder"
-  "ctrl-f": "find-and-replace:show"
-  "ctrl-h": "symbols-view:toggle-file-symbols"
-  "ctrl-shift-space": "vim-mode-plus:scroll-full-screen-up"
-  "ctrl-space": "vim-mode-plus:scroll-full-screen-down"
-  "ctrl-t": "fuzzy-finder:toggle-file-finder"
-  "ctrl-q": "unmap!"
-  "delete": "vim-mode-plus:delete-right"
-  "g _": "vim-mode-plus:snake-case"
-  "home": "vim-mode-plus:move-to-first-character-of-line"
-  "j": "vim-mode-plus:toggle-line-comments"
-  "k": "choose-pane:start"
-  "K": "choose-pane:focus-last-focused"
-  "l": "jumpy:toggle"
-  "shift-Y": "vim-mode-plus:yank-to-last-character-of-line"
-  "shift-down": "vim-mode-plus:scroll-down"
-  "shift-tab": "pane:show-previous-item"
-  "shift-up": "vim-mode-plus:scroll-up"
-  "space ,": "linter:next-error"
-  "space ;": "linter:previous-error"
-  "space n": "fuzzy-finder:toggle-file-finder"
-  "space q": "core:close"
-  "space w": "core:save"
-  "space": "unmap!"
-  "tab": "pane:show-next-item"
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  ',': 'vim-mode-plus:repeat-find'
+  ';': 'vim-mode-plus:repeat-find-reverse'
+  '-': 'tree-view:toggle-focus'
+  '_': 'vim-mode-plus:move-to-first-character-of-line-up'
+  'alt-b': 'editor:move-to-previous-subword-boundary'
+  'alt-w': 'editor:move-to-next-subword-boundary'
+  'backspace': 'vim-mode-plus:delete-left'
+  'ctrl-b': 'fuzzy-finder:toggle-buffer-finder'
+  'ctrl-f': 'find-and-replace:show'
+  'ctrl-h': 'symbols-view:toggle-file-symbols'
+  'ctrl-shift-space': 'vim-mode-plus:scroll-full-screen-up'
+  'ctrl-space': 'vim-mode-plus:scroll-full-screen-down'
+  'ctrl-t': 'fuzzy-finder:toggle-file-finder'
+  'ctrl-q': 'unmap!'
+  'delete': 'vim-mode-plus:delete-right'
+  'g _': 'vim-mode-plus:snake-case'
+  'home': 'vim-mode-plus:move-to-first-character-of-line'
+  'j': 'vim-mode-plus:toggle-line-comments'
+  'k': 'choose-pane:start'
+  'K': 'choose-pane:focus-last-focused'
+  'l': 'jumpy:toggle'
+  'shift-Y': 'vim-mode-plus:yank-to-last-character-of-line'
+  'shift-down': 'vim-mode-plus:scroll-down'
+  'shift-tab': 'pane:show-previous-item'
+  'shift-up': 'vim-mode-plus:scroll-up'
+  'space ,': 'linter:next-error'
+  'space ;': 'linter:previous-error'
+  'space n': 'fuzzy-finder:toggle-file-finder'
+  'space q': 'core:close'
+  'space w': 'core:save'
+  'space': 'unmap!'
+  'tab': 'pane:show-next-item'
 
-"atom-text-editor.vim-mode-plus.normal-mode":
-  "c H": "vim-mode-plus:change-surround"
-  "c h": "vim-mode-plus:change-surround-any-pair"
-  "c space h": "vim-mode-plus:change-surround-any-pair-allow-forwarding"
-  "d H": "vim-mode-plus:delete-surround"
-  "d h": "vim-mode-plus:delete-surround-any-pair"
-  "d space h": "vim-mode-plus:delete-surround-any-pair-allow-forwarding"
-  "h": "vim-mode-plus:surround"
-  "enter": "vim-mode-plus:add-blank-line-below"
-  "shift-enter": "vim-mode-plus:add-blank-line-above"
+'atom-text-editor.vim-mode-plus.normal-mode':
+  'c H': 'vim-mode-plus:change-surround'
+  'c h': 'vim-mode-plus:change-surround-any-pair'
+  'c space h': 'vim-mode-plus:change-surround-any-pair-allow-forwarding'
+  'd H': 'vim-mode-plus:delete-surround'
+  'd h': 'vim-mode-plus:delete-surround-any-pair'
+  'd space h': 'vim-mode-plus:delete-surround-any-pair-allow-forwarding'
+  'h': 'vim-mode-plus:surround'
+  'enter': 'vim-mode-plus:add-blank-line-below'
+  'shift-enter': 'vim-mode-plus:add-blank-line-above'
 
-"atom-text-editor.vim-mode-plus.operator-pending-mode.toggle-line-comments-pending":
-  "j": "vim-mode-plus:toggle-line-comments"
+'atom-text-editor.vim-mode-plus.operator-pending-mode.toggle-line-comments-pending':
+  'j': 'vim-mode-plus:toggle-line-comments'
 
-"atom-text-editor.vim-mode-plus.operator-pending-mode.surround-pending":
-  "h": "vim-mode-plus:inner-current-line"
+'atom-text-editor.vim-mode-plus.operator-pending-mode.surround-pending':
+  'h': 'vim-mode-plus:inner-current-line'
 
-"atom-text-editor.vim-mode-plus.visual-mode:not(.insert-mode)":
-  "h": "vim-mode-plus:surround"
+'atom-text-editor.vim-mode-plus.visual-mode:not(.insert-mode)':
+  'h': 'vim-mode-plus:surround'
 
-"atom-text-editor.vim-mode-plus.has-occurrence:not(.insert-mode)":
-  "tab": "vim-mode-plus:move-to-next-occurrence"
-  "shift-tab": "vim-mode-plus:move-to-previous-occurrence"
+'atom-text-editor.vim-mode-plus.has-occurrence:not(.insert-mode)':
+  'tab': 'vim-mode-plus:move-to-next-occurrence'
+  'shift-tab': 'vim-mode-plus:move-to-previous-occurrence'
 
-"atom-text-editor.vim-mode-plus.normal-mode, atom-text-editor.vim-mode-plus.visual-mode":
-  "g m": "vim-mode-plus-user:quick-highlight"
-  "space m": "vim-mode-plus-user:quick-highlight-word"
-  "space M": "quick-highlight:clear"
+'atom-text-editor.vim-mode-plus.normal-mode, atom-text-editor.vim-mode-plus.visual-mode':
+  'g m': 'vim-mode-plus-user:quick-highlight'
+  'space m': 'vim-mode-plus-user:quick-highlight-word'
+  'space M': 'quick-highlight:clear'
 
-"atom-text-editor.vim-mode-plus.operator-pending-mode, atom-text-editor.vim-mode-plus.visual-mode":
-  "a space s": "vim-mode-plus:a-any-pair-allow-forwarding"
-  "i space s": "vim-mode-plus:inner-any-pair-allow-forwarding"
-  "a space {": "vim-mode-plus:a-curly-bracket-allow-forwarding"
-  "i space {": "vim-mode-plus:inner-curly-bracket-allow-forwarding"
-  "a space }": "vim-mode-plus:a-curly-bracket-allow-forwarding"
-  "i space }": "vim-mode-plus:inner-curly-bracket-allow-forwarding"
-  "a space B": "vim-mode-plus:a-curly-bracket-allow-forwarding"
-  "i space B": "vim-mode-plus:inner-curly-bracket-allow-forwarding"
-  "a space [": "vim-mode-plus:a-square-bracket-allow-forwarding"
-  "i space [": "vim-mode-plus:inner-square-bracket-allow-forwarding"
-  "a space ]": "vim-mode-plus:a-square-bracket-allow-forwarding"
-  "i space ]": "vim-mode-plus:inner-square-bracket-allow-forwarding"
-  "a space (": "vim-mode-plus:a-parenthesis-allow-forwarding"
-  "i space (": "vim-mode-plus:inner-parenthesis-allow-forwarding"
-  "a space )": "vim-mode-plus:a-parenthesis-allow-forwarding"
-  "i space )": "vim-mode-plus:inner-parenthesis-allow-forwarding"
-  "a space b": "vim-mode-plus:a-parenthesis-allow-forwarding"
-  "i space b": "vim-mode-plus:inner-parenthesis-allow-forwarding"
-  "a space <": "vim-mode-plus:a-angle-bracket-allow-forwarding"
-  "i space <": "vim-mode-plus:inner-angle-bracket-allow-forwarding"
-  "a space >": "vim-mode-plus:a-angle-bracket-allow-forwarding"
-  "i space >": "vim-mode-plus:inner-angle-bracket-allow-forwarding"
+'atom-text-editor.vim-mode-plus.operator-pending-mode, atom-text-editor.vim-mode-plus.visual-mode':
+  'a space s': 'vim-mode-plus:a-any-pair-allow-forwarding'
+  'i space s': 'vim-mode-plus:inner-any-pair-allow-forwarding'
+  'a space {': 'vim-mode-plus:a-curly-bracket-allow-forwarding'
+  'i space {': 'vim-mode-plus:inner-curly-bracket-allow-forwarding'
+  'a space }': 'vim-mode-plus:a-curly-bracket-allow-forwarding'
+  'i space }': 'vim-mode-plus:inner-curly-bracket-allow-forwarding'
+  'a space B': 'vim-mode-plus:a-curly-bracket-allow-forwarding'
+  'i space B': 'vim-mode-plus:inner-curly-bracket-allow-forwarding'
+  'a space [': 'vim-mode-plus:a-square-bracket-allow-forwarding'
+  'i space [': 'vim-mode-plus:inner-square-bracket-allow-forwarding'
+  'a space ]': 'vim-mode-plus:a-square-bracket-allow-forwarding'
+  'i space ]': 'vim-mode-plus:inner-square-bracket-allow-forwarding'
+  'a space (': 'vim-mode-plus:a-parenthesis-allow-forwarding'
+  'i space (': 'vim-mode-plus:inner-parenthesis-allow-forwarding'
+  'a space )': 'vim-mode-plus:a-parenthesis-allow-forwarding'
+  'i space )': 'vim-mode-plus:inner-parenthesis-allow-forwarding'
+  'a space b': 'vim-mode-plus:a-parenthesis-allow-forwarding'
+  'i space b': 'vim-mode-plus:inner-parenthesis-allow-forwarding'
+  'a space <': 'vim-mode-plus:a-angle-bracket-allow-forwarding'
+  'i space <': 'vim-mode-plus:inner-angle-bracket-allow-forwarding'
+  'a space >': 'vim-mode-plus:a-angle-bracket-allow-forwarding'
+  'i space >': 'vim-mode-plus:inner-angle-bracket-allow-forwarding'
 
-"atom-text-editor#choose-pane-editor":
-  "enter": "choose-pane:last-focused"
+'atom-text-editor#choose-pane-editor':
+  'enter': 'choose-pane:last-focused'
 
-"atom-text-editor.vim-mode-plus.normal-mode[data-grammar~='js']":
-  "space g": "atom-ternjs:definition"
+'atom-text-editor.vim-mode-plus.normal-mode[data-grammar~="js"]':
+  'space g': 'atom-ternjs:definition'
 
-"atom-text-editor.vim-mode-plus.normal-mode[data-grammar~='python']":
-  "space g": "autocomplete-python:go-to-definition"
+'atom-text-editor.vim-mode-plus.normal-mode[data-grammar~="python"]':
+  'space g': 'autocomplete-python:go-to-definition'
 
-".fuzzy-finder atom-text-editor[mini]":
-  "ctrl-s": "pane:split-down"
-  "ctrl-v": "pane:split-right"
+'.fuzzy-finder atom-text-editor[mini]':
+  'ctrl-s': 'pane:split-down'
+  'ctrl-v': 'pane:split-right'
 
-".markdown-preview":
-  "k": "choose-pane:start"
-  "K": "choose-pane:focus-last-focused"
+'.markdown-preview':
+  'k': 'choose-pane:start'
+  'K': 'choose-pane:focus-last-focused'
 
-".tree-view":
-  "-": "tree-view:toggle-focus"
-  "_": "tree-view:reveal-active-file"
-  "k": "choose-pane:start"
-  "K": "choose-pane:focus-last-focused"
+'.tree-view':
+  '-': 'tree-view:toggle-focus'
+  '_': 'tree-view:reveal-active-file'
+  'k': 'choose-pane:start'
+  'K': 'choose-pane:focus-last-focused'
