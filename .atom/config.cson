@@ -30,7 +30,6 @@
     binary: "elm-format"
   "exception-reporting":
     userId: "60c3fc6f-0001-fdb6-f824-d0193742cf3f"
-  "file-icons": {}
   linter:
     errorPanelHeight: 24
   "linter-elm-make":
@@ -47,7 +46,6 @@
     fontSize: 14
     layoutMode: "Compact"
     tabSizing: "Minimum"
-  "relative-numbers": {}
   "trailing-spaces":
     enableForIndentation: true
   "tree-view":
