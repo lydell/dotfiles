@@ -35,6 +35,8 @@
   "shift-down": "vim-mode-plus:scroll-down"
   "shift-tab": "pane:show-previous-item"
   "shift-up": "vim-mode-plus:scroll-up"
+  "space ,": "linter:next-error"
+  "space ;": "linter:previous-error"
   "space q": "core:close"
   "space w": "core:save"
   "space": "unmap!"
