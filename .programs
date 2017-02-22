@@ -3,7 +3,21 @@ sudo apt-add-repository ppa:fish-shell/release-2
 sudo add-apt-repository ppa:git-core/ppa
 
 # APT
-sudo apt install chromium-browser curl fish git gvim jpegoptim optipng pwgen redshift shellcheck tree tworld wmctrl xclip
+sudo apt install \
+chromium-browser \
+curl \
+fish \
+git \
+gvim \
+jpegoptim \
+optipng \
+pwgen \
+redshift \
+shellcheck \
+tree \
+tworld \
+wmctrl \
+xclip
 
 # ~/programs
 firefox-developer-edition
@@ -16,43 +30,50 @@ ngrok
 pt
 
 # npm
-npm install --global coffee-script diff-so-fancy elm npm-check-updates source-map-visualize svgo
+npm install --global
+coffeescript \
+diff-so-fancy \
+elm \
+npm-check-updates \
+source-map-visualize \
+svgo
 
 # Atom
-advanced-open-file
-atom-jinja2
-atom-ternjs
-autocomplete-modules
-autocomplete-python
-blackspace
-choose-pane
-close-other-panes
-color-picker
-cursor-history
-double-tag
-elm-format
-elmjutsu
-file-icons
-git-blame
-git-plus
-highlight-bad-chars
-jumpy
-language-elm
-language-fish-shell
-language-viml
-less-than-slash
-linter
-linter-elm-make
-linter-eslint
-linter-flake8
-linter-shellcheck
-linter-stylelint
-merge-conflicts
-pigments
-quick-highlight
-relative-numbers
-trailing-spaces
-vim-mode-plus
+apm install \
+advanced-open-file \
+atom-jinja2 \
+atom-ternjs \
+autocomplete-modules \
+autocomplete-python \
+blackspace \
+choose-pane \
+close-other-panes \
+color-picker \
+cursor-history \
+double-tag \
+elm-format \
+elmjutsu \
+file-icons \
+git-blame \
+git-plus \
+highlight-bad-chars \
+jumpy \
+language-elm \
+language-fish-shell \
+language-viml \
+less-than-slash \
+linter \
+linter-elm-make \
+linter-eslint \
+linter-flake8 \
+linter-shellcheck \
+linter-stylelint \
+merge-conflicts \
+pigments \
+quick-highlight \
+relative-numbers \
+trailing-spaces \
+vim-mode-plus \
 vim-mode-plus-exchange
 
 # Via Vim
