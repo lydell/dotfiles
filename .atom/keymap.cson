@@ -43,6 +43,7 @@
   'space ,': 'linter:next-error'
   'space ;': 'linter:previous-error'
   'space n': 'fuzzy-finder:toggle-file-finder'
+  'space s': 'spell-check:correct-misspelling'
   'space q': 'core:close'
   'space w': 'core:save'
   'space': 'unmap!'
@@ -109,6 +110,9 @@
 
 'atom-text-editor.vim-mode-plus.normal-mode[data-grammar~="python"]':
   'space g': 'autocomplete-python:go-to-definition'
+
+'.corrections atom-text-editor[mini]':
+  'escape': 'core:cancel'
 
 '.fuzzy-finder atom-text-editor[mini]':
   'ctrl-s': 'pane:split-down'
