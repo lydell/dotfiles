@@ -29,6 +29,8 @@
   'ctrl-q': 'unmap!'
   'delete': 'vim-mode-plus:delete-right'
   'g _': 'vim-mode-plus:snake-case'
+  'g down': 'vim-mode-plus:move-down-screen'
+  'g up': 'vim-mode-plus:move-up-screen'
   'home': 'vim-mode-plus:move-to-first-character-of-line'
   'j': 'vim-mode-plus:toggle-line-comments'
   'k': 'choose-pane:start'
