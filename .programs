@@ -22,6 +22,7 @@ npm install --global coffee-script diff-so-fancy elm npm-check-updates source-ma
 advanced-open-file
 atom-jinja2
 atom-ternjs
+autocomplete-modules
 autocomplete-python
 blackspace
 choose-pane
