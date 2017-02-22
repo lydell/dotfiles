@@ -25,7 +25,9 @@ autocomplete-python
 blackspace
 choose-pane
 close-other-panes
+color-picker
 cursor-history
+double-tag
 elm-format
 elmjutsu
 file-icons
@@ -36,6 +38,7 @@ jumpy
 language-elm
 language-fish-shell
 language-viml
+less-than-slash
 linter
 linter-elm-make
 linter-eslint
