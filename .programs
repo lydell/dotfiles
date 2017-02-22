@@ -19,6 +19,7 @@ pt
 npm install --global coffee-script diff-so-fancy elm npm-check-updates source-map-visualize svgo
 
 # Atom
+advanced-open-file
 atom-jinja2
 atom-ternjs
 autocomplete-python

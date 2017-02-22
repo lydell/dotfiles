@@ -42,6 +42,7 @@
   'shift-up': 'vim-mode-plus:scroll-up'
   'space ,': 'linter:next-error'
   'space ;': 'linter:previous-error'
+  'space a': 'advanced-open-file:toggle'
   'space n': 'fuzzy-finder:toggle-file-finder'
   'space s': 'spell-check:correct-misspelling'
   'space q': 'core:close'

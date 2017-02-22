@@ -1,4 +1,7 @@
 "*":
+  "advanced-open-file":
+    fuzzyMatch: true
+    helmDirSwitch: true
   "atom-ternjs":
     inlineFnCompletionDocumentation: true
   "autocomplete-plus":
