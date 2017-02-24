@@ -3,7 +3,7 @@
     fuzzyMatch: true
     helmDirSwitch: true
   "atom-ternjs":
-    inlineFnCompletionDocumentation: true
+    useSnippetsAndFunction: true
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     confirmCompletion: "tab always, enter when suggestion explicitly selected"
