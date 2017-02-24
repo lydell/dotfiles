@@ -106,6 +106,9 @@
 'atom-text-editor#choose-pane-editor':
   'enter': 'choose-pane:last-focused'
 
+'atom-text-editor.vim-mode-plus.normal-mode[data-grammar~="git-commit"]':
+  'space q': 'core:save'
+
 'atom-text-editor.vim-mode-plus.normal-mode[data-grammar~="js"]':
   'space g': 'atom-ternjs:definition'
 

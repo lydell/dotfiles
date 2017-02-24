@@ -35,6 +35,12 @@
     binary: "elm-format"
   "exception-reporting":
     userId: "60c3fc6f-0001-fdb6-f824-d0193742cf3f"
+  "git-plus":
+    commits:
+      verboseCommits: true
+    general:
+      openInPane: false
+      splitPane: "Right"
   linter:
     errorPanelHeight: 24
   "linter-elm-make":
