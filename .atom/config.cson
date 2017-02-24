@@ -51,7 +51,7 @@
       "prettier/prettier"
     ]
   "linter-flake8":
-    executablePath: "$PROJECT/.venv/bin/flake8"
+    executablePath: "$PROJECT/.venv/bin/flake8;/bin/true"
     flakeErrors: true
   "one-dark-ui":
     fontSize: 14
