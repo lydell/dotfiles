@@ -43,6 +43,7 @@ apm install \
 advanced-open-file \
 atom-jinja2 \
 atom-ternjs \
+auto-detect-indentation \
 autocomplete-modules \
 autocomplete-python \
 blackspace \
@@ -71,6 +72,7 @@ linter-stylelint \
 merge-conflicts \
 pigments \
 quick-highlight \
+react \
 relative-numbers \
 trailing-spaces \
 vim-mode-plus \
