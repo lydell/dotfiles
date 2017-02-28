@@ -94,7 +94,16 @@
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
     removeTrailingWhitespace: false
+".coffee.jsx.source":
+  editor:
+    softWrapAtPreferredLineLength: false
+".gfm.source":
+  editor:
+    softWrapAtPreferredLineLength: true
 ".html.jinja.text":
   editor:
     commentEnd: " -#}"
     commentStart: "{#- "
+".plain.text":
+  editor:
+    softWrapAtPreferredLineLength: true
