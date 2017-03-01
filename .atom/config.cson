@@ -57,6 +57,8 @@
     fontSize: 14
     layoutMode: "Compact"
     tabSizing: "Minimum"
+  "relative-numbers":
+    softWrapsCount: false
   "trailing-spaces":
     enableForIndentation: true
   "tree-view":
