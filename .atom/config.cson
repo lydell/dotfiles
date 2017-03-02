@@ -26,6 +26,9 @@
       "text.html.jinja": [
         "html"
       ]
+    disabledPackages: [
+      "deprecation-cop"
+    ]
     projectHome: "/home/lydell/src"
     restorePreviousWindowsOnStart: false
     telemetryConsent: "limited"
@@ -43,6 +46,8 @@
       splitPane: "Right"
   linter:
     errorPanelHeight: 24
+    showErrorTabFile: false
+    showErrorTabProject: false
   "linter-elm-make":
     showInferredTypeAnnotations: true
   "linter-eslint":
