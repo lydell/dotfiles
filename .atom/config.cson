@@ -59,11 +59,20 @@
     executablePath: "$PROJECT/.venv/bin/flake8;/bin/true"
     flakeErrors: true
   "one-dark-ui":
-    fontSize: 14
+    fontSize: 12
+    layoutMode: "Compact"
+    tabSizing: "Minimum"
+  "one-light-ui":
+    fontSize: 12
     layoutMode: "Compact"
     tabSizing: "Minimum"
   "relative-numbers":
     softWrapsCount: false
+  "theme-switch":
+    profiles: [
+      "one-dark-ui one-dark-syntax"
+      "one-light-ui one-light-syntax"
+    ]
   "trailing-spaces":
     enableForIndentation: true
   "tree-view":
