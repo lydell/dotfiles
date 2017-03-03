@@ -42,6 +42,7 @@
     commits:
       verboseCommits: true
     general:
+      enableStatusBarIcon: false
       openInPane: false
       splitPane: "Right"
   linter:
