@@ -47,6 +47,8 @@
       splitPane: "Right"
   linter:
     errorPanelHeight: 24
+    gutterEnabled: false
+    gutterPosition: "Left"
     showErrorTabFile: false
     showErrorTabProject: false
   "linter-elm-make":
