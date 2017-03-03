@@ -51,6 +51,7 @@
     gutterPosition: "Left"
     showErrorTabFile: false
     showErrorTabProject: false
+    statusIconPosition: "Right"
   "linter-elm-make":
     showInferredTypeAnnotations: true
   "linter-eslint":
