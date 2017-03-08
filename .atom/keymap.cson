@@ -9,9 +9,6 @@
   'ctrl-shift-i': 'cursor-history:next-within-editor'
   'ctrl-shift-o': 'cursor-history:prev-within-editor'
 
-'atom-text-editor:not([mini])':
-  'alt-g B': 'git-blame:toggle'
-
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   ',': 'vim-mode-plus:repeat-find'
   ';': 'vim-mode-plus:repeat-find-reverse'
@@ -75,14 +72,13 @@
 'atom-text-editor.vim-mode-plus.visual-mode:not(.insert-mode)':
   'h': 'vim-mode-plus:surround'
 
+'atom-text-editor.vim-mode-plus.visual-mode.is-narrowed':
+  'space d': 'vim-mode-plus:select-occurrence'
+  'space D': 'vim-mode-plus:change-occurrence'
+
 'atom-text-editor.vim-mode-plus.has-occurrence:not(.insert-mode)':
   'tab': 'vim-mode-plus:move-to-next-occurrence'
   'shift-tab': 'vim-mode-plus:move-to-previous-occurrence'
-
-'atom-text-editor.vim-mode-plus.normal-mode, atom-text-editor.vim-mode-plus.visual-mode':
-  'g m': 'vim-mode-plus-user:quick-highlight'
-  'space m': 'vim-mode-plus-user:quick-highlight-word'
-  'space M': 'quick-highlight:clear'
 
 'atom-text-editor.vim-mode-plus.operator-pending-mode, atom-text-editor.vim-mode-plus.visual-mode':
   'a space s': 'vim-mode-plus:a-any-pair-allow-forwarding'

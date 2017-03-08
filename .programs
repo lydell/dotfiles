@@ -56,7 +56,6 @@ double-tag \
 elm-format \
 elmjutsu \
 file-icons \
-git-blame \
 git-plus \
 highlight-bad-chars \
 jumpy \
@@ -70,9 +69,7 @@ linter-eslint \
 linter-flake8 \
 linter-shellcheck \
 linter-stylelint \
-merge-conflicts \
 pigments \
-quick-highlight \
 react \
 relative-numbers \
 trailing-spaces \
