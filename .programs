@@ -72,6 +72,7 @@ linter-stylelint \
 pigments \
 react \
 relative-numbers \
+theme-switch \
 trailing-spaces \
 vim-mode-plus \
 vim-mode-plus-exchange
