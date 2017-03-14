@@ -38,6 +38,13 @@
     softWrap: true
   "elm-format":
     binary: "elm-format"
+  elmjutsu:
+    autocompleteEnabled: true
+    autocompleteFuzzyFilteringEnabled: true
+    autocompleteSnippetsEnabled: true
+    cacheDirectory: "/tmp/elmjutsu6379WloCW7w9oAhA"
+    showTypesInTooltip: true
+    typeAwareAutocompleteEnabled: true
   "exception-reporting":
     userId: "60c3fc6f-0001-fdb6-f824-d0193742cf3f"
   "git-plus":
@@ -47,6 +54,9 @@
       enableStatusBarIcon: false
       openInPane: false
       splitPane: "Right"
+  "language-elm":
+    autocompleteEnabled: false
+    elmOraclePath: "/home/lydell/.npm-global/bin/elm-oracle"
   linter:
     errorPanelHeight: 24
     gutterEnabled: false
@@ -55,7 +65,7 @@
     showErrorTabProject: false
     statusIconPosition: "Right"
   "linter-elm-make":
-    showInferredTypeAnnotations: true
+    lintOnTheFly: true
   "linter-eslint":
     fixOnSave: true
     rulesToSilenceWhileTyping: [
