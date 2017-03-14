@@ -3,7 +3,8 @@
     fuzzyMatch: true
     helmDirSwitch: true
   "atom-ternjs":
-    useSnippetsAndFunction: true
+    guess: false
+    sort: false
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     confirmCompletion: "tab always, enter when suggestion explicitly selected"
@@ -28,6 +29,7 @@
       ]
     disabledPackages: [
       "deprecation-cop"
+      "atom-ternjs"
     ]
     projectHome: "/home/lydell/src"
     restorePreviousWindowsOnStart: false
@@ -62,6 +64,10 @@
   "linter-flake8":
     executablePath: "$PROJECT/.venv/bin/flake8;/bin/true"
     flakeErrors: true
+  "linter-ui-default":
+    gutterPosition: "Left"
+    statusBarPosition: "Right"
+    tooltipFollows: "Keyboard"
   "one-dark-ui":
     fontSize: 12
     layoutMode: "Compact"
@@ -70,6 +76,9 @@
     fontSize: 12
     layoutMode: "Compact"
     tabSizing: "Minimum"
+  react:
+    disableAutoClose: true
+    enabledForAllJavascriptFiles: true
   "relative-numbers":
     softWrapsCount: false
   "theme-switch":

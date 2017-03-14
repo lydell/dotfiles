@@ -47,17 +47,16 @@ auto-detect-indentation \
 autocomplete-modules \
 autocomplete-python \
 blackspace \
+busy-signal \
 charcode-display \
-choose-pane \
 close-other-panes \
-color-picker \
 cursor-history \
-double-tag \
 elm-format \
 elmjutsu \
 file-icons \
 git-plus \
 highlight-bad-chars \
+intentions \
 jumpy \
 language-elm \
 language-fish-shell \
@@ -69,6 +68,7 @@ linter-eslint \
 linter-flake8 \
 linter-shellcheck \
 linter-stylelint \
+linter-ui-default \
 pigments \
 react \
 relative-numbers \

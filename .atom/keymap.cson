@@ -24,6 +24,10 @@
   'ctrl-space': 'vim-mode-plus:scroll-full-screen-down'
   'ctrl-t': 'fuzzy-finder:toggle-file-finder'
   'ctrl-q': 'unmap!'
+  'ctrl-left': 'window:focus-pane-on-left'
+  'ctrl-right': 'window:focus-pane-on-right'
+  'ctrl-up': 'window:focus-pane-above'
+  'ctrl-down': 'window:focus-pane-below'
   'delete': 'vim-mode-plus:delete-right'
   'g _': 'vim-mode-plus:snake-case'
   'g down': 'vim-mode-plus:move-down-screen'
@@ -35,15 +39,13 @@
   'g x x': 'tabs:close-all-tabs'
   'home': 'vim-mode-plus:move-to-first-character-of-line'
   'j': 'vim-mode-plus:toggle-line-comments'
-  'k': 'choose-pane:start'
-  'K': 'choose-pane:focus-last-focused'
   'l': 'jumpy:toggle'
   'shift-Y': 'vim-mode-plus:yank-to-last-character-of-line'
   'shift-down': 'vim-mode-plus:scroll-down'
   'shift-tab': 'pane:show-previous-item'
   'shift-up': 'vim-mode-plus:scroll-up'
-  'space ,': 'linter:next-error'
-  'space ;': 'linter:previous-error'
+  'space ,': 'linter-ui-default:next-in-current-file'
+  'space ;': 'linter-ui-default:previous-in-current-file'
   'space a': 'advanced-open-file:toggle'
   'space n': 'fuzzy-finder:toggle-file-finder'
   'space s': 'spell-check:correct-misspelling'
@@ -104,9 +106,6 @@
   'a space >': 'vim-mode-plus:a-angle-bracket-allow-forwarding'
   'i space >': 'vim-mode-plus:inner-angle-bracket-allow-forwarding'
 
-'atom-text-editor#choose-pane-editor':
-  'enter': 'choose-pane:last-focused'
-
 'atom-text-editor.vim-mode-plus.normal-mode[data-grammar~="git-commit"]':
   'space q': 'core:save'
 
@@ -123,12 +122,6 @@
   'ctrl-s': 'pane:split-down'
   'ctrl-v': 'pane:split-right'
 
-'.markdown-preview':
-  'k': 'choose-pane:start'
-  'K': 'choose-pane:focus-last-focused'
-
 '.tree-view':
   '-': 'tree-view:toggle-focus'
   '_': 'tree-view:reveal-active-file'
-  'k': 'choose-pane:start'
-  'K': 'choose-pane:focus-last-focused'
