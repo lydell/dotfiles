@@ -109,6 +109,9 @@
 'atom-text-editor.vim-mode-plus.normal-mode[data-grammar~="git-commit"]':
   'space q': 'core:save'
 
+'atom-text-editor.vim-mode-plus.normal-mode[data-grammar~="elm"]':
+  'space g': 'elmjutsu:go-to-definition'
+
 'atom-text-editor.vim-mode-plus.normal-mode[data-grammar~="js"]':
   'space g': 'atom-ternjs:definition'
 
