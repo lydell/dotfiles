@@ -60,13 +60,6 @@
   "language-elm":
     autocompleteEnabled: false
     elmOraclePath: "/home/lydell/.npm-global/bin/elm-oracle"
-  linter:
-    errorPanelHeight: 24
-    gutterEnabled: false
-    gutterPosition: "Left"
-    showErrorTabFile: false
-    showErrorTabProject: false
-    statusIconPosition: "Right"
   "linter-elm-make":
     lintOnTheFly: true
   "linter-eslint":
