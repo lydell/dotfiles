@@ -59,6 +59,7 @@ git-plus \
 highlight-bad-chars \
 intentions \
 jumpy \
+language-babel \
 language-elm \
 language-fish-shell \
 language-viml \
@@ -71,7 +72,6 @@ linter-shellcheck \
 linter-stylelint \
 linter-ui-default \
 pigments \
-react \
 relative-numbers \
 theme-switch \
 trailing-spaces \
