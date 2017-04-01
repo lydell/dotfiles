@@ -44,7 +44,6 @@
     autocompleteSnippetsEnabled: true
     cacheDirectory: "/tmp/elmjutsu6379WloCW7w9oAhA"
     showTypesInTooltip: true
-    typeAwareAutocompleteEnabled: true
   "exception-reporting":
     userId: "60c3fc6f-0001-fdb6-f824-d0193742cf3f"
   "fuzzy-finder":
@@ -60,8 +59,6 @@
   "language-elm":
     autocompleteEnabled: false
     elmOraclePath: "/home/lydell/.npm-global/bin/elm-oracle"
-  "linter-elm-make":
-    lintOnTheFly: true
   "linter-eslint":
     fixOnSave: true
     rulesToSilenceWhileTyping: [
