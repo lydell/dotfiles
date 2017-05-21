@@ -35,6 +35,7 @@
     restorePreviousWindowsOnStart: false
     telemetryConsent: "limited"
   editor:
+    scrollPastEnd: true
     softWrap: true
   "elm-format":
     binary: "elm-format"
@@ -73,7 +74,6 @@
     tooltipFollows: "Keyboard"
   "one-dark-ui":
     fontSize: 12
-    layoutMode: "Compact"
     tabSizing: "Minimum"
   "one-light-ui":
     fontSize: 12
