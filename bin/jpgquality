@@ -20,6 +20,6 @@ for quality in {10..100..10}; do
   log+="$(imgoptimize "$quality" "$newFile" | tail -n 1)\n"
 done
 
-echo -e "${log::-2}"
-echo -e "$orig\t$(du -bh "$orig" | cut -f 1)\t$(identify -format '%Q' "$orig")% quality"
+last="$orig|$(du -bh "$orig" | cut -f 1)|$(identify -format '%Q' "$orig")% quality"
+echo -e "${log::-2}\n$last" | sed 's/  \+/|/g' | column -t -s '|'
 eog "$dir"
