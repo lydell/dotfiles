@@ -47,11 +47,11 @@ for file in "$@"; do
     sizeAfterHuman="$(du -bh "$file" | cut -f 1)"
     percentage="$((100 * (sizeBefore - sizeAfter) / sizeBefore))"
     change="$(echo "-$percentage%" | sed 's/^--/+/')"
-    log+="$file\t$sizeBeforeHuman → $sizeAfterHuman\t$change\n"
+    log+="$file|$sizeBeforeHuman → $sizeAfterHuman|$change\n"
   else
-    log+="$file\tUnsupported file extension\n"
+    log+="$file|Unsupported file extension\n"
   fi
 done
 
 echo "### Results:"
-echo -e "${log::-2}"
+echo -e "${log::-2}" | column -t -s '|'
