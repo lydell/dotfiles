@@ -17,7 +17,14 @@ fi
 currentFile=''
 didChange=''
 
-(e --context 999999 --heading --null "$@"; echo -e '\0') |
+(
+  e \
+    --context 999999 \
+    --with-filename --heading --null \
+    --color=never --no-line-number \
+    "$@"
+  echo -e '\0'
+) |
 {
   while IFS= read -r -d '' part; do
     if test -n "$currentFile"; then
