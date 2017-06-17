@@ -2,15 +2,23 @@
 
 cmd="rg --hidden"
 
+# To use rg with a pager: `rg args... -p | less -RFX`
+# Automatically pipe into `less` if `-p` is used (but not if `--null` is used,
+# to avoid invoking `less` from `pre`). Use the long flag, `--pretty`, to skip
+# piping to `less`.
 seenP=''
+seenNull=''
 for arg in "$@"; do
-  if test "$arg" == '-p'; then
-    seenP='true'
+  if test "$arg" == '--'; then
     break
+  elif test "$arg" == '-p'; then
+    seenP='true'
+  elif test "$arg" == '--null'; then
+    seenNull='true'
   fi
 done
 
-if test -n "$seenP"; then
+if test -n "$seenP" -a -z "$seenNull"; then
   $cmd "$@" | less -RFX
 else
   $cmd "$@"
