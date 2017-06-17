@@ -1,3 +1,17 @@
 #!/usr/bin/env bash
 
-rg --hidden "$@"
+cmd="rg --hidden"
+
+seenP=''
+for arg in "$@"; do
+  if test "$arg" == '-p'; then
+    seenP='true'
+    break
+  fi
+done
+
+if test -n "$seenP"; then
+  $cmd "$@" | less -RFX
+else
+  $cmd "$@"
+fi
