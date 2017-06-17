@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if test "$#" == 0; then
-  gvim .
-else
-  gvim "$@"
-fi

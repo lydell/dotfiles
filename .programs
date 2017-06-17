@@ -9,11 +9,14 @@ curl \
 fish \
 git \
 gvim \
+http \
 jpegoptim \
+jq \
 optipng \
 pwgen \
 redshift \
 shellcheck \
+shutter \
 tree \
 tworld \
 wmctrl \
@@ -25,7 +28,6 @@ firefox-nightly
 nodejs
 
 # ~/bin
-elm-format
 ngrok
 ripgrep
 
@@ -34,6 +36,7 @@ npm install --global
 coffeescript \
 diff-so-fancy \
 elm \
+elm-format \
 npm-check-updates \
 source-map-visualize \
 svgo

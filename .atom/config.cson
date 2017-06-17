@@ -30,10 +30,14 @@
     disabledPackages: [
       "deprecation-cop"
       "atom-ternjs"
+      "flow-ide"
     ]
     projectHome: "/home/lydell/src"
-    restorePreviousWindowsOnStart: false
     telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
   editor:
     scrollPastEnd: true
     softWrap: true
@@ -70,6 +74,7 @@
     flakeErrors: true
   "linter-ui-default":
     gutterPosition: "Left"
+    panelHeight: 69
     statusBarPosition: "Right"
     tooltipFollows: "Keyboard"
   "one-dark-ui":
@@ -77,7 +82,6 @@
     tabSizing: "Minimum"
   "one-light-ui":
     fontSize: 12
-    layoutMode: "Compact"
     tabSizing: "Minimum"
   react:
     disableAutoClose: true
