@@ -7,8 +7,8 @@
 .venv/
 
 .env
+.ignore
 .nodejs
-.ptignore
 .tern-project
 run
 local_simon.py

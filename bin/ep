@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+e2 --pretty "$@" | less -RFX

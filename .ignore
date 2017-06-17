@@ -1,0 +1,6 @@
+.git/
+node_modules/
+elm-stuff/
+fixtures/
+*.min.*
+yarn.lock

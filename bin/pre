@@ -1,32 +1,35 @@
 #!/usr/bin/env bash
 
-if test $# -lt 2; then
-  echo "Usage: $(basename "$0") regex replacement [i] [re args]"
+seenReplace=''
+
+for arg in "$@"; do
+  if test "$arg" == '--replace'; then
+    seenReplace='true'
+    break
+  fi
+done
+
+if test -z "$seenReplace"; then
+  echo 'You must specify the --replace argument!'
   exit 1
 fi
 
-escape() {
-  # This does not cover the edge case where the user already escaped slashes.
-  # But KISS: A real user would never do that.
-  echo "$1" | sed 's#/#\\/#g'
+currentFile=''
+didChange=''
+
+(e --context 999999 --heading --null "$@"; echo -e '\0') |
+{
+  while IFS= read -r -d '' part; do
+    if test -n "$currentFile"; then
+      echo "$currentFile"
+      head -n -1 <<< "$part" > "$currentFile"
+      didChange='true'
+    fi
+    currentFile="$(tail -n 1 <<< "$part")"
+  done
+
+  if test -z "$didChange"; then
+    echo "No files were changed."
+    exit 1
+  fi
 }
-
-regex="$(escape "$1")"
-replacement="$(escape "$2")"
-shift 2
-
-reCase=()
-perlCase=''
-if test "$1" == 'i'; then
-  reCase=('--ignore-case')
-  perlCase='i'
-  shift
-fi
-
-files="$(re --files-with-matches "${reCase[@]}" "$regex" "$@")"
-if test -z "$files"; then
-  exit 1
-fi
-
-echo "$files"
-echo "$files" | xargs -d '\n' perl -i -pe "s/$regex/$replacement/g$perlCase" --

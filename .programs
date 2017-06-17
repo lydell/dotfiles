@@ -27,7 +27,7 @@ nodejs
 # ~/bin
 elm-format
 ngrok
-pt
+ripgrep
 
 # npm
 npm install --global

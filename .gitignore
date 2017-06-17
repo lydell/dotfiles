@@ -4,10 +4,10 @@
 !/.gitconfig
 !/.gitignore
 !/.gitignore_global
+!/.ignore
 !/.npmrc-template
 !/.profile
 !/.programs
-!/.ptignore
 !/.tern-project
 !/.vimrc
 !/README.md
@@ -34,6 +34,7 @@
 !/bin/
 !/bin/backup
 !/bin/e
+!/bin/ep
 !/bin/f
 !/bin/firefox-nightly
 !/bin/firefox-regular
