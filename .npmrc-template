@@ -1,1 +1,2 @@
 prefix=${HOME}/.npm-global
+scripts-prepend-node-path=auto
