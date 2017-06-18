@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-timeout=12
-clipboard='xclip -selection clipboard'
+clipboard='xclip -loops 1 -selection clipboard'
 decrypt='gpg --use-agent --no-tty --decrypt'
 
 file="$1"
@@ -30,8 +29,6 @@ case "$print" in
   '')
     echo -n "$user"
     echo -n "$pass" | $clipboard
-    sleep "$timeout"
-    echo -n '' | $clipboard
     ;;
   '-')
     echo "$user"
