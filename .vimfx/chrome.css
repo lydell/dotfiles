@@ -1,6 +1,6 @@
 @-moz-document url('chrome://browser/content/browser.xul') {
   /* Turn the URL bar stop button into a throbber */
-  #urlbar-stop-button:not(:hover) > image {
+  #stop-button:not(:hover) > image {
     list-style-image: url("chrome://global/skin/icons/loading.png") !important;
     -moz-image-region: auto !important;
   }
