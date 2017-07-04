@@ -23,13 +23,13 @@ didChange=''
     --with-filename --heading --null \
     --color=never --no-line-number \
     "$@"
-  echo -e '\0'
+  echo -e '\n\0'
 ) |
 {
   while IFS= read -r -d '' part; do
     if test -n "$currentFile"; then
       echo "$currentFile"
-      head -n -1 <<< "$part" > "$currentFile"
+      head -n -2 <<< "$part" > "$currentFile"
       didChange='true'
     fi
     currentFile="$(tail -n 1 <<< "$part")"

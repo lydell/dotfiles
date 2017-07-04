@@ -31,6 +31,7 @@
       "deprecation-cop"
       "atom-ternjs"
       "flow-ide"
+      "linter-stylelint"
     ]
     projectHome: "/home/lydell/src"
     telemetryConsent: "limited"
