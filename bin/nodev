@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-default=7
+default=8
 
 usage() {
   echo "Usage: $(basename "$0") (look-up|default|4|6|7|8) (node|npm) args..."
