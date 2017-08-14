@@ -61,7 +61,6 @@ const VIMFX_PREFS = {
 }
 
 const FIREFOX_PREFS = {
-  'accessibility.blockautorefresh': true,
   'browser.ctrlTab.previews': true,
   'browser.fixup.alternate.enabled': false,
   'browser.search.suggest.enabled': false,
