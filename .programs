@@ -38,6 +38,8 @@ diff-so-fancy \
 elm \
 elm-format \
 npm-check-updates \
+npm-home \
+npm-upgrade \
 source-map-visualize \
 svgo
 
