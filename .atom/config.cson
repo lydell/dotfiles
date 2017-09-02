@@ -109,11 +109,12 @@
     ]
     clearHighlightSearchOnResetNormalMode: true
     clearPersistentSelectionOnResetNormalMode: true
+    findAcrossLines: true
     flashOnMoveToOccurrence: true
     highlightSearch: true
     ignoreCaseForSearch: true
     incrementalSearch: true
-    keepColumnOnSelectTextObject: true
+    keymapYToYankToLastCharacterOfLine: true
     numberRegex: "(?:\\B-)?[0-9]+"
     showHoverOnOperate: true
     showHoverSearchCounter: true
