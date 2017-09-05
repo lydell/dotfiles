@@ -31,7 +31,6 @@
       "deprecation-cop"
       "atom-ternjs"
       "flow-ide"
-      "linter-stylelint"
     ]
     projectHome: "/home/lydell/src"
     telemetryConsent: "limited"
@@ -40,6 +39,7 @@
       "one-light-syntax"
     ]
   editor:
+    fontSize: 15
     scrollPastEnd: true
     softWrap: true
   "elm-format":
