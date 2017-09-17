@@ -48,13 +48,13 @@ apm install \
 advanced-open-file \
 atom-jinja2 \
 atom-ternjs \
+atom-typescript \
 auto-detect-indentation \
+autocomplete-haskell \
 autocomplete-modules \
 autocomplete-python \
 blackspace \
 busy-signal \
-charcode-display \
-close-other-panes \
 cursor-history \
 elm-format \
 elmjutsu \
@@ -67,6 +67,9 @@ jumpy \
 language-babel \
 language-elm \
 language-fish-shell \
+language-graphql \
+language-haskell \
+language-purescript \
 language-viml \
 less-than-slash \
 linter \

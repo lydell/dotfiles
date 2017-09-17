@@ -39,7 +39,6 @@
       "one-light-syntax"
     ]
   editor:
-    fontSize: 15
     scrollPastEnd: true
     softWrap: true
   "elm-format":
@@ -67,6 +66,9 @@
     elmOraclePath: "/home/lydell/.npm-global/bin/elm-oracle"
   "linter-eslint":
     fixOnSave: true
+    rulesToDisableWhileFixing: [
+      "no-debugger"
+    ]
     rulesToSilenceWhileTyping: [
       "prettier/prettier"
     ]
@@ -75,7 +77,6 @@
     flakeErrors: true
   "linter-ui-default":
     gutterPosition: "Left"
-    panelHeight: 69
     statusBarPosition: "Right"
     tooltipFollows: "Keyboard"
   "one-dark-ui":
@@ -98,6 +99,7 @@
     enableForIndentation: true
   "tree-view":
     alwaysOpenExisting: true
+    hideVcsIgnoredFiles: true
     showOnRightSide: true
     squashDirectoryNames: true
   "vim-mode-plus":
