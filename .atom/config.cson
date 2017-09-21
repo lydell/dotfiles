@@ -66,11 +66,9 @@
     elmOraclePath: "/home/lydell/.npm-global/bin/elm-oracle"
   "linter-eslint":
     fixOnSave: true
+    ignoreFixableRulesWhileTyping: true
     rulesToDisableWhileFixing: [
       "no-debugger"
-    ]
-    rulesToSilenceWhileTyping: [
-      "prettier/prettier"
     ]
   "linter-flake8":
     executablePath: "$PROJECT/.venv/bin/flake8;/bin/true"
