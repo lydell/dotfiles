@@ -17,6 +17,7 @@ rsync --archive ~/ "/media/$USER/backup/$(uname --nodename)/home" \
   --exclude /old/ \
   --exclude /programs/ \
   --exclude /tmp/ \
+  --exclude /VirtualBox\ VMs/ \
   --exclude .stack-work/ \
   --exclude .venv/ \
   --exclude bower_components/ \
