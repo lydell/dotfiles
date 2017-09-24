@@ -1,1 +1,0 @@
-sendAsyncMessage('VimFx-config:tabCreated')
