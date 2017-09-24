@@ -17,8 +17,6 @@
     wrapSelectionsInBrackets: false
   "choose-pane":
     labelChars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  "close-other-panes":
-    moveItems: false
   "color-picker":
     preferredFormat: "HEX"
   core:
