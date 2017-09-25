@@ -1,0 +1,236 @@
+{
+  "activeProfiles": {
+    "General": "default",
+    "Keybindings": "default_copy_1506275273479",
+    "Appearance": "vimium_copy_1506275561328"
+  },
+  "profiles": {
+    "General": {},
+    "Keybindings": {
+      "default_copy_1506275273479": {
+        "physicalKeys": false,
+        "ignoreModifierKeys": false,
+        "toggleHelpMenu": [],
+        "toggleSaka": [],
+        "openLink": [
+          [
+            {
+              "code": "Space",
+              "key": " ",
+              "shiftKey": false,
+              "ctrlKey": true,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
+        "openLinkInBackgroundTab": [
+          [
+            {
+              "code": "KeyE",
+              "key": "e",
+              "shiftKey": false,
+              "ctrlKey": true,
+              "altKey": false,
+              "metaKey": false
+            },
+            {
+              "code": "KeyI",
+              "key": "i",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
+        "openLinkInForegroundTab": [
+          [
+            {
+              "code": "KeyE",
+              "key": "e",
+              "shiftKey": false,
+              "ctrlKey": true,
+              "altKey": false,
+              "metaKey": false
+            },
+            {
+              "code": "KeyN",
+              "key": "n",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
+        "openLinkInNewWindow": [
+          [
+            {
+              "code": "KeyE",
+              "key": "e",
+              "shiftKey": false,
+              "ctrlKey": true,
+              "altKey": false,
+              "metaKey": false
+            },
+            {
+              "code": "KeyY",
+              "key": "y",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
+        "openLinkInIncognitoWindow": [
+          [
+            {
+              "code": "KeyE",
+              "key": "e",
+              "shiftKey": false,
+              "ctrlKey": true,
+              "altKey": false,
+              "metaKey": false
+            },
+            {
+              "code": "KeyJ",
+              "key": "j",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
+        "downloadLink": [
+          [
+            {
+              "code": "KeyE",
+              "key": "e",
+              "shiftKey": false,
+              "ctrlKey": true,
+              "altKey": false,
+              "metaKey": false
+            },
+            {
+              "code": "KeyL",
+              "key": "l",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
+        "focusLink": [
+          [
+            {
+              "code": "KeyE",
+              "key": "e",
+              "shiftKey": false,
+              "ctrlKey": true,
+              "altKey": false,
+              "metaKey": false
+            },
+            {
+              "code": "KeyU",
+              "key": "u",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
+        "hintChars": "ehstirnoamupcwlfgdy",
+        "scrollDown": [],
+        "scrollUp": [],
+        "scrollLeft": [],
+        "scrollRight": [],
+        "scrollPageDown": [],
+        "scrollPageUp": [],
+        "scrollHalfPageDown": [],
+        "scrollHalfPageUp": [],
+        "scrollToBottom": [],
+        "scrollToTop": [],
+        "scrollToLeft": [],
+        "scrollToRight": [],
+        "goBack": [],
+        "goForward": [],
+        "nextPage": [],
+        "previousPage": [],
+        "goUp": [],
+        "goToRoot": [],
+        "nextTab": [],
+        "previousTab": [],
+        "firstTab": [],
+        "lastTab": [],
+        "moveTabLeft": [],
+        "moveTabRight": [],
+        "moveTabFirst": [],
+        "moveTabLast": [],
+        "closeTab": [],
+        "closeOtherTabs": [],
+        "closeLeftTabs": [],
+        "closeRightTabs": [],
+        "newTab": [],
+        "restoreTab": [],
+        "duplicateTab": [],
+        "newWindow": [],
+        "switchWindow": [
+          [
+            {
+              "code": "Digit5",
+              "key": "%"
+            }
+          ]
+        ],
+        "zoomIn": [],
+        "zoomOut": [],
+        "zoomReset": [],
+        "refreshTab": [],
+        "refreshAllTabs": [],
+        "hardRefreshTab": [],
+        "toggleMuteTab": [],
+        "toggleMuteAllTabs": [],
+        "togglePinTab": [],
+        "passOneKey": [],
+        "passAllKeys": [],
+        "exitPassMode": [],
+        "copyURL": [],
+        "clipboardCurrentTab": [],
+        "clipboardBackgroundTab": [],
+        "clipboardForegroundTab": [],
+        "clipboardNewWindow": [],
+        "clipboardIncognitoWindow": []
+      }
+    },
+    "Appearance": {
+      "vimium_copy_1506275561328": {
+        "hintUseTargetSize": false,
+        "hintHorizontalPlacement": "left",
+        "hintVerticalPlacement": "center",
+        "hintHorizontalTranslation": 0,
+        "hintVerticalTranslation": 0,
+        "hintUseCustomCSS": true,
+        "hintTextColor": "#ff4081",
+        "hintBackgroundColor": "#ffffff",
+        "hintBorderColor": "#ff4081",
+        "hintOpacity": "1",
+        "hintFontFamily": "Roboto, sans-serif",
+        "hintFontSize": 12,
+        "hintFontWeight": "500",
+        "hintHorizontalPadding": 0.25,
+        "hintVerticalPadding": 0.15,
+        "hintBorderWidth": 1,
+        "hintBorderRadius": 4,
+        "hintShadow": true,
+        "hintCSS": "padding: 1px 2px;\nborder: solid 1px rgba(0, 0, 0, 0.4);\nbackground-color: #ffd76e;\ncolor: black;\nfont-family: Cantarell;\nfont-size: 13px;\nline-height: 1;\nfont-weight: bold;\ntext-transform: uppercase;\ntransform: translate(-100%, -50%);",
+        "hintNormalCharCSS": "",
+        "hintActiveCharCSS": "color: rgba(0, 0, 0, 0.3);"
+      }
+    }
+  }
+}

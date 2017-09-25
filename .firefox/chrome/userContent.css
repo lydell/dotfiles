@@ -1,24 +1,5 @@
 @namespace url("http://www.w3.org/1999/xhtml");
 
-@-moz-document regexp("https?://(?!([^.]+\\.)?localhost|\\d).*") {
-  /* Focus */
-  :focus {
-    outline: 2px solid orange !important;
-  }
-
-
-  /* Tab size */
-  *:not(#override) {
-    -moz-tab-size: 2 !important;
-  }
-
-
-  /* Textareas - Resize always */
-  html textarea {
-    resize: both !important;
-  }
-}
-
 @-moz-document domain("wikipedia.org") {
   @media (min-width: 1090px) {
     #mw-head {
