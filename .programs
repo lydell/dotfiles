@@ -30,6 +30,7 @@ nodejs
 # ~/bin
 fd
 ngrok
+pup
 ripgrep
 
 # npm
