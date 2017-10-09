@@ -28,6 +28,7 @@ firefox-nightly
 nodejs
 
 # ~/bin
+fd
 ngrok
 ripgrep
 
