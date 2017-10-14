@@ -29,6 +29,7 @@
       "deprecation-cop"
       "atom-ternjs"
       "flow-ide"
+      "vim-mode-plus-exchange"
     ]
     projectHome: "/home/lydell/src"
     telemetryConsent: "limited"
@@ -113,6 +114,7 @@
     ignoreCaseForSearch: true
     incrementalSearch: true
     keymapYToYankToLastCharacterOfLine: true
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     numberRegex: "(?:\\B-)?[0-9]+"
     showHoverOnOperate: true
     showHoverSearchCounter: true

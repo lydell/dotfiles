@@ -47,6 +47,7 @@ svgo
 
 # Atom
 apm install \
+MagicPython \
 advanced-open-file \
 atom-jinja2 \
 atom-ternjs \
@@ -77,6 +78,7 @@ linter \
 linter-elm-make \
 linter-eslint \
 linter-flake8 \
+linter-patch-errors-singleline \
 linter-shellcheck \
 linter-stylelint \
 linter-ui-default \
