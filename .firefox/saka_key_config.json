@@ -12,6 +12,7 @@
         "ignoreModifierKeys": false,
         "toggleHelpMenu": [],
         "toggleSaka": [],
+        "hintChars": "ehstirnoamupcwlfgdy",
         "openLink": [
           [
             {
@@ -42,6 +43,16 @@
               "altKey": false,
               "metaKey": false
             }
+          ],
+          [
+            {
+              "code": "KeyI",
+              "key": "i",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": true,
+              "metaKey": false
+            }
           ]
         ],
         "openLinkInForegroundTab": [
@@ -60,6 +71,16 @@
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
+              "metaKey": false
+            }
+          ],
+          [
+            {
+              "code": "KeyN",
+              "key": "n",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": true,
               "metaKey": false
             }
           ]
@@ -144,11 +165,16 @@
             }
           ]
         ],
-        "hintChars": "ehstirnoamupcwlfgdy",
+        "goBack": [],
+        "goForward": [],
+        "nextPage": [],
+        "previousPage": [],
+        "goUp": [],
+        "goToRoot": [],
         "scrollDown": [],
         "scrollUp": [],
-        "scrollLeft": [],
         "scrollRight": [],
+        "scrollLeft": [],
         "scrollPageDown": [],
         "scrollPageUp": [],
         "scrollHalfPageDown": [],
@@ -157,12 +183,21 @@
         "scrollToTop": [],
         "scrollToLeft": [],
         "scrollToRight": [],
-        "goBack": [],
-        "goForward": [],
-        "nextPage": [],
-        "previousPage": [],
-        "goUp": [],
-        "goToRoot": [],
+        "zoomIn": [],
+        "zoomOut": [],
+        "zoomReset": [],
+        "newTab": [],
+        "restoreTab": [],
+        "duplicateTab": [],
+        "newWindow": [],
+        "newIncognitoWindow": [],
+        "closeTab": [],
+        "closeOtherTabs": [],
+        "closeRightTabs": [],
+        "closeLeftTabs": [],
+        "refreshTab": [],
+        "refreshAllTabs": [],
+        "hardRefreshTab": [],
         "nextTab": [],
         "previousTab": [],
         "firstTab": [],
@@ -171,14 +206,9 @@
         "moveTabRight": [],
         "moveTabFirst": [],
         "moveTabLast": [],
-        "closeTab": [],
-        "closeOtherTabs": [],
-        "closeLeftTabs": [],
-        "closeRightTabs": [],
-        "newTab": [],
-        "restoreTab": [],
-        "duplicateTab": [],
-        "newWindow": [],
+        "toggleMuteTab": [],
+        "toggleMuteAllTabs": [],
+        "togglePinTab": [],
         "switchWindow": [
           [
             {
@@ -187,15 +217,6 @@
             }
           ]
         ],
-        "zoomIn": [],
-        "zoomOut": [],
-        "zoomReset": [],
-        "refreshTab": [],
-        "refreshAllTabs": [],
-        "hardRefreshTab": [],
-        "toggleMuteTab": [],
-        "toggleMuteAllTabs": [],
-        "togglePinTab": [],
         "passOneKey": [],
         "passAllKeys": [],
         "exitPassMode": [],
@@ -210,17 +231,17 @@
     "Appearance": {
       "vimium_copy_1506275561328": {
         "hintUseTargetSize": false,
+        "hintFontSize": 12,
         "hintHorizontalPlacement": "left",
         "hintVerticalPlacement": "center",
+        "hintUseCustomCSS": true,
         "hintHorizontalTranslation": 0,
         "hintVerticalTranslation": 0,
-        "hintUseCustomCSS": true,
         "hintTextColor": "#ff4081",
         "hintBackgroundColor": "#ffffff",
         "hintBorderColor": "#ff4081",
         "hintOpacity": "1",
         "hintFontFamily": "Roboto, sans-serif",
-        "hintFontSize": 12,
         "hintFontWeight": "500",
         "hintHorizontalPadding": 0.25,
         "hintVerticalPadding": 0.15,
