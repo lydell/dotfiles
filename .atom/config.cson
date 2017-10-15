@@ -29,7 +29,6 @@
       "deprecation-cop"
       "atom-ternjs"
       "flow-ide"
-      "vim-mode-plus-exchange"
     ]
     projectHome: "/home/lydell/src"
     telemetryConsent: "limited"
