@@ -1,11 +1,20 @@
 {
   "activeProfiles": {
-    "General": "default",
+    "General": "default_copy_1506533131347",
     "Keybindings": "default_copy_1506275273479",
     "Appearance": "vimium_copy_1506275561328"
   },
   "profiles": {
-    "General": {},
+    "General": {
+      "default_copy_1506533131347": {
+        "enabled": true,
+        "preventStealFocus": false,
+        "disablePageShortcuts": false,
+        "hintDetectByCursorStyle": true,
+        "smoothScroll": true,
+        "scrollStep": 16
+      }
+    },
     "Keybindings": {
       "default_copy_1506275273479": {
         "physicalKeys": false,
@@ -16,11 +25,11 @@
         "openLink": [
           [
             {
-              "code": "Space",
-              "key": " ",
+              "code": "KeyJ",
+              "key": "j",
               "shiftKey": false,
-              "ctrlKey": true,
-              "altKey": false,
+              "ctrlKey": false,
+              "altKey": true,
               "metaKey": false
             }
           ]
@@ -28,19 +37,11 @@
         "openLinkInBackgroundTab": [
           [
             {
-              "code": "KeyE",
-              "key": "e",
-              "shiftKey": false,
-              "ctrlKey": true,
-              "altKey": false,
-              "metaKey": false
-            },
-            {
-              "code": "KeyI",
-              "key": "i",
+              "code": "KeyK",
+              "key": "k",
               "shiftKey": false,
               "ctrlKey": false,
-              "altKey": false,
+              "altKey": true,
               "metaKey": false
             }
           ],
@@ -58,19 +59,11 @@
         "openLinkInForegroundTab": [
           [
             {
-              "code": "KeyE",
-              "key": "e",
-              "shiftKey": false,
-              "ctrlKey": true,
-              "altKey": false,
-              "metaKey": false
-            },
-            {
-              "code": "KeyN",
-              "key": "n",
+              "code": "KeyL",
+              "key": "l",
               "shiftKey": false,
               "ctrlKey": false,
-              "altKey": false,
+              "altKey": true,
               "metaKey": false
             }
           ],
@@ -88,16 +81,16 @@
         "openLinkInNewWindow": [
           [
             {
-              "code": "KeyE",
-              "key": "e",
+              "code": "Semicolon",
+              "key": "ö",
               "shiftKey": false,
-              "ctrlKey": true,
-              "altKey": false,
+              "ctrlKey": false,
+              "altKey": true,
               "metaKey": false
             },
             {
-              "code": "KeyY",
-              "key": "y",
+              "code": "KeyK",
+              "key": "k",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -108,31 +101,11 @@
         "openLinkInIncognitoWindow": [
           [
             {
-              "code": "KeyE",
-              "key": "e",
-              "shiftKey": false,
-              "ctrlKey": true,
-              "altKey": false,
-              "metaKey": false
-            },
-            {
-              "code": "KeyJ",
-              "key": "j",
+              "code": "Semicolon",
+              "key": "ö",
               "shiftKey": false,
               "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            }
-          ]
-        ],
-        "downloadLink": [
-          [
-            {
-              "code": "KeyE",
-              "key": "e",
-              "shiftKey": false,
-              "ctrlKey": true,
-              "altKey": false,
+              "altKey": true,
               "metaKey": false
             },
             {
@@ -145,19 +118,39 @@
             }
           ]
         ],
-        "focusLink": [
+        "downloadLink": [
           [
             {
-              "code": "KeyE",
-              "key": "e",
+              "code": "Semicolon",
+              "key": "ö",
               "shiftKey": false,
-              "ctrlKey": true,
-              "altKey": false,
+              "ctrlKey": false,
+              "altKey": true,
               "metaKey": false
             },
             {
-              "code": "KeyU",
-              "key": "u",
+              "code": "Semicolon",
+              "key": "ö",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
+        "focusLink": [
+          [
+            {
+              "code": "Semicolon",
+              "key": "ö",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": true,
+              "metaKey": false
+            },
+            {
+              "code": "KeyJ",
+              "key": "j",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
