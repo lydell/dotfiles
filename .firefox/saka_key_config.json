@@ -32,6 +32,16 @@
               "altKey": true,
               "metaKey": false
             }
+          ],
+          [
+            {
+              "code": "KeyH",
+              "key": "h",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": true,
+              "metaKey": false
+            }
           ]
         ],
         "openLinkInBackgroundTab": [
@@ -47,8 +57,8 @@
           ],
           [
             {
-              "code": "KeyI",
-              "key": "i",
+              "code": "KeyT",
+              "key": "t",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": true,
@@ -69,8 +79,8 @@
           ],
           [
             {
-              "code": "KeyN",
-              "key": "n",
+              "code": "KeyR",
+              "key": "r",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": true,
@@ -96,6 +106,24 @@
               "altKey": false,
               "metaKey": false
             }
+          ],
+          [
+            {
+              "code": "KeyO",
+              "key": "o",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": true,
+              "metaKey": false
+            },
+            {
+              "code": "KeyT",
+              "key": "t",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
           ]
         ],
         "openLinkInIncognitoWindow": [
@@ -111,6 +139,24 @@
             {
               "code": "KeyL",
               "key": "l",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ],
+          [
+            {
+              "code": "KeyO",
+              "key": "o",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": true,
+              "metaKey": false
+            },
+            {
+              "code": "KeyR",
+              "key": "r",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -136,6 +182,24 @@
               "altKey": false,
               "metaKey": false
             }
+          ],
+          [
+            {
+              "code": "KeyO",
+              "key": "o",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": true,
+              "metaKey": false
+            },
+            {
+              "code": "KeyO",
+              "key": "o",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
           ]
         ],
         "focusLink": [
@@ -151,6 +215,24 @@
             {
               "code": "KeyJ",
               "key": "j",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ],
+          [
+            {
+              "code": "KeyO",
+              "key": "o",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": true,
+              "metaKey": false
+            },
+            {
+              "code": "KeyH",
+              "key": "h",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
