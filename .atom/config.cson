@@ -81,6 +81,10 @@
   "one-light-ui":
     fontSize: 12
     tabSizing: "Minimum"
+  "prettier-atom":
+    formatOnSaveOptions:
+      isDisabledIfNoConfigFile: true
+      isDisabledIfNotInPackageJson: true
   react:
     disableAutoClose: true
     enabledForAllJavascriptFiles: true
