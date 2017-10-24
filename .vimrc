@@ -28,6 +28,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'prettier/vim-prettier', { 'for': ['javascript'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'tommcdo/vim-exchange'
 Plug 'unblevable/quick-scope'
@@ -445,6 +446,9 @@ function! DirvishReload()
   execute 'Dirvish' '%'
   call cursor(currentLine, 0)
 endfunction
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js Prettier
 
 
 """ Status line
