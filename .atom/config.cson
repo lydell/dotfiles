@@ -59,6 +59,9 @@
       enableStatusBarIcon: false
       openInPane: false
       splitPane: "Right"
+  jumpy:
+    fontSize: 1
+    highContrast: true
   "language-elm":
     autocompleteEnabled: false
     elmOraclePath: "/home/lydell/.npm-global/bin/elm-oracle"
