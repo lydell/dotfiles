@@ -36,6 +36,10 @@ active=false
 natural-scroll=true
 tap-to-click=true
 
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'us+altgr-intl')]
+xkb-options=['compose:sclk', 'terminate:ctrl_alt_bksp', 'lv3:ralt_switch']
+
 [org/gnome/settings-daemon/peripherals/keyboard]
 remember-numlock-state=false
 numlock-state='on'
