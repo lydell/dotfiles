@@ -125,6 +125,8 @@
     clearHighlightSearchOnResetNormalMode: true
     clearPersistentSelectionOnResetNormalMode: true
     findAcrossLines: true
+    findCharsMax: 100
+    findConfirmByTimeout: 200
     flashOnMoveToOccurrence: true
     highlightSearch: true
     ignoreCaseForSearch: true
