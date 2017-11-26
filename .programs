@@ -63,7 +63,6 @@ elm-format \
 elmjutsu \
 file-icons \
 flow-ide \
-git-plus \
 intentions \
 jumpy \
 language-babel \
@@ -71,7 +70,6 @@ language-elm \
 language-fish-shell \
 language-graphql \
 language-haskell \
-language-purescript \
 language-viml \
 less-than-slash \
 linter \
@@ -84,7 +82,6 @@ linter-stylelint \
 linter-ui-default \
 pigments \
 relative-numbers \
-theme-switch \
 trailing-spaces \
 vim-mode-plus \
 vim-mode-plus-exchange
