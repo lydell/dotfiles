@@ -80,6 +80,7 @@ linter-patch-errors-singleline \
 linter-shellcheck \
 linter-stylelint \
 linter-ui-default \
+mprettier \
 pigments \
 relative-numbers \
 trailing-spaces \
