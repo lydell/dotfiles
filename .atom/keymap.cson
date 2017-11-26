@@ -4,15 +4,16 @@
   'ctrl-escape': 'core:cancel'
 
 'atom-workspace':
-  'ctrl-i': 'cursor-history:next'
-  'ctrl-o': 'cursor-history:prev'
-  'ctrl-shift-i': 'cursor-history:next-within-editor'
-  'ctrl-shift-o': 'cursor-history:prev-within-editor'
+  'ctrl-i': 'cursor-history:next-within-editor'
+  'ctrl-o': 'cursor-history:prev-within-editor'
+
+  'ctrl-shift-i': 'cursor-history:next'
+  'ctrl-shift-o': 'cursor-history:prev'
 
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   ',': 'vim-mode-plus:repeat-find'
   ';': 'vim-mode-plus:repeat-find-reverse'
-  '-': 'tree-view:toggle-focus'
+  '-': 'jumpy:toggle'
   '_': 'vim-mode-plus:move-to-first-character-of-line-up'
   'alt-b': 'editor:move-to-previous-subword-boundary'
   'alt-w': 'editor:move-to-next-subword-boundary'
@@ -35,13 +36,15 @@
   'g up': 'vim-mode-plus:move-up'
   'down': 'vim-mode-plus:move-down-screen'
   'up': 'vim-mode-plus:move-up-screen'
+  'g P': 'vim-mode-plus:put-before-with-auto-indent',
+  'g p': 'vim-mode-plus:put-after-with-auto-indent',
   'g x home': 'tabs:close-tabs-to-left'
   'g x end': 'tabs:close-tabs-to-right'
   'g x a': 'tabs:close-other-tabs'
   'g x x': 'tabs:close-all-tabs'
   'home': 'vim-mode-plus:move-to-first-character-of-line'
   'j': 'vim-mode-plus:toggle-line-comments'
-  'l': 'jumpy:toggle'
+  'l': 'vim-mode-plus:select'
   'numpad0': 'vim-mode-plus:move-to-last-character-of-line'
   'numpad1': 'vim-mode-plus:move-up-to-edge'
   'numpad2': 'vim-mode-plus:move-down-to-edge'
@@ -53,9 +56,9 @@
   'numpad8': 'vim-mode-plus:move-to-next-paragraph'
   'numpad9': 'vim-mode-plus:move-to-first-character-of-line'
   'shift-Y': 'vim-mode-plus:yank-to-last-character-of-line'
-  'shift-down': 'vim-mode-plus:scroll-down'
+  'shift-down': 'vim-mode-plus:mini-scroll-down'
   'shift-tab': 'pane:show-previous-item'
-  'shift-up': 'vim-mode-plus:scroll-up'
+  'shift-up': 'vim-mode-plus:mini-scroll-up'
   'space ,': 'linter-ui-default:next-in-current-file'
   'space ;': 'linter-ui-default:previous-in-current-file'
   'space a': 'advanced-open-file:toggle'
@@ -168,9 +171,8 @@
   'escape': 'core:cancel'
 
 '.fuzzy-finder atom-text-editor[mini]':
-  'ctrl-s': 'pane:split-down'
-  'ctrl-v': 'pane:split-right'
+  'ctrl-shift-s': 'pane:split-down'
+  'ctrl-s': 'pane:split-right'
 
 '.tree-view':
-  '-': 'tree-view:toggle-focus'
-  '_': 'tree-view:reveal-active-file'
+  '-': 'tree-view:reveal-active-file'

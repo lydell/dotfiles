@@ -130,7 +130,6 @@
     ignoreCaseForSearch: true
     incrementalSearch: true
     keymapYToYankToLastCharacterOfLine: true
-    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     numberRegex: "(?:\\B-)?[0-9]+"
     showHoverOnOperate: true
     showHoverSearchCounter: true
