@@ -70,6 +70,27 @@
       openInPane: false
       splitPane: "Right"
   jumpy:
+    customKeys: [
+      "e"
+      "h"
+      "s"
+      "t"
+      "i"
+      "r"
+      "n"
+      "o"
+      "a"
+      "m"
+      "u"
+      "p"
+      "c"
+      "w"
+      "l"
+      "f"
+      "g"
+      "d"
+      "y"
+    ]
     fontSize: 1
     highContrast: true
   "language-elm":
