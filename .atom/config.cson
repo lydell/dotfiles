@@ -122,8 +122,7 @@
   react:
     disableAutoClose: true
     enabledForAllJavascriptFiles: true
-  "relative-numbers":
-    softWrapsCount: false
+  "relative-numbers": {}
   "theme-switch":
     profiles: [
       "one-dark-ui one-dark-syntax"
