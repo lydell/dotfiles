@@ -4,6 +4,8 @@ function setup
   abbr dc 'docker-compose'
   abbr c 'xclip -selection clipboard'
   abbr r './run'
+  abbr R 'less -R'
+  abbr q 'jq -C . | less -R'
 
   abbr s 'git status'
   abbr d 'git diff'
