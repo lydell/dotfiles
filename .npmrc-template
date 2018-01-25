@@ -1,3 +1,4 @@
 prefix=${HOME}/.npm-global
+save-prefix=''
 scripts-prepend-node-path=auto
 editor=atom
