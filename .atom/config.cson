@@ -7,7 +7,6 @@
     sort: false
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
-    confirmCompletion: "tab always, enter when suggestion explicitly selected"
   "autocomplete-python":
     useKite: false
     useSnippets: "required"
@@ -21,6 +20,7 @@
     preferredFormat: "HEX"
   core:
     autoHideMenuBar: true
+    closeDeletedFileTabs: true
     customFileTypes:
       "text.html.jinja": [
         "html"
