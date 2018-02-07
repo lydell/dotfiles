@@ -1,0 +1,37 @@
+unmapAll
+map <a-j> LinkHints.activateMode
+map <a-h> LinkHints.activateMode
+map <a-k> LinkHints.activateModeToOpenInNewTab
+map <a-t> LinkHints.activateModeToOpenInNewTab
+map <a-l> LinkHints.activateModeToOpenInNewForegroundTab
+map <a-r> LinkHints.activateModeToOpenInNewForegroundTab
+map <a-ö>j LinkHints.activateModeWithQueue
+map <a-o>h LinkHints.activateModeWithQueue
+map <a-ö>k LinkHints.activateModeToCopyLinkUrl
+map <a-o>t LinkHints.activateModeToCopyLinkUrl
+map <a-ö>l LinkHints.activateModeToDownloadLink
+map <a-o>r LinkHints.activateModeToDownloadLink
+map <a-ö>ö LinkHints.activateModeToOpenIncognito
+map <a-o>o LinkHints.activateModeToOpenIncognito
+
+ehstirnoamupcwlfgdy
+
+div > .vimiumHintMarker {
+  padding: 1px 2px;
+  border: solid 1px rgba(0, 0, 0, 0.4);
+  border-radius: 0;
+  background: #ffd76e;
+  box-shadow: none;
+  transform: translateX(-100%);
+}
+div > .vimiumHintMarker span {
+  color: black;
+  font-family: Cantarell;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+div > .vimiumHintMarker > .matchingCharacter {
+  color: rgba(0, 0, 0, 0.3);
+}
