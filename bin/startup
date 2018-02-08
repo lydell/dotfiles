@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-redshift -l 59:18 &
 xinput disable "ELAN Touchscreen"
 
 if test "$(uname --nodename)" != "nuc"; then
