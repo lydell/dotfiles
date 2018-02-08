@@ -1,6 +1,7 @@
 # PPA
 sudo apt-add-repository ppa:fish-shell/release-2
 sudo add-apt-repository ppa:git-core/ppa
+sudo add-apt-repository ppa:phoerious/keepassxc
 
 # APT
 sudo apt install \
@@ -21,6 +22,10 @@ tree \
 tworld \
 wmctrl \
 xclip
+
+# .deb
+atom
+slack
 
 # ~/programs
 firefox-developer-edition

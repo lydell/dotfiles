@@ -9,7 +9,7 @@ regex="$1"
 
 workspace_id="$(wmctrl -d | cut -d 'D' -f 1 | grep -m 1 '\*' | cut -d ' ' -f 1)"
 windows="$(wmctrl -lx | grep -P "^\S+\s+$workspace_id\s+[^.]+(\d*\.)++$regex")"
-test "$windows" == '' && exit
+test "$windows" == '' && exit 1
 
 window_id="$(xprop -root '\t$0' '_NET_ACTIVE_WINDOW' | cut -f 2 | sed 's/^0x/0x0/')"
 window_num="$(echo "$windows" | grep -n -m 1 "^$window_id\s" | cut -d ':' -f 1)"

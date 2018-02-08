@@ -99,10 +99,15 @@ name='focus gimp'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7]
 binding='<Super>minus'
-command='focus Nautilus'
-name='focus nautilus'
+command='focus Slack'
+name='focus slack'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8]
+binding='<Super>w'
+command='focus-or-start keepassxc keepassxc'
+name='focus or start KeePassXC'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9]
 binding='<Super>comma'
-command="focus '(?!Gnome-terminal|Atom|Gvim|Firefox|Chromium|Eog|Gimp|Nautilus)'"
+command="focus '(?!Gnome-terminal|Atom|Gvim|Firefox|Chromium|Eog|Gimp|Slack|keepassxc)'"
 name='focus other'

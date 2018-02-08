@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if test $# -lt 1 -o $# -gt 2; then
+  echo "Usage: $(basename "$0") ENTRY [DATABASE]"
+  exit 1
+fi
+
+entry="$1"
+database="${2:-'~/pw.kdbx'}"
+clipboard='xclip -selection clipboard'
+
+keepassxc-cli clip "$database" "$entry"
+
+# Make sure the clipboard can only be pasted once.
+$clipboard -out | $clipboard -loops 1
