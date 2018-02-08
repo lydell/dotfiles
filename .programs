@@ -9,7 +9,7 @@ curl \
 fish \
 git \
 gvim \
-http \
+httpie \
 jpegoptim \
 jq \
 optipng \
