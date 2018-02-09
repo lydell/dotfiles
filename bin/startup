@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-xinput disable "ELAN Touchscreen"
-
 if test "$(uname --nodename)" != "nuc"; then
   sleep 1
   teck_se
