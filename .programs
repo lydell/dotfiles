@@ -38,6 +38,7 @@ firefox-nightly
 nodejs
 
 # ~/bin
+micro
 ngrok
 pup
 ripgrep
