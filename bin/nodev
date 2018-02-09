@@ -27,13 +27,10 @@ fi
 
 case "$version" in
   '4')
-    name='node-v4.8.3-linux-x64'
+    name='node-v4.8.7-linux-x64'
     ;;
   '6')
-    name='node-v6.11.0-linux-x64'
-    ;;
-  '7')
-    name='node-v7.10.0-linux-x64'
+    name='node-v6.12.3-linux-x64'
     ;;
   '8')
     name='node-v8.9.4-linux-x64'
