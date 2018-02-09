@@ -13,12 +13,14 @@ gvim \
 httpie \
 jpegoptim \
 jq \
+keepassxc \
 optipng \
 pwgen \
 shellcheck \
 shutter \
 tree \
 tworld \
+vanilla-gnome-desktop \
 wmctrl \
 xclip
 
@@ -32,21 +34,15 @@ firefox-nightly
 nodejs
 
 # ~/bin
-fd
 ngrok
 pup
 ripgrep
 
 # npm
-npm install --global
-coffeescript \
+npm install --global \
 diff-so-fancy \
-elm \
-elm-format \
-npm-check-updates \
 npm-home \
 npm-upgrade \
-source-map-visualize \
 svgo
 
 # Atom
@@ -85,13 +81,12 @@ linter-shellcheck \
 linter-stylelint \
 linter-ui-default \
 mprettier \
-pigments \
 relative-numbers \
 trailing-spaces \
 vim-mode-plus \
 vim-mode-plus-exchange
 
-# Via Vim
+# Special
 fzf
 
 # Firefox
