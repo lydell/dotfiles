@@ -6,6 +6,7 @@
 $ cd location/of/choice
 $ git clone --no-checkout https://github.com/lydell/dotfiles.git
 $ cd dotfiles
+$ mkdir .git/info
 $ echo '*' > .git/info/exclude
 $ git config core.worktree "$HOME"
 $ git checkout master # --force if you know what you’re doing.
