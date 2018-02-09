@@ -20,6 +20,7 @@ pwgen \
 safe-rm \
 shellcheck \
 shutter \
+srm \
 tree \
 tworld \
 vanilla-gnome-desktop \
