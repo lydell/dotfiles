@@ -17,6 +17,7 @@ jq \
 keepassxc \
 optipng \
 pwgen \
+safe-rm \
 shellcheck \
 shutter \
 tree \
