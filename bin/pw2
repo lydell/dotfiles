@@ -6,7 +6,7 @@ if test $# -lt 1 -o $# -gt 2; then
 fi
 
 entry="$1"
-database="${2:-'~/pw.kdbx'}"
+database="${2:-"$HOME/pw.kdbx"}"
 clipboard='xclip -selection clipboard'
 
 keepassxc-cli clip "$database" "$entry"
