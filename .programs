@@ -1,6 +1,7 @@
 # PPA
 sudo apt-add-repository ppa:fish-shell/release-2
 sudo add-apt-repository ppa:git-core/ppa
+sudo add-apt-repository ppa:neovim-ppa/stable
 sudo add-apt-repository ppa:phoerious/keepassxc
 yarn
 
@@ -15,6 +16,7 @@ httpie \
 jpegoptim \
 jq \
 keepassxc \
+neovim \
 optipng \
 pwgen \
 safe-rm \
