@@ -2,6 +2,7 @@
 sudo apt-add-repository ppa:fish-shell/release-2
 sudo add-apt-repository ppa:git-core/ppa
 sudo add-apt-repository ppa:phoerious/keepassxc
+yarn
 
 # APT
 sudo apt install \
@@ -22,7 +23,8 @@ tree \
 tworld \
 vanilla-gnome-desktop \
 wmctrl \
-xclip
+xclip \
+yarn
 
 # .deb
 atom
