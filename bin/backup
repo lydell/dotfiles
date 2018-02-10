@@ -3,9 +3,11 @@
 rsync --archive ~/ "/media/$USER/backup/$(uname --nodename)/home" \
   --delete --backup \
   --progress --human-readable \
+  --exclude /.atom/ \
   --exclude /.cache/ \
   --exclude /.elm/ \
   --exclude /.fzf/ \
+  --exclude /.gem/ \
   --exclude /.node-gyp/ \
   --exclude /.npm/ \
   --exclude /.npm-global/ \
