@@ -69,54 +69,9 @@ switch-input-source=['']
 switch-input-source-backward=['']
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Shift><Super>q'
 command='gnome-session-quit --power-off'
 name='shut down'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Super>h'
-command='focus Gnome-terminal'
-name='focus terminal'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
-binding='<Super>t'
-command="focus '(Atom|Gvim)'"
-name='focus gvim'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
-binding='<Super>r'
-command="focus 'Firefox(?!.+Nightly$)'"
-name='focus firefox'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
-binding='<Super>period'
-command="focus '(Chromium|Firefox.+Nightly$)'"
-name='focus alternate browsers'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
-binding='<Super>f'
-command='focus Eog'
-name='focus eog'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
-binding='<Super>d'
-command='focus Gimp'
-name='focus gimp'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7]
-binding='<Super>minus'
-command='focus Slack'
-name='focus slack'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8]
-binding='<Super>w'
-command='focus-or-start keepassxc keepassxc'
-name='focus or start KeePassXC'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9]
-binding='<Super>comma'
-command="focus '(?!Gnome-terminal|Atom|Gvim|Firefox|Chromium|Eog|Gimp|Slack|keepassxc)'"
-name='focus other'
