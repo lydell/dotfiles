@@ -1,6 +1,1 @@
 #!/usr/bin/env bash
-
-if test "$(uname --nodename)" != "nuc"; then
-  sleep 1
-  teck_se
-fi

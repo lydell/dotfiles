@@ -46,12 +46,8 @@ natural-scroll=true
 tap-to-click=true
 
 [org/gnome/desktop/input-sources]
-sources=[('xkb', 'us+altgr-intl')]
-xkb-options=['compose:sclk', 'terminate:ctrl_alt_bksp', 'lv3:ralt_switch']
-
-[org/gnome/settings-daemon/peripherals/keyboard]
-remember-numlock-state=false
-numlock-state='on'
+sources=[('xkb', 'my')]
+xkb-options=['terminate:ctrl_alt_bksp']
 
 [org/gnome/mutter]
 overlay-key=''
@@ -60,7 +56,6 @@ overlay-key=''
 toggle-overview=['<Super>s', 'F13']
 
 [org/gnome/desktop/wm/keybindings]
-panel-main-menu=['<Alt>F1', 'F14']
 close=['<Alt>F4', '<Super>q']
 cycle-windows=['<Alt>Escape', '<Super>space']
 cycle-windows-backward=['<Shift><Alt>Escape', '<Super><Shift>space']
