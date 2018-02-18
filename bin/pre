@@ -22,6 +22,7 @@ didChange=''
     --context 999999 \
     --with-filename --heading --null \
     --color=never --no-line-number \
+    --max-columns=0 \
     "$@"
   echo -e '\n\0'
 ) |
