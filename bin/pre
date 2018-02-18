@@ -3,14 +3,14 @@
 seenReplace=''
 
 for arg in "$@"; do
-  if test "$arg" == '--replace'; then
+  if test "$arg" == '--replace' -o "$arg" == '-r'; then
     seenReplace='true'
     break
   fi
 done
 
 if test -z "$seenReplace"; then
-  echo 'You must specify the --replace argument!'
+  echo 'You must specify the --replace or -r argument!'
   exit 1
 fi
 
@@ -22,6 +22,7 @@ didChange=''
     --context 999999 \
     --with-filename --heading --null \
     --color=never --no-line-number \
+    --max-columns=0 \
     "$@"
   echo -e '\n\0'
 ) |
