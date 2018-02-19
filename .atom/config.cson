@@ -105,6 +105,8 @@
   "linter-flake8":
     executablePath: "$PROJECT/.venv/bin/flake8;/bin/true"
     flakeErrors: true
+  "linter-stylelint":
+    attemptFix: true
   "linter-ui-default":
     gutterPosition: "Left"
     statusBarPosition: "Right"
@@ -152,7 +154,6 @@
     ignoreCaseForSearch: true
     incrementalSearch: true
     keymapYToYankToLastCharacterOfLine: true
-    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     numberRegex: "(?:\\B-)?[0-9]+"
     showHoverOnOperate: true
     showHoverSearchCounter: true
