@@ -50,6 +50,7 @@ npm install --global \
 diff-so-fancy \
 npm-home \
 npm-upgrade \
+serve \
 svgo
 
 # Atom
@@ -95,6 +96,7 @@ vim-mode-plus-exchange
 
 # Special
 fzf
+one-gnome-terminal
 
 # Firefox
 Vimium
