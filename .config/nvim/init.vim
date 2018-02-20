@@ -23,6 +23,7 @@ colorscheme one
 set background=dark
 
 set clipboard+=unnamedplus
+set inccommand=nosplit
 set iskeyword+=$
 set mouse=a
 set shell=/bin/bash
