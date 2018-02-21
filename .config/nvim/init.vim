@@ -13,6 +13,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 call plug#end()
 
@@ -53,6 +54,16 @@ set tabstop=2
 let g:dirvish_mode = ':sort ,^.*[\/],'
 let g:deoplete#enable_at_startup = 1
 
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\   'css': ['stylelint'],
+\   'scss': ['stylelint'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '!'
+
 noremap <cr> o<esc>
 noremap g<cr> O<esc>
 noremap <backspace> X
@@ -83,6 +94,16 @@ vnoremap <end> $h
 map <space> <leader>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :wq<cr>
+nmap <silent> <leader>; <Plug>(ale_previous_wrap)
+nmap <silent> <leader>, <Plug>(ale_next_wrap)
+nmap <silent> <leader>g <Plug>(ale_go_to_definition)
+nmap <silent> <leader>f :call Prettier()<cr>
+
+function! Prettier()
+  let b:ale_fixers = ['prettier']
+  execute 'ALEFix'
+  unlet b:ale_fixers
+endfunction
 
 map  j  <Plug>Commentary
 nmap jj <Plug>CommentaryLine
@@ -126,6 +147,21 @@ vmap <silent> i<a-e> <Plug>CamelCaseMotion_ie
 omap <silent> i<a-g> <Plug>CamelCaseMotion_ige
 vmap <silent> i<a-g> <Plug>CamelCaseMotion_ige
 
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+
+  return l:counts.total == 0 ? '✔' : printf(
+  \   '%d%s %d%s',
+  \   all_errors,
+  \   g:ale_sign_error,
+  \   all_non_errors,
+  \   g:ale_sign_warning
+  \)
+endfunction
+
 set statusline=
 set statusline+=%-4(%m%) "[+]
 set statusline+=%f:%l:%c "dir/file.js:12:5
@@ -133,6 +169,7 @@ set statusline+=%=%<
 set statusline+=%#warningmsg#
 set statusline+=%*
 set statusline+=%{&fileformat=='unix'?'':'['.&fileformat.']'}
+set statusline+=[%{LinterStatus()}]
 set statusline+=%{strlen(&fileencoding)==0\|\|&fileencoding=='utf-8'?'':'['.&fileencoding.']'}
 set statusline+=%r "[RO]
 set statusline+=%y "[javascript]
