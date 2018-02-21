@@ -36,7 +36,7 @@ for file in "$@"; do
       jpegoptim --strip-all --max="$fileQuality" "$file"
       ;;
     *.svg)
-      svgo "$file"
+      svgo --config="$HOME/.svgo.yml" "$file"
       ;;
     *)
       unknown=1
