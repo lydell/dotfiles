@@ -1,4 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
+Plug '~/.fzf'
 Plug 'bkad/CamelCaseMotion'
 Plug 'henrik/vim-indexed-search'
 Plug 'justinmk/vim-dirvish'
@@ -94,6 +95,8 @@ vnoremap <end> $h
 map <space> <leader>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :wq<cr>
+map <leader>n :FZF<cr>
+map <leader>? :FZF<space>
 nmap <silent> <leader>; <Plug>(ale_previous_wrap)
 nmap <silent> <leader>, <Plug>(ale_next_wrap)
 nmap <silent> <leader>g <Plug>(ale_go_to_definition)
