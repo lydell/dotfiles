@@ -178,3 +178,7 @@ set statusline+=%r "[RO]
 set statusline+=%y "[javascript]
 set statusline+=[%{&expandtab?'spaces:'.&shiftwidth:'tabs:'.&tabstop}]
 set statusline+=%4p%% "50%
+
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
