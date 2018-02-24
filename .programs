@@ -18,6 +18,7 @@ keepassxc \
 neovim \
 optipng \
 pwgen \
+python3-venv \
 safe-rm \
 secure-delete \
 shellcheck \
@@ -44,10 +45,22 @@ ngrok
 pup
 ripgrep
 
+# pip
+# python3 -m venv .python
+# mv .python/bin/{,l}pip
+# lpip install wheel
+# virtualenv -p python2 .python2
+# .python2/bin/pip install neovim
+lpip install \
+ipython \
+neovim \
+virtualenv
+
 # npm
 npm install --global \
 diff-so-fancy \
 gzip-size-cli \
+neovim \
 npm-home \
 npm-upgrade \
 serve \

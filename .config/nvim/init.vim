@@ -52,6 +52,8 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 
+let g:python_host_prog  = $HOME . '/.python2/bin/python'
+let g:python3_host_prog = $HOME . '/.python/bin/python3'
 let g:dirvish_mode = ':sort ,^.*[\/],'
 let g:deoplete#enable_at_startup = 1
 

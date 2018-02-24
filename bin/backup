@@ -12,6 +12,7 @@ rsync --archive ~/ "/media/$USER/backup/$(uname --nodename)/home" \
   --exclude /.npm/ \
   --exclude /.npm-global/ \
   --exclude /.python/ \
+  --exclude /.python2/ \
   --exclude /.stack/ \
   --exclude /.thumbnails/ \
   --exclude /.tmp/ \
