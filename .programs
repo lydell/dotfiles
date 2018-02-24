@@ -48,6 +48,7 @@ ripgrep
 # npm
 npm install --global \
 diff-so-fancy \
+gzip-size-cli \
 npm-home \
 npm-upgrade \
 serve \
