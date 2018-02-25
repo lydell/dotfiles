@@ -41,6 +41,10 @@ active=false
 [org/gnome/shell]
 enable-hot-corners=false
 
+[org/gnome/terminal/legacy]
+theme-variant='dark'
+default-show-menubar=false
+
 [org/gnome/desktop/peripherals/touchpad]
 natural-scroll=true
 tap-to-click=true
@@ -59,6 +63,7 @@ toggle-overview=['<Super>s', 'F13']
 close=['<Alt>F4', '<Super>q']
 cycle-windows=['<Alt>Escape', '<Super>space']
 cycle-windows-backward=['<Shift><Alt>Escape', '<Super><Shift>space']
+minimize=@as []
 show-desktop=['<Shift><Super>d']
 switch-input-source=['']
 switch-input-source-backward=['']
