@@ -5,14 +5,14 @@ map <a-k> LinkHints.activateModeToOpenInNewTab
 map <a-t> LinkHints.activateModeToOpenInNewTab
 map <a-l> LinkHints.activateModeToOpenInNewForegroundTab
 map <a-r> LinkHints.activateModeToOpenInNewForegroundTab
-map <a-ö>j LinkHints.activateModeWithQueue
-map <a-o>h LinkHints.activateModeWithQueue
-map <a-ö>k LinkHints.activateModeToCopyLinkUrl
-map <a-o>t LinkHints.activateModeToCopyLinkUrl
-map <a-ö>l LinkHints.activateModeToDownloadLink
-map <a-o>r LinkHints.activateModeToDownloadLink
-map <a-ö>ö LinkHints.activateModeToOpenIncognito
-map <a-o>o LinkHints.activateModeToOpenIncognito
+map <a-ö> LinkHints.activateModeToOpenIncognito
+map <a-o> LinkHints.activateModeToOpenIncognito
+map <a-J> LinkHints.activateModeWithQueue
+map <a-H> LinkHints.activateModeWithQueue
+map <a-K> LinkHints.activateModeToCopyLinkUrl
+map <a-T> LinkHints.activateModeToCopyLinkUrl
+map <a-L> LinkHints.activateModeToDownloadLink
+map <a-R> LinkHints.activateModeToDownloadLink
 
 ehstirnoamupcwlfgdy
 
