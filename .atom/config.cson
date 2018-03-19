@@ -150,6 +150,7 @@
     findCharsMax: 100
     findConfirmByTimeout: 200
     flashOnMoveToOccurrence: true
+    hideCommandsFromCommandPalette: true
     highlightSearch: true
     ignoreCaseForSearch: true
     incrementalSearch: true
