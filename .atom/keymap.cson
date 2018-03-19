@@ -103,6 +103,8 @@
   'shift-tab': 'vim-mode-plus:move-to-previous-occurrence'
 
 'atom-text-editor.vim-mode-plus.operator-pending-mode, atom-text-editor.vim-mode-plus.visual-mode':
+  'i m': 'vim-mode-plus:inner-arguments'
+  'a m': 'vim-mode-plus:a-arguments'
   'i numpad1': 'vim-mode-plus:inner-square-bracket'
   'a numpad1': 'vim-mode-plus:a-square-bracket'
   'i numpad2': 'vim-mode-plus:inner-square-bracket'
