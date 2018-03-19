@@ -166,6 +166,7 @@
     stayOnTransformString: true
     stayOnYank: true
     useClipboardAsDefaultRegister: true
+    useLanguageIndependentNonWordCharacters: true
     useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
@@ -175,12 +176,6 @@
 ".coffee.jsx.source":
   editor:
     softWrapAtPreferredLineLength: false
-".css.scss.source":
-  editor:
-    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…-"
-".css.source":
-  editor:
-    nonWordCharacters: "/\\()\"':,.;<>~!#$@%^&*|+=[]{}`?…-"
 ".gfm.source":
   editor:
     softWrapAtPreferredLineLength: true
@@ -191,6 +186,3 @@
 ".plain.text":
   editor:
     softWrapAtPreferredLineLength: true
-".sass.source":
-  editor:
-    nonWordCharacters: "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?…-"
