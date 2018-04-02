@@ -65,7 +65,6 @@
   'space a': 'advanced-open-file:toggle'
   'space f': 'mprettier:format'
   'space n': 'fuzzy-finder:toggle-file-finder'
-  'space s': 'spell-check:correct-misspelling'
   'space q': 'core:close'
   'space w': 'core:save'
   'space': 'unmap!'
@@ -84,6 +83,9 @@
   'h': 'vim-mode-plus:surround'
   'enter': 'vim-mode-plus:add-blank-line-below'
   'shift-enter': 'vim-mode-plus:add-blank-line-above'
+
+'atom-text-editor.vim-mode-plus.insert-mode':
+  'ctrl-i': 'spell-check:correct-misspelling'
 
 'atom-text-editor.vim-mode-plus.operator-pending-mode.toggle-line-comments-pending':
   'j': 'vim-mode-plus:toggle-line-comments'
