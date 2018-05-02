@@ -21,3 +21,5 @@
 [init]
 	; Default: /usr/share/git-core/templates/hooks
 	templatedir = ~/.git-templates
+[rerere]
+	enabled = true
