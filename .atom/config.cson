@@ -125,6 +125,11 @@
     disableAutoClose: true
     enabledForAllJavascriptFiles: true
   "relative-numbers": {}
+  "spell-check":
+    locales: [
+      "sv-SE"
+      "en-US"
+    ]
   "theme-switch":
     profiles: [
       "one-dark-ui one-dark-syntax"

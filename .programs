@@ -12,6 +12,7 @@ curl \
 fish \
 git \
 httpie \
+hunspell-sv \
 jpegoptim \
 jq \
 keepassxc \
