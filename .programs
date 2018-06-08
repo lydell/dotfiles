@@ -23,7 +23,6 @@ python3-venv \
 safe-rm \
 secure-delete \
 shellcheck \
-shutter \
 tree \
 tworld \
 vanilla-gnome-desktop \
