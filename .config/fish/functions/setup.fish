@@ -13,6 +13,7 @@ function setup
   abbr g 'git'
   abbr ga 'git add'
   abbr gamd 'git commit -a --amend --no-edit'
+  abbr gb 'git blame'
   abbr gbr 'git branch'
   abbr gci 'git commit'
   abbr gco 'git checkout'
