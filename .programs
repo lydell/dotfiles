@@ -49,13 +49,14 @@ ripgrep
 
 # pip
 # python3 -m venv .python
-# mv .python/bin/{,l}pip
+# ln -s /home/lydell/.python/bin/{,l}pip
 # lpip install wheel
 # virtualenv -p python2 .python2
 # .python2/bin/pip install neovim
 lpip install \
 ipython \
 neovim \
+thefuck \
 virtualenv
 
 # npm
