@@ -62,9 +62,13 @@ virtualenv
 npm install --global \
 diff-so-fancy \
 gzip-size-cli \
+madge \
 neovim \
 npm-home \
+npm-quick-run \
 npm-upgrade \
+npm-why \
+onchange \
 serve \
 svgo
 
@@ -110,6 +114,7 @@ vim-mode-plus \
 vim-mode-plus-exchange
 
 # Special
+fuck
 fzf
 one-gnome-terminal
 
