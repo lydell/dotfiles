@@ -26,19 +26,8 @@
         "html"
       ]
     disabledPackages: [
-      "deprecation-cop"
       "atom-ternjs"
       "flow-ide"
-      "atom-typescript"
-      "autocomplete-haskell"
-      "elm-format"
-      "elmjutsu"
-      "file-icons"
-      "language-elm"
-      "language-fish-shell"
-      "language-haskell"
-      "linter-elm-make"
-      "pigments"
     ]
     projectHome: "/home/lydell/src"
     telemetryConsent: "limited"
@@ -111,6 +100,8 @@
     gutterPosition: "Left"
     statusBarPosition: "Right"
     tooltipFollows: "Keyboard"
+  "markdown-preview":
+    useGitHubStyle: true
   "one-dark-ui":
     fontSize: 12
     tabSizing: "Minimum"
