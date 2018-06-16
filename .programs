@@ -106,7 +106,7 @@ linter-patch-errors-singleline \
 linter-shellcheck \
 linter-stylelint \
 linter-ui-default \
-mprettier \
+miniprettier \
 relative-numbers \
 trailing-spaces \
 vim-mode-plus \

@@ -63,7 +63,7 @@
   'space ,': 'linter-ui-default:next-in-current-file'
   'space ;': 'linter-ui-default:previous-in-current-file'
   'space a': 'advanced-open-file:toggle'
-  'space f': 'mprettier:format'
+  'space f': 'miniprettier:format'
   'space n': 'fuzzy-finder:toggle-file-finder'
   'space q': 'core:close'
   'space w': 'core:save'

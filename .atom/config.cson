@@ -102,6 +102,9 @@
     tooltipFollows: "Keyboard"
   "markdown-preview":
     useGitHubStyle: true
+  miniprettier:
+    options:
+      trailingComma: "es5"
   "one-dark-ui":
     fontSize: 12
     tabSizing: "Minimum"
