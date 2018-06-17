@@ -4,3 +4,4 @@ elm-stuff/
 fixtures/
 *.min.*
 yarn.lock
+package-lock.json
