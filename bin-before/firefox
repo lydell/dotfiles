@@ -1,1 +1,3 @@
-/home/lydell/programs/firefox-developer-edition/firefox
+#!/usr/bin/env bash
+
+GTK_THEME=Adwaita:light "$HOME/programs/firefox-developer-edition/firefox" "$@"

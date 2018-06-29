@@ -24,7 +24,7 @@ sleep-inactive-battery-timeout=1800
 clock-show-date=true
 show-battery-percentage=true
 monospace-font-name='DejaVu Sans Mono 11'
-
+gtk-theme='Adwaita-dark'
 
 [org/gnome/desktop/screensaver]
 lock-enabled=true
