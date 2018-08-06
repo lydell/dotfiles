@@ -1,1 +1,3 @@
-/usr/bin/firefox
+#!/usr/bin/env bash
+
+GTK_THEME=Adwaita:light /usr/bin/firefox "$@"
