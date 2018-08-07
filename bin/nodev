@@ -30,13 +30,13 @@ case "$version" in
     name='node-v4.9.1-linux-x64'
     ;;
   '6')
-    name='node-v6.14.2-linux-x64'
+    name='node-v6.14.3-linux-x64'
     ;;
   '8')
-    name='node-v8.11.1-linux-x64'
+    name='node-v8.11.3-linux-x64'
     ;;
   '10')
-    name='node-v10.3.0-linux-x64'
+    name='node-v10.8.0-linux-x64'
     ;;
   *)
     echo "Unknown version: $version"
