@@ -1,8 +1,9 @@
 function setup
   fish_vi_key_bindings
 
-  abbr dc 'docker-compose'
   abbr c 'xclip -selection clipboard'
+  abbr dc 'docker-compose'
+  abbr do 'docker'
   abbr r './run'
   abbr R 'less -R'
   abbr q 'jq -C . | less -R'
@@ -16,6 +17,7 @@ function setup
   abbr gb 'git blame'
   abbr gbr 'git branch'
   abbr gci 'git commit'
+  abbr gcl 'git clone'
   abbr gco 'git checkout'
   abbr gl 'git log'
   abbr glol 'git log --all --graph --decorate --oneline'
