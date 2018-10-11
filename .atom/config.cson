@@ -25,6 +25,9 @@
       "text.html.jinja": [
         "html"
       ]
+      "text.plain": [
+        "template"
+      ]
     disabledPackages: [
       "atom-ternjs"
       "flow-ide"
