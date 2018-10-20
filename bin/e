@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cmd="rg --hidden --max-columns 150"
+cmd="rg --hidden --max-columns 150 --multiline-dotall"
 
 # To use rg with a pager: `rg args... -p | less -RFX`
 # Automatically pipe into `less` if `-p` is used (but not if `--null` is used,
