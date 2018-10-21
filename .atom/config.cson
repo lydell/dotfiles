@@ -34,10 +34,6 @@
     ]
     projectHome: "/home/lydell/src"
     telemetryConsent: "limited"
-    themes: [
-      "one-light-ui"
-      "one-light-syntax"
-    ]
   editor:
     scrollPastEnd: true
     softWrap: true
