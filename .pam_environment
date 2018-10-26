@@ -1,3 +1,3 @@
-PATH DEFAULT=/home/@{PAM_USER}/bin-before:${PATH}:/home/@{PAM_USER}/bin:/home/@{PAM_USER}/.python/bin:/home/@{PAM_USER}/.npm-global/bin:./.venv/bin:./node_modules/.bin
+PATH DEFAULT=/home/@{PAM_USER}/bin-before:${PATH}:/home/@{PAM_USER}/bin:/home/@{PAM_USER}/.python/bin:./.venv/bin:./node_modules/.bin:../node_modules/.bin:../../node_modules/.bin:../../../node_modules/.bin:../../../../node_modules/.bin:/home/@{PAM_USER}/.npm-global/bin
 FZF_DEFAULT_COMMAND=lsrc
 FZF_CTRL_T_COMMAND=lsrc
