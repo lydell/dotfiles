@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if test $# -eq 0; then
+  npm run
+  exit 0
+fi
+
+name="$1"
+shift
+
+set -x
+npm run --silent "$name" -- "$@"
