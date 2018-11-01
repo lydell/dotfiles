@@ -182,6 +182,9 @@
 'atom-text-editor.vim-mode-plus.normal-mode[data-grammar~="python"]':
   'space g': 'autocomplete-python:go-to-definition'
 
+'atom-text-editor.vim-mode-plus.insert-mode.autocomplete-active':
+  'shift-escape': 'autocomplete-plus:cancel'
+
 '.corrections atom-text-editor[mini]':
   'escape': 'core:cancel'
 
