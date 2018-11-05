@@ -50,4 +50,6 @@ if test ! -x "$cmd"; then
   exit 1
 fi
 
-"$cmd" "$@"
+# “Unset” `npm_execpath` to make `npm-run-all` use `~/bin/npm`. This seems to
+# not break `yarn run`.
+npm_execpath='' "$cmd" "$@"
