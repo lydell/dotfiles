@@ -76,22 +76,22 @@ svgo
 apm install \
 MagicPython \
 advanced-open-file \
+atom-ide-ui \
 atom-jinja2 \
-atom-ternjs \
 auto-detect-indentation \
 autocomplete-haskell \
 autocomplete-modules \
 autocomplete-python \
 blackspace \
-busy-signal \
 cursor-history \
 elm-format \
 elmjutsu \
 file-icons \
 flow-ide \
-intentions \
+hyperclick \
 jumpy \
 language-babel \
+language-docker \
 language-elm \
 language-fish-shell \
 language-graphql \
@@ -107,6 +107,7 @@ linter-shellcheck \
 linter-stylelint \
 linter-ui-default \
 miniprettier \
+python-black \
 relative-numbers \
 trailing-spaces \
 vim-mode-plus \

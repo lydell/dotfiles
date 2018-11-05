@@ -2,6 +2,11 @@
   "advanced-open-file":
     fuzzyMatch: true
     helmDirSwitch: true
+  "atom-ide-ui":
+    "atom-ide-diagnostics-ui":
+      statusBarPosition: "right"
+    use:
+      "atom-ide-diagnostics-ui": "never"
   "atom-ternjs":
     guess: false
     sort: false
@@ -28,10 +33,6 @@
       "text.plain": [
         "template"
       ]
-    disabledPackages: [
-      "atom-ternjs"
-      "flow-ide"
-    ]
     projectHome: "/home/lydell/src"
     telemetryConsent: "limited"
   editor:
@@ -90,6 +91,14 @@
     rulesToDisableWhileFixing: [
       "no-debugger"
     ]
+    scopes: [
+      "source.js"
+      "source.jsx"
+      "source.js.jsx"
+      "source.babel"
+      "source.js-semantic"
+      "source.flow"
+    ]
   "linter-flake8":
     executablePath: "$PROJECT/.venv/bin/flake8;/bin/true"
     flakeErrors: true
@@ -97,6 +106,7 @@
     attemptFix: true
   "linter-ui-default":
     gutterPosition: "Left"
+    panelHeight: 300
     statusBarPosition: "Right"
     tooltipFollows: "Keyboard"
   "markdown-preview":
@@ -114,6 +124,8 @@
     formatOnSaveOptions:
       isDisabledIfNoConfigFile: true
       isDisabledIfNotInPackageJson: true
+  "python-black":
+    fmtOnSave: false
   react:
     disableAutoClose: true
     enabledForAllJavascriptFiles: true
