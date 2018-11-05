@@ -7,6 +7,10 @@
       statusBarPosition: "right"
     use:
       "atom-ide-diagnostics-ui": "never"
+  "atom-package-deps":
+    ignored: [
+      "linter-ui-default"
+    ]
   "atom-ternjs":
     guess: false
     sort: false
