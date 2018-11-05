@@ -24,3 +24,5 @@
 [rerere]
 	enabled = true
 	autoupdate = true
+[merge]
+	conflictstyle = diff3
