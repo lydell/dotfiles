@@ -18,7 +18,7 @@ if test "$subcommand" == "run"; then
     package="$(look-up 'package.json')"
 
     if test -n "$package"; then
-      content="$(node -p 'try { require(process.argv[1]).scripts[process.argv[2]] || "" } catch { "" }' "$package" "$script")"
+      content="$(node -p 'try { require(process.argv[1]).scripts[process.argv[2]] || "" } catch (e) { "" }' "$package" "$script")"
 
       # Command not found. Let the regular `npm run` die with its nice error message.
       if test -z "$content"; then
