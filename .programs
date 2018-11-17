@@ -42,6 +42,7 @@ nodejs
 
 # ~/bin
 bat
+exa
 micro
 ngrok
 pup
