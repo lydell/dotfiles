@@ -4,6 +4,7 @@ function setup
   abbr c 'xclip -selection clipboard'
   abbr dc 'docker-compose'
   abbr do 'docker'
+  abbr l 'exa -lah'
   abbr r './run'
   abbr R 'less -R'
   abbr q 'jq -C . | less -R'
