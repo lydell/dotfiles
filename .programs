@@ -62,6 +62,8 @@ virtualenv
 # npm
 npm install --global \
 diff-so-fancy \
+fkill \
+fx \
 gzip-size-cli \
 madge \
 neovim \
@@ -69,7 +71,9 @@ npm-home \
 npm-upgrade \
 npm-why \
 onchange \
+prettier \
 serve \
+sqip \
 svgo
 
 # Atom
