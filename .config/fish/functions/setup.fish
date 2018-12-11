@@ -9,7 +9,7 @@ function setup
   abbr r './run'
   abbr R 'less -R'
   abbr q 'jq -C . | less -R'
-  abbr rm 'rm -I'
+  abbr rm 'rm -Id'
 
   abbr s 'git status'
   abbr d 'git diff'
