@@ -31,6 +31,9 @@
     autoHideMenuBar: true
     closeDeletedFileTabs: true
     customFileTypes:
+      "source.js.jsx": [
+        "js"
+      ]
       "text.html.jinja": [
         "html"
       ]
@@ -90,11 +93,12 @@
     autocompleteEnabled: false
     elmOraclePath: "/home/lydell/.npm-global/bin/elm-oracle"
   "linter-eslint":
-    fixOnSave: true
-    ignoreFixableRulesWhileTyping: true
-    rulesToDisableWhileFixing: [
-      "no-debugger"
-    ]
+    autofix:
+      fixOnSave: true
+      ignoreFixableRulesWhileTyping: true
+      rulesToDisableWhileFixing: [
+        "no-debugger"
+      ]
     scopes: [
       "source.js"
       "source.jsx"
@@ -107,10 +111,9 @@
     executablePath: "$PROJECT/.venv/bin/flake8;/bin/true"
     flakeErrors: true
   "linter-stylelint":
-    attemptFix: true
+    fixOnSave: true
   "linter-ui-default":
     gutterPosition: "Left"
-    panelHeight: 300
     statusBarPosition: "Right"
     tooltipFollows: "Keyboard"
   "markdown-preview":
