@@ -9,6 +9,7 @@
 
   'ctrl-shift-i': 'cursor-history:next'
   'ctrl-shift-o': 'cursor-history:prev'
+  'alt-shift-u': 'tabs:close-tabs-to-right'
 
 'atom-text-editor:not([mini])':
   'ctrl-shift-c': 'editor:copy-path'
