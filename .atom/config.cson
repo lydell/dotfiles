@@ -55,6 +55,8 @@
     showTypesInTooltip: true
   "exception-reporting":
     userId: "60c3fc6f-0001-fdb6-f824-d0193742cf3f"
+  "flow-ide":
+    useLSP: true
   "fuzzy-finder":
     preserveLastSearch: true
     searchAllPanes: true
