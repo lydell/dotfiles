@@ -72,9 +72,9 @@ switch-input-source-backward=['']
 screenshot-clip=''
 area-screenshot-clip=''
 window-screenshot-clip=''
-screenshot='<Super>Print'
-area-screenshot='<Shift>Print'
-window-screenshot='<Primary>Print'
+screenshot='<Super>Menu'
+area-screenshot='<Shift>Menu'
+window-screenshot='<Primary>Menu'
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
