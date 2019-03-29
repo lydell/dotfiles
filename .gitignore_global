@@ -1,9 +1,9 @@
 *.swp
 *~
 
-.cache/
-.stuff/
-.venv/
+.cache
+.stuff
+.venv
 
 .env
 .ignore
