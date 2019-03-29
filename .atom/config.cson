@@ -40,6 +40,9 @@
       "text.plain": [
         "template"
       ]
+    packagesWithKeymapsDisabled: [
+      "atom-typescript"
+    ]
     projectHome: "/home/lydell/src"
     telemetryConsent: "limited"
   editor:

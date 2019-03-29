@@ -82,6 +82,7 @@ MagicPython \
 advanced-open-file \
 atom-ide-ui \
 atom-jinja2 \
+atom-typescript \
 auto-detect-indentation \
 autocomplete-haskell \
 autocomplete-modules \
