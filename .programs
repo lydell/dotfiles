@@ -7,6 +7,7 @@ yarn
 
 # APT
 sudo apt install \
+build-essential \
 chromium-browser \
 curl \
 fish \
