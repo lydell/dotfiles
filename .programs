@@ -47,6 +47,7 @@ micro
 ngrok
 pup
 ripgrep
+tokei
 
 # pip
 # python3 -m venv .python
