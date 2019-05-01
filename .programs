@@ -1,5 +1,5 @@
 # PPA
-sudo apt-add-repository ppa:fish-shell/release-2
+sudo apt-add-repository ppa:fish-shell/release-3
 sudo add-apt-repository ppa:git-core/ppa
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo add-apt-repository ppa:phoerious/keepassxc
