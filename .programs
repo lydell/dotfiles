@@ -33,6 +33,7 @@ yarn
 # .deb
 atom
 bat
+vscode
 fd
 slack
 
@@ -119,6 +120,13 @@ relative-numbers \
 trailing-spaces \
 vim-mode-plus \
 vim-mode-plus-exchange
+
+# VSCode
+docker
+eslint
+prettier
+python
+vim
 
 # Special
 fzf

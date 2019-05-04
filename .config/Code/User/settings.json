@@ -1,0 +1,30 @@
+{
+    "javascript.validate.enable": false,
+    "eslint.autoFixOnSave": true,
+    "window.menuBarVisibility": "toggle",
+    "keyboard.dispatch": "keyCode",
+    "window.zoomLevel": 0,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "vim.camelCaseMotion.enable": true,
+    "vim.changeWordIncludesWhitespace": true,
+    "vim.easymotion": true,
+    "vim.highlightedyank.enable": true,
+    "vim.hlsearch": true,
+    "vim.sneak": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": false,
+    "vim.visualstar": true,
+    "breadcrumbs.enabled": true,
+    "vim.leader": "Space",
+    "javascript.suggest.autoImports": false,
+    "[python]": {},
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.renderWhitespace": "boundary",
+    "diffEditor.renderSideBySide": true,
+    "workbench.sideBar.location": "right",
+    "html.autoClosingTags": false,
+    "javascript.autoClosingTags": false,
+    "typescript.autoClosingTags": false
+}

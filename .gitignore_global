@@ -4,6 +4,7 @@
 .cache
 .stuff
 .venv
+.vscode
 
 .env
 .ignore
