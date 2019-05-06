@@ -26,5 +26,8 @@
     "workbench.sideBar.location": "right",
     "html.autoClosingTags": false,
     "javascript.autoClosingTags": false,
-    "typescript.autoClosingTags": false
+    "typescript.autoClosingTags": false,
+    "vim.easymotionKeys": "ehstirnoamupcwlfgdy",
+    "vim.easymotionMarkerFontFamily": "",
+    "vim.easymotionMarkerHeight": 18
 }
