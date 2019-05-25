@@ -23,14 +23,31 @@
     "vim.sneak": true,
     "vim.useCtrlKeys": false,
     "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "Y"
+            ],
+            "after": [
+                "y",
+                "$"
+            ]
+        },
+    ],
     "vim.visualstar": true,
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 0,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.sideBar.location": "right",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
