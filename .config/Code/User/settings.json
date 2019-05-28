@@ -23,6 +23,7 @@
     "vim.sneak": true,
     "vim.useCtrlKeys": false,
     "vim.useSystemClipboard": true,
+    "vim.visualstar": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -33,8 +34,23 @@
                 "$"
             ]
         },
+        {
+            "before": [
+                "Delete"
+            ],
+            "after": [
+                "x"
+            ]
+        },
+        {
+            "before": [
+                "Backspace"
+            ],
+            "after": [
+                "X"
+            ]
+        },
     ],
-    "vim.visualstar": true,
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 0,
     "workbench.editor.enablePreview": false,
