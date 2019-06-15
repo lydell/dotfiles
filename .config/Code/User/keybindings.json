@@ -27,5 +27,9 @@
         "key": "alt+left",
         "command": "-workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
+    },
+    {
+        "key": "shift+alt+u",
+        "command": "workbench.action.closeEditorsToTheRight"
     }
 ]
