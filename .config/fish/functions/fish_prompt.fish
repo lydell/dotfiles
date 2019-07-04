@@ -117,7 +117,7 @@ end
 
 
 function __prompt_excluded -a cmd
-  string match --quiet --regex "^($__prompt_excludes)\b" $cmd
+  string match --quiet --regex "^($__prompt_excludes)\b" -- $cmd
 end
 
 
