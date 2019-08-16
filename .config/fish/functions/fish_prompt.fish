@@ -111,7 +111,7 @@ end
 
 function __prompt_format_time -a milliseconds
   set -l seconds (math "$milliseconds / 1000")
-  set -l formatted (date --utc --date @$seconds "+%-kh %-Mm %-Ss")
+  set -l formatted (printf '%dd %dh %dm %ds' (math -s0 $seconds / 86400) (math -s0 $seconds % 86400 / 3600) (math -s0 $seconds % 3600 / 60) (math -s0 $seconds % 60))
   string replace --regex '^[0\D\s]+' '' $formatted
 end
 
