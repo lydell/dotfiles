@@ -30,7 +30,7 @@ didChange=''
   while IFS= read -r -d '' part; do
     if test -n "$currentFile"; then
       echo "$currentFile"
-      head -n -2 <<< "$part" > "$currentFile"
+      (sed '$d' | sed '$d') <<< "$part" > "$currentFile"
       didChange='true'
     fi
     currentFile="$(tail -n 1 <<< "$part")"
