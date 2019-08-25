@@ -1,6 +1,6 @@
 set -g __prompt_cyan cyan
 set -g __prompt_green green
-set -g __prompt_grey white
+set -g __prompt_grey normal
 set -g __prompt_red red
 set -g __prompt_white fff
 set -g __prompt_yellow yellow
