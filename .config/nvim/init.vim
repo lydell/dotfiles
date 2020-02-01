@@ -1,5 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug '~/.fzf'
+Plug '/home/linuxbrew/.linuxbrew/opt/fzf/bin/fzf'
 Plug 'bkad/CamelCaseMotion'
 Plug 'henrik/vim-indexed-search'
 Plug 'justinmk/vim-dirvish'

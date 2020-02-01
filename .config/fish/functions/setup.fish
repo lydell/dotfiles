@@ -1,15 +1,19 @@
 function setup
-  fish_vi_key_bindings
+  fish_hybrid_key_bindings
 
-  abbr c 'xclip -selection clipboard'
+  abbr pbcopy 'xclip -selection clipboard'
+  abbr pbpaste 'xclip -selection clipboard -o'
+
   abbr dc 'docker-compose'
   abbr do 'docker'
   abbr l 'exa'
   abbr la 'exa -lah'
-  abbr r './run'
   abbr R 'less -R'
   abbr q 'jq -C . | less -R'
+
   abbr rm 'rm -Id'
+  abbr cp 'cp -r'
+  abbr mkdir 'mkdir -p'
 
   abbr s 'git status'
   abbr d 'git diff'
@@ -22,8 +26,6 @@ function setup
   abbr gcl 'git clone'
   abbr gco 'git checkout'
   abbr gl 'git log'
-  abbr glol 'git log --all --graph --decorate --oneline'
-  abbr glols 'git log --all --graph --decorate --oneline --simplify-by-decoration'
   abbr glp 'git log -p'
   abbr gm 'git merge'
   abbr gp 'git pull'

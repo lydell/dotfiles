@@ -1,0 +1,26 @@
+set surround
+set multiple-cursors
+set commentary
+set clipboard+=unnamedplus
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set visualbell
+set noerrorbells
+
+nnoremap <cr> o<esc>
+nnoremap g<cr> O<esc>
+nnoremap <backspace> X
+nnoremap <delete> x
+nnoremap <home> ^
+nnoremap <end> $
+nnoremap Q @q
+nnoremap _ -
+nnoremap Y y$
+nnoremap <silent> <esc> :noh<cr><esc>
+nnoremap gh :action QuickJavaDoc<cr>
+
+map <space> <leader>
+
+xnoremap <backspace> c

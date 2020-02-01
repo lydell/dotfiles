@@ -1,0 +1,7 @@
+*.swp
+*~
+.cache
+.ignore
+.stuff
+.venv
+.vscode

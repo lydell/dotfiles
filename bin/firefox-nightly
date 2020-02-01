@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-GTK_THEME=Adwaita:light "$HOME/programs/firefox-nightly/firefox" "$@"

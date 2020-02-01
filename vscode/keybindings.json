@@ -31,5 +31,29 @@
     {
         "key": "shift+alt+u",
         "command": "workbench.action.closeEditorsToTheRight"
+    },
+    {
+        "key": "cmd+`",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "cmd+'",
+        "command": "editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+cmd+right",
+        "command": "-editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+'",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+cmd+left",
+        "command": "-editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
     }
 ]

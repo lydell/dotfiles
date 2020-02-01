@@ -1,0 +1,10 @@
+{
+  "chars": "ehstirnoamupcwlfgdy",
+  "logLevel": "warn",
+  "normal.alt-H": "EnterHintsMode_ManyClick",
+  "normal.alt-R": "EnterHintsMode_Select",
+  "normal.alt-T": "EnterHintsMode_ManyTab",
+  "normal.alt-h": "EnterHintsMode_Click",
+  "normal.alt-r": "EnterHintsMode_ForegroundTab",
+  "normal.alt-t": "EnterHintsMode_BackgroundTab"
+}

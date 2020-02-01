@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-python_cmd="$(look-up '.venv/bin/python')"
-
-if test "$python_cmd" == ''; then
-    python_cmd='/usr/bin/python'
-fi
-
-"$python_cmd" "$@"

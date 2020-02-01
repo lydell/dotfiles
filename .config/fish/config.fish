@@ -1,4 +1,4 @@
 set fish_greeting
-
-# Prevent fish from modifying the clipboard.
-set FISH_CLIPBOARD_CMD 'cat'
+# source ~/.iterm2_shell_integration.fish
+# status --is-interactive; and source (nodenv init -|psub)
+complete -c e -c pre -w rg

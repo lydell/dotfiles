@@ -1,0 +1,72 @@
+# apt
+chromium-browser
+gnome-session
+  sudo update-alternatives --config gdm3.css
+gnome-tweaks
+keepassxc
+xclip
+
+# ubuntu-make
+snap install ubuntu-make --classic
+umake web firefox-dev --lang en-US
+
+# deb
+vscode
+
+# brew
+bat
+exa
+fish
+fzf
+htop
+httpie
+imagemagick
+jq
+neovim
+node
+optipng
+python
+ripgrep
+shellcheck
+tokei
+yarn
+
+# brew cask
+1password
+docker
+dotnet-sdk
+firefox-developer-edition
+google-chrome
+insomnia
+intellij-idea-ce
+iterm2
+keepassxc
+mobster
+postico
+scroll-reverser
+slack
+spectacle
+tunnelblick
+visual-studio-code
+zsa-wally
+
+# npm
+diff-so-fancy
+fx
+neovim
+npm-home
+npm-upgrade
+npm-check
+npm-why
+prettier
+serve
+svgo
+
+# vscode
+eslint
+prettier
+vim
+
+# gnome
+Unite
+Vitals

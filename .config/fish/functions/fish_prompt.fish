@@ -72,12 +72,17 @@ function fish_prompt
 
   set -l char (__prompt_char $mode $failed)
 
+  set -l last_line "\n$char "
+  # if test "$TERM_PROGRAM" = 'iTerm.app'
+  #   set last_line (iterm2_prompt_mark) ' '
+  # end
+
   set -l prompt \
     $newline \
     (__prompt_part $dir $__prompt_grey) \
     (__prompt_part $duration $__prompt_yellow) \
     (__prompt_part $git) \
-    "\n$char "
+    $last_line
 
   echo -e -s $prompt
   set __prompt_at_top 0

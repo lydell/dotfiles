@@ -2,25 +2,9 @@
 
 ## Setup
 
-```sh
-$ cd location/of/choice
-$ git clone --no-checkout https://github.com/lydell/dotfiles.git
-$ cd dotfiles
-$ mkdir .git/info
-$ echo '*' > .git/info/exclude
-$ git config core.worktree "$HOME"
-$ git checkout master # --force if you know what you’re doing.
-```
-
-## Workflow
-
-Edit files as usual.
-
-`cd location/of/choice/dotfiles` before using `git` commands.
-(Tip: Use `git add ~` instead of `git add .`.)
-
-_Everything_ is ignored in `.git/info/exclude`. When adding new files, use `git
-add -f ~/some/file`. After that, diffing and committing works just like normal.
+I used to use some clever git trickery to track files at their actual
+locations, but these days I just copy files back and forth from this repo.
+I find that easier since mac and linux differ slightly.
 
 ## License
 

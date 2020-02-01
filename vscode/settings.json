@@ -2,10 +2,8 @@
     "breadcrumbs.enabled": true,
     "diffEditor.renderSideBySide": true,
     "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.lineNumbers": "relative",
     "editor.renderFinalNewline": false,
-    "editor.renderWhitespace": "boundary",
-    "eslint.autoFixOnSave": true,
+    "editor.renderWhitespace": "all",
     "files.insertFinalNewline": true,
     "html.autoClosingTags": false,
     "javascript.suggest.autoImports": false,
@@ -50,12 +48,58 @@
                 "X"
             ]
         },
+        {
+            "before": [
+                "u"
+            ],
+            "commands": [
+                "undo"
+            ]
+        }
     ],
-    "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 0,
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "p",
+            ],
+            "after": [
+                "p",
+                "g",
+                "v",
+                "y",
+                "g",
+                "v",
+                "Escape"
+            ]
+        },
+        {
+            "before": [
+                "P",
+            ],
+            "after": [
+                "P",
+                "g",
+                "v",
+                "y",
+                "g",
+                "v",
+                "Escape"
+            ]
+        },
+        {
+            "before": [
+                "y",
+            ],
+            "after": [
+                "y",
+                "g",
+                "v",
+                "Escape"
+            ]
+        },
+    ],
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.sideBar.location": "right",
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -70,5 +114,24 @@
     },
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "editor.fontSize": 13,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1,
+    "FSharp.showExplorerOnStartup": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": true,
+        "source.fixAll.eslint": true
+    },
+    "editor.minimap.enabled": true,
+    "git.detectSubmodulesLimit": 20,
+    "scm.alwaysShowProviders": true,
+    "editor.formatOnSaveTimeout": 1750,
+    "editor.codeActionsOnSaveTimeout": 1750,
+    "extensions.ignoreRecommendations": false,
+    "html.mirrorCursorOnMatchingTag": false,
+    "FSharp.useSdkScripts": true,
+    "git.confirmSync": false
 }

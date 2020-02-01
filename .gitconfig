@@ -3,7 +3,6 @@
 	email = simon.lydell@gmail.com
 [core]
 	editor = nvim
-	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=2 -R
 [color]
 	ui = true
@@ -26,3 +25,4 @@
 	autoupdate = true
 [merge]
 	conflictstyle = diff3
+
