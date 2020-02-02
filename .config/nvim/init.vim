@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug '/home/linuxbrew/.linuxbrew/opt/fzf/bin/fzf'
+" Plug '/home/linuxbrew/.linuxbrew/opt/fzf/bin/fzf'
+Plug '/usr/local/opt/fzf'
 Plug 'bkad/CamelCaseMotion'
 Plug 'henrik/vim-indexed-search'
 Plug 'justinmk/vim-dirvish'
@@ -91,7 +92,9 @@ inoremap <cr> <c-g>u<cr>
 inoremap <expr> <tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-vnoremap <end> $h
+xnoremap <end> $h
+xnoremap y ygv<esc>
+xnoremap p "_dgP
 
 map <space> <leader>
 " nnoremap <leader>w :w<cr>

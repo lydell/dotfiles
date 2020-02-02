@@ -24,3 +24,5 @@ nnoremap gh :action QuickJavaDoc<cr>
 map <space> <leader>
 
 xnoremap <backspace> c
+xnoremap y ygv<esc>
+xnoremap p "_dgP
