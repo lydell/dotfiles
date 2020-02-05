@@ -94,7 +94,7 @@ inoremap <expr> <s-tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 xnoremap <end> $h
 xnoremap y ygv<esc>
-xnoremap p "_dgP
+xnoremap p pgvygv<esc>
 
 map <space> <leader>
 " nnoremap <leader>w :w<cr>

@@ -25,4 +25,4 @@ map <space> <leader>
 
 xnoremap <backspace> c
 xnoremap y ygv<esc>
-xnoremap p "_dgP
+xnoremap p p`[v`]hygv<esc>
