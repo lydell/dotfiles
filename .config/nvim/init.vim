@@ -6,6 +6,7 @@ Plug 'henrik/vim-indexed-search'
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'machakann/vim-highlightedyank'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
