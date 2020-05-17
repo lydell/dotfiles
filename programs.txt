@@ -18,6 +18,7 @@ bat
 exa
 fish
 fzf
+git-delta
 htop
 httpie
 imagemagick
@@ -51,7 +52,6 @@ visual-studio-code
 zsa-wally
 
 # npm
-diff-so-fancy
 fx
 neovim
 npm-home
