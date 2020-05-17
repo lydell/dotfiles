@@ -83,6 +83,19 @@
                 "Escape"
             ]
         },
+        {
+            "before": [
+                "g",
+                "c",
+            ],
+            "after": [
+                "g",
+                "c",
+                "g",
+                "v",
+                "Escape"
+            ]
+        },
     ],
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -111,13 +124,34 @@
         "source.fixAll.tslint": true,
         "source.fixAll.eslint": true
     },
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "git.detectSubmodulesLimit": 20,
     "scm.alwaysShowProviders": true,
-    "editor.formatOnSaveTimeout": 1750,
-    "editor.codeActionsOnSaveTimeout": 1750,
     "extensions.ignoreRecommendations": false,
-    "html.mirrorCursorOnMatchingTag": false,
+    "editor.renameOnType": false,
+    "git.confirmSync": false,
+    "git.suggestSmartCommit": false,
+    "workbench.editor.limit.enabled": true,
     "FSharp.useSdkScripts": true,
-    "git.confirmSync": false
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gremlins.characters": {
+        "00a0": {
+            "description": "non breaking space",
+            "level": "warning"
+        },
+        "201c": {
+            "description": "left double quotation mark",
+            "level": "info"
+        },
+        "201d": {
+            "description": "right double quotation mark",
+            "level": "info"
+        }
+    },
+    "gremlins.color_info": "transparent",
+    "gremlins.gutterIconSize": "0%",
+    "workbench.colorCustomizations": {
+        "list.focusBackground": "#7f7f7f7f",
+    }
 }
