@@ -44,9 +44,10 @@ iterm2
 keepassxc
 mobster
 postico
+rectangle
 scroll-reverser
+sensiblesidebuttons
 slack
-spectacle
 tunnelblick
 visual-studio-code
 zsa-wally
