@@ -5,7 +5,7 @@
 	editor = nvim
 	pager = delta --plus-color="#014000" --minus-color="#540001" --theme=Nord
 [interactive]
-  diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [color]
 	ui = true
 [credential]
