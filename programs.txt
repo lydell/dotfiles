@@ -64,8 +64,11 @@ serve
 svgo
 
 # vscode
+change-case
 eslint
+gremlins
 prettier
+shellcheck
 vim
 
 # gnome

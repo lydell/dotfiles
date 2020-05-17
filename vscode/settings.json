@@ -6,6 +6,7 @@
     "editor.renderWhitespace": "all",
     "files.insertFinalNewline": true,
     "html.autoClosingTags": false,
+    "html.mirrorCursorOnMatchingTag": false,
     "javascript.suggest.autoImports": false,
     "javascript.validate.enable": false,
     "keyboard.dispatch": "keyCode",
@@ -97,8 +98,6 @@
             ]
         },
     ],
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -114,24 +113,27 @@
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.fontSize": 13,
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "prettier.requireConfig": true,
     "window.zoomLevel": 1,
-    "FSharp.showExplorerOnStartup": false,
+    "editor.fontSize": 13,
     "editor.codeActionsOnSave": {
         "source.fixAll.tslint": true,
         "source.fixAll.eslint": true
     },
-    "editor.minimap.enabled": false,
-    "git.detectSubmodulesLimit": 20,
-    "scm.alwaysShowProviders": true,
-    "extensions.ignoreRecommendations": false,
     "editor.renameOnType": false,
+    "editor.minimap.enabled": false,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "git.detectSubmodulesLimit": 20,
     "git.confirmSync": false,
     "git.suggestSmartCommit": false,
-    "workbench.editor.limit.enabled": true,
+    "scm.alwaysShowProviders": true,
+    "extensions.ignoreRecommendations": false,
+    "FSharp.showExplorerOnStartup": false,
     "FSharp.useSdkScripts": true,
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.enabled": false,
