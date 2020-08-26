@@ -3,6 +3,8 @@ set multiple-cursors
 set commentary
 set exchange
 set highlightedyank
+set textobj-entire
+set ReplaceWithRegister
 set clipboard+=unnamedplus
 set ignorecase
 set smartcase
