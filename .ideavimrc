@@ -2,6 +2,7 @@ set surround
 set multiple-cursors
 set commentary
 set exchange
+set highlightedyank
 set clipboard+=unnamedplus
 set ignorecase
 set smartcase
