@@ -20,11 +20,12 @@
 	newNormal = green bold
 	newHighlight = green bold 22
 [init]
-	; Default: /usr/share/git-core/templates/hooks
+	defaultBranch = main
 	templatedir = ~/.git-templates
 [rerere]
 	enabled = true
 	autoupdate = true
 [merge]
 	conflictstyle = diff3
-
+[pull]
+	ff = only
