@@ -3,9 +3,13 @@
 	email = simon.lydell@gmail.com
 [core]
 	editor = nvim
-	pager = delta --plus-color="#014000" --minus-color="#540001" --theme=Nord
+	pager = delta --diff-so-fancy
 [interactive]
 	diffFilter = delta --color-only
+[delta]
+	features = side-by-side line-numbers decorations
+[diff]
+	colorMoved = default
 [color]
 	ui = true
 [credential]
