@@ -103,9 +103,12 @@ function __prompt_char -a mode failed
     case default
       set char N
       set color --bold --background $__prompt_red $__prompt_white
-    case replace-one
+    case replace
       set char R
-      set color --bold --background $__prompt_yellow $__prompt_white
+      set color --bold --background $__prompt_green $__prompt_white
+    case replace_one
+      set char r
+      set color --bold --background $__prompt_green $__prompt_white
     case visual
       set char V
       set color --bold --background $__prompt_cyan $__prompt_white
