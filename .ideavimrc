@@ -29,4 +29,7 @@ map <space> <leader>
 
 xnoremap <backspace> c
 xnoremap y ygv<esc>
-xnoremap p p`[v`]hygv<esc>
+xnoremap p p`[v`]ygv<esc>
+
+nmap gcc :action CommentByLineComment<CR>
+vmap gc :action CommentByLineComment<CR>
