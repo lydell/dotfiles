@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -e
+
+if test "$#" = 0; then
+  echo "Usage: x CMD ARGS..."
+  exit 0
+fi
+
+cmd_name="$1"
+shift
+
+dir="$(pwd)"
+
+while true; do
+  cmd="$dir/node_modules/.bin/$cmd_name"
+  if test -e "$cmd"; then
+    break
+  elif test "$dir" = '/'; then
+    echo "No node_modules/ folder with '$cmd_name' found."
+    exit 1
+  else
+    dir="$(dirname "$dir")"
+  fi
+done
+
+PATH="$(dirname "$cmd"):$PATH" "$cmd" "$@"
