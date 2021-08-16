@@ -5,6 +5,8 @@ set exchange
 set highlightedyank
 set textobj-entire
 set ReplaceWithRegister
+set vim-paragraph-motion
+set textobj-indent
 set clipboard+=unnamedplus
 set ignorecase
 set smartcase
