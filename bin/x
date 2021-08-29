@@ -11,17 +11,14 @@ cmd_name="$1"
 shift
 
 dir="$(pwd)"
+path=""
 
 while true; do
-  cmd="$dir/node_modules/.bin/$cmd_name"
-  if test -e "$cmd"; then
+  path="$path:$dir/node_modules/.bin"
+  dir="$(dirname "$dir")"
+  if test "$dir" = '/'; then
     break
-  elif test "$dir" = '/'; then
-    echo "No node_modules/ folder with '$cmd_name' found."
-    exit 1
-  else
-    dir="$(dirname "$dir")"
   fi
 done
 
-PATH="$(dirname "$cmd"):$PATH" "$cmd" "$@"
+PATH="${path:1}:$PATH" "$cmd_name" "$@"
