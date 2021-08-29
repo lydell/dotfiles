@@ -23,6 +23,7 @@
     "vim.useCtrlKeys": false,
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
+    "vim.replaceWithRegister": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
