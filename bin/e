@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cmd="rg --hidden --max-columns 150 --max-columns-preview --multiline-dotall --auto-hybrid-regex"
+cmd="rg --hidden --max-columns $(( $(tput cols) - 27 )) --max-columns-preview --multiline-dotall --auto-hybrid-regex"
 
 # To use rg with a pager: `rg args... -p | less -RFX`
 # Automatically pipe into `less` if `-p` is used (but not if `--null` is used,
