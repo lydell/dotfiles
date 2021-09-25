@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -e
+
+default_branch=master
+
+if test "$(git branch --list main)" != ''; then
+  default_branch=main
+fi
+
+current_branch="$(git branch --show-current)"
+
+if test "$current_branch" = "$default_branch"; then
+  echo "Already on $default_branch"
+  exit 0
+fi
+
+git switch "$default_branch"
+git branch -D "$current_branch"
+git pull
