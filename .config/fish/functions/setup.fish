@@ -18,6 +18,7 @@ function setup
 
   abbr s 'git status'
   abbr d 'git diff'
+  abbr ds 'git diff --staged'
   abbr g 'git'
   abbr ga 'git add'
   abbr gamd 'git commit -a --amend --no-edit'
