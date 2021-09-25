@@ -30,8 +30,10 @@ function setup
   abbr glp 'git log -p'
   abbr gm 'git merge'
   abbr gp 'git pull'
-  abbr gr 'git rebase'
+  abbr gr 'git restore'
+  abbr grs 'git restore --staged'
   abbr gs 'git show'
   abbr gst 'git stash'
   abbr gu 'git push'
+  abbr gw 'git switch'
 end
