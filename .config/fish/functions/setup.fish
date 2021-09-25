@@ -13,6 +13,7 @@ function setup
 
   abbr rm 'rm -Id'
   abbr cp 'cp -r'
+  abbr mv 'mv -i'
   abbr mkdir 'mkdir -p'
 
   abbr s 'git status'
