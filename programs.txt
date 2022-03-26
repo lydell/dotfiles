@@ -22,6 +22,8 @@ git-delta
 htop
 httpie
 imagemagick
+jless
+jo
 jq
 neovim
 node
@@ -31,6 +33,7 @@ ripgrep
 shellcheck
 tokei
 yarn
+zoxide
 
 # brew cask
 1password
@@ -39,12 +42,11 @@ dotnet-sdk
 firefox-developer-edition
 google-chrome
 insomnia
-intellij-idea-ce
 iterm2
-keepassxc
-mobster
+krisp
 postico
 rectangle
+rider
 scroll-reverser
 sensiblesidebuttons
 slack
@@ -59,17 +61,19 @@ npm-home
 npm-upgrade
 npm-check
 npm-why
-prettier
 serve
 svgo
 
 # vscode
 change-case
-eslint
-gremlins
-prettier
-shellcheck
-vim
+Error Lens
+ESlint
+Fish
+GitLens
+Gremlins
+Prettier
+ShellCheck
+Vim
 
 # gnome
 Unite
