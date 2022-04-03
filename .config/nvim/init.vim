@@ -7,7 +7,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-highlightedyank'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'Mofiqul/vscode.nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tommcdo/vim-exchange'
@@ -22,7 +22,11 @@ call plug#end()
 
 set termguicolors
 set cursorline
-colorscheme onehalfdark
+
+let g:vscode_style = "dark"
+let g:vscode_transparency = 1
+let g:vscode_italic_comment = 1
+colorscheme vscode
 
 set clipboard+=unnamedplus
 set inccommand=nosplit
