@@ -16,6 +16,7 @@
 	helper = cache
 [push]
 	default = current
+	autoSetupRemote = true
 [log]
 	date = iso
 [color "diff-highlight"]
