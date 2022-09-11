@@ -3,7 +3,6 @@ chromium-browser
 gnome-session
   sudo update-alternatives --config gdm3.css
 gnome-tweaks
-keepassxc
 xclip
 
 # ubuntu-make
@@ -36,21 +35,13 @@ yarn
 zoxide
 
 # brew cask
-1password
-docker
-dotnet-sdk
+bitwarden
 firefox-developer-edition
-google-chrome
-insomnia
 iterm2
 krisp
-postico
 rectangle
-rider
 scroll-reverser
 sensiblesidebuttons
-slack
-tunnelblick
 visual-studio-code
 zsa-wally
 
@@ -59,7 +50,6 @@ fx
 neovim
 npm-home
 npm-upgrade
-npm-check
 npm-why
 serve
 svgo
@@ -70,7 +60,6 @@ Error Lens
 ESlint
 Fish
 GitLens
-Gremlins
 Prettier
 ShellCheck
 Vim

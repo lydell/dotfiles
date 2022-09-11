@@ -1,7 +1,7 @@
 *.swp
 *~
-.cache
-.ignore
 .stuff
-.venv
 .vscode
+.ignore
+.DS_Store
+.node-version

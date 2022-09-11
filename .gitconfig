@@ -10,23 +10,14 @@
 	features = side-by-side line-numbers decorations
 [diff]
 	colorMoved = default
-[color]
-	ui = true
-[credential]
-	helper = cache
 [push]
 	default = current
 	autoSetupRemote = true
 [log]
 	date = iso
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
 [init]
 	defaultBranch = main
-	templatedir = ~/.git-templates
+	templatedir = ~/src/dotfiles/.git-templates
 [rerere]
 	enabled = true
 	autoupdate = true

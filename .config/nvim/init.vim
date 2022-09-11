@@ -1,6 +1,6 @@
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin()
 " Plug '/home/linuxbrew/.linuxbrew/opt/fzf/bin/fzf'
-Plug '/usr/local/opt/fzf'
+Plug '/opt/homebrew/bin/fzf'
 Plug 'bkad/CamelCaseMotion'
 Plug 'henrik/vim-indexed-search'
 Plug 'justinmk/vim-dirvish'
@@ -9,7 +9,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-highlightedyank'
 Plug 'Mofiqul/vscode.nvim'
 Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
@@ -57,7 +57,7 @@ set shiftwidth=2
 set tabstop=2
 
 let g:camelcasemotion_key = '<leader>'
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 let g:dirvish_mode = ':sort ,^.*[\/],'
 let g:sneak#label = 1
 let g:sneak#target_labels = "eshitnraoumlwgfcpyd"
