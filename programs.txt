@@ -50,7 +50,6 @@ fx
 neovim
 npm-home
 npm-upgrade
-npm-why
 serve
 svgo
 
