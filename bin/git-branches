@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -e
+
+git submodule foreach 'printf "%-30s %s\n" "$name" "$(git symbolic-ref --short HEAD)"' | grep -v Entering
