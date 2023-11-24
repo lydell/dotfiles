@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -e
+
+open "https://github.com/$(git config remote.origin.url | cut -f2 -d: | cut -f1 -d.)/pull/new/$(git symbolic-ref --quiet --short HEAD)"
