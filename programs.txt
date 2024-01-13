@@ -14,7 +14,7 @@ vscode
 
 # brew
 bat
-exa
+eza
 fish
 fzf
 git-delta

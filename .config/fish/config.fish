@@ -3,7 +3,7 @@ eval (/opt/homebrew/bin/brew shellenv)
 complete -c e -c pre -w rg
 zoxide init fish --cmd c | source
 fzf_configure_bindings --directory=\ct --git_log=\cg --git_status=\cs --processes=\co
-set fzf_preview_dir_cmd exa --all --color=always
+set fzf_preview_dir_cmd eza --all --color=always
 set fzf_history_time_format %Y-%m-%d
 set tide_git_truncation_length 48
 
@@ -20,8 +20,8 @@ abbr pbqr 'pbpaste | qrencode -o - -t UTF8'
 
 abbr do docker
 abbr dc 'docker compose'
-abbr l exa
-abbr la 'exa -lah'
+abbr l eza
+abbr la 'eza --no-user --icons -lah'
 abbr R 'less -R'
 
 set g ''
