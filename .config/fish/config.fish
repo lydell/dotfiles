@@ -9,6 +9,11 @@ set tide_git_truncation_length 48
 
 function __nvm_auto --on-variable PWD
   nvm use --silent 2>/dev/null
+  if test -d .idea || test -d ../.idea
+    set -x ELM_WATCH_OPEN_EDITOR '/Applications/Rider.app/Contents/MacOS/rider --line "$line" --column "$((column - 1))" "$file"'
+  else
+    set -x ELM_WATCH_OPEN_EDITOR 'code --goto "$file:$line:$column"'
+  end
 end
 __nvm_auto
 
