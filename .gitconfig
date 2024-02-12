@@ -25,3 +25,5 @@
 	conflictstyle = diff3
 [pull]
 	ff = only
+[stash]
+	showIncludeUntracked = true
