@@ -10,6 +10,10 @@
 	features = side-by-side line-numbers decorations
 [diff]
 	colorMoved = default
+	colorMovedWS = allow-indentation-change
+	algoritm = histogram
+[branch]
+	sort = -committerdate
 [push]
 	default = current
 	autoSetupRemote = true
@@ -22,8 +26,10 @@
 	enabled = true
 	autoupdate = true
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 [pull]
 	ff = only
 [stash]
 	showIncludeUntracked = true
+[includeIf "gitdir:~/in/"]
+	path = ~/in/.gitconfig
