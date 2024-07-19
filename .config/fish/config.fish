@@ -1,3 +1,5 @@
+set -g fish_greeting
+set -gx LANG "en_US.UTF-8"
 fish_hybrid_key_bindings
 eval (/opt/homebrew/bin/brew shellenv)
 complete -c e -c pre -w rg
@@ -61,3 +63,6 @@ abbr gst 'git stash'
 abbr gu 'git push'
 abbr gw 'git switch'
 abbr --position anywhere mäin '(git main)'
+
+# Must be last
+source ~/.iterm2_shell_integration.fish
