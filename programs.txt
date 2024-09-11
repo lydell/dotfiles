@@ -16,6 +16,7 @@ vscode
 bat
 eza
 fish
+font-meslo-lg-nerd-font
 fzf
 git-delta
 htop
@@ -61,7 +62,7 @@ Fish
 GitLens
 Prettier
 ShellCheck
-Vim
+VSCode NeoVim
 
 # gnome
 Unite

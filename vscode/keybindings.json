@@ -1,59 +1,39 @@
-// Place your key bindings in this file to override the defaults
 [
-    {
-        "key": "ctrl+o",
-        "command": "workbench.action.navigateBack"
-    },
-    {
-        "key": "ctrl+i",
-        "command": "workbench.action.navigateForward"
-    },
-    {
-        "key": "ctrl+right",
-        "command": "workbench.action.terminal.focusNextPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+right",
-        "command": "-workbench.action.terminal.focusNextPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+left",
-        "command": "workbench.action.terminal.focusPreviousPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+left",
-        "command": "-workbench.action.terminal.focusPreviousPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "shift+alt+u",
-        "command": "workbench.action.closeEditorsToTheRight"
-    },
-    {
-        "key": "cmd+`",
-        "command": "workbench.action.terminal.focus"
-    },
-    {
-        "key": "cmd+'",
-        "command": "editor.action.smartSelect.expand",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+shift+cmd+right",
-        "command": "-editor.action.smartSelect.expand",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "shift+cmd+'",
-        "command": "editor.action.smartSelect.shrink",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+shift+cmd+left",
-        "command": "-editor.action.smartSelect.shrink",
-        "when": "editorTextFocus"
-    }
+  // Close tabs to the right.
+  {
+    "key": "shift+alt+u",
+    "command": "workbench.action.closeEditorsToTheRight"
+  },
+
+  // Expand and shrink selection.
+  {
+    "key": "cmd+[Quote]",
+    "command": "editor.action.smartSelect.expand",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+[Quote]",
+    "command": "editor.action.smartSelect.shrink",
+    "when": "editorTextFocus"
+  },
+
+  // GitHub CoPilot: Trigger on demand, and alt+right to accept partially (like Fish).
+  {
+    "key": "shift+cmd+[Period]",
+    "command": "editor.action.inlineSuggest.trigger"
+  },
+  {
+    "key": "alt+right",
+    "command": "editor.action.inlineSuggest.acceptNextWord",
+    "when": "inlineSuggestionVisible && !editorReadonly"
+  },
+
+  // Pass cmd+d (multiple cursors) to Neovim:
+  // https://github.com/vscode-neovim/vscode-neovim#vscodewith_insertcallback
+  {
+    "command": "vscode-neovim.send",
+    "key": "cmd+d",
+    "when": "editorTextFocus && neovim.mode != insert",
+    "args": "<M-d>",
+  },
 ]

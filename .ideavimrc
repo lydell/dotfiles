@@ -1,35 +1,55 @@
+" Plugins:
 set surround
-set multiple-cursors
 set commentary
 set exchange
 set highlightedyank
-set textobj-entire
-set ReplaceWithRegister
+set sneak
+" Makes { and } work even if a blank line contains spaces.
 set vim-paragraph-motion
-set textobj-indent
-set matchit
-set clipboard+=unnamedplus
+
+" Plugins, maybe remove:
+set ReplaceWithRegister
+
+" Settings:
+set clipboard+=unnamedplus,ideaput
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
 set visualbell
 set noerrorbells
+" Smart JetBrains Join.
+set ideajoin
 
-nnoremap <cr> o<esc>
-nnoremap g<cr> O<esc>
-nnoremap <backspace> X
-nnoremap <delete> x
-nnoremap <home> ^
-nnoremap <end> $
+" Mappings:
+
+" Quick macro playback: Record qith qq, play back with Q.
+" Note: In Neovim, Q replays the latest recorded macro by default.
 nnoremap Q @q
+
+" I usually show file explorer by pressing `-` (not available in IdeaVim). Put the original `-` on `_` instead.
 nnoremap _ -
+
+" Make Y work more like C and D (as in Neovim).
 nnoremap Y y$
+
+" Clear search highlight.
 nnoremap <silent> <esc> :noh<cr><esc>
-nnoremap gh :action QuickJavaDoc<cr>
 
-map <space> <leader>
+" Hover (like in VSCode).
+map gh <Action>(ShowHoverInfo)
 
-xnoremap <backspace> c
+" Enable “IdeaVim: Track Action IDs” in the command palette to find action names.
+" Find references (like in VSCode).
+map gH <Action>(FindUsages)
+
+" Expand and shrink selection.
+map h <Action>(EditorSelectWord)
+map l <Action>(EditorUnSelectWord)
+
+" Go to next and previous error in the current file.
+map j <Action>(GotoNextError)
+map k <Action>(GotoPreviousError)
+
+" Don’t move the cursor when yanking in visual mode.
 xnoremap y ygv<esc>
-xnoremap p p`[v`]ygv<esc>
