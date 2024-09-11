@@ -146,7 +146,11 @@ require("lazy").setup({
     -- File explorer.
     {
       "stevearc/oil.nvim",
-      opts = {},
+      opts = {
+        view_options = {
+          show_hidden = true,
+        },
+      },
       cond = not vim.g.vscode,
     },
 
