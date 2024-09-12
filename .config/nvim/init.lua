@@ -112,6 +112,7 @@ require("lazy").setup({
         local configs = require("nvim-treesitter.configs")
 
         configs.setup({
+          ensure_installed = { "bash", "css", "csv", "diff", "dockerfile", "elm", "fish", "gleam", "haskell", "html", "javascript", "jsdoc", "json", "lua", "luadoc", "make", "markdown", "markdown_inline", "python", "regex", "sql", "tsv", "tsx", "typescript", "vim", "vimdoc", "xml", "yaml" },
           highlight = {
             enable = not vim.g.vscode,
           },
