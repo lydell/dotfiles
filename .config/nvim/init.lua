@@ -112,6 +112,9 @@ require("lazy").setup({
         local configs = require("nvim-treesitter.configs")
 
         configs.setup({
+          highlight = {
+            enable = not vim.g.vscode,
+          },
           incremental_selection = {
             enable = true,
             keymaps = {
