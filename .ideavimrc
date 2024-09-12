@@ -54,6 +54,10 @@ map k <Action>(GotoPreviousError)
 " Don’t move the cursor when yanking in visual mode.
 xnoremap y ygv<esc>
 
+" Poor man’s edgemotion.
+nnoremap <expr> ö '/^.\{' . (col('.') - 1) . '\}\S/e<CR>:nohl<CR>'
+nnoremap <expr> Ö '?^.\{' . (col('.') - 1) . '\}\S?e<CR>:nohl<CR>'
+
 " Go back and forward with backspace.
 nnoremap <bs> <c-o>
 nnoremap <s-bs> <c-o>
