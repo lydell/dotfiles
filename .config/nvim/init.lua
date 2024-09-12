@@ -63,6 +63,9 @@ if not vim.g.vscode then
 end
 vim.keymap.set("n", "_", "-")
 
+vim.keymap.set("n", "<bs>", "<c-o>")
+vim.keymap.set("n", "<s-bs>", "<c-i>")
+
 -- Highlight yanked text.
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function() vim.highlight.on_yank({ timeout = 200 }) end,

@@ -53,3 +53,7 @@ map k <Action>(GotoPreviousError)
 
 " Don’t move the cursor when yanking in visual mode.
 xnoremap y ygv<esc>
+
+" Go back and forward with backspace.
+nnoremap <bs> <c-o>
+nnoremap <s-bs> <c-o>
