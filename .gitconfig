@@ -6,6 +6,7 @@
 	pager = delta --diff-so-fancy
 [interactive]
 	diffFilter = delta --color-only
+	singleKey = true
 [delta]
 	features = side-by-side line-numbers decorations
 [diff]
@@ -31,5 +32,8 @@
 	ff = only
 [stash]
 	showIncludeUntracked = true
+	showPatch = true
+[advice]
+	statusHints = false
 [includeIf "gitdir:~/in/"]
 	path = ~/in/.gitconfig
