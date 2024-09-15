@@ -63,6 +63,7 @@ if not vim.g.vscode then
 end
 vim.keymap.set("n", "_", "-")
 
+-- Go back and forward with backspace.
 vim.keymap.set("n", "<bs>", "<c-o>")
 vim.keymap.set("n", "<s-bs>", "<c-i>")
 
@@ -74,6 +75,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- VSCode specific.
 if vim.g.vscode then
   local vscode = require("vscode")
+
+  -- Avoid the Output panel opening when using Sneak.
+  vim.opt.cmdheight = 4
 
   -- Go to next and previous error in the current file.
   vim.keymap.set({ "n", "x" }, "j", function ()
