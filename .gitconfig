@@ -8,7 +8,7 @@
 	diffFilter = delta --color-only
 	singleKey = true
 [delta]
-	features = side-by-side line-numbers decorations
+	features = side-by-side line-numbers decorations navigate
 [diff]
 	colorMoved = default
 	colorMovedWS = allow-indentation-change
