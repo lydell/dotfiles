@@ -9,6 +9,7 @@
 	singleKey = true
 [delta]
 	features = side-by-side line-numbers decorations navigate
+	tabs = 2
 [diff]
 	colorMoved = default
 	colorMovedWS = allow-indentation-change
