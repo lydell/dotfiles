@@ -21,6 +21,11 @@ set noerrorbells
 " Smart JetBrains Join.
 set ideajoin
 
+" Change <leader> from backslash to space.
+" First unmap space, so it never moves forward after a delay.
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+
 " Mappings:
 
 " Quick macro playback: Record qith qq, play back with Q.
@@ -61,3 +66,9 @@ nnoremap <expr> Ö '?^.\{' . (col('.') - 1) . '\}\S?e<CR>:nohl<CR>'
 " Go back and forward with backspace.
 nnoremap <bs> <c-o>
 nnoremap <s-bs> <c-o>
+
+" Camel case motions.
+map <leader>w [w
+map <leader>b [b
+map <leader>e ]w
+map <leader>ge ]b

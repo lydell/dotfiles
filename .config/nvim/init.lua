@@ -16,8 +16,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Change <leader> from backslash to space.
+-- First unmap space, so it never moves forward after a delay.
+vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+-- Enable CamelCaseMotion using <leader>.
+vim.g.camelcasemotion_key = "<leader>"
 
 -- Default indentation settings.
 vim.opt.expandtab = true
@@ -184,5 +189,8 @@ require("lazy").setup({
 
     -- Guesses indentation settings.
     "tpope/vim-sleuth",
+
+    -- Camel case motions: <leader> w/b/e/ge
+    "bkad/CamelCaseMotion",
   },
 })
