@@ -194,3 +194,95 @@ require("lazy").setup({
     "bkad/CamelCaseMotion",
   },
 })
+
+----- Yank and paste with indent handling -----
+
+local function get_smallest_indent(lines)
+  smallest_indent = nil
+  for _, line in ipairs(lines) do
+    match = line:match("^%s*%S")
+    if match then
+      indent = match:sub(1, -2)
+      if smallest_indent then
+        if #indent < #smallest_indent then
+          smallest_indent = indent
+        end
+      else
+        smallest_indent = indent
+      end
+    end
+  end
+  return smallest_indent
+end
+
+-- Yank and remove the shortest indent from each line.
+local function yank()
+  -- Get the start and end of the motion range.
+  local start_pos = vim.api.nvim_buf_get_mark(0, "[")
+  local end_pos = vim.api.nvim_buf_get_mark(0, "]")
+
+  -- Retrieve the text in the selected range.
+  local lines = vim.api.nvim_buf_get_lines(0, start_pos[1] - 1, end_pos[1], false)
+
+  local regtype = vim.fn.getregtype()
+
+  -- Don’t change indentation in any way if the text is characterwise and just one line.
+  if #lines <= 1 and regtype == "v" then
+    return
+  end
+
+  local indent = get_smallest_indent(lines)
+  if not indent then
+    return
+  end
+
+  for i, line in ipairs(lines) do
+      lines[i] = line:sub(#indent + 1)
+  end
+
+  -- Overwrite the register we just yanked into (this runs after all yanks – also deletes).
+  vim.fn.setreg(vim.v.register, lines, regtype)
+end
+
+-- Paste and re-indent each line.
+local function paste(command)
+  local pasted = vim.fn.getreg(vim.v.register, 1, 1)
+  local regtype = vim.fn.getregtype()
+
+  -- Don’t change indentation in any way if the text is characterwise and just one line.
+  if #pasted <= 1 and regtype == "v" then
+    vim.cmd("normal! " .. command)
+    return
+  end
+
+  -- These correspond to the first or last line depending on whether you selected up or down.
+  local v_start = vim.fn.getpos("v")[2]
+  local v_end = vim.fn.getpos(".")[2]
+  local selection = vim.api.nvim_buf_get_lines(0, math.min(v_start, v_end) - 1, math.max(v_start, v_end), true)
+
+  local selection_indent = get_smallest_indent(selection) or selection[1]:match("^%s+") or ""
+  local pasted_indent = get_smallest_indent(pasted) or ""
+
+  local new_pasted = {}
+  for i, line in ipairs(pasted) do
+    if i == 1 and regtype == "v" then
+      new_pasted[i] = line:sub(#pasted_indent + 1)
+    else
+      new_pasted[i] = selection_indent .. line:sub(#pasted_indent + 1)
+    end
+  end
+
+  -- Temporarily set the register with the re-indented text and execute the command.
+  vim.fn.setreg(vim.v.register, new_pasted, regtype)
+  vim.cmd("normal! " .. command)
+  vim.fn.setreg(vim.v.register, pasted, regtype)
+  -- Note: Since we always reset the register after the command, we change the
+  -- default behavior of `p`, which otherwise replaces the default register with
+  -- the text that was pasted over.
+end
+
+vim.api.nvim_create_autocmd('TextYankPost', { callback = yank })
+vim.keymap.set({"n", "v"}, "p", function () paste("p") end)
+vim.keymap.set({"n", "v"}, "gp", function () paste("gp") end)
+vim.keymap.set({"n", "v"}, "P", function () paste("P") end)
+vim.keymap.set({"n", "v"}, "gP", function () paste("gP") end)
