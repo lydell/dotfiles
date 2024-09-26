@@ -289,3 +289,5 @@ vim.keymap.set({"n", "v"}, "gP", function () paste("gP") end)
 -- Paste anything as linewise:
 vim.keymap.set({"n", "v"}, "<leader>p", function () paste("p", "V") end)
 vim.keymap.set({"n", "v"}, "<leader>P", function () paste("P", "V") end)
+-- Yank without losing selection:
+vim.keymap.set("v", "<leader>y", "ygv")
