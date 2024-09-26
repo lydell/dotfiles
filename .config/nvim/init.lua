@@ -245,9 +245,9 @@ local function yank()
 end
 
 -- Paste and re-indent each line.
-local function paste(command)
+local function paste(command, regtype)
   local pasted = vim.fn.getreg(vim.v.register, 1, 1)
-  local regtype = vim.fn.getregtype()
+  regtype = regtype or vim.fn.getregtype()
 
   -- Don’t change indentation in any way if the text is characterwise and just one line.
   if #pasted <= 1 and regtype == "v" then
@@ -286,3 +286,6 @@ vim.keymap.set({"n", "v"}, "p", function () paste("p") end)
 vim.keymap.set({"n", "v"}, "gp", function () paste("gp") end)
 vim.keymap.set({"n", "v"}, "P", function () paste("P") end)
 vim.keymap.set({"n", "v"}, "gP", function () paste("gP") end)
+-- Paste anything as linewise:
+vim.keymap.set({"n", "v"}, "<leader>p", function () paste("p", "V") end)
+vim.keymap.set({"n", "v"}, "<leader>P", function () paste("P", "V") end)
