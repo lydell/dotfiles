@@ -288,7 +288,13 @@ local function yank()
   end
 
   for i, line in ipairs(lines) do
+    if regtype == "v" and i == 1 then
+      lines[i] = line:sub(start_pos[2] + 1)
+    elseif regtype == "v" and i == #lines then
+      lines[i] = line:sub(#indent + 1, end_pos[2] + 1)
+    else
       lines[i] = line:sub(#indent + 1)
+    end
   end
 
   -- Overwrite the register we just yanked into (this runs after all yanks – also deletes).
