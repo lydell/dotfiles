@@ -265,7 +265,9 @@ local function paste(command, regtype)
 
   local new_pasted = {}
   for i, line in ipairs(pasted) do
-    if i == 1 and regtype == "v" then
+    if line == "" then
+      new_pasted[i] = line
+    elseif i == 1 and regtype == "v" then
       new_pasted[i] = line:sub(#pasted_indent + 1)
     else
       new_pasted[i] = selection_indent .. line:sub(#pasted_indent + 1)
