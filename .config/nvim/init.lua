@@ -215,6 +215,57 @@ local function get_smallest_indent(lines)
   return smallest_indent
 end
 
+local function get_indent_for_cursor_column(cursor_indentation)
+  -- The indent char to use once the cursor indentation runs out:
+  -- The last char of the indentation, or a space or tab depending on options.
+  local last_indentation_char = cursor_indentation:sub(-1)
+  if last_indentation_char == "" then
+    if vim.opt.expandtab then
+      last_indentation_char = " "
+    else
+      last_indentation_char = "\t"
+    end
+  end
+
+  local tabstop = vim.o.tabstop
+
+  -- By default, `virtcol` returns the virtual column at the _end_ of tabs.
+  -- By passing the second argument, it returns both the start and end.
+  -- We’re interested in the start.
+  local cursor = vim.fn.virtcol(".", 1)[1] - 1
+
+  local indentation_index = 1
+  local indent_length = 0
+  local indent = ""
+
+  while indent_length < cursor do
+    -- If we’re still in the cursor indentation, take the next char from there.
+    local char = last_indentation_char
+    if indentation_index <= #cursor_indentation then
+      char = cursor_indentation:sub(indentation_index, indentation_index)
+      indentation_index = indentation_index + 1
+    end
+
+    if char == "\t" then
+      -- If a tab fits, use it.
+      if indent_length + tabstop <= cursor then
+        indent = indent .. char
+        indent_length = indent_length + tabstop
+      else
+        -- Otherwise fill the rest with spaces.
+        indent = indent .. string.rep(" ", cursor - indent_length)
+        indent_length = indent_length + cursor - indent_length
+      end
+    else
+      -- All other whitespace is assumed to be of length 1.
+      indent = indent .. char
+      indent_length = indent_length + 1
+    end
+  end
+
+  return indent
+end
+
 -- Yank and remove the shortest indent from each line.
 local function yank()
   -- Get the start and end of the motion range.
@@ -245,9 +296,15 @@ local function yank()
 end
 
 -- Paste and re-indent each line.
-local function paste(command, regtype)
+local function paste(command, linewise_at_column)
   local pasted = vim.fn.getreg(vim.v.register, 1, 1)
-  regtype = regtype or vim.fn.getregtype()
+
+  local regtype = ""
+  if linewise_at_column then
+    regtype = "V"
+  else
+    regtype = vim.fn.getregtype()
+  end
 
   -- Don’t change indentation in any way if the text is characterwise and just one line.
   if #pasted <= 1 and regtype == "v" then
@@ -260,7 +317,13 @@ local function paste(command, regtype)
   local v_end = vim.fn.getpos(".")[2]
   local selection = vim.api.nvim_buf_get_lines(0, math.min(v_start, v_end) - 1, math.max(v_start, v_end), true)
 
-  local selection_indent = get_smallest_indent(selection) or selection[1]:match("^%s+") or ""
+  local selection_indent = ""
+  if linewise_at_column and vim.api.nvim_get_mode().mode == "n" then
+    selection_indent = get_indent_for_cursor_column(selection[1]:match("^%s*"))
+  else
+    selection_indent = get_smallest_indent(selection) or selection[1]:match("^%s*") or ""
+  end
+
   local pasted_indent = get_smallest_indent(pasted) or ""
 
   local new_pasted = {}
@@ -288,11 +351,8 @@ vim.keymap.set({"n", "v"}, "p", function () paste("p") end)
 vim.keymap.set({"n", "v"}, "gp", function () paste("gp") end)
 vim.keymap.set({"n", "v"}, "P", function () paste("P") end)
 vim.keymap.set({"n", "v"}, "gP", function () paste("gP") end)
--- Paste anything as linewise:
-vim.keymap.set("n", "<leader>p", function () paste("p", "V") end)
-vim.keymap.set("n", "<leader>P", function () paste("P", "V") end)
--- Paste as linewise and indent:
-vim.keymap.set("n", "<leader>>p", function () paste("p", "V"); vim.cmd("normal! >`]") end)
-vim.keymap.set("n", "<leader>>P", function () paste("P", "V"); vim.cmd("normal! >`]") end)
+-- Paste anything as linewise, at the cursor column if in Normal mode:
+vim.keymap.set("n", "<leader>p", function () paste("p", true) end)
+vim.keymap.set("n", "<leader>P", function () paste("P", true) end)
 -- Yank without losing selection:
 vim.keymap.set("v", "<leader>y", "ygv")

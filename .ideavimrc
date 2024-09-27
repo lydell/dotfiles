@@ -59,6 +59,9 @@ map k <Action>(GotoPreviousError)
 " Don’t move the cursor when yanking in visual mode.
 xnoremap y ygv<esc>
 
+" Yank without losing selection.
+xnoremap <leader>y ygv
+
 " Poor man’s edgemotion.
 nnoremap <expr> ö '/^.\{' . (col('.') - 1) . '\}\S/e<CR>:nohl<CR>'
 nnoremap <expr> Ö '?^.\{' . (col('.') - 1) . '\}\S?e<CR>:nohl<CR>'
@@ -72,10 +75,3 @@ map <leader>w [w
 map <leader>b [b
 map <leader>e ]w
 map <leader>ge ]b
-
-" Paste and indent.
-nnoremap <leader>>p p>`]
-nnoremap <leader>>P P>`]
-
-" Yank without losing selection.
-xnoremap <leader>y ygv
