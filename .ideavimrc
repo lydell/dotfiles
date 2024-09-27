@@ -72,3 +72,10 @@ map <leader>w [w
 map <leader>b [b
 map <leader>e ]w
 map <leader>ge ]b
+
+" Paste and indent.
+nnoremap <leader>>p p>`]
+nnoremap <leader>>P P>`]
+
+" Yank without losing selection.
+xnoremap <leader>y ygv
