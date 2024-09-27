@@ -308,7 +308,7 @@ local function paste(command, linewise_at_column)
 
   -- Don’t change indentation in any way if the text is characterwise and just one line.
   if #pasted <= 1 and regtype == "v" then
-    vim.cmd("normal! " .. command)
+    vim.cmd('normal! "' .. vim.v.register .. command)
     return
   end
 
@@ -339,7 +339,7 @@ local function paste(command, linewise_at_column)
 
   -- Temporarily set the register with the re-indented text and execute the command.
   vim.fn.setreg(vim.v.register, new_pasted, regtype)
-  vim.cmd("normal! " .. command)
+  vim.cmd('normal! "' .. vim.v.register .. command)
   vim.fn.setreg(vim.v.register, pasted, regtype)
   -- Note: Since we always reset the register after the command, we change the
   -- default behavior of `p`, which otherwise replaces the default register with
