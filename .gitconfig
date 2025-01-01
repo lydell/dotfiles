@@ -24,6 +24,8 @@
 [init]
 	defaultBranch = main
 	templatedir = ~/src/dotfiles/.git-templates
+[rebase]
+	missingCommitsCheck = error
 [rerere]
 	enabled = true
 	autoupdate = true
