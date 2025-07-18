@@ -77,6 +77,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function() vim.highlight.on_yank({ timeout = 200 }) end,
 })
 
+-- Reset iskeyword every time a buffer is entered or filetype is set.
+-- This prevents for example `w` from behaving differently in .fish files.
+vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
+  callback = function()
+    vim.opt_local.iskeyword = "@,48-57,_,192-255"
+  end,
+})
+
 -- VSCode specific.
 if vim.g.vscode then
   local vscode = require("vscode")
