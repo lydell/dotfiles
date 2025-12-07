@@ -5,3 +5,4 @@
 .ignore
 .DS_Store
 .node-version
+.idea

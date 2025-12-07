@@ -10,8 +10,9 @@
 [delta]
 	features = side-by-side line-numbers decorations navigate
 	tabs = 2
+	wrap-max-lines = unlimited
 [diff]
-	colorMoved = default
+	colorMoved = plain
 	colorMovedWS = allow-indentation-change
 	algoritm = histogram
 [branch]
