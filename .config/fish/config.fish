@@ -64,5 +64,7 @@ abbr gu 'git push'
 abbr gw 'git switch'
 abbr --position anywhere mäin '(git main)'
 
-# Must be last
-source ~/.iterm2_shell_integration.fish
+function insert_last_command
+  commandline --insert -- (history --max 1)
+end
+bind -M insert … insert_last_command
