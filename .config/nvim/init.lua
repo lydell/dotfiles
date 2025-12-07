@@ -94,10 +94,10 @@ if vim.g.vscode then
 
   -- Go to next and previous error in the current file.
   vim.keymap.set({ "n", "x" }, "j", function ()
-    vscode.action("editor.action.marker.next")
+    vscode.action("diagnosticNavigator.nextDiagnosticWithoutPopup")
   end)
   vim.keymap.set({ "n", "x" }, "k", function ()
-    vscode.action("editor.action.marker.prev")
+    vscode.action("diagnosticNavigator.previousDiagnosticWithoutPopup")
   end)
 
   -- Multiple cursors only really works in Insert Mode unfortunately.
