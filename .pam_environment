@@ -1,3 +1,0 @@
-PATH DEFAULT=/home/linuxbrew/.linuxbrew/bin:${PATH}:/home/@{PAM_USER}/.npm-global/bin
-FZF_DEFAULT_COMMAND=rg --hidden --files
-FZF_CTRL_T_COMMAND=rg --hidden --files

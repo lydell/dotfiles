@@ -3,7 +3,7 @@
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.accessibilitySupport": "off",
   "editor.inlineSuggest.enabled": true,
-  "editor.minimap.autohide": true,
+  "editor.minimap.enabled": false,
   "editor.renderFinalNewline": "off",
   "editor.stickyScroll.enabled": true,
   "files.autoSave": "onFocusChange",
@@ -12,13 +12,13 @@
   "window.zoomLevel": 1.5,
   "workbench.activityBar.location": "top",
   "workbench.editor.limit.enabled": true,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
 
   "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "Default Dark+",
   "workbench.preferredLightColorTheme": "Default Light+",
 
   "elmLand.feature.offlinePackageDocs": "Imports only",
-  "gitlens.codeLens.enabled": false,
   "haskell.manageHLS": "GHCup",
   "prettier.requireConfig": true,
   "typescript.tsserver.experimental.enableProjectDiagnostics": true,

@@ -1,69 +1,43 @@
-# apt
-chromium-browser
-gnome-session
-  sudo update-alternatives --config gdm3.css
-gnome-tweaks
-xclip
-
-# ubuntu-make
-snap install ubuntu-make --classic
-umake web firefox-dev --lang en-US
-
-# deb
-vscode
-
 # brew
 bat
+coreutils
 eza
+fd
 fish
-font-meslo-lg-nerd-font
 fzf
 git-delta
+gleam
 htop
-httpie
 imagemagick
 jless
 jo
 jq
 neovim
-node
 optipng
 python
 ripgrep
 shellcheck
 tokei
-yarn
 zoxide
 
 # brew cask
 bitwarden
-firefox-developer-edition
+discord
+dropbox
+firefox@developer-edition
+font-meslo-lg-nerd-font
 iterm2
-krisp
-rectangle
-scroll-reverser
-sensiblesidebuttons
+mos
+ungoogled-chromium
 visual-studio-code
+webstorm
 zsa-wally
-
-# npm
-fx
-neovim
-npm-home
-npm-upgrade
-serve
-svgo
 
 # vscode
 change-case
-Error Lens
 ESlint
 Fish
 GitLens
 Prettier
 ShellCheck
 VSCode NeoVim
-
-# gnome
-Unite
-Vitals
