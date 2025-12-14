@@ -93,11 +93,12 @@ if vim.g.vscode then
   vim.opt.cmdheight = 4
 
   -- Go to next and previous error in the current file.
+  -- https://github.com/lydell/vscode-go-to-diagnostic
   vim.keymap.set({ "n", "x" }, "j", function ()
-    vscode.action("diagnosticNavigator.nextDiagnosticWithoutPopup")
+    vscode.action("goToDiagnostic.nextDiagnosticWithoutPopup")
   end)
   vim.keymap.set({ "n", "x" }, "k", function ()
-    vscode.action("diagnosticNavigator.previousDiagnosticWithoutPopup")
+    vscode.action("goToDiagnostic.previousDiagnosticWithoutPopup")
   end)
 
   -- Multiple cursors only really works in Insert Mode unfortunately.
