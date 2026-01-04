@@ -36,4 +36,17 @@
     "when": "editorTextFocus && neovim.mode != insert",
     "args": "<M-d>",
   },
+
+  // Remove shortcuts conflicting with my left/right half window shortcuts.
+  {
+    "key": "ctrl+alt+right",
+    "command": "-cursorWordPartRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+left",
+    "command": "-cursorWordPartLeft",
+    "when": "textInputFocus"
+  },
 ]
+
