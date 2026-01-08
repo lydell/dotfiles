@@ -39,5 +39,3 @@
 	showPatch = true
 [advice]
 	statusHints = false
-[includeIf "gitdir:~/in/"]
-	path = ~/in/.gitconfig

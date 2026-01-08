@@ -35,6 +35,9 @@ zsa-wally
 
 # vscode
 change-case
+Code Spell Checker
+    Swedish - Code Spell Checker
+Elm Land
 ESlint
 Fish
 GitLens

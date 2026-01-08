@@ -128,6 +128,7 @@ require("lazy").setup({
     -- Using this for its expand/shrink selection commands.
     {
       "nvim-treesitter/nvim-treesitter",
+      branch = "master",
       build = ":TSUpdate",
       config = function ()
         local configs = require("nvim-treesitter.configs")
