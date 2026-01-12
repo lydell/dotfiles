@@ -1,10 +1,9 @@
 {
   "chars": "ehstirnoamupcwlfgdy",
-  "logLevel": "warn",
-  "normal.alt-H": "EnterHintsMode_ManyClick",
-  "normal.alt-R": "EnterHintsMode_Select",
-  "normal.alt-T": "EnterHintsMode_ManyTab",
-  "normal.alt-h": "EnterHintsMode_Click",
-  "normal.alt-r": "EnterHintsMode_ForegroundTab",
-  "normal.alt-t": "EnterHintsMode_BackgroundTab"
+  "normal.alt-˛": "EnterHintsMode_Click",
+  "normal.alt-†": "EnterHintsMode_BackgroundTab",
+  "normal.alt-®": "EnterHintsMode_ForegroundTab",
+  "normal.alt-˘": "EnterHintsMode_ManyClick",
+  "normal.alt-‡": "EnterHintsMode_ManyTab",
+  "normal.alt-©": "EnterHintsMode_Select"
 }
