@@ -8,6 +8,7 @@
   "editor.stickyScroll.enabled": true,
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
+  "git.blame.editorDecoration.enabled": true,
   "git.openRepositoryInParentFolders": "never",
   "window.zoomLevel": 1.5,
   "workbench.activityBar.location": "top",
