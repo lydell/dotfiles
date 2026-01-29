@@ -44,7 +44,8 @@
     "source.fixAll.eslint": "explicit"
   },
   "[elm]": {
-    "editor.defaultFormatter": "elm-land.elm-land"
+    "editor.defaultFormatter": "elm-land.elm-land",
+    "editor.wordBasedSuggestions": "currentDocument"
   },
   "[fish]": {
     "editor.defaultFormatter": "bmalehorn.vscode-fish"
