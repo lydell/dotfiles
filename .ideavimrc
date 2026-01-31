@@ -54,6 +54,15 @@ map l <Action>(EditorUnSelectWord)
 map j <Action>(GotoNextError)
 map k <Action>(GotoPreviousError)
 
+" Swap p and P in visual mode: Retain register for p, and take the overpasted text on P.
+" I want to keep the register by default, and take the overpasted text only intentionally.
+xnoremap p P
+xnoremap P p
+
+" Select the pasted text and indent or dedent. Repeat using `.`.
+nnoremap <leader>p `[V`]>
+nnoremap <leader>P `[V`]<
+
 " Don’t move the cursor when yanking in visual mode.
 xnoremap y ygv<esc>
 

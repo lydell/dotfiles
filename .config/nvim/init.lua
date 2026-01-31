@@ -208,11 +208,11 @@ require("lazy").setup({
 ----- Yank and paste with indent handling -----
 
 local function get_smallest_indent(lines)
-  smallest_indent = nil
+  local smallest_indent = nil
   for _, line in ipairs(lines) do
-    match = line:match("^%s*%S")
+    local match = line:match("^%s*%S")
     if match then
-      indent = match:sub(1, -2)
+      local indent = match:sub(1, -2)
       if smallest_indent then
         if #indent < #smallest_indent then
           smallest_indent = indent
@@ -225,70 +225,26 @@ local function get_smallest_indent(lines)
   return smallest_indent
 end
 
-local function get_indent_for_cursor_column(cursor_indentation)
-  -- The indent char to use once the cursor indentation runs out:
-  -- The last char of the indentation, or a space or tab depending on options.
-  local last_indentation_char = cursor_indentation:sub(-1)
-  if last_indentation_char == "" then
-    if vim.opt.expandtab then
-      last_indentation_char = " "
-    else
-      last_indentation_char = "\t"
-    end
+
+-- Adjust characterwise multiline yanking so that the indentation of each line makes sense:
+-- Remove the shortest indent from each line.
+local function text_yank_post()
+  -- Only modify characterwise yanks.
+  local regtype = vim.fn.getregtype()
+  if regtype ~= "v" then
+    return
   end
 
-  local tabstop = vim.o.tabstop
-
-  -- By default, `virtcol` returns the virtual column at the _end_ of tabs.
-  -- By passing the second argument, it returns both the start and end.
-  -- We’re interested in the start.
-  local cursor = vim.fn.virtcol(".", 1)[1] - 1
-
-  local indentation_index = 1
-  local indent_length = 0
-  local indent = ""
-
-  while indent_length < cursor do
-    -- If we’re still in the cursor indentation, take the next char from there.
-    local char = last_indentation_char
-    if indentation_index <= #cursor_indentation then
-      char = cursor_indentation:sub(indentation_index, indentation_index)
-      indentation_index = indentation_index + 1
-    end
-
-    if char == "\t" then
-      -- If a tab fits, use it.
-      if indent_length + tabstop <= cursor then
-        indent = indent .. char
-        indent_length = indent_length + tabstop
-      else
-        -- Otherwise fill the rest with spaces.
-        indent = indent .. string.rep(" ", cursor - indent_length)
-        indent_length = indent_length + cursor - indent_length
-      end
-    else
-      -- All other whitespace is assumed to be of length 1.
-      indent = indent .. char
-      indent_length = indent_length + 1
-    end
-  end
-
-  return indent
-end
-
--- Yank and remove the shortest indent from each line.
-local function yank()
   -- Get the start and end of the motion range.
   local start_pos = vim.api.nvim_buf_get_mark(0, "[")
   local end_pos = vim.api.nvim_buf_get_mark(0, "]")
 
-  -- Retrieve the text in the selected range.
+  -- Retrieve the full lines of the selected range.
+  -- The first and last lines might not be fully selected, but we still read the full lines.
   local lines = vim.api.nvim_buf_get_lines(0, start_pos[1] - 1, end_pos[1], false)
 
-  local regtype = vim.fn.getregtype()
-
-  -- Don’t change indentation in any way if the text is characterwise and just one line.
-  if #lines <= 1 and regtype == "v" then
+  -- Don’t change indentation in any way if the yanked text is just one line.
+  if #lines <= 1 then
     return
   end
 
@@ -298,11 +254,14 @@ local function yank()
   end
 
   for i, line in ipairs(lines) do
-    if regtype == "v" and i == 1 then
+    if i == 1 then
+      -- Cut the first line to the start of characterwise selection.
       lines[i] = line:sub(start_pos[2] + 1)
-    elseif regtype == "v" and i == #lines then
+    elseif i == #lines then
+      -- Remove indentation and cut the last line to the end of characterwise selection.
       lines[i] = line:sub(#indent + 1, end_pos[2] + 1)
     else
+      -- Remove indentation.
       lines[i] = line:sub(#indent + 1)
     end
   end
@@ -311,64 +270,108 @@ local function yank()
   vim.fn.setreg(vim.v.register, lines, regtype)
 end
 
--- Paste and re-indent each line.
-local function paste(command, linewise_at_column)
-  local pasted = vim.fn.getreg(vim.v.register, 1, 1)
+local function find_first_nonblank_indent(buf, start_line, direction)
+  local line_count = vim.api.nvim_buf_line_count(buf)
+  local i = start_line
 
-  local regtype = ""
-  if linewise_at_column then
-    regtype = "V"
-  else
-    regtype = vim.fn.getregtype()
+  while i >= 1 and i <= line_count do
+    local line = vim.api.nvim_buf_get_lines(buf, i - 1, i, false)[1]
+    local match = line:match("^%s*%S")
+    if match then
+      return match:sub(1, -2)
+    end
+    i = i + direction
   end
 
-  -- Don’t change indentation in any way if the text is characterwise and just one line.
-  if #pasted <= 1 and regtype == "v" then
-    vim.cmd('normal! "' .. vim.v.register .. command)
+  return ""
+end
+
+local function get_indent_unit()
+  if vim.bo.expandtab then
+    return string.rep(" ", vim.bo.shiftwidth)
+  else
+    return "\t"
+  end
+end
+
+local function reindent_last_paste(look_forward)
+  local start_col = vim.fn.col("'[") - 1 -- 0-based
+  local start_row = vim.fn.line("'[")
+  local end_row = vim.fn.line("']")
+
+  if start_row == 0 or end_row == 0 then
     return
   end
 
-  -- These correspond to the first or last line depending on whether you selected up or down.
-  local v_start = vim.fn.getpos("v")[2]
-  local v_end = vim.fn.getpos(".")[2]
-  local selection = vim.api.nvim_buf_get_lines(0, math.min(v_start, v_end) - 1, math.max(v_start, v_end), true)
-
-  local selection_indent = ""
-  if linewise_at_column and vim.api.nvim_get_mode().mode == "n" then
-    selection_indent = get_indent_for_cursor_column(selection[1]:match("^%s*"))
-  else
-    selection_indent = get_smallest_indent(selection) or selection[1]:match("^%s*") or ""
+  local buf = vim.api.nvim_get_current_buf()
+  local lines = vim.api.nvim_buf_get_lines(buf, start_row - 1, end_row, false)
+  if #lines == 0 then
+    return
   end
 
-  local pasted_indent = get_smallest_indent(pasted) or ""
+  local smallest_indent = get_smallest_indent(lines)
+  if not smallest_indent then
+    return
+  end
 
-  local new_pasted = {}
-  for i, line in ipairs(pasted) do
-    if line == "" then
-      new_pasted[i] = line
-    elseif i == 1 and regtype == "v" then
-      new_pasted[i] = line:sub(#pasted_indent + 1)
-    else
-      new_pasted[i] = selection_indent .. line:sub(#pasted_indent + 1)
+  local target_indent
+  if look_forward then
+    -- Find the first nonblank indent forward.
+    target_indent = find_first_nonblank_indent(buf, end_row + 1, 1)
+  else
+    -- Find the first nonblank indent backward.
+    target_indent = find_first_nonblank_indent(buf, start_row - 1, -1)
+  end
+
+  if start_col > 0 then
+    -- When pasted in the middle of a line, `target_indent` is the indent of the start line.
+    target_indent = lines[1]:match("^%s*") or ""
+    if #target_indent > #smallest_indent then
+      -- When the first line is indented more than the rest, don’t replace any indentation
+      -- in the other lines, just add to them.
+      smallest_indent = ""
     end
   end
 
-  -- Temporarily set the register with the re-indented text and execute the command.
-  vim.fn.setreg(vim.v.register, new_pasted, regtype)
-  vim.cmd('normal! "' .. vim.v.register .. command)
-  vim.fn.setreg(vim.v.register, pasted, regtype)
-  -- Note: Since we always reset the register after the command, we change the
-  -- default behavior of `p`, which otherwise replaces the default register with
-  -- the text that was pasted over.
+  local changed = false
+  for i, line in ipairs(lines) do
+    -- Leave blank or whitespace-only lines as-is.
+    if not line:match("^%s*$") then
+      -- Do not reindent the first line when pasted in the middle of a line and the other lines are less indented.
+      if not (i == 1 and smallest_indent == "") then
+        -- Replace smallest indent with target indent.
+        local new_line = line:gsub("^" .. smallest_indent, target_indent, 1)
+        if new_line ~= line then
+          lines[i] = new_line
+          changed = true
+        end
+      end
+    end
+  end
+
+  if not changed then
+    -- Indent all the rows once if unchanged.
+    local indent_unit = get_indent_unit()
+    for i, line in ipairs(lines) do
+      lines[i] = indent_unit .. lines[i]
+    end
+  end
+
+  vim.api.nvim_buf_set_lines(buf, start_row - 1, end_row, false, lines)
 end
 
-vim.api.nvim_create_autocmd('TextYankPost', { callback = yank })
-vim.keymap.set({"n", "v"}, "p", function () paste("p") end)
-vim.keymap.set({"n", "v"}, "gp", function () paste("gp") end)
-vim.keymap.set({"n", "v"}, "P", function () paste("P") end)
-vim.keymap.set({"n", "v"}, "gP", function () paste("gP") end)
--- Paste anything as linewise, at the cursor column if in Normal mode:
-vim.keymap.set("n", "<leader>p", function () paste("p", true) end)
-vim.keymap.set("n", "<leader>P", function () paste("P", true) end)
+-- Adjust characterwise multiline yanking so that the indentation of each line makes sense.
+vim.api.nvim_create_autocmd('TextYankPost', { callback = text_yank_post })
+
+-- Swap p and P in visual mode: Retain register for p, and take the overpasted text on P.
+-- I want to keep the register by default, and take the overpasted text only intentionally.
+vim.keymap.set("v", "p", "P")
+vim.keymap.set("v", "P", "p")
+
+-- Re-indent last paste to match the first non-blank line before or after the last paste.
+vim.keymap.set("n", "<leader>P", function() reindent_last_paste(false) end)
+vim.keymap.set("n", "<leader>p", function() reindent_last_paste(true) end)
+
 -- Yank without losing selection:
 vim.keymap.set("v", "<leader>y", "ygv")
+
