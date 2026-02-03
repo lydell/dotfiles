@@ -63,6 +63,7 @@ abbr gst 'git stash'
 abbr gu 'git push'
 abbr gw 'git switch'
 abbr --position anywhere mäin '(git main)'
+abbr nr 'node --run'
 
 function insert_last_command
   commandline --insert -- (history --max 1)
