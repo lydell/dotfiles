@@ -18,6 +18,7 @@ set incsearch
 set hlsearch
 set visualbell
 set noerrorbells
+set idearefactormode=keep
 
 " Change <leader> from backslash to space.
 " First unmap space, so it never moves forward after a delay.
