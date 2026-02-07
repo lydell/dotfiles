@@ -46,6 +46,9 @@ map gh <Action>(ShowHoverInfo)
 " Find references (like in VSCode).
 map gH <Action>(FindUsages)
 
+" Rename.
+map gR <Action>(RenameElement)
+
 " Expand and shrink selection.
 map h <Action>(EditorSelectWord)
 map l <Action>(EditorUnSelectWord)

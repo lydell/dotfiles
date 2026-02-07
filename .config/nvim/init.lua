@@ -101,6 +101,11 @@ if vim.g.vscode then
     vscode.action("goToDiagnostic.previousDiagnosticWithoutPopup")
   end)
 
+  -- Rename.
+  vim.keymap.set({ "n", "x" }, "gR", function ()
+    vscode.action("editor.action.rename")
+  end)
+
   -- Multiple cursors only really works in Insert Mode unfortunately.
   -- This makes cmd+d usable from Normal mode (but you can only use insert mode).
   -- https://github.com/vscode-neovim/vscode-neovim#vscodewith_insertcallback
