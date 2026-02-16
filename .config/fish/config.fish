@@ -69,3 +69,25 @@ function insert_last_command
   commandline --insert -- (history --max 1)
 end
 bind -M insert … insert_last_command
+
+function _fzf_search_git_branch --description "Search git branches with fzf. Replace the current token with the selected branch(es)."
+    if not git rev-parse --git-dir >/dev/null 2>&1
+        echo '_fzf_search_git_branch: Not in a git repository.' >&2
+    else
+        set -f selected_branches (
+            git branch --color=always --format='%(refname:short)' |
+            _fzf_wrapper --ansi \
+                --multi \
+                --prompt="Git Branch> " \
+                --query=(commandline --current-token) \
+                --preview='git log --oneline --graph --color=always {}' \
+                --preview-window=right:60% \
+                $fzf_git_branch_opts
+        )
+        if test $status -eq 0
+            commandline --current-token --replace -- (string join ' ' $selected_branches)
+        end
+    end
+    commandline --function repaint
+end
+bind -M insert \cb _fzf_search_git_branch
