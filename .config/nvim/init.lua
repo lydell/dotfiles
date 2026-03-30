@@ -100,6 +100,12 @@ if vim.g.vscode then
   vim.keymap.set({ "n", "x" }, "k", function ()
     vscode.action("goToDiagnostic.previousDiagnosticWithoutPopup")
   end)
+  vim.keymap.set({ "n", "x" }, "|", function ()
+    vscode.action("goToDiagnostic.nextDiagnosticWithoutPopup")
+  end)
+  vim.keymap.set({ "n", "x" }, "&", function ()
+    vscode.action("goToDiagnostic.previousDiagnosticWithoutPopup")
+  end)
 
   -- Rename.
   vim.keymap.set({ "n", "x" }, "gR", function ()
