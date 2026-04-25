@@ -72,6 +72,10 @@ vim.keymap.set("n", "_", "-")
 vim.keymap.set("n", "<bs>", "<c-o>")
 vim.keymap.set("n", "<s-bs>", "<c-i>")
 
+-- Swap , and ; (previous/next f or t).
+vim.keymap.set("n", ",", ";")
+vim.keymap.set("n", ";", ",")
+
 -- Highlight yanked text.
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function() vim.highlight.on_yank({ timeout = 200 }) end,
