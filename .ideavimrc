@@ -83,10 +83,6 @@ nnoremap <expr> Ö '?^.\{' . (col('.') - 1) . '\}\S?e<CR>:nohl<CR>'
 nnoremap <bs> <c-o>
 nnoremap <s-bs> <c-o>
 
-" Swap , and ; (previous/next f or t).
-nnoremap , ;
-nnoremap ; ,
-
 " Camel case motions.
 map <leader>w [w
 map <leader>b [b
