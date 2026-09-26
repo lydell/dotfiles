@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# A script that automatically runs the correct Elm version based on elm.json.
+# Assumes the following binaries in $PATH: 
+# elm-0.19.0
+# elm-0.19.1
+# elm-0.19.2
+# etc...
+# elm-latest (the latest version, used for packages and as a fallback)
+
+# Find the closest elm.json.
+dir="$(pwd)"
+while true; do
+  if test -f "$dir/elm.json"; then
+    break
+  fi
+  if test "$dir" = '/'; then
+    # No elm.json exists. Fall back to the latest version.
+    elm-latest "$@"
+    exit $?
+  fi
+  dir="$(dirname "$dir")"
+done
+
+if grep -qE '"type"\s*:\s*"package"' "$dir/elm.json"; then
+  # Run the latest Elm for packages.
+  elm-latest "$@"
+else
+  # Read the Elm version for applications.
+  version="$(grep -E '"elm-version"\s*:\s*"\d+\.\d+\.\d+"' "$dir/elm.json" | cut -d '"' -f 4)"
+  if test -z "$version"; then
+    # No version found in elm.json. Fall back to the latest version.
+    elm-latest "$@"
+  else
+    "elm-$version" "$@"
+  fi
+fi
