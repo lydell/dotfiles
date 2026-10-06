@@ -27,7 +27,7 @@ if grep -qE '"type"\s*:\s*"package"' "$dir/elm.json"; then
   elm-latest "$@"
 else
   # Read the Elm version for applications.
-  version="$(grep -E '"elm-version"\s*:\s*"\d+\.\d+\.\d+"' "$dir/elm.json" | cut -d '"' -f 4)"
+  version="$(grep -oE '"elm-version"\s*:\s*"\d+\.\d+\.\d+"' "$dir/elm.json" | cut -d '"' -f 4)"
   if test -z "$version"; then
     # No version found in elm.json. Fall back to the latest version.
     elm-latest "$@"
