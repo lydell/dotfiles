@@ -18,6 +18,7 @@ python
 ripgrep
 shellcheck
 tokei
+tree-sitter-cli
 zoxide
 
 # brew cask

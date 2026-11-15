@@ -62,6 +62,11 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
 
+-- Expand/shrink selection using the built-in treesitter incremental selection (`an` and `in`).
+vim.keymap.set("n", "h", "van", { remap = true }) -- higher
+vim.keymap.set("x", "h", "an", { remap = true }) -- higher
+vim.keymap.set("x", "l", "in", { remap = true }) -- lower
+
 -- Show file explorer by pressing `-`. Put the original `-` on `_` instead.
 if not vim.g.vscode then
   vim.keymap.set("n", "-", "<CMD>Oil<CR>")
@@ -84,6 +89,13 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
     vim.opt_local.iskeyword = "@,48-57,_,192-255"
   end,
 })
+
+-- Enable treesitter highlighting for all languages that have a parser installed.
+if not vim.g.vscode then
+  vim.api.nvim_create_autocmd("FileType", {
+    callback = function() pcall(vim.treesitter.start) end,
+  })
+end
 
 -- VSCode specific.
 if vim.g.vscode then
@@ -136,28 +148,15 @@ require("lazy").setup({
       end,
     },
 
-    -- Using this for its expand/shrink selection commands.
+    -- Installs treesitter parsers (for highlighting and expand/shrink selection).
+    -- Requires the tree-sitter CLI: brew install tree-sitter-cli
     {
       "nvim-treesitter/nvim-treesitter",
-      branch = "master",
+      branch = "main",
+      lazy = false,
       build = ":TSUpdate",
-      config = function ()
-        local configs = require("nvim-treesitter.configs")
-
-        configs.setup({
-          ensure_installed = { "bash", "css", "csv", "diff", "dockerfile", "elm", "fish", "gleam", "haskell", "html", "javascript", "jsdoc", "json", "lua", "luadoc", "make", "markdown", "markdown_inline", "python", "regex", "sql", "tsv", "tsx", "typescript", "vim", "vimdoc", "xml", "yaml" },
-          highlight = {
-            enable = not vim.g.vscode,
-          },
-          incremental_selection = {
-            enable = true,
-            keymaps = {
-              init_selection = "h",
-              node_incremental = "h", -- higher
-              node_decremental = "l", -- lower
-            },
-          },
-        })
+      config = function()
+        require("nvim-treesitter").install({ "bash", "css", "csv", "diff", "dockerfile", "elm", "fish", "gleam", "haskell", "html", "javascript", "jsdoc", "json", "lua", "luadoc", "make", "markdown", "markdown_inline", "python", "regex", "sql", "tsv", "tsx", "typescript", "vim", "vimdoc", "xml", "yaml" })
       end,
     },
 
