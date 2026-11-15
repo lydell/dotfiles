@@ -62,10 +62,9 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
 
--- Expand/shrink selection using the built-in treesitter incremental selection (`an` and `in`).
-vim.keymap.set("n", "h", "van", { remap = true }) -- higher
-vim.keymap.set("x", "h", "an", { remap = true }) -- higher
-vim.keymap.set("x", "l", "in", { remap = true }) -- lower
+-- Expand/shrink selection using the built-in treesitter incremental selection.
+vim.keymap.set({ "n", "x" }, "h", function() vim.treesitter.select("parent") end) -- higher
+vim.keymap.set("x", "l", function() vim.treesitter.select("child") end) -- lower
 
 -- Show file explorer by pressing `-`. Put the original `-` on `_` instead.
 if not vim.g.vscode then
