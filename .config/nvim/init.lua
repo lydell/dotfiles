@@ -1,20 +1,3 @@
--- Copied from: https://lazy.folke.io/installation (Single File Setup)
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
-end
-vim.opt.rtp:prepend(lazypath)
-
 -- Change <leader> from backslash to space.
 -- First unmap space, so it never moves forward after a delay.
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
@@ -133,86 +116,95 @@ if vim.g.vscode then
   end)
 end
 
--- The lazy.nvim docs recommend configuring stuff before loading the plugins where possible.
-require("lazy").setup({
-  spec = {
-    {
-      -- Colorscheme loaded as described in https://lazy.folke.io/spec/examples
-      "Mofiqul/vscode.nvim",
-      lazy = false,
-      priority = 1000,
-      cond = not vim.g.vscode,
-      config = function()
-        vim.cmd([[colorscheme vscode]])
-      end,
-    },
+----- Plugins -----
 
-    -- Installs treesitter parsers (for highlighting and expand/shrink selection).
-    -- Requires the tree-sitter CLI: brew install tree-sitter-cli
-    {
-      "nvim-treesitter/nvim-treesitter",
-      branch = "main",
-      lazy = false,
-      build = ":TSUpdate",
-      config = function()
-        require("nvim-treesitter").install({ "bash", "css", "csv", "diff", "dockerfile", "elm", "fish", "gleam", "haskell", "html", "javascript", "jsdoc", "json", "lua", "luadoc", "make", "markdown", "markdown_inline", "python", "regex", "sql", "tsv", "tsx", "typescript", "vim", "vimdoc", "xml", "yaml" })
-      end,
-    },
+-- Update plugins: Shows a list of changes. :w to apply, :q to cancel.
+vim.api.nvim_create_user_command("PackUpdate", function()
+  vim.pack.update()
+end, {})
 
-    -- Motions for “falling down or up”. Like W and B, but vertically.
-    -- Originally from Vim Mode Plus for Atom.
-    {
-      "pchampio/vim-edgemotion",
-      config = function()
-        vim.keymap.set("n", "ö", "<Plug>(edgemotion-j)")
-        vim.keymap.set("n", "Ö", "<Plug>(edgemotion-k)")
-      end,
-    },
+local function gh(repo)
+  return "https://github.com/" .. repo
+end
 
-    -- Don’t move the cursor after yanking.
-    {
-      "svban/YankAssassin.nvim",
-      opts = {
-        auto_normal = true,
-        auto_visual = true,
-      },
-    },
+-- Rebuild treesitter parsers when nvim-treesitter is updated.
+-- Must be set up before vim.pack.add().
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(ev)
+    if ev.data.spec.name == "nvim-treesitter" and ev.data.kind == "update" then
+      if not ev.data.active then
+        vim.cmd.packadd("nvim-treesitter")
+      end
+      vim.cmd("TSUpdate")
+    end
+  end,
+})
+
+vim.pack.add({
+  -- Installs treesitter parsers (for highlighting and expand/shrink selection).
+  -- Requires the tree-sitter CLI: brew install tree-sitter-cli
+  { src = gh("nvim-treesitter/nvim-treesitter"), version = "main" },
+
+  -- Motions for “falling down or up”. Like W and B, but vertically.
+  -- Originally from Vim Mode Plus for Atom.
+  gh("pchampio/vim-edgemotion"),
+
+  -- Don’t move the cursor after yanking.
+  gh("svban/YankAssassin.nvim"),
+
+  -- Add (ys), remove (ds) and change (cs) parentheses and similar around things.
+  -- In visual mode: S.
+  gh("kylechui/nvim-surround"),
+
+  -- Changes s to a two-letter f.
+  gh("justinmk/vim-sneak"),
+
+  -- Swap two pieces of text, with cx.
+  -- In visual mode: X.
+  gh("tommcdo/vim-exchange"),
+
+  -- Makes { and } work even if a blank line contains spaces.
+  gh("dbakker/vim-paragraph-motion"),
+
+  -- Makes ga print unicode info about the character under the cursor.
+  gh("tpope/vim-characterize"),
+
+  -- Guesses indentation settings.
+  gh("tpope/vim-sleuth"),
+
+  -- Camel case motions: <leader> w/b/e/ge
+  gh("bkad/CamelCaseMotion"),
+})
+
+if not vim.g.vscode then
+  vim.pack.add({
+    -- Colorscheme.
+    gh("Mofiqul/vscode.nvim"),
 
     -- File explorer.
-    {
-      "stevearc/oil.nvim",
-      opts = {
-        view_options = {
-          show_hidden = true,
-        },
-      },
-      cond = not vim.g.vscode,
+    gh("stevearc/oil.nvim"),
+  })
+
+  vim.cmd.colorscheme("vscode")
+
+  require("oil").setup({
+    view_options = {
+      show_hidden = true,
     },
+  })
+end
 
-    -- Add (ys), remove (ds) and change (cs) parentheses and similar around things.
-    -- In visual mode: S.
-    { "kylechui/nvim-surround", opts = {} },
+require("nvim-treesitter").install({ "bash", "css", "csv", "diff", "dockerfile", "elm", "fish", "gleam", "haskell", "html", "javascript", "jsdoc", "json", "lua", "luadoc", "make", "markdown", "markdown_inline", "python", "regex", "sql", "tsv", "tsx", "typescript", "vim", "vimdoc", "xml", "yaml" })
 
-    -- Changes s to a two-letter f.
-    "justinmk/vim-sneak",
+vim.keymap.set("n", "ö", "<Plug>(edgemotion-j)")
+vim.keymap.set("n", "Ö", "<Plug>(edgemotion-k)")
 
-    -- Swap two pieces of text, with cx.
-    -- In visual mode: X.
-    "tommcdo/vim-exchange",
-
-    -- Makes { and } work even if a blank line contains spaces.
-    "dbakker/vim-paragraph-motion",
-
-    -- Makes ga print unicode info about the character under the cursor.
-    "tpope/vim-characterize",
-
-    -- Guesses indentation settings.
-    "tpope/vim-sleuth",
-
-    -- Camel case motions: <leader> w/b/e/ge
-    "bkad/CamelCaseMotion",
-  },
+require("YankAssassin").setup({
+  auto_normal = true,
+  auto_visual = true,
 })
+
+require("nvim-surround").setup()
 
 ----- Yank and paste with indent handling -----
 
