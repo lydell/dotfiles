@@ -78,7 +78,7 @@ vim.keymap.set("n", "<s-bs>", "<c-i>")
 
 -- Highlight yanked text.
 vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function() vim.highlight.on_yank({ timeout = 200 }) end,
+  callback = function() vim.hl.on_yank({ timeout = 200 }) end,
 })
 
 -- Reset iskeyword every time a buffer is entered or filetype is set.
