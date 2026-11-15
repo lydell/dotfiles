@@ -28,7 +28,9 @@ dropbox
 firefox@developer-edition
 font-meslo-lg-nerd-font
 iterm2
+karabiner-elements
 mos
+orbstack
 ungoogled-chromium
 visual-studio-code
 webstorm
